@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINDFAX - Visualizing The Future</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background: #0a0a0a; 
+            color: #ffffff; 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+        }
+        
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+        }
+        
+        .hero { 
+            min-height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #2D1B69 0%, #0a0a0a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+        }
+        
+        .hero-content { 
+            position: relative; 
+            z-index: 2; 
+            max-width: 800px; 
+        }
+        
+        h1 { 
+            font-size: 4rem; 
+            font-weight: 700; 
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #FFD700 0%, #FF6B35 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle { 
+            font-size: 1.5rem; 
+            margin-bottom: 2rem; 
+            opacity: 0.9; 
+        }
+        
+        .cta-button { 
+            display: inline-block; 
+            padding: 15px 40px; 
+            background: linear-gradient(135deg, #FFD700 0%, #FF6B35 100%);
+            color: #000; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: 600; 
+            font-size: 1.1rem; 
+            transition: transform 0.3s ease;
+        }
+        
+        .cta-button:hover { 
+            transform: translateY(-2px); 
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .subtitle { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>VISUALIZING THE FUTURE</h1>
+                <p class="subtitle">THE COSMIC & QUANTUM INFOGRAPHICS PACK</p>
+                <p style="margin-bottom: 2rem; opacity: 0.8;">
+                    Where quantum mechanics meets conscious experience. This atlas is not a book —<br>
+                    it is an interface between imagination and mathematics.
+                </p>
+                <a href="#" class="cta-button">GET THE ATLAS - COMING SOON</a>
+                <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.6;">
+                    MINDFAX © 2025 — For Those Who Think in Light.
+                </p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
