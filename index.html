@@ -40,7 +40,12 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--deep-space) 100%);
+            background: 
+                linear-gradient(135deg, rgba(45, 27, 105, 0.9) 0%, rgba(10, 10, 10, 0.95) 100%),
+                url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2110&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             position: relative;
             overflow: hidden;
         }
@@ -148,10 +153,31 @@
             border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .concept-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, var(--electric-gold) 0%, var(--cosmic-orange) 100%);
         }
 
         .concept-card:hover {
             transform: translateY(-5px);
+        }
+
+        .concept-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--electric-gold) 0%, var(--cosmic-orange) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .concept-title {
@@ -168,7 +194,11 @@
         /* Architect Section */
         .architect {
             padding: 100px 0;
-            background: linear-gradient(135deg, var(--deep-space) 0%, var(--primary-purple) 100%);
+            background: 
+                linear-gradient(135deg, rgba(10, 10, 10, 0.9) 0%, rgba(45, 27, 105, 0.8) 100%),
+                url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80');
+            background-size: cover;
+            background-position: center;
             text-align: center;
         }
 
@@ -178,6 +208,10 @@
             font-size: 1.2rem;
             line-height: 1.8;
             opacity: 0.9;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--electric-gold);
         }
 
         /* Footer */
@@ -185,6 +219,7 @@
             padding: 50px 0;
             text-align: center;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            background: var(--deep-space);
         }
 
         .copyright {
@@ -198,6 +233,7 @@
             .subtitle { font-size: 1.2rem; }
             .section-title { font-size: 2rem; }
             .concepts-grid { grid-template-columns: 1fr; }
+            .hero { background-attachment: scroll; }
         }
 
         /* Animations */
@@ -239,6 +275,7 @@
             <h2 class="section-title">INSIDE THE ATLAS</h2>
             <div class="concepts-grid">
                 <div class="concept-card">
+                    <div class="concept-icon">⏳</div>
                     <h3 class="concept-title">TIME CRYSTALS & TEMPORAL SYMMETRY</h3>
                     <p class="concept-description">
                         Crystals that beat forever without energy. Not just physics—a new computing paradigm 
@@ -246,6 +283,7 @@
                     </p>
                 </div>
                 <div class="concept-card">
+                    <div class="concept-icon">🧠</div>
                     <h3 class="concept-title">THE CONSCIOUSNESS ARCHITECTURE</h3>
                     <p class="concept-description">
                         From neural sparks to global mind networks. Consciousness isn't magic—it's computational 
@@ -253,6 +291,7 @@
                     </p>
                 </div>
                 <div class="concept-card">
+                    <div class="concept-icon">⚛️</div>
                     <h3 class="concept-title">QUANTUM ENTANGLEMENT ENGINE</h3>
                     <p class="concept-description">
                         Instantaneous connection beyond space-time. Two particles united across galaxies—what 
@@ -260,6 +299,7 @@
                     </p>
                 </div>
                 <div class="concept-card">
+                    <div class="concept-icon">🌌</div>
                     <h3 class="concept-title">THE GREAT FILTER HYPOTHESIS</h3>
                     <p class="concept-description">
                         Why the universe might be empty. Somewhere between chemistry and consciousness, 
@@ -267,6 +307,7 @@
                     </p>
                 </div>
                 <div class="concept-card">
+                    <div class="concept-icon">🖥️</div>
                     <h3 class="concept-title">SIMULATION CONTROL PANEL</h3>
                     <p class="concept-description">
                         If we're in a simulation, where are the controls? Mapping the interface of reality 
@@ -274,6 +315,7 @@
                     </p>
                 </div>
                 <div class="concept-card">
+                    <div class="concept-icon">💾</div>
                     <h3 class="concept-title">DIGITAL IMMORTALITY PROTOCOL</h3>
                     <p class="concept-description">
                         If consciousness is information, it can be copied. The step-by-step process of 
