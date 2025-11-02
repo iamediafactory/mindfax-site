@@ -33,7 +33,7 @@
             padding: 0 20px;
         }
 
-        /* Hero Section */
+        /* Hero Section com Background CSS */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -41,11 +41,10 @@
             justify-content: center;
             text-align: center;
             background: 
-                linear-gradient(135deg, rgba(45, 27, 105, 0.9) 0%, rgba(10, 10, 10, 0.95) 100%),
-                url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2110&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+                radial-gradient(ellipse at 20% 50%, rgba(45, 27, 105, 0.4) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(255, 107, 53, 0.3) 0%, transparent 50%),
+                radial-gradient(ellipse at 40% 80%, rgba(255, 215, 0, 0.2) 0%, transparent 50%),
+                linear-gradient(135deg, var(--primary-purple) 0%, var(--deep-space) 100%);
             position: relative;
             overflow: hidden;
         }
@@ -58,9 +57,8 @@
             right: 0;
             bottom: 0;
             background: 
-                radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="0.5" fill="white" opacity="0.3"/><circle cx="6" cy="8" r="0.3" fill="white" opacity="0.2"/><circle cx="3" cy="4" r="0.4" fill="white" opacity="0.4"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>'),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
         }
 
         .hero-content {
@@ -128,6 +126,17 @@
         .features {
             padding: 100px 0;
             background: var(--deep-space);
+            position: relative;
+        }
+
+        .features::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--electric-gold) 50%, transparent 100%);
         }
 
         .section-title {
@@ -148,11 +157,11 @@
         }
 
         .concept-card {
-            background: linear-gradient(135deg, rgba(45, 27, 105, 0.3) 0%, rgba(10, 10, 10, 0.8) 100%);
-            padding: 2rem;
+            background: linear-gradient(135deg, rgba(45, 27, 105, 0.3) 0%, rgba(10, 10, 10, 0.9) 100%);
+            padding: 2.5rem 2rem;
             border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
@@ -167,83 +176,140 @@
             background: linear-gradient(135deg, var(--electric-gold) 0%, var(--cosmic-orange) 100%);
         }
 
+        .concept-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+            opacity: 0;
+        }
+
+        .concept-card:hover::after {
+            opacity: 1;
+            transform: rotate(45deg) translate(10%, 10%);
+        }
+
         .concept-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
         }
 
         .concept-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
             background: linear-gradient(135deg, var(--electric-gold) 0%, var(--cosmic-orange) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            display: block;
         }
 
         .concept-title {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             margin-bottom: 1rem;
             color: var(--electric-gold);
+            font-weight: 600;
         }
 
         .concept-description {
             opacity: 0.8;
-            line-height: 1.6;
+            line-height: 1.7;
+            font-size: 1rem;
         }
 
         /* Architect Section */
         .architect {
-            padding: 100px 0;
+            padding: 120px 0;
             background: 
-                linear-gradient(135deg, rgba(10, 10, 10, 0.9) 0%, rgba(45, 27, 105, 0.8) 100%),
-                url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80');
-            background-size: cover;
-            background-position: center;
+                radial-gradient(ellipse at center, rgba(45, 27, 105, 0.4) 0%, var(--deep-space) 70%),
+                linear-gradient(135deg, var(--deep-space) 0%, var(--primary-purple) 100%);
             text-align: center;
+            position: relative;
+        }
+
+        .architect::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="circuit" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 0 10 L 20 10 M 10 0 L 10 20" fill="none" stroke="rgba(0,212,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23circuit)"/></svg>');
         }
 
         .architect-text {
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
-            font-size: 1.2rem;
-            line-height: 1.8;
+            font-size: 1.3rem;
+            line-height: 1.9;
             opacity: 0.9;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 2rem;
-            border-radius: 15px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 3rem;
+            border-radius: 20px;
             border-left: 4px solid var(--electric-gold);
+            position: relative;
+            z-index: 2;
+            backdrop-filter: blur(10px);
         }
 
         /* Footer */
         .footer {
-            padding: 50px 0;
+            padding: 60px 0;
             text-align: center;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             background: var(--deep-space);
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--cosmic-orange) 50%, transparent 100%);
         }
 
         .copyright {
             opacity: 0.6;
             font-size: 0.9rem;
+            line-height: 1.6;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            .subtitle { font-size: 1.2rem; }
-            .section-title { font-size: 2rem; }
+            h1 { font-size: 2.8rem; }
+            .subtitle { font-size: 1.3rem; }
+            .section-title { font-size: 2.2rem; }
             .concepts-grid { grid-template-columns: 1fr; }
-            .hero { background-attachment: scroll; }
+            .concept-card { padding: 2rem 1.5rem; }
+            .architect-text { padding: 2rem; font-size: 1.1rem; }
         }
 
         /* Animations */
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+            50% { transform: translateY(-12px); }
         }
 
         .floating {
-            animation: float 3s ease-in-out infinite;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3); }
+            50% { box-shadow: 0 15px 40px rgba(255, 215, 0, 0.5); }
+        }
+
+        .cta-button {
+            animation: glow 3s ease-in-out infinite;
         }
     </style>
 </head>
@@ -275,7 +341,7 @@
             <h2 class="section-title">INSIDE THE ATLAS</h2>
             <div class="concepts-grid">
                 <div class="concept-card">
-                    <div class="concept-icon">⏳</div>
+                    <span class="concept-icon">⏳</span>
                     <h3 class="concept-title">TIME CRYSTALS & TEMPORAL SYMMETRY</h3>
                     <p class="concept-description">
                         Crystals that beat forever without energy. Not just physics—a new computing paradigm 
@@ -283,7 +349,7 @@
                     </p>
                 </div>
                 <div class="concept-card">
-                    <div class="concept-icon">🧠</div>
+                    <span class="concept-icon">🧠</span>
                     <h3 class="concept-title">THE CONSCIOUSNESS ARCHITECTURE</h3>
                     <p class="concept-description">
                         From neural sparks to global mind networks. Consciousness isn't magic—it's computational 
@@ -291,7 +357,7 @@
                     </p>
                 </div>
                 <div class="concept-card">
-                    <div class="concept-icon">⚛️</div>
+                    <span class="concept-icon">⚛️</span>
                     <h3 class="concept-title">QUANTUM ENTANGLEMENT ENGINE</h3>
                     <p class="concept-description">
                         Instantaneous connection beyond space-time. Two particles united across galaxies—what 
@@ -299,7 +365,7 @@
                     </p>
                 </div>
                 <div class="concept-card">
-                    <div class="concept-icon">🌌</div>
+                    <span class="concept-icon">🌌</span>
                     <h3 class="concept-title">THE GREAT FILTER HYPOTHESIS</h3>
                     <p class="concept-description">
                         Why the universe might be empty. Somewhere between chemistry and consciousness, 
@@ -307,7 +373,7 @@
                     </p>
                 </div>
                 <div class="concept-card">
-                    <div class="concept-icon">🖥️</div>
+                    <span class="concept-icon">🖥️</span>
                     <h3 class="concept-title">SIMULATION CONTROL PANEL</h3>
                     <p class="concept-description">
                         If we're in a simulation, where are the controls? Mapping the interface of reality 
@@ -315,7 +381,7 @@
                     </p>
                 </div>
                 <div class="concept-card">
-                    <div class="concept-icon">💾</div>
+                    <span class="concept-icon">💾</span>
                     <h3 class="concept-title">DIGITAL IMMORTALITY PROTOCOL</h3>
                     <p class="concept-description">
                         If consciousness is information, it can be copied. The step-by-step process of 
@@ -349,7 +415,7 @@
     </footer>
 
     <script>
-        // Simple animation on scroll
+        // Enhanced animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -364,11 +430,11 @@
             });
         }, observerOptions);
 
-        // Observe concept cards
-        document.querySelectorAll('.concept-card').forEach(card => {
+        // Observe concept cards with staggered animation
+        document.querySelectorAll('.concept-card').forEach((card, index) => {
             card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
             observer.observe(card);
         });
     </script>
