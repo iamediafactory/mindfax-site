@@ -36,7 +36,7 @@ nav{display:flex; align-items:center; justify-content:space-between; padding:12p
 /* sections with single sprite background (4 slices) */
 .section{
   position:relative; min-height:100vh; display:flex; align-items:center; justify-content:center;
-  background-image:url("E-Book_Site_Page 2.png"); /* única imagem com 4 painéis */
+  background-image:url("E-Book_Site_Page%202.png"); /* única imagem com 4 painéis (URL encoded) */
   background-repeat:no-repeat; background-position:center 0%;
   background-size:100% 400%; /* altura total = 4x (cada seção mostra 1/4) */
   isolation:isolate;
@@ -61,7 +61,7 @@ h2{font-family:Cinzel,serif; font-size:40px; margin:0 0 10px; color:var(--gold);
 .s3{ background-position:center 66.666% }
 .s4{ background-position:center 100% }
 
-/* scroll reveal */
+/* scroll reveal (fade como na index) */
 .reveal{opacity:0; transform:translateY(14px); transition:opacity .9s ease, transform .9s ease}
 .reveal.in{opacity:1; transform:none}
 
@@ -153,7 +153,7 @@ footer{padding:40px 0 60px; color:var(--muted); border-top:1px solid rgba(255,25
       Once the 1,000 artifacts are sealed, the Continuum closes — forever.
     </div>
     <div style="margin-top:14px">
-      <a class="btn gold" href="mailto:hello@mindfax.art?subject=Request%20Edition%20Number">
+      <a class="btn gold" href="mailto:iamediafactory.studio@gmail.com?subject=Request%20Edition%20Number">
         <span class="dot"></span> Request Edition Number
       </a>
     </div>
@@ -165,11 +165,12 @@ footer{padding:40px 0 60px; color:var(--muted); border-top:1px solid rgba(255,25
     <!-- logo 4× maior -->
     <img src="Logo_Ultimate_2.png" alt="MINDFAX" style="height:136px;width:auto;opacity:.9;margin-bottom:12px">
     <div style="color:#A2A8BD">© 2025 MINDFAX · All Rights Reserved · mindfax.art</div>
+    <div style="color:#A2A8BD">Contact: iamediafactory.studio@gmail.com</div>
   </div>
 </footer>
 
 <script>
-// scroll reveal
+// scroll reveal (fade na rolagem)
 const obs=new IntersectionObserver((entries)=>{
   entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target) } });
 },{threshold:.18});
