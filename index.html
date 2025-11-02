@@ -1,314 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>MINDFAX — Artifact 001 · For Those Who Think in Light</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0A0B10" />
-  <meta name="description" content="A limited cognitive artifact merging science, philosophy and cinematic design for the post-human era."/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<meta charset="utf-8" />
+<title>MINDFAX · For Those Who Think in Light</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#0A0B10" />
+<meta name="description" content="MINDFAX is a cinematic synthesis of science, philosophy and design. Artifact 001 is a limited cognitive artifact for those who think in light."/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<meta property="og:title" content="MINDFAX — For Those Who Think in Light" />
+<meta property="og:description" content="A cinematic continuum of knowledge and design." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://raw.githubusercontent.com/youruser/mindfax.art/main/og-cover.jpg" />
+<meta property="og:url" content="https://mindfax.art" />
+<style>
+:root{
+  --bg:#0A0B10; --text:#EAEAF5; --muted:#A2A8BD;
+  --gold:#FFD700; --cyan:#00CFFF; --violet:#8888FF;
+  --glass: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  --brd: rgba(255,255,255,.10); --radius:22px; --shadow:0 20px 60px rgba(0,0,0,.45);
+}
+*{box-sizing:border-box} html,body{margin:0;background:#0A0B10;color:var(--text);
+  font-family:"IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif; line-height:1.6}
+a{color:var(--cyan);text-decoration:none}
+.wrap{width:min(1100px,92%);margin:0 auto}
+header{position:sticky;top:0;z-index:40;backdrop-filter:saturate(160%) blur(10px);
+  background:linear-gradient(180deg, rgba(10,11,16,.92), rgba(10,11,16,.65)); border-bottom:1px solid rgba(255,255,255,.06)}
+nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:30px; width:auto; display:block}
+.brand h1{font-family:Cinzel,serif; font-size:16px; margin:0; letter-spacing:.5px; color:#DDE3F7}
+.navlinks a{margin-left:14px; color:var(--muted); font-size:14px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 20px;border-radius:14px;font-weight:600;
+  border:1px solid rgba(255,255,255,.09); background:var(--glass); box-shadow:var(--shadow)}
+.btn.gold{background:linear-gradient(120deg,#2a2200,#1a1400); border-color:#3a2c00; color:#FCEFB0}
+.btn .dot{width:10px;height:10px;border-radius:50%;background:var(--gold); box-shadow:0 0 16px rgba(255,215,0,.55)}
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="MINDFAX — Artifact 001" />
-  <meta property="og:description" content="Not a book — a cognitive artifact. Limited collector’s editions." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://raw.githubusercontent.com/youruser/mindfax-artifact-001/main/og-cover.jpg" />
-  <meta property="og:url" content="https://youruser.github.io/mindfax-artifact-001" />
-
-  <!-- Product Schema -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Product",
-    "name":"MINDFAX — Artifact 001",
-    "image":["https://youruser.github.io/mindfax-artifact-001/og-cover.jpg"],
-    "description":"A limited cognitive artifact merging science, philosophy and cinematic design for the post-human era.",
-    "brand":{"@type":"Brand","name":"MINDFAX"},
-    "offers":[
-      {"@type":"Offer","priceCurrency":"USD","price":"1997","availability":"https://schema.org/InStock","url":"https://YOUR_STRIPE_LINK_HERE","name":"Founders Edition"},
-      {"@type":"Offer","priceCurrency":"USD","price":"997","availability":"https://schema.org/InStock","url":"https://YOUR_STRIPE_LINK_HERE","name":"Collector’s Edition"},
-      {"@type":"Offer","priceCurrency":"USD","price":"297","availability":"https://schema.org/LimitedAvailability","url":"https://YOUR_STRIPE_LINK_HERE","name":"Open Edition (72h)"}
-    ]
-  }
-  </script>
-
-  <style>
-    :root{
-      --bg:#0A0B10; --panel:#0F1119; --soft:#131628;
-      --text:#EAEAF5; --muted:#9AA1B5;
-      --gold:#FFD700; --cyan:#00CFFF; --violet:#8888FF;
-      --accent:#11E4B4; --error:#FF5566;
-      --shadow: 0 20px 60px rgba(0,0,0,.45);
-      --radius: 18px;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;background:radial-gradient(1200px 800px at 80% -10%, #111638 0%, #0B0E1F 35%, var(--bg) 70%); color:var(--text); font-family:"IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif; line-height:1.6}
-    a{color:var(--cyan); text-decoration:none}
-    .wrap{width:min(1200px, 92%); margin:0 auto}
-    header{position:sticky; top:0; z-index:30; backdrop-filter:saturate(160%) blur(12px); background:linear-gradient(180deg, rgba(10,11,16,.9), rgba(10,11,16,.6)); border-bottom:1px solid rgba(255,255,255,.06)}
-    nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
-    .brand{display:flex; gap:12px; align-items:center}
-    .brand-logo{width:34px; height:34px; border-radius:50%; background:radial-gradient(circle at 30% 30%, var(--gold), #9C7A00); box-shadow:0 0 40px rgba(255,215,0,.2)}
-    .brand h1{font-family:Cinzel, serif; font-size:18px; margin:0; letter-spacing:.6px}
-    .navlinks a{margin-inline:10px; color:var(--muted)}
-    .btn{display:inline-flex; align-items:center; gap:10px; padding:14px 20px; border-radius:14px; font-weight:600; border:1px solid rgba(255,255,255,.09); background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); box-shadow:var(--shadow); transition:.2s}
-    .btn:hover{transform:translateY(-1px); border-color:rgba(255,255,255,.2)}
-    .btn.gold{background:linear-gradient(120deg, #2a2200, #1a1400); border-color:#3a2c00; color:#FCEFB0}
-    .btn.gold span.dot{width:10px; height:10px; border-radius:50%; background:var(--gold); box-shadow:0 0 16px rgba(255,215,0,.6)}
-    .hero{position:relative; padding:112px 0 64px; overflow:hidden}
-    .hero .bg{
-      position:absolute; inset:0; background:
-       radial-gradient(1200px 600px at 50% -10%, rgba(136,136,255,.22), transparent 60%),
-       radial-gradient(900px 500px at 10% 100%, rgba(0,207,255,.18), transparent 60%),
-       radial-gradient(900px 600px at 90% 100%, rgba(255,215,0,.06), transparent 70%);
-      pointer-events:none;
-    }
-    .hero .grid{display:grid; grid-template-columns: 1.1fr .9fr; gap:42px}
-    .title{font-family:Cinzel, serif; font-size:46px; line-height:1.12; margin:0 0 12px}
-    .subtitle{color:var(--muted); font-size:18px; margin:0 0 26px}
-    .hero .panel{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow)}
-    .gallery{display:grid; grid-template-columns: repeat(3, 1fr); gap:10px}
-    .gallery img{width:100%; aspect-ratio: 16 / 10; object-fit:cover; border-radius:12px; border:1px solid rgba(255,255,255,.06)}
-    .kpibadges{display:flex; gap:12px; flex-wrap:wrap; margin:18px 0}
-    .kpi{background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.08); padding:10px 14px; border-radius:999px; font-size:12px; color:#D9DEF3}
-    section{padding:66px 0}
-    .section-title{font-family:Cinzel, serif; font-size:28px; margin:0 0 10px}
-    .section-sub{color:var(--muted); margin:0 0 26px}
-    .cards{display:grid; grid-template-columns: repeat(3, 1fr); gap:18px}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow)}
-    .price{font-size:28px; font-weight:700; color:#FCEFB0}
-    .tag{display:inline-block; padding:6px 10px; border:1px solid rgba(255,255,255,.14); border-radius:999px; font-size:12px; color:#C3C9DE; margin-bottom:10px}
-    .features{margin:12px 0 18px; color:#D6DCF0; font-size:14px}
-    .features li{margin:8px 0}
-    .cta-row{display:flex; flex-wrap:wrap; gap:14px; margin-top:14px}
-    .two-col{display:grid; grid-template-columns: 1fr 1fr; gap:22px}
-    .embed{aspect-ratio:16/9; width:100%; border:1px solid rgba(255,255,255,.1); border-radius:14px}
-    footer{padding:50px 0 70px; color:var(--muted); border-top:1px solid rgba(255,255,255,.06)}
-    .footgrid{display:grid; grid-template-columns: 1.2fr .8fr; gap:30px}
-    .logoBig{width:68px; height:68px; border-radius:20px; background:radial-gradient(circle at 35% 35%, var(--gold), #9C7A00); box-shadow:0 0 60px rgba(255,215,0,.18)}
-    .fine{font-size:12px; color:#9BA3BD}
-    .notice{border-left:3px solid var(--violet); padding:12px 16px; background:rgba(136,136,255,.06); border-radius:10px; color:#DADFFF}
-    .chip{display:inline-flex; gap:8px; align-items:center; padding:8px 12px; border-radius:12px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.08); color:#D8DEF4; font-size:12px}
-    .grid-3{display:grid; grid-template-columns: repeat(3, 1fr); gap:16px}
-    .small{font-size:14px}
-    .muted{color:var(--muted)}
-    .divider{height:1px; background:linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,.12), rgba(255,255,255,0)); margin:26px 0}
-    @media (max-width: 980px){
-      .hero .grid{grid-template-columns:1fr}
-      .cards{grid-template-columns: 1fr}
-      .gallery{grid-template-columns: repeat(2, 1fr)}
-      .two-col{grid-template-columns: 1fr}
-      nav .navlinks{display:none}
-      .title{font-size:36px}
-    }
-  </style>
+.section{position:relative; min-height:100vh; display:flex; align-items:center; justify-content:center;
+  background-image:url('Site.png'); background-size:cover; background-repeat:no-repeat; color:#EAEAF5}
+.section::after{content:""; position:absolute; inset:0;
+  background: radial-gradient(1000px 600px at 50% -10%, rgba(136,136,255,.20), transparent 60%),
+              radial-gradient(900px 500px at 10% 100%, rgba(0,207,255,.12), transparent 60%),
+              linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.55)); pointer-events:none}
+.section .panel{position:relative; z-index:2; text-align:center; backdrop-filter: blur(6px);
+  border:1px solid var(--brd); background:var(--glass); padding:28px 26px; border-radius:var(--radius); box-shadow:var(--shadow); width:min(840px,92%)}
+.section h2{font-family:Cinzel,serif; font-size:36px; margin:0 0 10px}
+.section p.lead{color:#DDE3F7; font-size:16px; margin:4px 0 12px}
+.kicker{color:#C8CFE6; font-weight:600; letter-spacing:.4px; margin-bottom:8px}
+.section.top{background-position:center top}
+.section.mid{background-position:center center}
+.section.bot{background-position:center bottom}
+.scroll{margin-top:14px}
+footer{padding:40px 0 60px; color:var(--muted); border-top:1px solid rgba(255,255,255,.06); text-align:center}
+.small{font-size:12px}
+@media (max-width:900px){
+  .section h2{font-size:28px}
+  .navlinks{display:none}
+}
+</style>
 </head>
 <body>
+
 <header>
   <div class="wrap">
     <nav>
       <div class="brand">
-        <div class="brand-logo" aria-hidden="true"></div>
-        <h1>MINDFAX · Artifact 001</h1>
+        <!-- TROQUE O SRC ABAIXO PELO NOME DO SEU ARQUIVO DE LOGO -->
+        <img src="mindfax-logo.svg" alt="MINDFAX logo">
+        <h1>MINDFAX</h1>
       </div>
       <div class="navlinks">
-        <a href="#editions">Editions</a>
-        <a href="#inside">Inside</a>
-        <a href="#coa">Authenticity</a>
-        <a href="#faq">FAQ</a>
+        <a href="#origin">Origin</a>
+        <a href="#continuum">Continuum</a>
+        <a href="#architect">Architect</a>
       </div>
-      <a class="btn gold" href="#buy"><span class="dot"></span> Buy Now</a>
+      <a class="btn gold" href="#continuum"><span class="dot"></span> Enter the Continuum</a>
     </nav>
   </div>
 </header>
 
-<section class="hero">
-  <div class="bg"></div>
-  <div class="wrap grid">
-    <div>
-      <h2 class="title">Not a book — a cognitive <em>artifact</em>.</h2>
-      <p class="subtitle">A limited, cinematic synthesis of science, philosophy and design. For those who think in light.</p>
-      <div class="kpibadges">
-        <span class="kpi">Limited Editions</span>
-        <span class="kpi">COA + NFT Companion</span>
-        <span class="kpi">8K Gallery Assets</span>
-        <span class="kpi">Mastermind Access (Founders)</span>
-      </div>
-      <div class="cta-row">
-        <a class="btn gold" href="#editions"><span class="dot"></span> Explore Editions</a>
-        <a class="btn" href="#trailer">Watch Trailer</a>
-      </div>
-    </div>
-    <div class="panel">
-      <div class="gallery" aria-label="Cinematic page stills">
-        <img src="https://images.unsplash.com/photo-1462332420958-a05d1e002413?q=80&w=1200&auto=format&fit=crop" alt="Cosmic city of light"/>
-        <img src="https://images.unsplash.com/photo-1527443154391-507e9dc6c5cc?q=80&w=1200&auto=format&fit=crop" alt="Data cathedral"/>
-        <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?q=80&w=1200&auto=format&fit=crop" alt="Golden equations"/>
-        <img src="https://images.unsplash.com/photo-1535905496755-26ae35d0ae54?q=80&w=1200&auto=format&fit=crop" alt="Nebula horizon"/>
-        <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=1200&auto=format&fit=crop" alt="Fractal singularity"/>
-        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1200&auto=format&fit=crop" alt="Blueprint network"/>
-      </div>
-    </div>
+<!-- Section 1 — ORIGIN / MANIFEST -->
+<section id="origin" class="section top" role="region" aria-label="Origin">
+  <div class="panel">
+    <div class="kicker">FOR THOSE WHO THINK IN LIGHT</div>
+    <h2>Not a Book — a Cognitive Artifact</h2>
+    <p class="lead">Origin · Code · Creation. A cinematic philosophy rendered as design.</p>
+    <div class="scroll"><a class="btn" href="#continuum">Continue</a></div>
   </div>
 </section>
 
-<section id="editions">
-  <div class="wrap">
-    <h3 class="section-title">Editions & Inclusions</h3>
-    <p class="section-sub">Three paths into the continuum. Choose your provenance.</p>
-    <div class="cards" id="buy">
-      <article class="card">
-        <span class="tag">Founders Edition</span>
-        <h4 class="section-title" style="margin:4px 0 8px">Artifact 001 — Founders</h4>
-        <div class="price">$1,997</div>
-        <ul class="features">
-          <li>Numbered COA (physical + digital)</li>
-          <li>NFT companion (non-transferable or SBT optional)</li>
-          <li>8K gallery pack + private license</li>
-          <li>Mastermind lifetime access (4 sessions/year)</li>
-        </ul>
-        <div class="cta-row">
-          <a class="btn gold" href="https://YOUR_STRIPE_LINK_HERE">Acquire Founders</a>
-          <span class="chip">100–300 copies</span>
-        </div>
-      </article>
-      <article class="card">
-        <span class="tag">Collector’s Edition</span>
-        <h4 class="section-title" style="margin:4px 0 8px">Artifact 001 — Collector</h4>
-        <div class="price">$997</div>
-        <ul class="features">
-          <li>COA digital (numbered)</li>
-          <li>NFT companion</li>
-          <li>Curated walkthrough session</li>
-          <li>8K wallpapers</li>
-        </ul>
-        <div class="cta-row">
-          <a class="btn gold" href="https://YOUR_STRIPE_LINK_HERE">Acquire Collector</a>
-          <span class="chip">1,000 copies</span>
-        </div>
-      </article>
-      <article class="card">
-        <span class="tag">Open Edition (72h)</span>
-        <h4 class="section-title" style="margin:4px 0 8px">Artifact 001 — Cinematic Digital</h4>
-        <div class="price">$297</div>
-        <ul class="features">
-          <li>Digital cinematic edition</li>
-          <li>Access to immersive player</li>
-          <li>No COA · No Mastermind</li>
-        </ul>
-        <div class="cta-row">
-          <a class="btn gold" href="https://YOUR_STRIPE_LINK_HERE">Acquire Digital</a>
-          <span class="chip">Time-limited</span>
-        </div>
-      </article>
-    </div>
+<!-- Section 2 — CONTINUUM / ARTIFACT 001 -->
+<section id="continuum" class="section mid" role="region" aria-label="Continuum">
+  <div class="panel">
+    <div class="kicker">ARTIFACT 001</div>
+    <h2>Where Quantum Design Meets Human Meaning</h2>
+    <p class="lead">A limited cognitive artifact — knowledge turned into light. Cinematic, precise, alive.</p>
+    <p class="lead" style="opacity:.85">A synthesis of science, philosophy and visual architecture.</p>
+    <div class="scroll"><a class="btn" href="#architect">Meet the Architect</a></div>
   </div>
 </section>
 
-<section id="inside">
-  <div class="wrap two-col">
-    <div>
-      <h3 class="section-title">Inside the Artifact</h3>
-      <p class="section-sub">A mythopoetic architecture of consciousness: The Architect, The Great Filter, The Singularity Spectrum, Digital Immortality, The Final Equation — and more.</p>
-      <div class="notice small">
-        <strong>Positioning:</strong> Not an ebook. A limited cognitive artifact merging science, philosophy and cinematic design. <em>For Those Who Think in Light.</em>
-      </div>
-      <div class="divider"></div>
-      <div class="grid-3 small">
-        <div>
-          <p><strong>Philosophical Core</strong><br/>Message from the Architect, post-human ethos, sacred modernism.</p>
-        </div>
-        <div>
-          <p><strong>Visual Grammar</strong><br/>Gold · Cyan · Violet; data-temple, cosmic blueprint, divine minimalism.</p>
-        </div>
-        <div>
-          <p><strong>Systems</strong><br/>COA, hash provenance, optional NFT companion, limited series.</p>
-        </div>
-      </div>
-    </div>
-    <div>
-      <h3 class="section-title" id="trailer">Trailer</h3>
-      <iframe class="embed" src="https://www.youtube.com/embed/VIDEO_ID_HERE" title="MINDFAX Trailer" allowfullscreen></iframe>
-      <p class="muted small">Replace <code>VIDEO_ID_HERE</code> with your published trailer ID.</p>
-    </div>
-  </div>
-</section>
-
-<section id="coa">
-  <div class="wrap two-col">
-    <div class="panel">
-      <h3 class="section-title">Authenticity & Provenance</h3>
-      <p class="section-sub">Every copy is numbered. Ownership is certified by COA and optional on-chain record.</p>
-      <ul class="features">
-        <li><strong>COA</strong> — Certificate of Authenticity (physical/digital)</li>
-        <li><strong>Hash</strong> — Public SHA-256 stored in the COA</li>
-        <li><strong>NFT Companion</strong> — Optional token for provenance</li>
-        <li><strong>License</strong> — Private display + gallery crediting</li>
-      </ul>
-    </div>
-    <div class="panel">
-      <h3 class="section-title">What collectors receive</h3>
-      <ul class="features">
-        <li>High-res digital edition + 8K stills</li>
-        <li>Collector updates & private events</li>
-        <li>Access to restoration files on demand</li>
-        <li>Priority on future artifacts (002+)</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section id="faq">
-  <div class="wrap">
-    <h3 class="section-title">FAQ · Collectors</h3>
-    <div class="two-col">
-      <div>
-        <p><strong>Is this just a PDF?</strong><br/>No. It’s a curated artifact with cinematic composition, limited provenance, and optional on-chain record.</p>
-        <p><strong>Can I resell?</strong><br/>Yes — subject to edition rules and provenance. NFT royalties (if enabled) may apply.</p>
-      </div>
-      <div>
-        <p><strong>Commercial rights?</strong><br/>No. Private/galleries with credit. Contact us for licensing discussions.</p>
-        <p><strong>Refund policy?</strong><br/>Limited editions are final once minted/COA issued.</p>
-      </div>
-    </div>
+<!-- Section 3 — THE ARCHITECT / MESSAGE -->
+<section id="architect" class="section bot" role="region" aria-label="Architect">
+  <div class="panel">
+    <div class="kicker">THE ARCHITECT</div>
+    <h2>Message to Those Who Still Look Up</h2>
+    <p class="lead">“Humanity is not a mistake — it is a question. You were never meant to conquer the cosmos; you were meant to understand it.”</p>
+    <p class="lead" style="opacity:.85">From origin to continuum: a promise of exploration, hope and intelligence.</p>
   </div>
 </section>
 
 <footer>
-  <div class="wrap footgrid">
-    <div style="display:flex; gap:16px">
-      <div class="logoBig" aria-hidden="true"></div>
-      <div>
-        <h4 class="section-title" style="margin:0 0 6px">MINDFAX</h4>
-        <p class="small">For Those Who Think in Light.</p>
-        <p class="fine">© 2025 MINDFAX. All Rights Reserved. Artifact 001 — Limited Series.</p>
-      </div>
-    </div>
-    <div>
-      <p class="small muted"><strong>Contact</strong><br/> hello@mindfax.art</p>
-      <p class="small muted"><strong>Legal</strong><br/> Terms · Privacy · Provenance Policy</p>
-    </div>
+  <div class="wrap">
+    <div class="small">© 2025 MINDFAX · All Rights Reserved · mindfax.art</div>
+    <div class="small">Contact: hello@mindfax.art</div>
   </div>
 </footer>
 
 <script>
-  // Smooth scroll for internal anchors
+  // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(a=>{
     a.addEventListener('click', e=>{
       const id=a.getAttribute('href');
-      if(id.length>1){
-        e.preventDefault();
-        document.querySelector(id)?.scrollIntoView({behavior:'smooth', block:'start'});
-      }
+      if(id.length>1){ e.preventDefault(); document.querySelector(id)?.scrollIntoView({behavior:'smooth'}) }
     });
   });
-
-  // Simple “drop countdown” (optional). Set a deadline or remove.
-  const deadline = null; // e.g., new Date("2025-12-01T00:00:00Z")
-  if(deadline){
-    // implement a banner if needed
-  }
 </script>
 </body>
 </html>
