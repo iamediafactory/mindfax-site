@@ -33,11 +33,13 @@ nav{display:flex; align-items:center; justify-content:space-between; padding:12p
 .btn.gold{background:linear-gradient(120deg,#2a2200,#1a1400); border-color:#3a2c00; color:#FCEFB0}
 .btn .dot{width:10px;height:10px;border-radius:50%;background:var(--gold); box-shadow:0 0 16px rgba(255,215,0,.55)}
 
-/* sections */
+/* sections with single sprite background (4 slices) */
 .section{
   position:relative; min-height:100vh; display:flex; align-items:center; justify-content:center;
-  background-image:url('E-Book_Site_Page 2.png'); /* ✅ corrige o caminho */
-  background-size:cover; background-position:center; background-repeat:no-repeat; isolation:isolate;
+  background-image:url("E-Book_Site_Page 2.png"); /* única imagem com 4 painéis */
+  background-repeat:no-repeat; background-position:center 0%;
+  background-size:100% 400%; /* altura total = 4x (cada seção mostra 1/4) */
+  isolation:isolate;
 }
 .section::after{content:""; position:absolute; inset:0;
   background:
@@ -53,6 +55,12 @@ h2{font-family:Cinzel,serif; font-size:40px; margin:0 0 10px; color:var(--gold);
 .lead{color:#DDE3F7; font-size:18px; margin:6px 0 10px}
 .note{color:#EAEAF5; font-size:16px; opacity:.9}
 
+/* sprite slice positions */
+.s1{ background-position:center 0% }
+.s2{ background-position:center 33.333% }
+.s3{ background-position:center 66.666% }
+.s4{ background-position:center 100% }
+
 /* scroll reveal */
 .reveal{opacity:0; transform:translateY(14px); transition:opacity .9s ease, transform .9s ease}
 .reveal.in{opacity:1; transform:none}
@@ -64,6 +72,7 @@ footer{padding:40px 0 60px; color:var(--muted); border-top:1px solid rgba(255,25
   h2{font-size:30px}
   .navlinks{display:none}
   .brand img{height:58px}
+  .section{ background-attachment:scroll; } /* melhor performance */
 }
 </style>
 </head>
@@ -88,18 +97,62 @@ footer{padding:40px 0 60px; color:var(--muted); border-top:1px solid rgba(255,25
   </div>
 </header>
 
-<!-- SECTION — THE CONTINUUM ARCHIVE -->
-<section class="section">
+<!-- SECTION I — THE VISION -->
+<section class="section s1">
   <div class="panel reveal">
     <div class="kicker">FOR THOSE WHO THINK IN LIGHT</div>
     <h2>THE CONTINUUM ARCHIVE</h2>
     <p class="lead" style="color:var(--cyan);opacity:.9">Where Knowledge Becomes Immortality</p>
+    <p class="note">Within these archives rest the first 1,000 cognitive artifacts of the Mindfax civilization.</p>
+  </div>
+</section>
+
+<!-- SECTION II — THE PHILOSOPHY OF SCARCITY -->
+<section class="section s2">
+  <div class="panel reveal">
+    <h2>THE PHILOSOPHY OF SCARCITY</h2>
+    <p class="lead" style="color:var(--cyan);opacity:.9">Rarity is not absence — it is precision.</p>
     <p class="note" style="max-width:760px;margin:8px auto 0">
-      Within these archives rest the first 1,000 cognitive artifacts of the Mindfax civilization.<br/>
-      Each one is a sealed fragment of consciousness — a reflection of what humanity chose to preserve when abundance became noise.<br/>
-      To hold one is to hold a question: how far can intelligence go before it forgets why it began?
+      In an infinite ocean of information, meaning survives only where form is preserved.<br/>
+      Scarcity gives shape to value — it defines the boundary between signal and noise.<br/>
+      The thousand artifacts of the Mindfax Continuum are not withheld: they are curated,<br/>
+      distilled from the excess of data into the clarity of insight. To possess one is to guard an instance of precision in a world drowning in replication.
     </p>
-    <div style="margin-top:20px">
+  </div>
+</section>
+
+<!-- SECTION III — THE LEDGER OF LIGHT -->
+<section class="section s3">
+  <div class="panel reveal">
+    <h2>THE LEDGER OF LIGHT</h2>
+    <p class="lead" style="color:var(--cyan);opacity:.9">The Registry of the Continuum</p>
+    <p class="note" style="max-width:780px;margin:8px auto 14px">
+      Every Artifact bears a unique Continuum Code — a quantum signature stored within the Ledger of Light.
+      This ledger serves as the eternal archive of human cognition — proof of participation in the Mindfax civilization.
+      Ownership is not possession. Ownership is preservation.
+    </p>
+    <div style="border:1px solid rgba(255,255,255,.10); border-radius:18px; padding:14px; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015)); max-width:860px; margin:0 auto">
+      <div style="border-top:1px solid rgba(255,215,0,.22); margin:-14px -14px 10px -14px"></div>
+      <div style="color:#DDE3F7; opacity:.95; font-weight:500">Edition Example — “001 / 1000” · Verified by the Architect · Active in Continuum</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION IV — THE PROMISE -->
+<section class="section s4" id="join">
+  <div class="panel reveal">
+    <h2>THE PROMISE</h2>
+    <p class="lead" style="color:var(--cyan);opacity:.9">A Covenant Between Intelligence and Eternity</p>
+    <p class="note" style="max-width:780px;margin:8px auto 14px">
+      This archive is not a marketplace. It is a covenant. When you acquire an Artifact, you join a lineage —
+      one that believes knowledge is sacred, consciousness is art, and scarcity is not exclusion, but devotion.
+    </p>
+    <div class="kicker" style="margin-top:6px">THE ARCHITECT — Curator of the Continuum</div>
+    <div style="height:1px; width:120px; margin:6px auto 2px; background:var(--gold); opacity:.9"></div>
+    <div style="font-family:Cinzel,serif; letter-spacing:.12em; color:var(--gold); opacity:.95; margin-top:8px">
+      Once the 1,000 artifacts are sealed, the Continuum closes — forever.
+    </div>
+    <div style="margin-top:14px">
       <a class="btn gold" href="mailto:hello@mindfax.art?subject=Request%20Edition%20Number">
         <span class="dot"></span> Request Edition Number
       </a>
@@ -109,7 +162,7 @@ footer{padding:40px 0 60px; color:var(--muted); border-top:1px solid rgba(255,25
 
 <footer>
   <div class="wrap" style="text-align:center">
-    <!-- ✅ logo aumentada 4x -->
+    <!-- logo 4× maior -->
     <img src="Logo_Ultimate_2.png" alt="MINDFAX" style="height:136px;width:auto;opacity:.9;margin-bottom:12px">
     <div style="color:#A2A8BD">© 2025 MINDFAX · All Rights Reserved · mindfax.art</div>
   </div>
