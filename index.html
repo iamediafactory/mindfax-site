@@ -8,7 +8,7 @@
 <meta name="description" content="MINDFAX is a cinematic synthesis of science, philosophy and design. Artifact 001 is a limited cognitive artifact for those who think in light."/>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 
-<!-- Open Graph (ajuste a URL da imagem quando quiser) -->
+<!-- Open Graph -->
 <meta property="og:title" content="MINDFAX — For Those Who Think in Light" />
 <meta property="og:description" content="A cinematic continuum of knowledge and design." />
 <meta property="og:type" content="website" />
@@ -33,14 +33,14 @@ header{position:sticky; top:0; z-index:40; backdrop-filter:saturate(160%) blur(1
   background:linear-gradient(180deg, rgba(10,11,16,.92), rgba(10,11,16,.65)); border-bottom:1px solid rgba(255,255,255,.06)}
 nav{display:flex; align-items:center; justify-content:space-between; padding:12px 0}
 .brand{display:flex; align-items:center; gap:12px}
-.brand img{height:85px; width:auto; display:block} /* logo já maior */
+.brand img{height:85px; width:auto; display:block}
 .navlinks a{margin-left:14px; color:var(--muted); font-size:14px}
 .btn{display:inline-flex; align-items:center; gap:10px; padding:14px 20px; border-radius:14px; font-weight:600;
   border:1px solid rgba(255,255,255,.09); background:var(--glass); box-shadow:var(--shadow)}
 .btn.gold{background:linear-gradient(120deg,#2a2200,#1a1400); border-color:#3a2c00; color:#FCEFB0}
 .btn .dot{width:10px; height:10px; border-radius:50%; background:var(--gold); box-shadow:0 0 16px rgba(255,215,0,.55)}
 
-/* SECTIONS (uma única imagem de fundo para as 4 sessões) */
+/* SECTIONS */
 .section{
   position:relative; min-height:100vh;
   display:flex; align-items:center; justify-content:center; text-align:center;
@@ -62,7 +62,7 @@ nav{display:flex; align-items:center; justify-content:space-between; padding:12p
 .section p.lead{color:#DDE3F7; font-size:16px; margin:4px 0 12px}
 .kicker{color:#C8CFE6; font-weight:600; letter-spacing:.4px; margin-bottom:8px}
 
-/* Posições do sprite 4-em-1 */
+/* Posições */
 .section.top  { background-position:center 0% }
 .section.mid  { background-position:center 33% }
 .section.bot  { background-position:center 66% }
@@ -76,7 +76,7 @@ footer{padding:40px 0 60px; color:var(--muted); border-top:1px solid rgba(255,25
 
 /* Mobile */
 @media (max-width:900px){
-  .section{ background-attachment:scroll; } /* melhora performance mobile */
+  .section{ background-attachment:scroll; }
   .section h2{font-size:28px}
   .navlinks{display:none}
   .brand img{height:72px}
@@ -142,7 +142,12 @@ footer{padding:40px 0 60px; color:var(--muted); border-top:1px solid rgba(255,25
     <h2>The Artifact Series</h2>
     <p class="lead">Each artifact is sealed, numbered, and archived within the MINDFAX Continuum.</p>
     <p class="lead" style="opacity:.85">Once the 1,000 copies are acquired, the continuum closes — forever.</p>
-    <div class="scroll"><a class="btn gold" href="#origin"><span class="dot"></span> Acquire Your Edition</a></div>
+    <!-- 🔁 BOTÃO ATUALIZADO -->
+    <div class="scroll">
+      <a class="btn gold" href="continuum.html">
+        <span class="dot"></span> Acquire Your Edition
+      </a>
+    </div>
   </div>
 </section>
 
@@ -154,7 +159,7 @@ footer{padding:40px 0 60px; color:var(--muted); border-top:1px solid rgba(255,25
 </footer>
 
 <script>
-  // Smooth scroll
+  // Smooth scroll (mantém funcionamento interno)
   document.querySelectorAll('a[href^="#"]').forEach(a=>{
     a.addEventListener('click', e=>{
       const id=a.getAttribute('href');
