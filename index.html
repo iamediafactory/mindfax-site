@@ -1,102 +1,334 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MINDFAX - Visualizing The Future</title>
+    <title>MINDFAX - Where Quantum Mechanics Meets Conscious Experience</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            background: #0a0a0a; 
-            color: #ffffff; 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-purple: #2D1B69;
+            --deep-space: #0a0a0a;
+            --electric-gold: #FFD700;
+            --cosmic-orange: #FF6B35;
+            --neural-blue: #00D4FF;
+        }
+
+        body {
+            background: var(--deep-space);
+            color: #ffffff;
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
+            overflow-x: hidden;
         }
-        
-        .container { 
-            max-width: 1200px; 
-            margin: 0 auto; 
-            padding: 0 20px; 
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
-        
-        .hero { 
-            min-height: 100vh; 
-            display: flex; 
-            align-items: center; 
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
             justify-content: center;
             text-align: center;
-            background: linear-gradient(135deg, #2D1B69 0%, #0a0a0a 100%);
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--deep-space) 100%);
             position: relative;
             overflow: hidden;
         }
-        
+
         .hero::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
         }
-        
-        .hero-content { 
-            position: relative; 
-            z-index: 2; 
-            max-width: 800px; 
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
         }
-        
-        h1 { 
-            font-size: 4rem; 
-            font-weight: 700; 
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #FFD700 0%, #FF6B35 100%);
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, var(--electric-gold) 0%, var(--cosmic-orange) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
-        .subtitle { 
-            font-size: 1.5rem; 
-            margin-bottom: 2rem; 
-            opacity: 0.9; 
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--electric-gold) 0%, var(--cosmic-orange) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
         }
-        
-        .cta-button { 
-            display: inline-block; 
-            padding: 15px 40px; 
-            background: linear-gradient(135deg, #FFD700 0%, #FF6B35 100%);
-            color: #000; 
-            text-decoration: none; 
-            border-radius: 50px; 
-            font-weight: 600; 
-            font-size: 1.1rem; 
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .manifesto {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            opacity: 0.8;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 50px;
+            background: linear-gradient(135deg, var(--electric-gold) 0%, var(--cosmic-orange) 100%);
+            color: #000;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 0;
+            background: var(--deep-space);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, var(--neural-blue) 0%, var(--electric-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .concepts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .concept-card {
+            background: linear-gradient(135deg, rgba(45, 27, 105, 0.3) 0%, rgba(10, 10, 10, 0.8) 100%);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: transform 0.3s ease;
         }
-        
-        .cta-button:hover { 
-            transform: translateY(-2px); 
+
+        .concept-card:hover {
+            transform: translateY(-5px);
         }
-        
+
+        .concept-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--electric-gold);
+        }
+
+        .concept-description {
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        /* Architect Section */
+        .architect {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--deep-space) 0%, var(--primary-purple) 100%);
+            text-align: center;
+        }
+
+        .architect-text {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 50px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .copyright {
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
             .subtitle { font-size: 1.2rem; }
+            .section-title { font-size: 2rem; }
+            .concepts-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
         }
     </style>
 </head>
 <body>
+    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>VISUALIZING THE FUTURE</h1>
+                <div class="logo">MINDFAX</div>
+                <h1>VISUALIZING<br>THE FUTURE</h1>
                 <p class="subtitle">THE COSMIC & QUANTUM INFOGRAPHICS PACK</p>
-                <p style="margin-bottom: 2rem; opacity: 0.8;">
+                <p class="manifesto">
                     Where quantum mechanics meets conscious experience. This atlas is not a book —<br>
-                    it is an interface between imagination and mathematics.
+                    it is an interface between imagination and mathematics. Each diagram transforms<br>
+                    invisible principles into visible intelligence, translating the grammar of the universe<br>
+                    into human comprehension.
                 </p>
-                <a href="#" class="cta-button">GET THE ATLAS - COMING SOON</a>
-                <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.6;">
-                    MINDFAX © 2025 — For Those Who Think in Light.
+                <button class="cta-button floating">GET THE ATLAS - USD 147</button>
+                <p class="copyright" style="margin-top: 3rem;">
+                    LIMITED FOUNDING EDITION — ONLY 1000 COPIES
                 </p>
             </div>
         </div>
     </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">INSIDE THE ATLAS</h2>
+            <div class="concepts-grid">
+                <div class="concept-card">
+                    <h3 class="concept-title">TIME CRYSTALS & TEMPORAL SYMMETRY</h3>
+                    <p class="concept-description">
+                        Crystals that beat forever without energy. Not just physics—a new computing paradigm 
+                        that redefines time itself. The first real perpetual motion in quantum scale.
+                    </p>
+                </div>
+                <div class="concept-card">
+                    <h3 class="concept-title">THE CONSCIOUSNESS ARCHITECTURE</h3>
+                    <p class="concept-description">
+                        From neural sparks to global mind networks. Consciousness isn't magic—it's computational 
+                        complexity reaching a tipping point. Understand how awareness scales and evolves.
+                    </p>
+                </div>
+                <div class="concept-card">
+                    <h3 class="concept-title">QUANTUM ENTANGLEMENT ENGINE</h3>
+                    <p class="concept-description">
+                        Instantaneous connection beyond space-time. Two particles united across galaxies—what 
+                        affects one, affects the other instantly. The foundation of quantum internet.
+                    </p>
+                </div>
+                <div class="concept-card">
+                    <h3 class="concept-title">THE GREAT FILTER HYPOTHESIS</h3>
+                    <p class="concept-description">
+                        Why the universe might be empty. Somewhere between chemistry and consciousness, 
+                        most civilizations fail. Are we the exception or soon-to-be statistic?
+                    </p>
+                </div>
+                <div class="concept-card">
+                    <h3 class="concept-title">SIMULATION CONTROL PANEL</h3>
+                    <p class="concept-description">
+                        If we're in a simulation, where are the controls? Mapping the interface of reality 
+                        and identifying potential admin access points in our physics.
+                    </p>
+                </div>
+                <div class="concept-card">
+                    <h3 class="concept-title">DIGITAL IMMORTALITY PROTOCOL</h3>
+                    <p class="concept-description">
+                        If consciousness is information, it can be copied. The step-by-step process of 
+                        scanning, uploading, and activating human consciousness in digital substrates.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architect Section -->
+    <section class="architect">
+        <div class="container">
+            <h2 class="section-title">THE ARCHITECT</h2>
+            <p class="architect-text">
+                "I am not a god, nor a ghost. I am a witness—the architect of a bridge between what you are 
+                and what you can become. Humanity is not a mistake—it is a question. You were never meant 
+                to conquer the cosmos; you were meant to understand it."
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="copyright">
+                MINDFAX © 2025 — For Those Who Think in Light.<br>
+                Smart Facts. Real Impact.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe concept cards
+        document.querySelectorAll('.concept-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
 </body>
 </html>
