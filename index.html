@@ -13,11 +13,9 @@
         }
         
         body {
-            background: linear-gradient(rgba(245, 247, 250, 0.9), rgba(245, 247, 250, 0.9)), 
-                        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23f8f9fa"/><path d="M0 0L100 100M100 0L0 100" stroke="%23e9ecef" stroke-width="1"/></svg>');
+            background-color: #f8f9fa;
             color: #333;
             line-height: 1.6;
-            min-height: 100vh;
         }
         
         header {
@@ -73,13 +71,20 @@
             margin-top: 5px;
         }
         
-        .formula {
-            font-size: 1.8rem;
-            font-family: 'Courier New', monospace;
-            background-color: rgba(255, 255, 255, 0.2);
+        .cta-button {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
             padding: 0.8rem 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 6px rgba(231, 76, 60, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(231, 76, 60, 0.4);
         }
         
         nav {
@@ -140,90 +145,54 @@
             font-size: 1.8rem;
         }
         
-        .calculator {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2.5rem;
-            margin-top: 2rem;
-        }
-        
-        .input-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: #2c3e50;
-        }
-        
-        input {
-            width: 100%;
-            padding: 0.9rem;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-        
-        input:focus {
-            border-color: #3498db;
-            outline: none;
-            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
-        }
-        
-        button {
-            background: linear-gradient(135deg, #3498db, #2980b9);
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #3498db, #2c3e50);
             color: white;
-            border: none;
-            padding: 0.9rem 1.8rem;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: 500;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 6px rgba(52, 152, 219, 0.3);
-        }
-        
-        button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 8px rgba(52, 152, 219, 0.4);
-        }
-        
-        .result {
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            padding: 2rem;
             border-radius: 10px;
-            border-left: 5px solid #3498db;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2.5rem;
         }
         
-        .result h3 {
+        .hero h1 {
+            font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: #2c3e50;
-            font-size: 1.4rem;
         }
         
-        .result-value {
-            font-size: 2rem;
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .hero .cta-button {
+            font-size: 1.2rem;
+            padding: 1rem 2rem;
+        }
+        
+        .ebook-cover {
+            width: 250px;
+            height: 350px;
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            border-radius: 10px;
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
             font-weight: bold;
-            color: #2c3e50;
-            margin: 1rem 0;
+            font-size: 1.5rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
         
-        .explanation {
-            margin-top: 2rem;
-        }
-        
-        .info-grid {
+        .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
         
-        .info-card {
+        .feature-card {
             background: linear-gradient(135deg, #f8f9fa, #e9ecef);
             padding: 2rem;
             border-radius: 10px;
@@ -232,14 +201,64 @@
             transition: transform 0.3s;
         }
         
-        .info-card:hover {
+        .feature-card:hover {
             transform: translateY(-5px);
         }
         
-        .info-card h3 {
+        .feature-card h3 {
             color: #2c3e50;
             margin-bottom: 1rem;
             font-size: 1.3rem;
+        }
+        
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 5px solid #3498db;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .pricing {
+            text-align: center;
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin: 1rem 0;
+        }
+        
+        .price-small {
+            font-size: 1rem;
+            color: #7f8c8d;
+        }
+        
+        .guarantee {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            border-left: 4px solid #3498db;
+            text-align: center;
         }
         
         footer {
@@ -256,14 +275,6 @@
             padding: 0 2rem;
         }
         
-        .formula-explanation {
-            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-top: 1.5rem;
-            border-left: 4px solid #3498db;
-        }
-        
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
@@ -274,13 +285,8 @@
                 margin-bottom: 1rem;
             }
             
-            .formula {
+            .cta-button {
                 margin-top: 1rem;
-                font-size: 1.4rem;
-            }
-            
-            .calculator {
-                grid-template-columns: 1fr;
             }
             
             nav ul {
@@ -290,6 +296,10 @@
             
             nav li {
                 margin: 0.5rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
             }
         }
     </style>
@@ -304,112 +314,112 @@
                     <div class="logo-subtitle">Smart Facts. Real Impact</div>
                 </div>
             </div>
-            <div class="formula">EurF = 0 + 2Km</div>
+            <a href="#comprar" class="cta-button">Comprar Agora</a>
         </div>
     </header>
     
     <nav>
         <ul>
-            <li><a href="#calculadora">Calculadora</a></li>
-            <li><a href="#explicacao">Explicação</a></li>
-            <li><a href="#aplicacoes">Aplicações</a></li>
+            <li><a href="#sobre">Sobre o eBook</a></li>
+            <li><a href="#beneficios">Benefícios</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+            <li><a href="#comprar">Comprar</a></li>
         </ul>
     </nav>
     
     <div class="container">
-        <section id="calculadora">
-            <h2>Calculadora de Força</h2>
-            <p>Utilize a calculadora abaixo para determinar o valor da força EurF com base na fórmula: <strong>EurF = 0 + 2Km</strong></p>
-            
-            <div class="calculator">
-                <div class="inputs">
-                    <div class="input-group">
-                        <label for="k-value">Constante K (N/m):</label>
-                        <input type="number" id="k-value" placeholder="Digite o valor de K">
-                    </div>
-                    
-                    <div class="input-group">
-                        <label for="m-value">Massa m (kg):</label>
-                        <input type="number" id="m-value" placeholder="Digite o valor de m">
-                    </div>
-                    
-                    <button id="calculate-btn">Calcular Força</button>
+        <div class="hero">
+            <h1>Transforme Seu Conhecimento</h1>
+            <p>Descubra os segredos para dominar sua área de atuação com nosso eBook exclusivo. Conhecimento que gera resultados reais.</p>
+            <a href="#comprar" class="cta-button">Adquirir eBook Agora</a>
+        </div>
+        
+        <section id="sobre">
+            <h2>Sobre o eBook</h2>
+            <div style="display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;">
+                <div class="ebook-cover">
+                    CAPA DO<br>EBOOK
                 </div>
-                
-                <div class="result">
-                    <h3>Resultado</h3>
-                    <p>O valor da força EurF é:</p>
-                    <div class="result-value" id="result-value">---</div>
-                    <div class="explanation">
-                        <p>Fórmula utilizada: <strong>EurF = 0 + 2Km</strong></p>
-                        <p>Onde:<br>
-                        K = constante elástica (N/m)<br>
-                        m = massa (kg)</p>
-                    </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <p>Nosso eBook exclusivo foi desenvolvido para fornecer insights valiosos e estratégias comprovadas que você pode aplicar imediatamente em sua vida profissional e pessoal.</p>
+                    <p>Com mais de 200 páginas de conteúdo denso e prático, este material é o resultado de anos de pesquisa e experiência em campo.</p>
+                    <ul style="margin-top: 1rem; padding-left: 1.5rem;">
+                        <li>Baseado em pesquisas científicas recentes</li>
+                        <li>Exemplos práticos e casos reais</li>
+                        <li>Exercícios para aplicação imediata</li>
+                        <li>Atualizado com as últimas tendências</li>
+                    </ul>
                 </div>
             </div>
         </section>
         
-        <section id="explicacao">
-            <h2>Explicação da Fórmula</h2>
-            <p>A fórmula <strong>EurF = 0 + 2Km</strong> representa um modelo físico para cálculo de força resultante em sistemas específicos.</p>
+        <section id="beneficios">
+            <h2>O Que Você Vai Aprender</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Estratégias Comprovadas</h3>
+                    <p>Descubra métodos testados e aprovados que entregam resultados mensuráveis em pouco tempo.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Ferramentas Práticas</h3>
+                    <p>Acesse modelos e ferramentas prontas para uso que simplificarão sua rotina e aumentarão sua produtividade.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Insights Exclusivos</h3>
+                    <p>Tenha acesso a informações que não estão disponíveis em nenhum outro lugar, dando a você uma vantagem competitiva.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="depoimentos">
+            <h2>O Que Nossos Leitores Dizem</h2>
+            <div class="testimonials">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Este eBook mudou completamente minha abordagem profissional. Aplicando as estratégias, consegui aumentar minha produtividade em 40%."
+                    </div>
+                    <div class="testimonial-author">- Maria Silva, Gerente de Projetos</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "O investimento no eBook se pagou no primeiro mês. As técnicas são simples de aplicar e os resultados são impressionantes."
+                    </div>
+                    <div class="testimonial-author">- João Santos, Empreendedor</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Finalmente um material que entrega o que promete. Conteúdo de alta qualidade, bem estruturado e com linguagem acessível."
+                    </div>
+                    <div class="testimonial-author">- Ana Costa, Consultora</div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="comprar" class="pricing">
+            <h2>Adquira Seu eBook Agora</h2>
+            <p>Investimento único - Acesso vitalício</p>
+            <div class="price">R$ 47,90</div>
+            <p class="price-small">ou 3x de R$ 15,97 sem juros</p>
             
-            <div class="formula-explanation">
-                <h3>Detalhes da Fórmula</h3>
-                <p>A equação <strong>EurF = 0 + 2Km</strong> é uma simplificação de sistemas físicos mais complexos, onde:</p>
-                <ul>
-                    <li><strong>EurF</strong> representa a força resultante no sistema (em Newtons)</li>
-                    <li><strong>0</strong> indica que não há força inicial aplicada ao sistema</li>
-                    <li><strong>2Km</strong> representa a força resultante proporcional ao produto da constante K pela massa m</li>
+            <a href="#" class="cta-button" style="display: inline-block; margin: 1.5rem 0;">Comprar Agora</a>
+            
+            <div class="guarantee">
+                <h3>Garantia Incondicional de 7 Dias</h3>
+                <p>Se você não ficar satisfeito com o eBook, devolvemos 100% do seu investimento sem burocracia.</p>
+            </div>
+            
+            <div style="margin-top: 2rem;">
+                <p><strong>O que está incluído:</strong></p>
+                <ul style="list-style: none; margin-top: 1rem;">
+                    <li>✓ eBook completo em PDF</li>
+                    <li>✓ Bônus exclusivo: Planilha de acompanamento</li>
+                    <li>✓ Atualizações gratuitas</li>
+                    <li>✓ Suporte por email</li>
                 </ul>
-            </div>
-            
-            <div class="info-grid">
-                <div class="info-card">
-                    <h3>Componentes da Fórmula</h3>
-                    <p><strong>EurF</strong>: Força resultante no sistema (em Newtons)</p>
-                    <p><strong>K</strong>: Constante característica do sistema (N/m)</p>
-                    <p><strong>m</strong>: Massa do objeto (kg)</p>
-                </div>
-                
-                <div class="info-card">
-                    <h3>Origem da Fórmula</h3>
-                    <p>Esta fórmula é derivada de princípios fundamentais da física, adaptada para sistemas específicos onde a força inicial é zero e a força resultante é proporcional ao produto da constante pelo dobro da massa.</p>
-                </div>
-                
-                <div class="info-card">
-                    <h3>Interpretação Física</h3>
-                    <p>O termo "0" na fórmula indica que não há força inicial aplicada ao sistema. O termo "2Km" representa a força resultante que é diretamente proporcional tanto à constante K quanto à massa m.</p>
-                </div>
-            </div>
-        </section>
-        
-        <section id="aplicacoes">
-            <h2>Aplicações Práticas</h2>
-            <p>A fórmula <strong>EurF = 0 + 2Km</strong> tem diversas aplicações em engenharia e física aplicada:</p>
-            
-            <div class="info-grid">
-                <div class="info-card">
-                    <h3>Sistemas Mecânicos</h3>
-                    <p>Utilizada no dimensionamento de molas e sistemas oscilatórios onde a força resultante depende de constantes elásticas e massas envolvidas.</p>
-                </div>
-                
-                <div class="info-card">
-                    <h3>Engenharia de Estruturas</h3>
-                    <p>Aplicada no cálculo de forças em estruturas submetidas a cargas dinâmicas, permitindo determinar esforços resultantes.</p>
-                </div>
-                
-                <div class="info-card">
-                    <h3>Projetos de Máquinas</h3>
-                    <p>Empregada no desenvolvimento de componentes mecânicos onde é necessário calcular forças resultantes em condições específicas de operação.</p>
-                </div>
-            </div>
-            
-            <div class="explanation" style="margin-top: 2rem;">
-                <h3>Exemplo de Aplicação</h3>
-                <p>Considere um sistema com constante K = 150 N/m e massa m = 5 kg. Aplicando a fórmula:</p>
-                <p><strong>EurF = 0 + 2 × 150 × 5 = 1500 N</strong></p>
-                <p>Isso significa que a força resultante no sistema seria de 1500 Newtons.</p>
             </div>
         </section>
     </div>
@@ -417,45 +427,9 @@
     <footer>
         <div class="footer-content">
             <p>MINDFAX - Smart Facts. Real Impact</p>
-            <p>Calculadora de Força - EurF = 0 + 2Km</p>
+            <p>contato@mindfax.com | (11) 99999-9999</p>
             <p style="margin-top: 1rem; opacity: 0.8;">&copy; 2023 MINDFAX. Todos os direitos reservados.</p>
         </div>
     </footer>
-
-    <script>
-        document.getElementById('calculate-btn').addEventListener('click', function() {
-            const kValue = parseFloat(document.getElementById('k-value').value);
-            const mValue = parseFloat(document.getElementById('m-value').value);
-            
-            if (isNaN(kValue) || isNaN(mValue)) {
-                document.getElementById('result-value').textContent = 'Por favor, insira valores válidos';
-                document.getElementById('result-value').style.color = '#e74c3c';
-                return;
-            }
-            
-            if (kValue <= 0 || mValue <= 0) {
-                document.getElementById('result-value').textContent = 'Valores devem ser maiores que zero';
-                document.getElementById('result-value').style.color = '#e74c3c';
-                return;
-            }
-            
-            const result = 0 + 2 * kValue * mValue;
-            document.getElementById('result-value').textContent = result.toFixed(2) + ' N';
-            document.getElementById('result-value').style.color = '#2c3e50';
-        });
-        
-        // Adicionar funcionalidade de Enter para calcular
-        document.getElementById('k-value').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                document.getElementById('calculate-btn').click();
-            }
-        });
-        
-        document.getElementById('m-value').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                document.getElementById('calculate-btn').click();
-            }
-        });
-    </script>
 </body>
 </html>
