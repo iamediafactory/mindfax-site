@@ -7,11 +7,14 @@
 <meta name="theme-color" content="#0A0B10" />
 <meta name="description" content="MINDFAX is a cinematic synthesis of science, philosophy and design. Artifact 001 is a limited cognitive artifact for those who think in light."/>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- Open Graph (ajuste a URL da imagem quando quiser) -->
 <meta property="og:title" content="MINDFAX — For Those Who Think in Light" />
 <meta property="og:description" content="A cinematic continuum of knowledge and design." />
 <meta property="og:type" content="website" />
-<meta property="og:image" content="https://raw.githubusercontent.com/youruser/mindfax.art/main/og-cover.jpg" />
-<meta property="og:url" content="https://mindfax.art" />
+<meta property="og:image" content="https://iamediafactory.github.io/mindfax-site/og-cover.jpg" />
+<meta property="og:url" content="https://iamediafactory.github.io/mindfax-site/" />
+
 <style>
 :root{
   --bg:#0A0B10; --text:#EAEAF5; --muted:#A2A8BD;
@@ -19,42 +22,64 @@
   --glass: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
   --brd: rgba(255,255,255,.10); --radius:22px; --shadow:0 20px 60px rgba(0,0,0,.45);
 }
-*{box-sizing:border-box} html,body{margin:0;background:#0A0B10;color:var(--text);
+*{box-sizing:border-box}
+html,body{margin:0; background:var(--bg); color:var(--text);
   font-family:"IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif; line-height:1.6}
-a{color:var(--cyan);text-decoration:none}
-.wrap{width:min(1100px,92%);margin:0 auto}
-header{position:sticky;top:0;z-index:40;backdrop-filter:saturate(160%) blur(10px);
+a{color:var(--cyan); text-decoration:none}
+.wrap{width:min(1100px,92%); margin:0 auto}
+
+/* HEADER */
+header{position:sticky; top:0; z-index:40; backdrop-filter:saturate(160%) blur(10px);
   background:linear-gradient(180deg, rgba(10,11,16,.92), rgba(10,11,16,.65)); border-bottom:1px solid rgba(255,255,255,.06)}
-nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-.brand{display:flex;align-items:center;gap:12px}
-.brand img{height:30px; width:auto; display:block}
-.brand h1{font-family:Cinzel,serif; font-size:16px; margin:0; letter-spacing:.5px; color:#DDE3F7}
+nav{display:flex; align-items:center; justify-content:space-between; padding:12px 0}
+.brand{display:flex; align-items:center; gap:12px}
+.brand img{height:85px; width:auto; display:block} /* logo já maior */
 .navlinks a{margin-left:14px; color:var(--muted); font-size:14px}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 20px;border-radius:14px;font-weight:600;
+.btn{display:inline-flex; align-items:center; gap:10px; padding:14px 20px; border-radius:14px; font-weight:600;
   border:1px solid rgba(255,255,255,.09); background:var(--glass); box-shadow:var(--shadow)}
 .btn.gold{background:linear-gradient(120deg,#2a2200,#1a1400); border-color:#3a2c00; color:#FCEFB0}
-.btn .dot{width:10px;height:10px;border-radius:50%;background:var(--gold); box-shadow:0 0 16px rgba(255,215,0,.55)}
+.btn .dot{width:10px; height:10px; border-radius:50%; background:var(--gold); box-shadow:0 0 16px rgba(255,215,0,.55)}
 
-.section{position:relative; min-height:100vh; display:flex; align-items:center; justify-content:center;
-  background-image:url('Site.png'); background-size:cover; background-repeat:no-repeat; color:#EAEAF5}
+/* SECTIONS (uma única imagem de fundo para as 4 sessões) */
+.section{
+  position:relative; min-height:100vh;
+  display:flex; align-items:center; justify-content:center; text-align:center;
+  background-image:url('Site_v2.png');
+  background-size:cover; background-repeat:no-repeat; color:var(--text);
+  background-attachment:fixed;
+}
 .section::after{content:""; position:absolute; inset:0;
   background: radial-gradient(1000px 600px at 50% -10%, rgba(136,136,255,.20), transparent 60%),
               radial-gradient(900px 500px at 10% 100%, rgba(0,207,255,.12), transparent 60%),
-              linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.55)); pointer-events:none}
-.section .panel{position:relative; z-index:2; text-align:center; backdrop-filter: blur(6px);
-  border:1px solid var(--brd); background:var(--glass); padding:28px 26px; border-radius:var(--radius); box-shadow:var(--shadow); width:min(840px,92%)}
+              linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.55));
+  pointer-events:none}
+.section .panel{
+  position:relative; z-index:2; backdrop-filter: blur(6px);
+  border:1px solid var(--brd); background:var(--glass);
+  padding:28px 26px; border-radius:var(--radius); box-shadow:var(--shadow); width:min(840px,92%)
+}
 .section h2{font-family:Cinzel,serif; font-size:36px; margin:0 0 10px}
 .section p.lead{color:#DDE3F7; font-size:16px; margin:4px 0 12px}
 .kicker{color:#C8CFE6; font-weight:600; letter-spacing:.4px; margin-bottom:8px}
-.section.top{background-position:center top}
-.section.mid{background-position:center center}
-.section.bot{background-position:center bottom}
+
+/* Posições do sprite 4-em-1 */
+.section.top  { background-position:center 0% }
+.section.mid  { background-position:center 33% }
+.section.bot  { background-position:center 66% }
+.section.last { background-position:center 100% }
+
 .scroll{margin-top:14px}
+
+/* FOOTER */
 footer{padding:40px 0 60px; color:var(--muted); border-top:1px solid rgba(255,255,255,.06); text-align:center}
 .small{font-size:12px}
+
+/* Mobile */
 @media (max-width:900px){
+  .section{ background-attachment:scroll; } /* melhora performance mobile */
   .section h2{font-size:28px}
   .navlinks{display:none}
+  .brand img{height:72px}
 }
 </style>
 </head>
@@ -64,13 +89,14 @@ footer{padding:40px 0 60px; color:var(--muted); border-top:1px solid rgba(255,25
   <div class="wrap">
     <nav>
       <div class="brand">
-        <!-- TROQUE O SRC ABAIXO PELO NOME DO SEU ARQUIVO DE LOGO -->
-        <img src="Logo_Ultimate_2.png?v=2" alt="MINDFAX logo" style="height:85px;width:auto;">
+        <!-- LOGO -->
+        <img src="Logo_Ultimate_2.png?v=1" alt="MINDFAX logo">
       </div>
       <div class="navlinks">
         <a href="#origin">Origin</a>
         <a href="#continuum">Continuum</a>
         <a href="#architect">Architect</a>
+        <a href="#artifact">Series</a>
       </div>
       <a class="btn gold" href="#continuum"><span class="dot"></span> Enter the Continuum</a>
     </nav>
@@ -105,6 +131,18 @@ footer{padding:40px 0 60px; color:var(--muted); border-top:1px solid rgba(255,25
     <h2>Message to Those Who Still Look Up</h2>
     <p class="lead">“Humanity is not a mistake — it is a question. You were never meant to conquer the cosmos; you were meant to understand it.”</p>
     <p class="lead" style="opacity:.85">From origin to continuum: a promise of exploration, hope and intelligence.</p>
+    <div class="scroll"><a class="btn" href="#artifact">The Artifact Series</a></div>
+  </div>
+</section>
+
+<!-- Section 4 — THE ARTIFACT SERIES / LIMITED CONTINUUM -->
+<section id="artifact" class="section last" role="region" aria-label="Artifact Series">
+  <div class="panel">
+    <div class="kicker">THE CONTINUUM</div>
+    <h2>The Artifact Series</h2>
+    <p class="lead">Each artifact is sealed, numbered, and archived within the MINDFAX Continuum.</p>
+    <p class="lead" style="opacity:.85">Once the 1,000 copies are acquired, the continuum closes — forever.</p>
+    <div class="scroll"><a class="btn gold" href="#origin"><span class="dot"></span> Acquire Your Edition</a></div>
   </div>
 </section>
 
