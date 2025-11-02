@@ -27,7 +27,7 @@ header{position:sticky; top:0; z-index:40; backdrop-filter:saturate(160%) blur(1
 nav{display:flex; align-items:center; justify-content:space-between; padding:12px 0}
 .brand{display:flex; align-items:center; gap:12px}
 .brand img{height:70px; width:auto; display:block}
-.navlinks a{margin-left:14px; color:var(--muted); font-size:14px}
+.navlinks a{margin-left:14px; color:#A2A8BD; font-size:14px}
 .btn{display:inline-flex; align-items:center; gap:10px; padding:14px 22px; border-radius:14px; font-weight:600;
   border:1px solid rgba(255,255,255,.09); background:var(--glass); box-shadow:var(--shadow)}
 .btn.gold{background:linear-gradient(120deg,#2a2200,#1a1400); border-color:#3a2c00; color:#FCEFB0}
@@ -35,21 +35,28 @@ nav{display:flex; align-items:center; justify-content:space-between; padding:12p
 
 /* sections with single sprite background (4 slices) */
 .section{
-  position:relative; min-height:100vh; display:flex; align-items:center; justify-content:center;
-  background-image:url("E-Book_Site_Page%202.png"); /* única imagem com 4 painéis (URL encoded) */
-  background-repeat:no-repeat; background-position:center 0%;
-  background-size:100% 400%; /* altura total = 4x (cada seção mostra 1/4) */
+  position:relative;
+  min-height:100vh;
+  display:flex; align-items:center; justify-content:center;
+  background-image:url("E-Book_Site_Page%202.png"); /* sprite vertical com 4 painéis */
+  background-repeat:no-repeat;
+  background-position:center 0%;
+  background-size:100% 400%;     /* altura total = 4x (cada seção exibe 1/4) */
+  background-attachment:fixed;   /* ✅ igual à index para o efeito de “trazer” o próximo bloco */
   isolation:isolate;
 }
 .section::after{content:""; position:absolute; inset:0;
+  /* mesma vinheta/gradiente da index para transição suave */
   background:
     radial-gradient(1100px 700px at 50% -10%, rgba(136,136,255,.16), transparent 60%),
     radial-gradient(900px 540px at 10% 100%, rgba(0,207,255,.10), transparent 60%),
     linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.62));
   pointer-events:none}
-.panel{position:relative; z-index:2; text-align:center; backdrop-filter: blur(6px);
+.panel{
+  position:relative; z-index:2; text-align:center; backdrop-filter: blur(6px);
   border:1px solid var(--brd); background:var(--glass);
-  padding:28px 26px; border-radius:var(--radius); box-shadow:var(--shadow); width:min(840px,92%)}
+  padding:28px 26px; border-radius:var(--radius); box-shadow:var(--shadow); width:min(840px,92%)
+}
 .kicker{color:#C8CFE6; font-weight:600; letter-spacing:.12em; margin-bottom:8px}
 h2{font-family:Cinzel,serif; font-size:40px; margin:0 0 10px; color:var(--gold); text-shadow:0 8px 24px rgba(0,0,0,.45)}
 .lead{color:#DDE3F7; font-size:18px; margin:6px 0 10px}
@@ -57,22 +64,23 @@ h2{font-family:Cinzel,serif; font-size:40px; margin:0 0 10px; color:var(--gold);
 
 /* sprite slice positions */
 .s1{ background-position:center 0% }
+s2{ background-position:center 33.333% } /* typo safety not needed, real one below */
 .s2{ background-position:center 33.333% }
 .s3{ background-position:center 66.666% }
 .s4{ background-position:center 100% }
 
-/* scroll reveal (fade como na index) */
+/* scroll reveal (fade-in como na index) */
 .reveal{opacity:0; transform:translateY(14px); transition:opacity .9s ease, transform .9s ease}
 .reveal.in{opacity:1; transform:none}
 
-footer{padding:40px 0 60px; color:var(--muted); border-top:1px solid rgba(255,255,255,.06); text-align:center}
+footer{padding:40px 0 60px; color:#A2A8BD; border-top:1px solid rgba(255,255,255,.06); text-align:center}
 
 /* mobile */
 @media (max-width:900px){
   h2{font-size:30px}
   .navlinks{display:none}
   .brand img{height:58px}
-  .section{ background-attachment:scroll; } /* melhor performance */
+  .section{ background-attachment:scroll; } /* mesma degradação elegante da index para performance */
 }
 </style>
 </head>
@@ -162,7 +170,6 @@ footer{padding:40px 0 60px; color:var(--muted); border-top:1px solid rgba(255,25
 
 <footer>
   <div class="wrap" style="text-align:center">
-    <!-- logo 4× maior -->
     <img src="Logo_Ultimate_2.png" alt="MINDFAX" style="height:136px;width:auto;opacity:.9;margin-bottom:12px">
     <div style="color:#A2A8BD">© 2025 MINDFAX · All Rights Reserved · mindfax.art</div>
     <div style="color:#A2A8BD">Contact: iamediafactory.studio@gmail.com</div>
@@ -170,7 +177,7 @@ footer{padding:40px 0 60px; color:var(--muted); border-top:1px solid rgba(255,25
 </footer>
 
 <script>
-// scroll reveal (fade na rolagem)
+// fade-in on scroll (igual à index)
 const obs=new IntersectionObserver((entries)=>{
   entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target) } });
 },{threshold:.18});
