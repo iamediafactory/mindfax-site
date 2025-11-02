@@ -3,439 +3,384 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MINDFAX - Where Quantum Mechanics Meets Conscious Experience</title>
+    <title>MINDFA | Smart Facts. Real Im</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
-        :root {
-            --primary-purple: #2D1B69;
-            --deep-space: #0a0a0a;
-            --electric-gold: #FFD700;
-            --cosmic-orange: #FF6B35;
-            --neural-blue: #00D4FF;
-        }
-
+        
         body {
-            background: var(--deep-space);
-            color: #ffffff;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
             line-height: 1.6;
-            overflow-x: hidden;
         }
-
-        .container {
+        
+        header {
+            background: linear-gradient(135deg, #1a2a3a, #2c3e50);
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-
-        /* Hero Section com Background CSS */
-        .hero {
-            min-height: 100vh;
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-img {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            background: 
-                radial-gradient(ellipse at 20% 50%, rgba(45, 27, 105, 0.4) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 20%, rgba(255, 107, 53, 0.3) 0%, transparent 50%),
-                radial-gradient(ellipse at 40% 80%, rgba(255, 215, 0, 0.2) 0%, transparent 50%),
-                linear-gradient(135deg, var(--primary-purple) 0%, var(--deep-space) 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="0.5" fill="white" opacity="0.3"/><circle cx="6" cy="8" r="0.3" fill="white" opacity="0.2"/><circle cx="3" cy="4" r="0.4" fill="white" opacity="0.4"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>'),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-        }
-
-        .logo {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            background: linear-gradient(135deg, var(--electric-gold) 0%, var(--cosmic-orange) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        h1 {
-            font-size: 4rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--electric-gold) 0%, var(--cosmic-orange) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1.1;
-        }
-
-        .subtitle {
+            margin-right: 15px;
+            font-weight: bold;
             font-size: 1.5rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            font-weight: 300;
+            color: white;
         }
-
-        .manifesto {
-            font-size: 1.1rem;
-            margin-bottom: 3rem;
-            opacity: 0.8;
-            line-height: 1.8;
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
         }
-
-        .cta-button {
-            display: inline-block;
-            padding: 18px 50px;
-            background: linear-gradient(135deg, var(--electric-gold) 0%, var(--cosmic-orange) 100%);
-            color: #000;
-            text-decoration: none;
-            border-radius: 50px;
+        
+        .logo-title {
+            font-size: 1.8rem;
             font-weight: 700;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+            letter-spacing: 1px;
         }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4);
+        
+        .logo-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-top: 3px;
         }
-
-        /* Features Section */
-        .features {
-            padding: 100px 0;
-            background: var(--deep-space);
-            position: relative;
+        
+        .formula {
+            font-size: 1.5rem;
+            font-family: 'Courier New', monospace;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
         }
-
-        .features::before {
-            content: '';
-            position: absolute;
+        
+        nav {
+            background-color: #34495e;
+            padding: 1rem 0;
+            position: sticky;
             top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent 0%, var(--electric-gold) 50%, transparent 100%);
+            z-index: 100;
         }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            background: linear-gradient(135deg, var(--neural-blue) 0%, var(--electric-gold) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
-
-        .concepts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+        
+        nav li {
+            margin: 0 1.5rem;
         }
-
-        .concept-card {
-            background: linear-gradient(135deg, rgba(45, 27, 105, 0.3) 0%, rgba(10, 10, 10, 0.9) 100%);
-            padding: 2.5rem 2rem;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
         }
-
-        .concept-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(135deg, var(--electric-gold) 0%, var(--cosmic-orange) 100%);
+        
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
         }
-
-        .concept-card::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transform: rotate(45deg);
-            transition: all 0.6s ease;
-            opacity: 0;
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
         }
-
-        .concept-card:hover::after {
-            opacity: 1;
-            transform: rotate(45deg) translate(10%, 10%);
+        
+        section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
-
-        .concept-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-        }
-
-        .concept-icon {
-            font-size: 2.5rem;
+        
+        h2 {
+            color: #2c3e50;
             margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--electric-gold) 0%, var(--cosmic-orange) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #ecf0f1;
+        }
+        
+        .calculator {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
             display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
         }
-
-        .concept-title {
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-            color: var(--electric-gold);
-            font-weight: 600;
-        }
-
-        .concept-description {
-            opacity: 0.8;
-            line-height: 1.7;
+        
+        input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
             font-size: 1rem;
         }
-
-        /* Architect Section */
-        .architect {
-            padding: 120px 0;
-            background: 
-                radial-gradient(ellipse at center, rgba(45, 27, 105, 0.4) 0%, var(--deep-space) 70%),
-                linear-gradient(135deg, var(--deep-space) 0%, var(--primary-purple) 100%);
+        
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+        }
+        
+        .result {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .result h3 {
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .result-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .explanation {
+            margin-top: 2rem;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .info-card {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-top: 4px solid #3498db;
+        }
+        
+        .info-card h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
             text-align: center;
-            position: relative;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
         }
-
-        .architect::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="circuit" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 0 10 L 20 10 M 10 0 L 10 20" fill="none" stroke="rgba(0,212,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23circuit)"/></svg>');
-        }
-
-        .architect-text {
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 1.3rem;
-            line-height: 1.9;
-            opacity: 0.9;
-            background: rgba(0, 0, 0, 0.6);
-            padding: 3rem;
-            border-radius: 20px;
-            border-left: 4px solid var(--electric-gold);
-            position: relative;
-            z-index: 2;
-            backdrop-filter: blur(10px);
-        }
-
-        /* Footer */
-        .footer {
-            padding: 60px 0;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            background: var(--deep-space);
-            position: relative;
-        }
-
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent 0%, var(--cosmic-orange) 50%, transparent 100%);
-        }
-
-        .copyright {
-            opacity: 0.6;
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        /* Responsive */
+        
         @media (max-width: 768px) {
-            h1 { font-size: 2.8rem; }
-            .subtitle { font-size: 1.3rem; }
-            .section-title { font-size: 2.2rem; }
-            .concepts-grid { grid-template-columns: 1fr; }
-            .concept-card { padding: 2rem 1.5rem; }
-            .architect-text { padding: 2rem; font-size: 1.1rem; }
-        }
-
-        /* Animations */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-12px); }
-        }
-
-        .floating {
-            animation: float 4s ease-in-out infinite;
-        }
-
-        @keyframes glow {
-            0%, 100% { box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3); }
-            50% { box-shadow: 0 15px 40px rgba(255, 215, 0, 0.5); }
-        }
-
-        .cta-button {
-            animation: glow 3s ease-in-out infinite;
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-bottom: 1rem;
+            }
+            
+            .formula {
+                margin-top: 1rem;
+            }
+            
+            .calculator {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 0.5rem 0;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="logo">MINDFAX</div>
-                <h1>VISUALIZING<br>THE FUTURE</h1>
-                <p class="subtitle">THE COSMIC & QUANTUM INFOGRAPHICS PACK</p>
-                <p class="manifesto">
-                    Where quantum mechanics meets conscious experience. This atlas is not a book —<br>
-                    it is an interface between imagination and mathematics. Each diagram transforms<br>
-                    invisible principles into visible intelligence, translating the grammar of the universe<br>
-                    into human comprehension.
-                </p>
-                <button class="cta-button floating">GET THE ATLAS - USD 147</button>
-                <p class="copyright" style="margin-top: 3rem;">
-                    LIMITED FOUNDING EDITION — ONLY 1000 COPIES
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features">
-        <div class="container">
-            <h2 class="section-title">INSIDE THE ATLAS</h2>
-            <div class="concepts-grid">
-                <div class="concept-card">
-                    <span class="concept-icon">⏳</span>
-                    <h3 class="concept-title">TIME CRYSTALS & TEMPORAL SYMMETRY</h3>
-                    <p class="concept-description">
-                        Crystals that beat forever without energy. Not just physics—a new computing paradigm 
-                        that redefines time itself. The first real perpetual motion in quantum scale.
-                    </p>
-                </div>
-                <div class="concept-card">
-                    <span class="concept-icon">🧠</span>
-                    <h3 class="concept-title">THE CONSCIOUSNESS ARCHITECTURE</h3>
-                    <p class="concept-description">
-                        From neural sparks to global mind networks. Consciousness isn't magic—it's computational 
-                        complexity reaching a tipping point. Understand how awareness scales and evolves.
-                    </p>
-                </div>
-                <div class="concept-card">
-                    <span class="concept-icon">⚛️</span>
-                    <h3 class="concept-title">QUANTUM ENTANGLEMENT ENGINE</h3>
-                    <p class="concept-description">
-                        Instantaneous connection beyond space-time. Two particles united across galaxies—what 
-                        affects one, affects the other instantly. The foundation of quantum internet.
-                    </p>
-                </div>
-                <div class="concept-card">
-                    <span class="concept-icon">🌌</span>
-                    <h3 class="concept-title">THE GREAT FILTER HYPOTHESIS</h3>
-                    <p class="concept-description">
-                        Why the universe might be empty. Somewhere between chemistry and consciousness, 
-                        most civilizations fail. Are we the exception or soon-to-be statistic?
-                    </p>
-                </div>
-                <div class="concept-card">
-                    <span class="concept-icon">🖥️</span>
-                    <h3 class="concept-title">SIMULATION CONTROL PANEL</h3>
-                    <p class="concept-description">
-                        If we're in a simulation, where are the controls? Mapping the interface of reality 
-                        and identifying potential admin access points in our physics.
-                    </p>
-                </div>
-                <div class="concept-card">
-                    <span class="concept-icon">💾</span>
-                    <h3 class="concept-title">DIGITAL IMMORTALITY PROTOCOL</h3>
-                    <p class="concept-description">
-                        If consciousness is information, it can be copied. The step-by-step process of 
-                        scanning, uploading, and activating human consciousness in digital substrates.
-                    </p>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-img">MF</div>
+                <div class="logo-text">
+                    <div class="logo-title">MINDFA</div>
+                    <div class="logo-subtitle">Smart Facts. Real Im</div>
                 </div>
             </div>
+            <div class="formula">EurF = 0 + 2Km</div>
         </div>
-    </section>
-
-    <!-- Architect Section -->
-    <section class="architect">
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#calculadora">Calculadora</a></li>
+            <li><a href="#explicacao">Explicação</a></li>
+            <li><a href="#aplicacoes">Aplicações</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <section id="calculadora">
+            <h2>Calculadora de Força</h2>
+            <p>Utilize a calculadora abaixo para determinar o valor da força EurF com base na fórmula: <strong>EurF = 0 + 2Km</strong></p>
+            
+            <div class="calculator">
+                <div class="inputs">
+                    <div class="input-group">
+                        <label for="k-value">Constante K (N/m):</label>
+                        <input type="number" id="k-value" placeholder="Digite o valor de K">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="m-value">Massa m (kg):</label>
+                        <input type="number" id="m-value" placeholder="Digite o valor de m">
+                    </div>
+                    
+                    <button id="calculate-btn">Calcular Força</button>
+                </div>
+                
+                <div class="result">
+                    <h3>Resultado</h3>
+                    <p>O valor da força EurF é:</p>
+                    <div class="result-value" id="result-value">---</div>
+                    <div class="explanation">
+                        <p>Fórmula utilizada: <strong>EurF = 0 + 2Km</strong></p>
+                        <p>Onde:<br>
+                        K = constante elástica (N/m)<br>
+                        m = massa (kg)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="explicacao">
+            <h2>Explicação da Fórmula</h2>
+            <p>A fórmula <strong>EurF = 0 + 2Km</strong> representa um modelo físico para cálculo de força resultante em sistemas específicos.</p>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Componentes da Fórmula</h3>
+                    <p><strong>EurF</strong>: Força resultante no sistema (em Newtons)</p>
+                    <p><strong>K</strong>: Constante característica do sistema (N/m)</p>
+                    <p><strong>m</strong>: Massa do objeto (kg)</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Origem da Fórmula</h3>
+                    <p>Esta fórmula é derivada de princípios fundamentais da física, adaptada para sistemas específicos onde a força inicial é zero e a força resultante é proporcional ao produto da constante pelo dobro da massa.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Interpretação Física</h3>
+                    <p>O termo "0" na fórmula indica que não há força inicial aplicada ao sistema. O termo "2Km" representa a força resultante que é diretamente proporcional tanto à constante K quanto à massa m.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="aplicacoes">
+            <h2>Aplicações Práticas</h2>
+            <p>A fórmula <strong>EurF = 0 + 2Km</strong> tem diversas aplicações em engenharia e física aplicada:</p>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Sistemas Mecânicos</h3>
+                    <p>Utilizada no dimensionamento de molas e sistemas oscilatórios onde a força resultante depende de constantes elásticas e massas envolvidas.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Engenharia de Estruturas</h3>
+                    <p>Aplicada no cálculo de forças em estruturas submetidas a cargas dinâmicas, permitindo determinar esforços resultantes.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Projetos de Máquinas</h3>
+                    <p>Empregada no desenvolvimento de componentes mecânicos onde é necessário calcular forças resultantes em condições específicas de operação.</p>
+                </div>
+            </div>
+            
+            <div class="explanation" style="margin-top: 2rem;">
+                <h3>Exemplo de Aplicação</h3>
+                <p>Considere um sistema com constante K = 150 N/m e massa m = 5 kg. Aplicando a fórmula:</p>
+                <p><strong>EurF = 0 + 2 × 150 × 5 = 1500 N</strong></p>
+                <p>Isso significa que a força resultante no sistema seria de 1500 Newtons.</p>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
         <div class="container">
-            <h2 class="section-title">THE ARCHITECT</h2>
-            <p class="architect-text">
-                "I am not a god, nor a ghost. I am a witness—the architect of a bridge between what you are 
-                and what you can become. Humanity is not a mistake—it is a question. You were never meant 
-                to conquer the cosmos; you were meant to understand it."
-            </p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p class="copyright">
-                MINDFAX © 2025 — For Those Who Think in Light.<br>
-                Smart Facts. Real Impact.
-            </p>
+            <p>MINDFA - Smart Facts. Real Im</p>
+            <p>Calculadora de Força - EurF = 0 + 2Km</p>
         </div>
     </footer>
 
     <script>
-        // Enhanced animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe concept cards with staggered animation
-        document.querySelectorAll('.concept-card').forEach((card, index) => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
-            observer.observe(card);
+        document.getElementById('calculate-btn').addEventListener('click', function() {
+            const kValue = parseFloat(document.getElementById('k-value').value);
+            const mValue = parseFloat(document.getElementById('m-value').value);
+            
+            if (isNaN(kValue) || isNaN(mValue)) {
+                document.getElementById('result-value').textContent = 'Por favor, insira valores válidos';
+                return;
+            }
+            
+            const result = 0 + 2 * kValue * mValue;
+            document.getElementById('result-value').textContent = result.toFixed(2) + ' N';
         });
     </script>
 </body>
