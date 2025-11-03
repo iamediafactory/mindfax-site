@@ -40,7 +40,7 @@ nav{display:flex; align-items:center; justify-content:space-between; padding:12p
 /* Buttons */
 .btn{
   display:inline-flex; align-items:center; gap:10px; padding:14px 22px; border-radius:14px; font-weight:600;
-  border:1px solid rgba(255,255,255,.09); background:var(--glass); box-shadow:var(--shadow)
+  border:1px solid rgba(255,255,255,.09); background:var(--glass); box-shadow:var(--shadow);
 }
 .btn.gold{background:linear-gradient(120deg,#2a2200,#1a1400); border-color:#3a2c00; color:#FCEFB0}
 .btn .dot{width:10px; height:10px; border-radius:50%; background:var(--gold); box-shadow:0 0 16px rgba(255,215,0,.55)}
@@ -63,7 +63,7 @@ nav{display:flex; align-items:center; justify-content:space-between; padding:12p
 .panel{
   position:relative; z-index:2; backdrop-filter:blur(6px);
   border:1px solid var(--brd); background:var(--glass);
-  padding:28px 26px; border-radius:var(--radius); box-shadow:var(--shadow); width:min(840px,92%)
+  padding:28px 26px; border-radius:var(--radius); box-shadow:var(--shadow); width:min(840px,92%);
 }
 .kicker{color:#C8CFE6; font-weight:600; letter-spacing:.12em; margin-bottom:8px}
 h2{font-family:Cinzel,serif; font-size:40px; margin:0 0 10px; color:var(--gold); text-shadow:0 8px 24px rgba(0,0,0,.45)}
@@ -121,7 +121,7 @@ footer{padding:40px 0 60px; color:#A2A8BD; border-top:1px solid rgba(255,255,255
       </div>
       <div style="display:flex;gap:10px;flex-wrap:wrap">
         <a class="btn" href="index.html">Back to Origin</a>
-        <a class="btn gold" href="https://payhip.com/b/62ZIw" target="_blank" rel="noopener">
+        <a class="btn gold" href="https://payhip.com/b/62ZIw" target="_blank" rel="noopener noreferrer" aria-label="Buy Artifact — The Continuum on Payhip">
           <span class="dot"></span> Acquire Now — $197
         </a>
       </div>
@@ -130,7 +130,7 @@ footer{padding:40px 0 60px; color:#A2A8BD; border-top:1px solid rgba(255,255,255
 </header>
 
 <!-- SECTION I — THE VISION -->
-<section class="section s1">
+<section class="section s1" role="region" aria-label="Vision">
   <div class="panel reveal">
     <div class="kicker">FOR THOSE WHO THINK IN LIGHT</div>
     <h2>Artifact — The Continuum (First Edition)</h2>
@@ -140,7 +140,7 @@ footer{padding:40px 0 60px; color:#A2A8BD; border-top:1px solid rgba(255,255,255
 </section>
 
 <!-- SECTION II — THE PHILOSOPHY OF SCARCITY -->
-<section class="section s2">
+<section class="section s2" role="region" aria-label="Philosophy of Scarcity">
   <div class="panel reveal">
     <h2>THE PHILOSOPHY OF SCARCITY</h2>
     <p class="lead" style="color:var(--cyan);opacity:.9">Rarity is not absence — it is precision.</p>
@@ -154,7 +154,7 @@ footer{padding:40px 0 60px; color:#A2A8BD; border-top:1px solid rgba(255,255,255
 </section>
 
 <!-- SECTION III — THE VALUE OF RARITY (NOVA) -->
-<section class="section s3">
+<section class="section s3" role="region" aria-label="Value of Rarity">
   <div class="panel reveal">
     <h2>THE VALUE OF RARITY</h2>
     <p class="lead" style="color:var(--cyan);opacity:.9">
@@ -172,8 +172,8 @@ footer{padding:40px 0 60px; color:#A2A8BD; border-top:1px solid rgba(255,255,255
   </div>
 </section>
 
-<!-- SECTION IV — THE LEDGER OF LIGHT (antes s3) -->
-<section class="section s4">
+<!-- SECTION IV — THE LEDGER OF LIGHT -->
+<section class="section s4" role="region" aria-label="Ledger of Light">
   <div class="panel reveal">
     <h2>THE LEDGER OF LIGHT</h2>
     <p class="lead" style="color:var(--cyan);opacity:.9">The Registry of the Continuum</p>
@@ -188,8 +188,8 @@ footer{padding:40px 0 60px; color:#A2A8BD; border-top:1px solid rgba(255,255,255
   </div>
 </section>
 
-<!-- SECTION V — THE PROMISE (antes s4) -->
-<section class="section s5" id="join">
+<!-- SECTION V — THE PROMISE -->
+<section class="section s5" id="join" role="region" aria-label="The Promise">
   <div class="panel reveal">
     <h2>THE PROMISE</h2>
     <p class="lead" style="color:var(--cyan);opacity:.9">A Covenant Between Intelligence and Eternity</p>
@@ -205,13 +205,14 @@ footer{padding:40px 0 60px; color:#A2A8BD; border-top:1px solid rgba(255,255,255
     </div>
 
     <div style="margin-top:20px;display:flex;justify-content:center">
-      <a class="btn gold" href="https://payhip.com/b/62ZIw" target="_blank" rel="noopener">
+      <a class="btn gold" href="https://payhip.com/b/62ZIw" target="_blank" rel="noopener noreferrer" aria-label="Secure checkout on Payhip">
         <span class="dot"></span> Acquire Now — $197
       </a>
     </div>
 
     <p class="note" style="max-width:780px;margin:14px auto 0;opacity:.8;text-align:center">
-      Secure checkout via Payhip (Credit & Debit Cards · USD)<br/>
+      Secure checkout via Payhip · PayPal (Credit & Debit Cards · USD)<br/>
+      Funds settle to your PayPal BR account (USD auto-converted to BRL).<br/>
       Instant download upon confirmation · Limited to 1,000 digital units.
     </p>
   </div>
