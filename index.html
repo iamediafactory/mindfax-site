@@ -1,172 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<title>MINDFAX · For Those Who Think in Light</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="theme-color" content="#0A0B10" />
-<meta name="description" content="MINDFAX is a cinematic synthesis of science, philosophy and design. Artifact 001 is a limited cognitive artifact for those who think in light."/>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-
-<!-- Open Graph -->
-<meta property="og:title" content="MINDFAX — For Those Who Think in Light" />
-<meta property="og:description" content="A cinematic continuum of knowledge and design." />
-<meta property="og:type" content="website" />
-<meta property="og:image" content="https://iamediafactory.github.io/mindfax-site/og-cover.jpg" />
-<meta property="og:url" content="https://iamediafactory.github.io/mindfax-site/" />
-
-<style>
-:root{
-  --bg:#0A0B10; --text:#EAEAF5; --muted:#A2A8BD;
-  --gold:#FFD700; --cyan:#00CFFF; --violet:#8888FF;
-  --glass: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-  --brd: rgba(255,255,255,.10); --radius:22px; --shadow:0 20px 60px rgba(0,0,0,.45);
-}
-*{box-sizing:border-box}
-html,body{margin:0; background:var(--bg); color:var(--text);
-  font-family:"IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif; line-height:1.6}
-a{color:var(--cyan); text-decoration:none}
-.wrap{width:min(1100px,92%); margin:0 auto}
-
-/* HEADER */
-header{position:sticky; top:0; z-index:40; backdrop-filter:saturate(160%) blur(10px);
-  background:linear-gradient(180deg, rgba(10,11,16,.92), rgba(10,11,16,.65)); border-bottom:1px solid rgba(255,255,255,.06)}
-nav{display:flex; align-items:center; justify-content:space-between; padding:12px 0}
-.brand{display:flex; align-items:center; gap:12px}
-.brand img{height:85px; width:auto; display:block}
-.navlinks a{margin-left:14px; color:var(--muted); font-size:14px}
-.btn{display:inline-flex; align-items:center; gap:10px; padding:14px 20px; border-radius:14px; font-weight:600;
-  border:1px solid rgba(255,255,255,.09); background:var(--glass); box-shadow:var(--shadow)}
-.btn.gold{background:linear-gradient(120deg,#2a2200,#1a1400); border-color:#3a2c00; color:#FCEFB0}
-.btn .dot{width:10px; height:10px; border-radius:50%; background:var(--gold); box-shadow:0 0 16px rgba(255,215,0,.55)}
-
-/* SECTIONS */
-.section{
-  position:relative; min-height:100vh;
-  display:flex; align-items:center; justify-content:center; text-align:center;
-  background-image:url('Site_v2.png');
-  background-size:cover; background-repeat:no-repeat; color:var(--text);
-  background-attachment:fixed;
-}
-.section::after{content:""; position:absolute; inset:0;
-  background: radial-gradient(1000px 600px at 50% -10%, rgba(136,136,255,.20), transparent 60%),
-              radial-gradient(900px 500px at 10% 100%, rgba(0,207,255,.12), transparent 60%),
-              linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.55));
-  pointer-events:none}
-.section .panel{
-  position:relative; z-index:2; backdrop-filter: blur(6px);
-  border:1px solid var(--brd); background:var(--glass);
-  padding:28px 26px; border-radius:var(--radius); box-shadow:var(--shadow); width:min(840px,92%)
-}
-.section h2{font-family:Cinzel,serif; font-size:36px; margin:0 0 10px}
-.section p.lead{color:#DDE3F7; font-size:16px; margin:4px 0 12px}
-.kicker{color:#C8CFE6; font-weight:600; letter-spacing:.4px; margin-bottom:8px}
-
-/* Posições */
-.section.top  { background-position:center 0% }
-.section.mid  { background-position:center 33% }
-.section.bot  { background-position:center 66% }
-.section.last { background-position:center 100% }
-
-.scroll{margin-top:14px}
-
-/* FOOTER */
-footer{padding:40px 0 60px; color:var(--muted); border-top:1px solid rgba(255,255,255,.06); text-align:center}
-.small{font-size:12px}
-
-/* Mobile */
-@media (max-width:900px){
-  .section{ background-attachment:scroll; }
-  .section h2{font-size:28px}
-  .navlinks{display:none}
-  .brand img{height:72px}
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MINDFAX — The Continuum</title>
+  <meta name="description" content="MINDFAX — Cognitive Artifact · First Edition. 1,000 units only. No serial numbers. When the Continuum closes, it closes forever." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: #d7e7ff;
+      font-family: "Inter", sans-serif;
+      overflow-x: hidden;
+    }
+    header, section {
+      width: 100%;
+      padding: 80px 10%;
+      box-sizing: border-box;
+    }
+    h1, h2 {
+      font-family: "Cinzel", serif;
+      letter-spacing: 0.05em;
+      color: #00CFFF;
+    }
+    p {
+      line-height: 1.6;
+      color: #c8d7ef;
+      max-width: 800px;
+    }
+    .cta {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 12px 28px;
+      background: linear-gradient(90deg, #00CFFF, #007AFF);
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      transition: all 0.2s ease;
+    }
+    .cta:hover { opacity: 0.85; transform: scale(1.03); }
+    footer {
+      text-align: center;
+      padding: 50px 0;
+      color: #777;
+      font-size: 14px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .section-image {
+      width: 100%;
+      height: 300px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 4px;
+      margin: 60px 0;
+      opacity: 0.9;
+    }
+  </style>
 </head>
+
 <body>
+  <!-- HERO -->
+  <header style="text-align:center;">
+    <h1>MINDFAX — Cognitive Artifact · First Edition</h1>
+    <p>Only 1,000 units. No serial numbers. Once the Continuum closes, it closes forever.</p>
+    <a class="cta" href="https://your-checkout-link" target="_blank" rel="noopener">Acquire Now</a>
+  </header>
 
-<header>
-  <div class="wrap">
-    <nav>
-      <div class="brand">
-        <!-- LOGO -->
-        <img src="Logo_Ultimate_2.png?v=1" alt="MINDFAX logo">
-      </div>
-      <div class="navlinks">
-        <a href="#origin">Origin</a>
-        <a href="#continuum">Continuum</a>
-        <a href="#architect">Architect</a>
-        <a href="#artifact">Series</a>
-      </div>
-      <!-- ✅ Botão atualizado -->
-      <a class="btn gold" href="continuum.html"><span class="dot"></span> Enter the Continuum</a>
-    </nav>
-  </div>
-</header>
-
-<!-- Section 1 — ORIGIN / MANIFEST -->
-<section id="origin" class="section top" role="region" aria-label="Origin">
-  <div class="panel">
-    <div class="kicker">FOR THOSE WHO THINK IN LIGHT</div>
+  <!-- ORIGIN -->
+  <section id="origin">
+    <div class="section-image" style="background-image:url('images/origin.jpg');"></div>
     <h2>Not a Book — a Cognitive Artifact</h2>
-    <p class="lead">Origin · Code · Creation. A cinematic philosophy rendered as design.</p>
-    <div class="scroll"><a class="btn" href="#continuum">Continue</a></div>
-  </div>
-</section>
+    <p>
+      MINDFAX is a cinematic vessel for ideas — crafted to be felt as much as read.
+      This first edition embraces pure scarcity: exactly 1,000 units, ever.
+      No serial numbers. No reruns. No reprints. When the last unit is claimed, the Continuum closes.
+    </p>
+  </section>
 
-<!-- Section 2 — CONTINUUM / ARTIFACT 001 -->
-<section id="continuum" class="section mid" role="region" aria-label="Continuum">
-  <div class="panel">
-    <div class="kicker">ARTIFACT 001</div>
+  <!-- CONTINUUM -->
+  <section id="continuum">
+    <div class="section-image" style="background-image:url('images/continuum.jpg');"></div>
     <h2>Where Quantum Design Meets Human Meaning</h2>
-    <p class="lead">A limited cognitive artifact — knowledge turned into light. Cinematic, precise, alive.</p>
-    <p class="lead" style="opacity:.85">A synthesis of science, philosophy and visual architecture.</p>
-    <div class="scroll"><a class="btn" href="#architect">Meet the Architect</a></div>
-  </div>
-</section>
+    <p>
+      We removed complexity so the essence shines: a limited artifact that invites contemplation and rewards devotion.
+      You are not buying pages — you are acquiring a signal: a commitment to think in light.
+    </p>
+    <a class="cta" href="https://your-checkout-link" target="_blank" rel="noopener">Acquire Your Unit</a>
+  </section>
 
-<!-- Section 3 — THE ARCHITECT / MESSAGE -->
-<section id="architect" class="section bot" role="region" aria-label="Architect">
-  <div class="panel">
-    <div class="kicker">THE ARCHITECT</div>
+  <!-- THE ARCHITECT -->
+  <section id="architect">
+    <div class="section-image" style="background-image:url('images/architect.jpg');"></div>
     <h2>Message to Those Who Still Look Up</h2>
-    <p class="lead">“Humanity is not a mistake — it is a question. You were never meant to conquer the cosmos; you were meant to understand it.”</p>
-    <p class="lead" style="opacity:.85">From origin to continuum: a promise of exploration, hope and intelligence.</p>
-    <div class="scroll"><a class="btn" href="#artifact">The Artifact Series</a></div>
-  </div>
-</section>
+    <p>
+      If you sense that intelligence is sacred — that attention is the ultimate currency — 
+      then you are already part of MINDFAX.
+      This artifact is a quiet pact: less noise, more signal; less speed, more depth.
+    </p>
+  </section>
 
-<!-- Section 4 — THE ARTIFACT SERIES / LIMITED CONTINUUM -->
-<section id="artifact" class="section last" role="region" aria-label="Artifact Series">
-  <div class="panel">
-    <div class="kicker">THE CONTINUUM</div>
-    <h2>The Artifact Series</h2>
-    <p class="lead">Each artifact is sealed, numbered, and archived within the MINDFAX Continuum.</p>
-    <p class="lead" style="opacity:.85">Once the 1,000 copies are acquired, the continuum closes — forever.</p>
-    <!-- ✅ Botão final revisado -->
-    <div class="scroll">
-      <a class="btn gold" href="continuum.html">
-        <span class="dot"></span> Acquire Your Edition
-      </a>
-    </div>
-  </div>
-</section>
+  <!-- ARTIFACT SERIES -->
+  <section id="artifact">
+    <div class="section-image" style="background-image:url('images/artifact.jpg');"></div>
+    <h2>The Continuum — First Edition</h2>
+    <p>
+      A single, finite run of 1,000 digital units. No numbering, no tiers.
+      The scarcity is structural, not cosmetic.
+      When the last unit is claimed, this edition vanishes — permanently.
+    </p>
+    <a class="cta" href="https://your-checkout-link" target="_blank" rel="noopener">Claim One of 1,000</a>
+  </section>
 
-<footer>
-  <div class="wrap">
-    <div class="small">© 2025 MINDFAX · All Rights Reserved · mindfax.art</div>
-    <div class="small">Contact: iamediafactory.studio@gmail.com</div>
-  </div>
-</footer>
-
-<script>
-  // Smooth scroll (somente para âncoras internas)
-  document.querySelectorAll('a[href^="#"]').forEach(a=>{
-    a.addEventListener('click', e=>{
-      const id=a.getAttribute('href');
-      if(id.length>1){ e.preventDefault(); document.querySelector(id)?.scrollIntoView({behavior:'smooth'}) }
-    });
-  });
-</script>
+  <!-- FOOTER -->
+  <footer>
+    <p>Contact: iamediafactory.studio@gmail.com · mindfax.art</p>
+  </footer>
 </body>
 </html>
