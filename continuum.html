@@ -9,81 +9,161 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --bg:#0A0B10; --text:#EAEAF5; --muted:#A2A8BD;
-  --gold:#FFD77A; --cyan:#00CFFF; --violet:#1A1054;
-  --glass: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-  --brd: rgba(255,255,255,.10); --radius:22px; --shadow:0 20px 60px rgba(0,0,0,.45)
+:root {
+  --bg:#0A0B10;
+  --text:#EAEAF5;
+  --muted:#A2A8BD;
+  --gold:#FFD77A;
+  --cyan:#00CFFF;
+  --glass:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  --brd:rgba(255,255,255,.10);
+  --radius:22px;
+  --shadow:0 20px 60px rgba(0,0,0,.45);
 }
-*{box-sizing:border-box}
-html,body{margin:0;background:var(--bg);color:var(--text);
-  font-family:"IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif; line-height:1.6}
-a{color:var(--cyan); text-decoration:none}
-.wrap{width:min(1100px,92%); margin:0 auto}
 
-/* header */
-header{position:sticky; top:0; z-index:40; backdrop-filter:saturate(160%) blur(10px);
-  background:linear-gradient(180deg, rgba(10,11,16,.92), rgba(10,11,16,.65)); border-bottom:1px solid rgba(255,255,255,.06)}
-nav{display:flex; align-items:center; justify-content:space-between; padding:12px 0}
-.brand{display:flex; align-items:center; gap:12px}
-.brand img{height:70px; width:auto; display:block}
-.navlinks a{margin-left:14px; color:#A2A8BD; font-size:14px}
-.btn{display:inline-flex; align-items:center; gap:10px; padding:14px 22px; border-radius:14px; font-weight:600;
-  border:1px solid rgba(255,255,255,.09); background:var(--glass); box-shadow:var(--shadow)}
-.btn.gold{background:linear-gradient(120deg,#2a2200,#1a1400); border-color:#3a2c00; color:#FCEFB0}
-.btn .dot{width:10px;height:10px;border-radius:50%;background:var(--gold); box-shadow:0 0 16px rgba(255,215,0,.55)}
+/* Base */
+* { box-sizing:border-box; }
+html,body {
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:"IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  line-height:1.6;
+}
+a { color:var(--cyan); text-decoration:none; }
+.wrap { width:min(1100px,92%); margin:0 auto; }
 
-/* sections with single sprite background (4 slices) */
-.section{
+/* Header */
+header {
+  position:sticky;
+  top:0;
+  z-index:40;
+  backdrop-filter:saturate(160%) blur(10px);
+  background:linear-gradient(180deg, rgba(10,11,16,.92), rgba(10,11,16,.65));
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+nav {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 0;
+}
+.brand {
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.brand img { height:70px; width:auto; display:block; }
+.navlinks a {
+  margin-left:14px;
+  color:#A2A8BD;
+  font-size:14px;
+}
+
+/* Buttons */
+.btn {
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:14px 22px;
+  border-radius:14px;
+  font-weight:600;
+  border:1px solid rgba(255,255,255,.09);
+  background:var(--glass);
+  box-shadow:var(--shadow);
+}
+.btn.gold {
+  background:linear-gradient(120deg,#2a2200,#1a1400);
+  border-color:#3a2c00;
+  color:#FCEFB0;
+}
+.btn .dot {
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:var(--gold);
+  box-shadow:0 0 16px rgba(255,215,0,.55);
+}
+
+/* Sections */
+.section {
   position:relative;
   min-height:100vh;
-  display:flex; align-items:center; justify-content:center;
-  background-image:url("E-Book_Site_Page%202.png"); /* sprite vertical com 4 painéis */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background-image:url("E-Book_Site_Page%202.png");
   background-repeat:no-repeat;
-  background-position:center 0%;
-  background-size:100% 400%;     /* altura total = 4x (cada seção exibe 1/4) */
-  background-attachment:fixed;   /* ✅ igual à index para o efeito de “trazer” o próximo bloco */
+  background-size:100% 400%;
+  background-attachment:fixed;
   isolation:isolate;
 }
-.section::after{content:""; position:absolute; inset:0;
-  /* mesma vinheta/gradiente da index para transição suave */
+.section::after {
+  content:"";
+  position:absolute;
+  inset:0;
   background:
     radial-gradient(1100px 700px at 50% -10%, rgba(136,136,255,.16), transparent 60%),
     radial-gradient(900px 540px at 10% 100%, rgba(0,207,255,.10), transparent 60%),
     linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.62));
-  pointer-events:none}
-.panel{
-  position:relative; z-index:2; text-align:center; backdrop-filter: blur(6px);
-  border:1px solid var(--brd); background:var(--glass);
-  padding:28px 26px; border-radius:var(--radius); box-shadow:var(--shadow); width:min(840px,92%)
+  pointer-events:none;
 }
-.kicker{color:#C8CFE6; font-weight:600; letter-spacing:.12em; margin-bottom:8px}
-h2{font-family:Cinzel,serif; font-size:40px; margin:0 0 10px; color:var(--gold); text-shadow:0 8px 24px rgba(0,0,0,.45)}
-.lead{color:#DDE3F7; font-size:18px; margin:6px 0 10px}
-.note{color:#EAEAF5; font-size:16px; opacity:.9}
+.panel {
+  position:relative;
+  z-index:2;
+  backdrop-filter:blur(6px);
+  border:1px solid var(--brd);
+  background:var(--glass);
+  padding:28px 26px;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  width:min(840px,92%);
+}
+.kicker {
+  color:#C8CFE6;
+  font-weight:600;
+  letter-spacing:.12em;
+  margin-bottom:8px;
+}
+h2 {
+  font-family:Cinzel,serif;
+  font-size:40px;
+  margin:0 0 10px;
+  color:var(--gold);
+  text-shadow:0 8px 24px rgba(0,0,0,.45);
+}
+.lead { color:#DDE3F7; font-size:18px; margin:6px 0 10px; }
+.note { color:#EAEAF5; font-size:16px; opacity:.9; }
 
-/* sprite slice positions */
-.s1{ background-position:center 0% }
-s2{ background-position:center 33.333% } /* typo safety not needed, real one below */
-.s2{ background-position:center 33.333% }
-.s3{ background-position:center 66.666% }
-.s4{ background-position:center 100% }
+/* Background positions */
+.s1 { background-position:center 0%; }
+.s2 { background-position:center 33.333%; }
+.s3 { background-position:center 66.666%; }
+.s4 { background-position:center 100%; }
 
-/* scroll reveal (fade-in como na index) */
-.reveal{opacity:0; transform:translateY(14px); transition:opacity .9s ease, transform .9s ease}
-.reveal.in{opacity:1; transform:none}
+/* Animation */
+.reveal { opacity:0; transform:translateY(14px); transition:opacity .9s ease, transform .9s ease; }
+.reveal.in { opacity:1; transform:none; }
 
-footer{padding:40px 0 60px; color:#A2A8BD; border-top:1px solid rgba(255,255,255,.06); text-align:center}
+/* Footer */
+footer {
+  padding:40px 0 60px;
+  color:#A2A8BD;
+  border-top:1px solid rgba(255,255,255,.06);
+  text-align:center;
+}
 
-/* mobile */
-@media (max-width:900px){
-  h2{font-size:30px}
-  .navlinks{display:none}
-  .brand img{height:58px}
-  .section{ background-attachment:scroll; } /* mesma degradação elegante da index para performance */
+/* Mobile */
+@media (max-width:900px) {
+  h2 { font-size:30px; }
+  .navlinks { display:none; }
+  .brand img { height:58px; }
+  .section { background-attachment:scroll; }
 }
 </style>
 </head>
+
 <body>
 
 <header>
@@ -99,9 +179,9 @@ footer{padding:40px 0 60px; color:#A2A8BD; border-top:1px solid rgba(255,255,255
       </div>
       <div style="display:flex;gap:10px;flex-wrap:wrap">
         <a class="btn" href="index.html">Back to Origin</a>
-        <!-- 🔁 checkout duplo (somente aqui na página do produto) -->
-        <a class="btn gold" href="https://commerce.coinbase.com/checkout/SEU_LINK" target="_blank" rel="noopener"><span class="dot"></span> Pay with Crypto</a>
-        <a class="btn" href="https://redotpay.link/SEU_LINK" target="_blank" rel="noopener"><span class="dot"></span> Pay with Card (USD)</a>
+        <a class="btn gold" href="https://payhip.com/b/62ZIw" target="_blank" rel="noopener">
+          <span class="dot"></span> Acquire Now — $197
+        </a>
       </div>
     </nav>
   </div>
@@ -156,20 +236,23 @@ footer{padding:40px 0 60px; color:#A2A8BD; border-top:1px solid rgba(255,255,255
       This archive is not a marketplace. It is a covenant. When you acquire a unit, you join a lineage —
       one that believes knowledge is sacred, consciousness is art, and scarcity is not exclusion, but devotion.
     </p>
+
     <div class="kicker" style="margin-top:6px">THE ARCHITECT — Curator of the Continuum</div>
     <div style="height:1px; width:120px; margin:6px auto 2px; background:var(--gold); opacity:.9"></div>
     <div style="font-family:Cinzel,serif; letter-spacing:.12em; color:var(--gold); opacity:.95; margin-top:8px">
       Once the 1,000 units are claimed, the Continuum closes — forever.
     </div>
-    <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
-      <!-- 🔁 checkout duplo (sem a frase técnica) -->
-      <a class="btn gold" href="https://commerce.coinbase.com/checkout/SEU_LINK" target="_blank" rel="noopener">
-        <span class="dot"></span> Pay with Crypto
-      </a>
-      <a class="btn" href="https://redotpay.link/SEU_LINK" target="_blank" rel="noopener">
-        <span class="dot"></span> Pay with Card (USD)
+
+    <div style="margin-top:20px;display:flex;justify-content:center">
+      <a class="btn gold" href="https://payhip.com/b/62ZIw" target="_blank" rel="noopener">
+        <span class="dot"></span> Acquire Now — $197
       </a>
     </div>
+
+    <p class="note" style="max-width:780px;margin:14px auto 0;opacity:.8;text-align:center">
+      Secure checkout via Payhip (Credit & Debit Cards · USD)<br/>
+      Instant download upon confirmation · Limited to 1,000 digital units.
+    </p>
   </div>
 </section>
 
@@ -182,11 +265,16 @@ footer{padding:40px 0 60px; color:#A2A8BD; border-top:1px solid rgba(255,255,255
 </footer>
 
 <script>
-// fade-in on scroll (igual à index)
-const obs=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target) } });
-},{threshold:.18});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      obs.unobserve(e.target);
+    }
+  });
+}, {threshold:.18});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 </script>
+
 </body>
 </html>
