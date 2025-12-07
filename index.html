@@ -1,173 +1,435 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<title>MINDFAX · For Those Who Think in Light</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="theme-color" content="#0A0B10" />
-<meta name="description" content="MINDFAX is a cinematic synthesis of science, philosophy and design. The Continuum · First Edition is limited to 1,000 unnumbered units."/>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-
-<!-- Open Graph -->
-<meta property="og:title" content="MINDFAX — For Those Who Think in Light" />
-<meta property="og:description" content="A cinematic continuum of knowledge and design. First Edition: 1,000 unnumbered units." />
-<meta property="og:type" content="website" />
-<meta property="og:image" content="https://iamediafactory.github.io/mindfax-site/og-cover.jpg" />
-<meta property="og:url" content="https://iamediafactory.github.io/mindfax-site/" />
-
-<style>
-:root{
-  --bg:#0A0B10; --text:#EAEAF5; --muted:#A2A8BD;
-  --gold:#FFD700; --cyan:#00CFFF; --violet:#8888FF;
-  --glass: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-  --brd: rgba(255,255,255,.10); --radius:22px; --shadow:0 20px 60px rgba(0,0,0,.45);
-}
-*{box-sizing:border-box}
-html,body{margin:0; background:var(--bg); color:var(--text);
-  font-family:"IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif; line-height:1.6}
-a{color:var(--cyan); text-decoration:none}
-.wrap{width:min(1100px,92%); margin:0 auto}
-
-/* HEADER */
-header{position:sticky; top:0; z-index:40; backdrop-filter:saturate(160%) blur(10px);
-  background:linear-gradient(180deg, rgba(10,11,16,.92), rgba(10,11,16,.65)); border-bottom:1px solid rgba(255,255,255,.06)}
-nav{display:flex; align-items:center; justify-content:space-between; padding:12px 0}
-.brand{display:flex; align-items:center; gap:12px}
-.brand img{height:85px; width:auto; display:block}
-.navlinks a{margin-left:14px; color:var(--muted); font-size:14px}
-.btn{display:inline-flex; align-items:center; gap:10px; padding:14px 20px; border-radius:14px; font-weight:600;
-  border:1px solid rgba(255,255,255,.09); background:var(--glass); box-shadow:var(--shadow)}
-.btn.gold{background:linear-gradient(120deg,#2a2200,#1a1400); border-color:#3a2c00; color:#FCEFB0}
-.btn .dot{width:10px; height:10px; border-radius:50%; background:var(--gold); box-shadow:0 0 16px rgba(255,215,0,.55)}
-
-/* SECTIONS */
-.section{
-  position:relative; min-height:100vh;
-  display:flex; align-items:center; justify-content:center; text-align:center;
-  background-image:url('Site_v2.png');
-  background-size:cover; background-repeat:no-repeat; color:var(--text);
-  background-attachment:fixed;
-}
-.section::after{content:""; position:absolute; inset:0;
-  background: radial-gradient(1000px 600px at 50% -10%, rgba(136,136,255,.20), transparent 60%),
-              radial-gradient(900px 500px at 10% 100%, rgba(0,207,255,.12), transparent 60%),
-              linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.55));
-  pointer-events:none}
-.section .panel{
-  position:relative; z-index:2; backdrop-filter: blur(6px);
-  border:1px solid var(--brd); background:var(--glass);
-  padding:28px 26px; border-radius:var(--radius); box-shadow:var(--shadow); width:min(840px,92%)
-}
-.section h2{font-family:Cinzel,serif; font-size:36px; margin:0 0 10px}
-.section p.lead{color:#DDE3F7; font-size:16px; margin:4px 0 12px}
-.kicker{color:#C8CFE6; font-weight:600; letter-spacing:.4px; margin-bottom:8px}
-
-/* Posições */
-.section.top  { background-position:center 0% }
-.section.mid  { background-position:center 33% }
-.section.bot  { background-position:center 66% }
-.section.last { background-position:center 100% }
-
-.scroll{margin-top:14px}
-
-/* FOOTER */
-footer{padding:40px 0 60px; color:var(--muted); border-top:1px solid rgba(255,255,255,.06); text-align:center}
-.small{font-size:12px}
-
-/* Mobile */
-@media (max-width:900px){
-  .section{ background-attachment:scroll; }
-  .section h2{font-size:28px}
-  .navlinks{display:none}
-  .brand img{height:72px}
-}
-</style>
+  <meta charset="UTF-8" />
+  <title>The Architect Universe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="The Architect Universe — the central portal connecting The Architect, Mindfax, Neurabyte and Finsage." />
+  <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
+  <div class="page">
 
-<header>
-  <div class="wrap">
-    <nav>
-      <div class="brand">
-        <!-- LOGO -->
-        <img src="Logo_Ultimate_2.png?v=1" alt="MINDFAX logo">
+    <!-- ================= HEADER / NAV ================= -->
+    <header class="site-header">
+      <div class="nav-inner">
+        <div class="brand">
+          <!-- SLOT: LOGO THE ARCHITECT UNIVERSE -->
+          <!-- Trocar src pelo arquivo real assim que tiver -->
+          <img
+            src="assets/img/logo-architect.svg"
+            alt="The Architect Universe"
+            class="brand-logo"
+          />
+          <div class="brand-text">
+            <div class="brand-title">THE ARCHITECT UNIVERSE</div>
+            <div class="brand-subtitle">Time · Consciousness · Sovereignty</div>
+          </div>
+        </div>
+        <nav class="nav-links">
+          <a href="#cosmos">Cosmos</a>
+          <a href="#worlds">Worlds</a>
+          <a href="#portals">Portals</a>
+          <a href="#purpose">Why</a>
+          <a href="#call">Enter</a>
+        </nav>
       </div>
-      <div class="navlinks">
-        <a href="#origin">Origin</a>
-        <a href="#continuum">Continuum</a>
-        <a href="#architect">Architect</a>
-        <a href="#artifact">Series</a>
+    </header>
+
+    <main>
+
+      <!-- =============== HERO / PORTAL CINEMATOGRÁFICO =============== -->
+      <section class="hero" id="top">
+        <!-- SLOT: VÍDEO DE FUNDO DO HERO -->
+        <!-- Quando tiver o arquivo, só trocar o src -->
+        <video
+          class="hero-bg-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          poster="assets/img/hero-bg-fallback.jpg"
+        >
+          <source src="assets/video/hero-intro.mp4" type="video/mp4" />
+          <!-- Fallback se o vídeo não carregar -->
+        </video>
+
+        <!-- OVERLAY ESCURO POR CIMA DO VÍDEO -->
+        <div class="hero-overlay"></div>
+
+        <div class="hero-inner">
+          <!-- SLOT: AVATAR DO THE ARCHITECT DENTRO DO PORTAL -->
+          <div class="hero-avatar-shell">
+            <div class="hero-avatar-circle">
+              <img
+                src="assets/img/architect-avatar.png"
+                alt="The Architect Avatar"
+                class="hero-avatar-img"
+              />
+            </div>
+          </div>
+
+          <!-- TEXTO DO HERO -->
+          <div class="hero-text-block">
+            <p class="hero-kicker">A universe built from a real fracture</p>
+
+            <h1 class="hero-title">
+              The <span>architecture of reality</span> begins in the fracture you choose to see.
+            </h1>
+
+            <p class="hero-subtitle">
+              A life that refused its assigned script became an entire universe: a map to protect your
+              mind, your time and your money in a world that is quietly collapsing.
+            </p>
+
+            <div class="hero-actions">
+              <!-- Botão para abrir/rolar até o VÍDEO DE APRESENTAÇÃO COMPLETO -->
+              <a href="#trailer" class="btn btn-primary">
+                <span class="btn-icon">▶</span>
+                <span>Watch the intro</span>
+              </a>
+
+              <!-- Botão para descer para o mapa do cosmos -->
+              <a href="#cosmos" class="btn btn-ghost">
+                <span class="btn-icon">⭓</span>
+                <span>Enter the universe</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============== SEÇÃO TRAILER (VIDEO APRESENTAÇÃO) =============== -->
+      <section class="section section-trailer" id="trailer">
+        <div class="container">
+          <div class="section-label">Presentation</div>
+          <h2 class="section-title">The Architect Universe · Intro</h2>
+          <p class="section-subtitle">
+            This video is the fastest way to feel what this universe really is: where it comes from,
+            why it exists, and why you are probably meeting it at the exact right time.
+          </p>
+
+          <!-- SLOT: VIDEO PLAYER (embed YouTube / arquivo local) -->
+          <!-- Se for YouTube, trocar pelo iframe do canal -->
+          <div class="trailer-frame">
+            <!-- Exemplo com vídeo local -->
+            <video
+              controls
+              poster="assets/img/hero-bg-fallback.jpg"
+              class="trailer-video"
+            >
+              <source src="assets/video/hero-intro.mp4" type="video/mp4" />
+            </video>
+
+            <!-- Exemplo alternativo (YouTube) – deixar comentado até decidir
+            <iframe
+              class="trailer-iframe"
+              src="https://www.youtube.com/embed/SEU_VIDEO_ID"
+              title="The Architect Universe Intro"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+            -->
+          </div>
+        </div>
+      </section>
+
+      <!-- =============== COSMOS / THE ARCHITECT + MUNDOS =============== -->
+      <section class="section section-cosmos" id="cosmos">
+        <div class="container">
+          <div class="section-label">The Cosmos</div>
+          <h2 class="section-title">The central axis of the universe</h2>
+          <p class="section-subtitle">
+            Everything begins in The Architect: biography, collapse, spiritual work, political service,
+            fatherhood, crypto winters and real-world scars. From this fracture, three worlds were born
+            to protect different layers of existence.
+          </p>
+
+          <div class="cosmos-layout">
+            <!-- BLOCO THE ARCHITECT -->
+            <article class="cosmos-center-card">
+              <!-- SLOT: LOGO/SÍMBOLO THE ARCHITECT -->
+              <div class="cosmos-center-logo">
+                <img
+                  src="assets/img/logo-architect.svg"
+                  alt="The Architect"
+                />
+              </div>
+              <h3 class="cosmos-center-title">THE ARCHITECT</h3>
+              <p class="cosmos-center-tagline">Time · Consciousness · The Zero Axis</p>
+              <p class="cosmos-center-text">
+                Early Edition, TIME, The Continuum and The Freedom Protocol form the backbone of this
+                universe. This is where pain is turned into consciousness and consciousness into
+                sovereignty.
+              </p>
+              <a href="#portals" class="btn btn-outline">
+                Explore the core works
+              </a>
+            </article>
+
+            <!-- COLUNA COM OS TRÊS MUNDOS / LOGOS -->
+            <div class="worlds-column" id="worlds">
+
+              <!-- SLOT: FAIXA HORIZONTAL CINEMATOGRÁFICA (Mindfax) COMO BACKGROUND -->
+              <article class="world-card world-mindfax">
+                <div class="world-header">
+                  <div class="world-label">World I</div>
+                  <!-- LOGO MINDFAX -->
+                  <img
+                    src="assets/img/logo-mindfax.svg"
+                    alt="Mindfax"
+                    class="world-logo"
+                  />
+                </div>
+                <h3 class="world-title">Mindfax · The Cosmos</h3>
+                <p class="world-text">
+                  Black holes, nuclear risk, extinction, simulations, fragile civilizations. Mindfax is the
+                  world where the sky stops being decoration and becomes a threat, a question and a teacher.
+                </p>
+                <a href="worlds/mindfax.html" class="world-link">
+                  Enter Mindfax ↗
+                </a>
+              </article>
+
+              <!-- SLOT: FAIXA HORIZONTAL (Neurabyte) -->
+              <article class="world-card world-neurabyte">
+                <div class="world-header">
+                  <div class="world-label">World II</div>
+                  <!-- LOGO NEURABYTE -->
+                  <img
+                    src="assets/img/logo-neurabyte.svg"
+                    alt="Neurabyte"
+                    class="world-logo"
+                  />
+                </div>
+                <h3 class="world-title">Neurabyte · The Mind</h3>
+                <p class="world-text">
+                  Cognitive architecture, attention firewalls, dopamine discipline. Neurabyte exists to keep
+                  your brain from being hacked by a world engineered for addiction and paralysis.
+                </p>
+                <a href="worlds/neurabyte.html" class="world-link">
+                  Enter Neurabyte ↗
+                </a>
+              </article>
+
+              <!-- SLOT: FAIXA HORIZONTAL (Finsage) -->
+              <article class="world-card world-finsage">
+                <div class="world-header">
+                  <div class="world-label">World III</div>
+                  <!-- LOGO FINSAGE -->
+                  <img
+                    src="assets/img/logo-finsage.svg"
+                    alt="Finsage"
+                    class="world-logo"
+                  />
+                </div>
+                <h3 class="world-title">Finsage · The Matter</h3>
+                <p class="world-text">
+                  Money as stored time. Protocols for crypto, DeFi and survival. Finsage is where spreadsheets
+                  and philosophy finally sit at the same table — and where inflation stops owning your years.
+                </p>
+                <a href="worlds/finsage.html" class="world-link">
+                  Enter Finsage ↗
+                </a>
+              </article>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============== PORTALS / OBRAS =============== -->
+      <section class="section section-portals" id="portals">
+        <div class="container">
+          <div class="section-label">Portals</div>
+          <h2 class="section-title">Core works of The Architect Universe</h2>
+          <p class="section-subtitle">
+            Each book is a portal. Some protect your mind. Others your money. All of them are training
+            simulations for the day the world hits <strong>START</strong> without warning.
+          </p>
+
+          <div class="portals-grid">
+            <!-- CADA CARD TEM SLOT DE IMAGEM/CAPA DA OBRA -->
+
+            <article class="portal-card">
+              <div class="portal-media">
+                <img
+                  src="assets/img/cover-early-edition.jpg"
+                  alt="The Architect — Early Edition"
+                />
+              </div>
+              <div class="portal-body">
+                <h3 class="portal-title">The Architect · Early Edition</h3>
+                <p class="portal-tagline">The first rupture. The call to stop lying to yourself.</p>
+                <p class="portal-text">
+                  A manifesto born from collapse and spiritual work. The Architect steps out of hiding and
+                  talks directly to those who are on the edge and still breathing.
+                </p>
+                <a href="#store" class="portal-link">Get this portal ↗</a>
+              </div>
+            </article>
+
+            <article class="portal-card">
+              <div class="portal-media">
+                <img
+                  src="assets/img/cover-continuum.jpg"
+                  alt="The Continuum"
+                />
+              </div>
+              <div class="portal-body">
+                <h3 class="portal-title">The Continuum</h3>
+                <p class="portal-tagline">Spirit as flow. Time as continuity.</p>
+                <p class="portal-text">
+                  A metaphysical framework disguised as a small book: consciousness as software that changes
+                  density, not as something that switches on and off.
+                </p>
+                <a href="#store" class="portal-link">Get this portal ↗</a>
+              </div>
+            </article>
+
+            <article class="portal-card">
+              <div class="portal-media">
+                <img
+                  src="assets/img/cover-freedom-protocol.jpg"
+                  alt="The Freedom Protocol"
+                />
+              </div>
+              <div class="portal-body">
+                <h3 class="portal-title">The Freedom Protocol</h3>
+                <p class="portal-tagline">Collapse as the first portal.</p>
+                <p class="portal-text">
+                  System, money, faith and language crashing into each other. Freedom Protocol is a blade
+                  against the idea that you must remain spiritually and financially domesticated.
+                </p>
+                <a href="#store" class="portal-link">Get this portal ↗</a>
+              </div>
+            </article>
+
+            <article class="portal-card">
+              <div class="portal-media">
+                <img
+                  src="assets/img/cover-time.jpg"
+                  alt="TIME"
+                />
+              </div>
+              <div class="portal-body">
+                <h3 class="portal-title">TIME</h3>
+                <p class="portal-tagline">The moral field where everything is measured.</p>
+                <p class="portal-text">
+                  Time as the supreme moral resource. Every decision is a temporal trade. TIME unifies
+                  philosophy, economy, neurobiology and spirituality into a single thesis.
+                </p>
+                <a href="#store" class="portal-link">Coming soon …</a>
+              </div>
+            </article>
+
+            <article class="portal-card">
+              <div class="portal-media">
+                <img
+                  src="assets/img/cover-fractal.jpg"
+                  alt="The Fractal Trilogy"
+                />
+              </div>
+              <div class="portal-body">
+                <h3 class="portal-title">The Fractal Trilogy</h3>
+                <p class="portal-tagline">You don’t just read it. You play it.</p>
+                <p class="portal-text">
+                  Twelve girls, twelve cultures, a hidden neurolinguistic engine. A videogame disguised as
+                  literature, designed to train you to carry pain without breaking.
+                </p>
+                <a href="#store" class="portal-link">In development …</a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- =============== PROPÓSITO =============== -->
+      <section class="section section-purpose" id="purpose">
+        <!-- SLOT: IMAGEM DE FUNDO CINEMATOGRÁFICA (paisagem / cidade / cosmos) -->
+        <!-- Definida via CSS como background-image -->
+        <div class="purpose-overlay">
+          <div class="container">
+            <div class="section-label">Why it exists</div>
+            <h2 class="section-title">This is not a “content universe”.</h2>
+            <p class="section-subtitle">
+              It was forged inside poverty, trauma, spiritual work, public service and the weight of
+              protecting a family in an age of systemic collapse. The goal is not to entertain you. It is
+              to train you.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============== CHAMADO FINAL =============== -->
+      <section class="section section-call" id="call">
+        <div class="container">
+          <div class="call-box">
+            <p class="call-text">
+              This is not just a website. It’s a training ground for the day the world hits
+              <span>START</span> without warning.
+            </p>
+            <p class="call-note">
+              When that day comes, your mind, your time and your money must be aligned — or someone else
+              will architect your life for you.
+            </p>
+            <a href="#store" class="btn btn-primary">
+              <span class="btn-icon">⭓</span>
+              <span>I’m ready to enter</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============== LOJA (SLOT para integrar com mindfax.art) =============== -->
+      <section class="section section-store" id="store">
+        <div class="container">
+          <div class="section-label">Store</div>
+          <h2 class="section-title">Entry portals available now</h2>
+          <p class="section-subtitle">
+            Connect these buttons to your existing Mindfax store (Payhip, site, etc.). Each click should
+            open the real sales page for Early Edition, The Continuum and future works.
+          </p>
+          <div class="store-actions">
+            <!-- SLOT: links reais de venda -->
+            <a href="#" class="btn btn-primary">
+              <span class="btn-icon">↗</span>
+              <span>Get Early Edition</span>
+            </a>
+            <a href="#" class="btn btn-ghost">
+              <span class="btn-icon">↗</span>
+              <span>Get The Continuum</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- =============== RODAPÉ =============== -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-left">
+          <div class="footer-title">THE ARCHITECT</div>
+          <div class="footer-sub">Created by a life that refused its assigned script.</div>
+        </div>
+        <div class="footer-right">
+          <nav class="footer-links">
+            <a href="#top">Home</a>
+            <a href="#cosmos">Cosmos</a>
+            <a href="#portals">Portals</a>
+            <a href="#purpose">Why</a>
+            <a href="#store">Store</a>
+          </nav>
+          <p class="footer-quote">
+            “Pain is universal. What you build with it isn’t.”
+          </p>
+        </div>
       </div>
-      <!-- ✅ Botão mantido: apenas navega para a página do produto -->
-      <a class="btn gold" href="continuum.html"><span class="dot"></span> Enter the Continuum</a>
-    </nav>
-  </div>
-</header>
+    </footer>
 
-<!-- Section 1 — ORIGIN / MANIFEST -->
-<section id="origin" class="section top" role="region" aria-label="Origin">
-  <div class="panel">
-    <div class="kicker">FOR THOSE WHO THINK IN LIGHT</div>
-    <h2>Not a Book — a Cognitive Artifact</h2>
-    <p class="lead">Origin · Code · Creation. A cinematic philosophy rendered as design.</p>
-    <p class="lead" style="opacity:.85">First Edition · 1,000 unnumbered units. Pure scarcity — no serials.</p>
-    <div class="scroll"><a class="btn" href="#continuum">Continue</a></div>
   </div>
-</section>
-
-<!-- Section 2 — CONTINUUM -->
-<section id="continuum" class="section mid" role="region" aria-label="Continuum">
-  <div class="panel">
-    <div class="kicker">THE CONTINUUM</div>
-    <h2>Where Quantum Design Meets Human Meaning</h2>
-    <p class="lead">A limited cognitive artifact — knowledge turned into light. Cinematic, precise, alive.</p>
-    <p class="lead" style="opacity:.85">First Edition limited to 1,000 units, with no numbering or tiers.</p>
-    <div class="scroll"><a class="btn" href="#architect">Meet the Architect</a></div>
-  </div>
-</section>
-
-<!-- Section 3 — THE ARCHITECT / MESSAGE -->
-<section id="architect" class="section bot" role="region" aria-label="Architect">
-  <div class="panel">
-    <div class="kicker">THE ARCHITECT</div>
-    <h2>Message to Those Who Still Look Up</h2>
-    <p class="lead">“Humanity is not a mistake — it is a question. You were never meant to conquer the cosmos; you were meant to understand it.”</p>
-    <p class="lead" style="opacity:.85">From origin to continuum: a promise of exploration, hope and intelligence.</p>
-    <div class="scroll"><a class="btn" href="#artifact">The Artifact Series</a></div>
-  </div>
-</section>
-
-<!-- Section 4 — THE ARTIFACT SERIES / LIMITED CONTINUUM -->
-<section id="artifact" class="section last" role="region" aria-label="Artifact Series">
-  <div class="panel">
-    <div class="kicker">THE CONTINUUM</div>
-    <h2>The Artifact Series</h2>
-    <p class="lead">Each artifact is finite, unnumbered, and archived within the MINDFAX Continuum.</p>
-    <p class="lead" style="opacity:.85">Once the 1,000 units are acquired, the Continuum closes — forever.</p>
-    <!-- 🔁 VOLTAMOS para um único botão que leva à página do produto -->
-    <div class="scroll">
-      <a class="btn gold" href="continuum.html">
-        <span class="dot"></span> Enter the Continuum
-      </a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <div class="small">© 2025 MINDFAX · All Rights Reserved · mindfax.art</div>
-    <div class="small">Contact: iamediafactory.studio@gmail.com</div>
-  </div>
-</footer>
-
-<script>
-  // Smooth scroll (somente para âncoras internas)
-  document.querySelectorAll('a[href^="#"]').forEach(a=>{
-    a.addEventListener('click', e=>{
-      const id=a.getAttribute('href');
-      if(id.length>1){ e.preventDefault(); document.querySelector(id)?.scrollIntoView({behavior:'smooth'}) }
-    });
-  });
-</script>
 </body>
 </html>
