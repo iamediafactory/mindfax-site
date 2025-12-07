@@ -234,4 +234,3 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
 </body>
 </html>
-
