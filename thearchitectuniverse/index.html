@@ -57,12 +57,43 @@
 
         <div class="hero-inner">
           <!-- AVATAR DO THE ARCHITECT (avatar oficial na mesma pasta) -->
-          <div class="hero-avatar-shell" style="transform: scale(2); transform-origin: center;">
+          <div class="hero-avatar-shell"
+               style="
+                 position: relative;
+                 width: min(360px, 40vw);
+                 aspect-ratio: 3 / 4;
+                 display: flex;
+                 align-items: flex-end;
+                 justify-content: center;
+               ">
+            <!-- Triângulo de energia atrás do avatar -->
+            <div
+              style="
+                position: absolute;
+                inset: 0;
+                clip-path: polygon(50% 0, 0 100%, 100% 100%);
+                background:
+                  radial-gradient(circle at 50% 0, rgba(72, 207, 255, 0.35), transparent 60%);
+                background-color: rgba(3, 6, 23, 0.9);
+                opacity: 0.9;
+                filter: blur(1px);
+              ">
+            </div>
+
+            <!-- Avatar com fumaça original, sem fundo adicional -->
             <img
               src="architect-avatar.png"
               alt="The Architect Avatar"
               class="hero-avatar-img"
-              style="background: transparent; box-shadow: none;"
+              style="
+                position: relative;
+                height: 120%;
+                width: auto;
+                object-fit: contain;
+                background: transparent;
+                box-shadow: none;
+                filter: drop-shadow(0 0 22px rgba(72, 207, 255, 0.35));
+              "
             />
           </div>
 
