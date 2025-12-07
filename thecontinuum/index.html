@@ -1,1 +1,173 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>MINDFAX · For Those Who Think in Light</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#0A0B10" />
+<meta name="description" content="MINDFAX is a cinematic synthesis of science, philosophy and design. The Continuum · First Edition is limited to 1,000 unnumbered units."/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 
+<!-- Open Graph -->
+<meta property="og:title" content="MINDFAX — For Those Who Think in Light" />
+<meta property="og:description" content="A cinematic continuum of knowledge and design. First Edition: 1,000 unnumbered units." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://iamediafactory.github.io/mindfax-site/og-cover.jpg" />
+<meta property="og:url" content="https://iamediafactory.github.io/mindfax-site/" />
+
+<style>
+:root{
+  --bg:#0A0B10; --text:#EAEAF5; --muted:#A2A8BD;
+  --gold:#FFD700; --cyan:#00CFFF; --violet:#8888FF;
+  --glass: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  --brd: rgba(255,255,255,.10); --radius:22px; --shadow:0 20px 60px rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+html,body{margin:0; background:var(--bg); color:var(--text);
+  font-family:"IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif; line-height:1.6}
+a{color:var(--cyan); text-decoration:none}
+.wrap{width:min(1100px,92%); margin:0 auto}
+
+/* HEADER */
+header{position:sticky; top:0; z-index:40; backdrop-filter:saturate(160%) blur(10px);
+  background:linear-gradient(180deg, rgba(10,11,16,.92), rgba(10,11,16,.65)); border-bottom:1px solid rgba(255,255,255,.06)}
+nav{display:flex; align-items:center; justify-content:space-between; padding:12px 0}
+.brand{display:flex; align-items:center; gap:12px}
+.brand img{height:85px; width:auto; display:block}
+.navlinks a{margin-left:14px; color:var(--muted); font-size:14px}
+.btn{display:inline-flex; align-items:center; gap:10px; padding:14px 20px; border-radius:14px; font-weight:600;
+  border:1px solid rgba(255,255,255,.09); background:var(--glass); box-shadow:var(--shadow)}
+.btn.gold{background:linear-gradient(120deg,#2a2200,#1a1400); border-color:#3a2c00; color:#FCEFB0}
+.btn .dot{width:10px; height:10px; border-radius:50%; background:var(--gold); box-shadow:0 0 16px rgba(255,215,0,.55)}
+
+/* SECTIONS */
+.section{
+  position:relative; min-height:100vh;
+  display:flex; align-items:center; justify-content:center; text-align:center;
+  background-image:url('Site_v2.png');
+  background-size:cover; background-repeat:no-repeat; color:var(--text);
+  background-attachment:fixed;
+}
+.section::after{content:""; position:absolute; inset:0;
+  background: radial-gradient(1000px 600px at 50% -10%, rgba(136,136,255,.20), transparent 60%),
+              radial-gradient(900px 500px at 10% 100%, rgba(0,207,255,.12), transparent 60%),
+              linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.55));
+  pointer-events:none}
+.section .panel{
+  position:relative; z-index:2; backdrop-filter: blur(6px);
+  border:1px solid var(--brd); background:var(--glass);
+  padding:28px 26px; border-radius:var(--radius); box-shadow:var(--shadow); width:min(840px,92%)
+}
+.section h2{font-family:Cinzel,serif; font-size:36px; margin:0 0 10px}
+.section p.lead{color:#DDE3F7; font-size:16px; margin:4px 0 12px}
+.kicker{color:#C8CFE6; font-weight:600; letter-spacing:.4px; margin-bottom:8px}
+
+/* Posições */
+.section.top  { background-position:center 0% }
+.section.mid  { background-position:center 33% }
+.section.bot  { background-position:center 66% }
+.section.last { background-position:center 100% }
+
+.scroll{margin-top:14px}
+
+/* FOOTER */
+footer{padding:40px 0 60px; color:var(--muted); border-top:1px solid rgba(255,255,255,.06); text-align:center}
+.small{font-size:12px}
+
+/* Mobile */
+@media (max-width:900px){
+  .section{ background-attachment:scroll; }
+  .section h2{font-size:28px}
+  .navlinks{display:none}
+  .brand img{height:72px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <div class="brand">
+        <!-- LOGO -->
+        <img src="Logo_Ultimate_2.png?v=1" alt="MINDFAX logo">
+      </div>
+      <div class="navlinks">
+        <a href="#origin">Origin</a>
+        <a href="#continuum">Continuum</a>
+        <a href="#architect">Architect</a>
+        <a href="#artifact">Series</a>
+      </div>
+      <!-- ✅ Botão mantido: apenas navega para a página do produto -->
+      <a class="btn gold" href="continuum.html"><span class="dot"></span> Enter the Continuum</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Section 1 — ORIGIN / MANIFEST -->
+<section id="origin" class="section top" role="region" aria-label="Origin">
+  <div class="panel">
+    <div class="kicker">FOR THOSE WHO THINK IN LIGHT</div>
+    <h2>Not a Book — a Cognitive Artifact</h2>
+    <p class="lead">Origin · Code · Creation. A cinematic philosophy rendered as design.</p>
+    <p class="lead" style="opacity:.85">First Edition · 1,000 unnumbered units. Pure scarcity — no serials.</p>
+    <div class="scroll"><a class="btn" href="#continuum">Continue</a></div>
+  </div>
+</section>
+
+<!-- Section 2 — CONTINUUM -->
+<section id="continuum" class="section mid" role="region" aria-label="Continuum">
+  <div class="panel">
+    <div class="kicker">THE CONTINUUM</div>
+    <h2>Where Quantum Design Meets Human Meaning</h2>
+    <p class="lead">A limited cognitive artifact — knowledge turned into light. Cinematic, precise, alive.</p>
+    <p class="lead" style="opacity:.85">First Edition limited to 1,000 units, with no numbering or tiers.</p>
+    <div class="scroll"><a class="btn" href="#architect">Meet the Architect</a></div>
+  </div>
+</section>
+
+<!-- Section 3 — THE ARCHITECT / MESSAGE -->
+<section id="architect" class="section bot" role="region" aria-label="Architect">
+  <div class="panel">
+    <div class="kicker">THE ARCHITECT</div>
+    <h2>Message to Those Who Still Look Up</h2>
+    <p class="lead">“Humanity is not a mistake — it is a question. You were never meant to conquer the cosmos; you were meant to understand it.”</p>
+    <p class="lead" style="opacity:.85">From origin to continuum: a promise of exploration, hope and intelligence.</p>
+    <div class="scroll"><a class="btn" href="#artifact">The Artifact Series</a></div>
+  </div>
+</section>
+
+<!-- Section 4 — THE ARTIFACT SERIES / LIMITED CONTINUUM -->
+<section id="artifact" class="section last" role="region" aria-label="Artifact Series">
+  <div class="panel">
+    <div class="kicker">THE CONTINUUM</div>
+    <h2>The Artifact Series</h2>
+    <p class="lead">Each artifact is finite, unnumbered, and archived within the MINDFAX Continuum.</p>
+    <p class="lead" style="opacity:.85">Once the 1,000 units are acquired, the Continuum closes — forever.</p>
+    <!-- 🔁 VOLTAMOS para um único botão que leva à página do produto -->
+    <div class="scroll">
+      <a class="btn gold" href="continuum.html">
+        <span class="dot"></span> Enter the Continuum
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="small">© 2025 MINDFAX · All Rights Reserved · mindfax.art</div>
+    <div class="small">Contact: iamediafactory.studio@gmail.com</div>
+  </div>
+</footer>
+
+<script>
+  // Smooth scroll (somente para âncoras internas)
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', e=>{
+      const id=a.getAttribute('href');
+      if(id.length>1){ e.preventDefault(); document.querySelector(id)?.scrollIntoView({behavior:'smooth'}) }
+    });
+  });
+</script>
+</body>
+</html>
