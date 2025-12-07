@@ -5,7 +5,7 @@
   <title>The Architect Universe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="The Architect Universe — the central portal connecting The Architect, Mindfax, Neurabyte and Finsage." />
-  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="../css/main.css" />
 </head>
 <body>
   <div class="page">
@@ -14,12 +14,10 @@
     <header class="site-header">
       <div class="nav-inner">
         <div class="brand">
-          <!-- LOGO PRINCIPAL – agora com a logo do Architect -->
           <img
-            src="mindfax-site/thearchitectuniverse/architect-avatar-logo.png"
+            src="../thecontinuum/Logo_Ultimate_2.png"
             alt="The Architect Universe"
             class="brand-logo"
-            style="height:112px;"
           />
           <div class="brand-text">
             <div class="brand-title">THE ARCHITECT UNIVERSE</div>
@@ -46,7 +44,7 @@
           muted
           loop
           playsinline
-          poster="assets/img/hero-bg-fallback.jpg"
+          poster="../thecontinuum/The Continuum_Mockup.png"
         >
           <source src="assets/video/hero-intro.mp4" type="video/mp4" />
         </video>
@@ -54,14 +52,42 @@
         <div class="hero-overlay"></div>
 
         <div class="hero-inner">
-          <div class="hero-avatar-shell">
-            <div class="hero-avatar-circle">
-              <img
-                src="assets/img/architect-avatar.png"
-                alt="The Architect Avatar"
-                class="hero-avatar-img"
-              />
+          <div class="hero-avatar-shell"
+               style="
+                 position: relative;
+                 width: min(360px, 40vw);
+                 aspect-ratio: 3 / 4;
+                 display: flex;
+                 align-items: flex-end;
+                 justify-content: center;
+               ">
+            <div
+              style="
+                position: absolute;
+                inset: 0;
+                clip-path: polygon(50% 0, 0 100%, 100% 100%);
+                background:
+                  radial-gradient(circle at 50% 0, rgba(72, 207, 255, 0.35), transparent 60%);
+                background-color: rgba(3, 6, 23, 0.9);
+                opacity: 0.9;
+                filter: blur(1px);
+              ">
             </div>
+
+            <img
+              src="architect-avatar.png"
+              alt="The Architect Avatar"
+              class="hero-avatar-img"
+              style="
+                position: relative;
+                height: 120%;
+                width: auto;
+                object-fit: contain;
+                background: transparent;
+                box-shadow: none;
+                filter: drop-shadow(0 0 22px rgba(72, 207, 255, 0.35));
+              "
+            />
           </div>
 
           <div class="hero-text-block">
@@ -81,6 +107,7 @@
                 <span class="btn-icon">▶</span>
                 <span>Watch the intro</span>
               </a>
+
               <a href="#cosmos" class="btn btn-ghost">
                 <span class="btn-icon">⭓</span>
                 <span>Enter the universe</span>
@@ -90,7 +117,7 @@
         </div>
       </section>
 
-      <!-- =============== SEÇÃO TRAILER (VIDEO APRESENTAÇÃO) =============== -->
+      <!-- =============== SEÇÃO TRAILER (YouTube) =============== -->
       <section class="section section-trailer" id="trailer">
         <div class="container">
           <div class="section-label">Presentation</div>
@@ -100,11 +127,10 @@
             why it exists, and why you are probably meeting it at the exact right time.
           </p>
 
-          <!-- Player em tamanho grande, formato padrão YouTube -->
-          <div class="trailer-frame" style="max-width: 960px; margin: 0 auto;">
+          <div class="trailer-frame" style="max-width: 900px; margin: 0 auto;">
             <div style="position: relative; width: 100%; padding-bottom: 56.25%;">
               <iframe
-                src="https://www.youtube.com/embed/Qav8AtEUeQU?autoplay=1&mute=1&controls=1&rel=0&modestbranding=1&showinfo=0"
+                src="https://www.youtube.com/embed/Qav8AtEUeQU?autoplay=1&mute=1&rel=0&modestbranding=1&controls=1&showinfo=0"
                 title="The Architect Universe Intro"
                 style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -112,6 +138,7 @@
               ></iframe>
             </div>
           </div>
+
         </div>
       </section>
 
@@ -127,13 +154,11 @@
           </p>
 
           <div class="cosmos-layout">
-            <!-- BLOCO THE ARCHITECT -->
             <article class="cosmos-center-card">
               <div class="cosmos-center-logo">
                 <img
-                  src="mindfax-site/thearchitectuniverse/architect-avatar-logo.png"
+                  src="../thecontinuum/Logo_Ultimate_2.png"
                   alt="The Architect"
-                  style="height:112px;"
                 />
               </div>
               <h3 class="cosmos-center-title">THE ARCHITECT</h3>
@@ -148,17 +173,15 @@
               </a>
             </article>
 
-            <!-- COLUNA COM OS TRÊS MUNDOS / LOGOS -->
             <div class="worlds-column" id="worlds">
 
               <article class="world-card world-mindfax">
                 <div class="world-header">
                   <div class="world-label">World I</div>
                   <img
-                    src="assets/img/logo-mindfax.svg"
+                    src="../thecontinuum/Logo_Ultimate_2.png"
                     alt="Mindfax"
                     class="world-logo"
-                    style="height:112px;"
                   />
                 </div>
                 <h3 class="world-title">Mindfax · The Cosmos</h3>
@@ -166,7 +189,7 @@
                   Black holes, nuclear risk, extinction, simulations, fragile civilizations. Mindfax is the
                   world where the sky stops being decoration and becomes a threat, a question and a teacher.
                 </p>
-                <a href="worlds/mindfax.html" class="world-link">
+                <a href="#" class="world-link">
                   Enter Mindfax ↗
                 </a>
               </article>
@@ -175,10 +198,9 @@
                 <div class="world-header">
                   <div class="world-label">World II</div>
                   <img
-                    src="mindfax-site/thearchitectuniverse/Logo 2.png"
+                    src="../thecontinuum/Logo_Ultimate_2.png"
                     alt="Neurabyte"
                     class="world-logo"
-                    style="height:112px;"
                   />
                 </div>
                 <h3 class="world-title">Neurabyte · The Mind</h3>
@@ -186,7 +208,7 @@
                   Cognitive architecture, attention firewalls, dopamine discipline. Neurabyte exists to keep
                   your brain from being hacked by a world engineered for addiction and paralysis.
                 </p>
-                <a href="worlds/neurabyte.html" class="world-link">
+                <a href="#" class="world-link">
                   Enter Neurabyte ↗
                 </a>
               </article>
@@ -195,10 +217,9 @@
                 <div class="world-header">
                   <div class="world-label">World III</div>
                   <img
-                    src="mindfax-site/thearchitectuniverse/finsage-logo-site.png"
+                    src="../thecontinuum/Logo_Ultimate_2.png"
                     alt="Finsage"
                     class="world-logo"
-                    style="height:112px;"
                   />
                 </div>
                 <h3 class="world-title">Finsage · The Matter</h3>
@@ -206,7 +227,7 @@
                   Money as stored time. Protocols for crypto, DeFi and survival. Finsage is where spreadsheets
                   and philosophy finally sit at the same table — and where inflation stops owning your years.
                 </p>
-                <a href="worlds/finsage.html" class="world-link">
+                <a href="#" class="world-link">
                   Enter Finsage ↗
                 </a>
               </article>
@@ -227,12 +248,12 @@
           </p>
 
           <div class="portals-grid">
-
+            <!-- EARLY EDITION -->
             <article class="portal-card">
               <div class="portal-media">
                 <img
-                  src="assets/img/mockups/architect-early-mockup.png"
-                  alt="The Architect — Early Edition mockup"
+                  src="../thecontinuum/Early_Edition_Mocup.png"
+                  alt="The Architect — Early Edition"
                 />
               </div>
               <div class="portal-body">
@@ -242,15 +263,18 @@
                   A manifesto born from collapse and spiritual work. The Architect steps out of hiding and
                   talks directly to those who are on the edge and still breathing.
                 </p>
-                <a href="/architect-early/" class="portal-link">Get this portal ↗</a>
+                <a href="https://mindfax.art/architect-early/" class="portal-link" target="_blank">
+                  Get this portal ↗
+                </a>
               </div>
             </article>
 
+            <!-- THE CONTINUUM -->
             <article class="portal-card">
               <div class="portal-media">
                 <img
-                  src="assets/img/mockups/continuum-mockup.png"
-                  alt="The Continuum mockup"
+                  src="../thecontinuum/The Continuum_Mockup.png"
+                  alt="The Continuum"
                 />
               </div>
               <div class="portal-body">
@@ -260,15 +284,18 @@
                   A metaphysical framework disguised as a small book: consciousness as software that changes
                   density, not as something that switches on and off.
                 </p>
-                <a href="/thecontinuum/continuum.html" class="portal-link">Get this portal ↗</a>
+                <a href="https://mindfax.art/thecontinuum/" class="portal-link" target="_blank">
+                  Get this portal ↗
+                </a>
               </div>
             </article>
 
+            <!-- FREEDOM PROTOCOL -->
             <article class="portal-card">
               <div class="portal-media">
                 <img
-                  src="assets/img/mockups/freedom-protocol-mockup.png"
-                  alt="The Freedom Protocol mockup"
+                  src="../thecontinuum/Early_Edition_Mocup.png"
+                  alt="The Freedom Protocol"
                 />
               </div>
               <div class="portal-body">
@@ -278,15 +305,18 @@
                   System, money, faith and language crashing into each other. Freedom Protocol is a blade
                   against the idea that you must remain spiritually and financially domesticated.
                 </p>
-                <a href="#store" class="portal-link">Get this portal ↗</a>
+                <a href="#store" class="portal-link">
+                  Get this portal ↗
+                </a>
               </div>
             </article>
 
+            <!-- TIME -->
             <article class="portal-card">
               <div class="portal-media">
                 <img
-                  src="assets/img/mockups/time-mockup.png"
-                  alt="TIME mockup"
+                  src="../thecontinuum/The Continuum_Mockup.png"
+                  alt="TIME"
                 />
               </div>
               <div class="portal-body">
@@ -296,15 +326,18 @@
                   Time as the supreme moral resource. Every decision is a temporal trade. TIME unifies
                   philosophy, economy, neurobiology and spirituality into a single thesis.
                 </p>
-                <a href="#store" class="portal-link">Coming soon …</a>
+                <a href="#store" class="portal-link">
+                  Coming soon …
+                </a>
               </div>
             </article>
 
+            <!-- FRACTAL TRILOGY -->
             <article class="portal-card">
               <div class="portal-media">
                 <img
-                  src="assets/img/mockups/fractal-mockup.png"
-                  alt="The Fractal Trilogy mockup"
+                  src="../thecontinuum/Early_Edition_Mocup.png"
+                  alt="The Fractal Trilogy"
                 />
               </div>
               <div class="portal-body">
@@ -314,7 +347,9 @@
                   Twelve girls, twelve cultures, a hidden neurolinguistic engine. A videogame disguised as
                   literature, designed to train you to carry pain without breaking.
                 </p>
-                <a href="#store" class="portal-link">In development …</a>
+                <a href="#store" class="portal-link">
+                  In development …
+                </a>
               </div>
             </article>
 
@@ -357,21 +392,20 @@
         </div>
       </section>
 
-      <!-- =============== LOJA (SLOT para integrar com mindfax.art) =============== -->
+      <!-- =============== LOJA =============== -->
       <section class="section section-store" id="store">
         <div class="container">
           <div class="section-label">Store</div>
           <h2 class="section-title">Entry portals available now</h2>
           <p class="section-subtitle">
-            Connect these buttons to your existing Mindfax store (Payhip, site, etc.). Each click should
-            open the real sales page for Early Edition, The Continuum and future works.
+            Each button leads to the official Mindfax pages for the core works of The Architect Universe.
           </p>
           <div class="store-actions">
-            <a href="/architect-early/" class="btn btn-primary">
+            <a href="https://mindfax.art/architect-early/" class="btn btn-primary" target="_blank">
               <span class="btn-icon">↗</span>
               <span>Get Early Edition</span>
             </a>
-            <a href="/thecontinuum/continuum.html" class="btn btn-ghost">
+            <a href="https://mindfax.art/thecontinuum/" class="btn btn-ghost" target="_blank">
               <span class="btn-icon">↗</span>
               <span>Get The Continuum</span>
             </a>
