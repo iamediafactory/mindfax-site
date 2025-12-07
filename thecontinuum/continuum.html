@@ -45,12 +45,14 @@ nav{display:flex; align-items:center; justify-content:space-between; padding:12p
 .btn.gold{background:linear-gradient(120deg,#2a2200,#1a1400); border-color:#3a2c00; color:#FCEFB0}
 .btn .dot{width:10px; height:10px; border-radius:50%; background:var(--gold); box-shadow:0 0 16px rgba(255,215,0,.55)}
 
-/* Sections - sprite base (para s1, s2, s4, s5) */
+/* Sections with sprite */
 .section{
   position:relative; min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center;
-  background-image:url("E-Book_Site_Page%202.png"); /* sprite vertical principal */
-  background-repeat:no-repeat; background-size:100% 500%; /* 5 “fatias” agora */
-  background-attachment:fixed; isolation:isolate;
+  background-image:url("E-Book_Site_Page 2.png");
+  background-repeat:no-repeat; 
+  background-size:100% 500%;
+  background-attachment:fixed;
+  isolation:isolate;
 }
 .section::after{
   content:""; position:absolute; inset:0;
@@ -60,27 +62,32 @@ nav{display:flex; align-items:center; justify-content:space-between; padding:12p
     linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.62));
   pointer-events:none;
 }
+
 .panel{
   position:relative; z-index:2; backdrop-filter:blur(6px);
   border:1px solid var(--brd); background:var(--glass);
   padding:28px 26px; border-radius:var(--radius); box-shadow:var(--shadow); width:min(840px,92%);
 }
+
 .kicker{color:#C8CFE6; font-weight:600; letter-spacing:.12em; margin-bottom:8px}
 h2{font-family:Cinzel,serif; font-size:40px; margin:0 0 10px; color:var(--gold); text-shadow:0 8px 24px rgba(0,0,0,.45)}
 .lead{color:#DDE3F7; font-size:18px; margin:6px 0 10px}
 .note{color:#EAEAF5; font-size:16px; opacity:.9}
 
-/* Background positions (sprite) */
+/* Sprite positions */
 .s1{ background-position:center 0% }
 .s2{ background-position:center 25% }
 .s4{ background-position:center 75% }
 .s5{ background-position:center 100% }
 
-/* Seção especial (s3) com imagem própria */
+/* Special section (s3) */
 .section.s3{
-  background-image:url("E-Book_Site_Page continuum.png"); /* sua nova arte */
-  background-size:cover; background-position:center 50%; background-attachment:fixed;
+  background-image:url("E-Book_Site_Page continuum.png");
+  background-size:cover;
+  background-position:center 50%;
+  background-attachment:fixed;
 }
+
 .section.s3::after{
   content:""; position:absolute; inset:0;
   background:
@@ -112,10 +119,8 @@ footer{padding:40px 0 60px; color:#A2A8BD; border-top:1px solid rgba(255,255,255
   <div class="wrap">
     <nav>
       <div class="brand">
-        <!-- Logo está na mesma pasta -->
         <img src="Logo_Ultimate_2.png" alt="MINDFAX logo">
         <div class="navlinks">
-          <!-- Volta para o portal principal (index.html na raiz do repo) -->
           <a href="../index.html#origin">Origin</a>
           <a href="../index.html#continuum">Continuum</a>
           <a href="../index.html#architect">Architect</a>
@@ -123,7 +128,7 @@ footer{padding:40px 0 60px; color:#A2A8BD; border-top:1px solid rgba(255,255,255
       </div>
       <div style="display:flex;gap:10px;flex-wrap:wrap">
         <a class="btn" href="../index.html">Back to Origin</a>
-        <a class="btn gold" href="https://payhip.com/b/62ZIw" target="_blank" rel="noopener noreferrer" aria-label="Buy Artifact — The Continuum on Payhip">
+        <a class="btn gold" href="https://payhip.com/b/62ZIw" target="_blank" rel="noopener noreferrer">
           <span class="dot"></span> Acquire Now — $197
         </a>
       </div>
@@ -131,8 +136,7 @@ footer{padding:40px 0 60px; color:#A2A8BD; border-top:1px solid rgba(255,255,255
   </div>
 </header>
 
-<!-- SECTION I — THE VISION -->
-<section class="section s1" role="region" aria-label="Vision">
+<section class="section s1">
   <div class="panel reveal">
     <div class="kicker">FOR THOSE WHO THINK IN LIGHT</div>
     <h2>Artifact — The Continuum (First Edition)</h2>
@@ -141,8 +145,7 @@ footer{padding:40px 0 60px; color:#A2A8BD; border-top:1px solid rgba(255,255,255
   </div>
 </section>
 
-<!-- SECTION II — THE PHILOSOPHY OF SCARCITY -->
-<section class="section s2" role="region" aria-label="Philosophy of Scarcity">
+<section class="section s2">
   <div class="panel reveal">
     <h2>THE PHILOSOPHY OF SCARCITY</h2>
     <p class="lead" style="color:var(--cyan);opacity:.9">Rarity is not absence — it is precision.</p>
@@ -155,8 +158,7 @@ footer{padding:40px 0 60px; color:#A2A8BD; border-top:1px solid rgba(255,255,255
   </div>
 </section>
 
-<!-- SECTION III — THE VALUE OF RARITY -->
-<section class="section s3" role="region" aria-label="Value of Rarity">
+<section class="section s3">
   <div class="panel reveal">
     <h2>THE VALUE OF RARITY</h2>
     <p class="lead" style="color:var(--cyan);opacity:.9">
@@ -174,8 +176,7 @@ footer{padding:40px 0 60px; color:#A2A8BD; border-top:1px solid rgba(255,255,255
   </div>
 </section>
 
-<!-- SECTION IV — THE LEDGER OF LIGHT -->
-<section class="section s4" role="region" aria-label="Ledger of Light">
+<section class="section s4">
   <div class="panel reveal">
     <h2>THE LEDGER OF LIGHT</h2>
     <p class="lead" style="color:var(--cyan);opacity:.9">The Registry of the Continuum</p>
@@ -190,8 +191,7 @@ footer{padding:40px 0 60px; color:#A2A8BD; border-top:1px solid rgba(255,255,255
   </div>
 </section>
 
-<!-- SECTION V — THE PROMISE -->
-<section class="section s5" id="join" role="region" aria-label="The Promise">
+<section class="section s5" id="join">
   <div class="panel reveal">
     <h2>THE PROMISE</h2>
     <p class="lead" style="color:var(--cyan);opacity:.9">A Covenant Between Intelligence and Eternity</p>
@@ -202,12 +202,13 @@ footer{padding:40px 0 60px; color:#A2A8BD; border-top:1px solid rgba(255,255,255
 
     <div class="kicker" style="margin-top:6px">THE ARCHITECT — Curator of the Continuum</div>
     <div style="height:1px; width:120px; margin:6px auto 2px; background:var(--gold); opacity:.9"></div>
+
     <div style="font-family:Cinzel,serif; letter-spacing:.12em; color:var(--gold); opacity:.95; margin-top:8px">
       Once the 1,000 units are claimed, the Continuum closes — forever.
     </div>
 
     <div style="margin-top:20px;display:flex;justify-content:center">
-      <a class="btn gold" href="https://payhip.com/b/62ZIw" target="_blank" rel="noopener noreferrer" aria-label="Secure checkout on Payhip">
+      <a class="btn gold" href="https://payhip.com/b/62ZIw" target="_blank" rel="noopener noreferrer">
         <span class="dot"></span> Acquire Now — $197
       </a>
     </div>
@@ -229,11 +230,15 @@ footer{padding:40px 0 60px; color:#A2A8BD; border-top:1px solid rgba(255,255,255
 
 <script>
 const obs=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); }});
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('in');
+      obs.unobserve(e.target);
+    }
+  });
 },{threshold:.18});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
 
 </body>
 </html>
-
