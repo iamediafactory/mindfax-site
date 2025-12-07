@@ -48,7 +48,7 @@ nav{display:flex; align-items:center; justify-content:space-between; padding:12p
 /* Sections - sprite base (para s1, s2, s4, s5) */
 .section{
   position:relative; min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center;
-  background-image:url("../E-Book_Site_Page%202.png"); /* sprite vertical principal */
+  background-image:url("E-Book_Site_Page%202.png"); /* sprite vertical principal */
   background-repeat:no-repeat; background-size:100% 500%; /* 5 “fatias” agora */
   background-attachment:fixed; isolation:isolate;
 }
@@ -78,7 +78,7 @@ h2{font-family:Cinzel,serif; font-size:40px; margin:0 0 10px; color:var(--gold);
 
 /* Seção especial (s3) com imagem própria */
 .section.s3{
-  background-image:url("../E-Book_Site_Page continuum.png"); /* sua nova arte */
+  background-image:url("E-Book_Site_Page continuum.png"); /* sua nova arte */
   background-size:cover; background-position:center 50%; background-attachment:fixed;
 }
 .section.s3::after{
@@ -112,17 +112,17 @@ footer{padding:40px 0 60px; color:#A2A8BD; border-top:1px solid rgba(255,255,255
   <div class="wrap">
     <nav>
       <div class="brand">
-        <!-- Logo agora sobe um nível -->
-        <img src="../Logo_Ultimate_2.png" alt="MINDFAX logo">
+        <!-- Logo está na mesma pasta -->
+        <img src="Logo_Ultimate_2.png" alt="MINDFAX logo">
         <div class="navlinks">
-          <!-- Links voltando para o index.html na raiz do site -->
-          <a href="../../index.html#origin">Origin</a>
-          <a href="../../index.html#continuum">Continuum</a>
-          <a href="../../index.html#architect">Architect</a>
+          <!-- Volta para o portal principal (index.html na raiz do repo) -->
+          <a href="../index.html#origin">Origin</a>
+          <a href="../index.html#continuum">Continuum</a>
+          <a href="../index.html#architect">Architect</a>
         </div>
       </div>
       <div style="display:flex;gap:10px;flex-wrap:wrap">
-        <a class="btn" href="../../index.html">Back to Origin</a>
+        <a class="btn" href="../index.html">Back to Origin</a>
         <a class="btn gold" href="https://payhip.com/b/62ZIw" target="_blank" rel="noopener noreferrer" aria-label="Buy Artifact — The Continuum on Payhip">
           <span class="dot"></span> Acquire Now — $197
         </a>
@@ -221,7 +221,7 @@ footer{padding:40px 0 60px; color:#A2A8BD; border-top:1px solid rgba(255,255,255
 
 <footer>
   <div class="wrap" style="text-align:center">
-    <img src="../Logo_Ultimate_2.png" alt="MINDFAX" style="height:136px;width:auto;opacity:.9;margin-bottom:12px">
+    <img src="Logo_Ultimate_2.png" alt="MINDFAX" style="height:136px;width:auto;opacity:.9;margin-bottom:12px">
     <div style="color:#A2A8BD">© 2025 MINDFAX · All Rights Reserved · mindfax.art</div>
     <div style="color:#A2A8BD">Contact: iamediafactory.studio@gmail.com</div>
   </div>
