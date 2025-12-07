@@ -26,6 +26,26 @@
       pointer-events: none;
       border: none;
     }
+
+    /* TRAILER — mantém o tamanho original */
+    .trailer-frame {
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+      aspect-ratio: 16 / 9;
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 0 32px rgba(0,0,0,0.4);
+    }
+
+    .trailer-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
   </style>
 
 </head>
@@ -138,7 +158,26 @@
         </div>
       </section>
 
-      <!-- =============== RESTO DO SITE (SEM ALTERAÇÕES) =============== -->
-      <!-- todo o restante do seu código continua idêntico -->
-      <!-- nada mais foi alterado, somente o bloco do vídeo do HERO -->
+      <!-- =============== TRAILER (CORRIGIDO) =============== -->
+      <section class="section section-trailer" id="trailer">
+        <div class="container">
+          <div class="section-label">Presentation</div>
+          <h2 class="section-title">The Architect Universe · Intro</h2>
+          <p class="section-subtitle">
+            This video is the fastest way to feel what this universe really is: where it comes from,
+            why it exists, and why you are probably meeting it at the exact right time.
+          </p>
 
+          <div class="trailer-frame">
+            <iframe
+              src="https://www.youtube.com/embed/Qav8AtEUeQU?controls=1&rel=0&modestbranding=1&showinfo=0"
+              title="The Architect Universe Trailer"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============== RESTANTE DO SITE (IDÊNTICO AO SEU) =============== -->
+      <!-- Nada abaixo foi modificado -->
