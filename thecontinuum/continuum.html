@@ -1,1 +1,239 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Artifact — The Continuum (First Edition) · MINDFAX</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#0A0B10" />
+<meta name="description" content="Artifact — The Continuum (First Edition). A finite release of 1,000 unnumbered units where knowledge becomes immortality. MINDFAX." />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:#0A0B10; --text:#EAEAF5; --muted:#A2A8BD;
+  --gold:#FFD77A; --cyan:#00CFFF;
+  --glass:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  --brd:rgba(255,255,255,.10); --radius:22px; --shadow:0 20px 60px rgba(0,0,0,.45);
+}
+
+/* Base */
+*{box-sizing:border-box}
+html,body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+  line-height:1.6;
+}
+a{color:var(--cyan); text-decoration:none}
+.wrap{width:min(1100px,92%); margin:0 auto}
+
+/* Header */
+header{
+  position:sticky; top:0; z-index:40; backdrop-filter:saturate(160%) blur(10px);
+  background:linear-gradient(180deg, rgba(10,11,16,.92), rgba(10,11,16,.65));
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+nav{display:flex; align-items:center; justify-content:space-between; padding:12px 0}
+.brand{display:flex; align-items:center; gap:12px}
+.brand img{height:70px; width:auto; display:block}
+.navlinks a{margin-left:14px; color:#A2A8BD; font-size:14px}
+
+/* Buttons */
+.btn{
+  display:inline-flex; align-items:center; gap:10px; padding:14px 22px; border-radius:14px; font-weight:600;
+  border:1px solid rgba(255,255,255,.09); background:var(--glass); box-shadow:var(--shadow);
+}
+.btn.gold{background:linear-gradient(120deg,#2a2200,#1a1400); border-color:#3a2c00; color:#FCEFB0}
+.btn .dot{width:10px; height:10px; border-radius:50%; background:var(--gold); box-shadow:0 0 16px rgba(255,215,0,.55)}
+
+/* Sections - sprite base (para s1, s2, s4, s5) */
+.section{
+  position:relative; min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center;
+  background-image:url("E-Book_Site_Page%202.png"); /* sprite vertical principal */
+  background-repeat:no-repeat; background-size:100% 500%; /* 5 “fatias” agora */
+  background-attachment:fixed; isolation:isolate;
+}
+.section::after{
+  content:""; position:absolute; inset:0;
+  background:
+    radial-gradient(1100px 700px at 50% -10%, rgba(136,136,255,.16), transparent 60%),
+    radial-gradient(900px 540px at 10% 100%, rgba(0,207,255,.10), transparent 60%),
+    linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.62));
+  pointer-events:none;
+}
+.panel{
+  position:relative; z-index:2; backdrop-filter:blur(6px);
+  border:1px solid var(--brd); background:var(--glass);
+  padding:28px 26px; border-radius:var(--radius); box-shadow:var(--shadow); width:min(840px,92%);
+}
+.kicker{color:#C8CFE6; font-weight:600; letter-spacing:.12em; margin-bottom:8px}
+h2{font-family:Cinzel,serif; font-size:40px; margin:0 0 10px; color:var(--gold); text-shadow:0 8px 24px rgba(0,0,0,.45)}
+.lead{color:#DDE3F7; font-size:18px; margin:6px 0 10px}
+.note{color:#EAEAF5; font-size:16px; opacity:.9}
+
+/* Background positions (sprite) */
+.s1{ background-position:center 0% }
+.s2{ background-position:center 25% }
+.s4{ background-position:center 75% }
+.s5{ background-position:center 100% }
+
+/* Seção especial (s3) com imagem própria */
+.section.s3{
+  background-image:url("E-Book_Site_Page continuum.png"); /* sua nova arte */
+  background-size:cover; background-position:center 50%; background-attachment:fixed;
+}
+.section.s3::after{
+  content:""; position:absolute; inset:0;
+  background:
+    radial-gradient(1200px 700px at 50% -10%, rgba(255,215,122,0.18), transparent 60%),
+    linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0.55));
+  pointer-events:none;
+}
+
+/* Animation */
+.reveal{opacity:0; transform:translateY(14px); transition:opacity .9s ease, transform .9s ease}
+.reveal.in{opacity:1; transform:none}
+
+/* Footer */
+footer{padding:40px 0 60px; color:#A2A8BD; border-top:1px solid rgba(255,255,255,.06); text-align:center}
+
+/* Mobile */
+@media (max-width:900px){
+  h2{font-size:30px}
+  .navlinks{display:none}
+  .brand img{height:58px}
+  .section{background-attachment:scroll}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <div class="brand">
+        <!-- Logo está na mesma pasta -->
+        <img src="Logo_Ultimate_2.png" alt="MINDFAX logo">
+        <div class="navlinks">
+          <!-- Volta para o portal principal (index.html na raiz do repo) -->
+          <a href="../index.html#origin">Origin</a>
+          <a href="../index.html#continuum">Continuum</a>
+          <a href="../index.html#architect">Architect</a>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn" href="../index.html">Back to Origin</a>
+        <a class="btn gold" href="https://payhip.com/b/62ZIw" target="_blank" rel="noopener noreferrer" aria-label="Buy Artifact — The Continuum on Payhip">
+          <span class="dot"></span> Acquire Now — $197
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- SECTION I — THE VISION -->
+<section class="section s1" role="region" aria-label="Vision">
+  <div class="panel reveal">
+    <div class="kicker">FOR THOSE WHO THINK IN LIGHT</div>
+    <h2>Artifact — The Continuum (First Edition)</h2>
+    <p class="lead" style="color:var(--cyan);opacity:.9">Where Knowledge Becomes Immortality</p>
+    <p class="note">First Edition: a finite release of 1,000 unnumbered units — once claimed, the Continuum closes.</p>
+  </div>
+</section>
+
+<!-- SECTION II — THE PHILOSOPHY OF SCARCITY -->
+<section class="section s2" role="region" aria-label="Philosophy of Scarcity">
+  <div class="panel reveal">
+    <h2>THE PHILOSOPHY OF SCARCITY</h2>
+    <p class="lead" style="color:var(--cyan);opacity:.9">Rarity is not absence — it is precision.</p>
+    <p class="note" style="max-width:760px;margin:8px auto 0">
+      In an infinite ocean of information, meaning survives only where form is preserved.<br/>
+      Scarcity gives shape to value — it defines the boundary between signal and noise.<br/>
+      This first edition embraces pure scarcity: exactly 1,000 units, with no serial numbers or tiers.<br/>
+      To acquire one is to commit to signal over noise.
+    </p>
+  </div>
+</section>
+
+<!-- SECTION III — THE VALUE OF RARITY -->
+<section class="section s3" role="region" aria-label="Value of Rarity">
+  <div class="panel reveal">
+    <h2>THE VALUE OF RARITY</h2>
+    <p class="lead" style="color:var(--cyan);opacity:.9">
+      Beyond price — this is not a transaction, but an initiation.
+    </p>
+    <p class="note" style="max-width:780px;margin:8px auto 14px">
+      The Continuum is not a publication. It is a living artifact — a synthesis of philosophy, design and cognition.
+      Each edition represents the materialization of thought itself: a conceptual artwork that bridges intellect and eternity.
+      <br><br>
+      Priced as art, not content, its value resides in what it preserves: the discipline of rare attention in an era of noise.
+      To hold an Artifact is to participate in a lineage of minds that still choose to think — deeply, deliberately, and against the current.
+      <br><br>
+      The first edition is not reproduced, reissued or discounted. It is the origin point — finite, verified, and irrevocably sealed into the Continuum.
+    </p>
+  </div>
+</section>
+
+<!-- SECTION IV — THE LEDGER OF LIGHT -->
+<section class="section s4" role="region" aria-label="Ledger of Light">
+  <div class="panel reveal">
+    <h2>THE LEDGER OF LIGHT</h2>
+    <p class="lead" style="color:var(--cyan);opacity:.9">The Registry of the Continuum</p>
+    <p class="note" style="max-width:780px;margin:8px auto 14px">
+      The Ledger records the first edition as a closed, finite release — 1,000 units total, unnumbered.
+      Ownership is stewardship: a quiet pact to preserve attention as something sacred.
+    </p>
+    <div style="border:1px solid rgba(255,255,255,.10); border-radius:18px; padding:14px; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015)); max-width:860px; margin:0 auto">
+      <div style="border-top:1px solid rgba(255,215,0,.22); margin:-14px -14px 10px -14px"></div>
+      <div style="color:#DDE3F7; opacity:.95; font-weight:500">First Edition — 1,000 Units (Unnumbered) · Verified by the Architect · Active in Continuum</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION V — THE PROMISE -->
+<section class="section s5" id="join" role="region" aria-label="The Promise">
+  <div class="panel reveal">
+    <h2>THE PROMISE</h2>
+    <p class="lead" style="color:var(--cyan);opacity:.9">A Covenant Between Intelligence and Eternity</p>
+    <p class="note" style="max-width:780px;margin:8px auto 14px">
+      This archive is not a marketplace. It is a covenant. When you acquire a unit, you join a lineage —
+      one that believes knowledge is sacred, consciousness is art, and scarcity is not exclusion, but devotion.
+    </p>
+
+    <div class="kicker" style="margin-top:6px">THE ARCHITECT — Curator of the Continuum</div>
+    <div style="height:1px; width:120px; margin:6px auto 2px; background:var(--gold); opacity:.9"></div>
+    <div style="font-family:Cinzel,serif; letter-spacing:.12em; color:var(--gold); opacity:.95; margin-top:8px">
+      Once the 1,000 units are claimed, the Continuum closes — forever.
+    </div>
+
+    <div style="margin-top:20px;display:flex;justify-content:center">
+      <a class="btn gold" href="https://payhip.com/b/62ZIw" target="_blank" rel="noopener noreferrer" aria-label="Secure checkout on Payhip">
+        <span class="dot"></span> Acquire Now — $197
+      </a>
+    </div>
+
+    <p class="note" style="max-width:780px;margin:14px auto 0;opacity:.8;text-align:center">
+      Secure checkout via Payhip · PayPal (Credit & Debit Cards · USD)<br/>
+      Instant download upon confirmation · Limited to 1,000 digital units.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="text-align:center">
+    <img src="Logo_Ultimate_2.png" alt="MINDFAX" style="height:136px;width:auto;opacity:.9;margin-bottom:12px">
+    <div style="color:#A2A8BD">© 2025 MINDFAX · All Rights Reserved · mindfax.art</div>
+    <div style="color:#A2A8BD">Contact: iamediafactory.studio@gmail.com</div>
+  </div>
+</footer>
+
+<script>
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); }});
+},{threshold:.18});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+
+</body>
+</html>
 
