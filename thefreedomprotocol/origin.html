@@ -1,1 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>The Freedom Protocol — ORIGIN · MINDFAX</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#0A0B10" />
+<meta name="description" content="The Freedom Protocol — ORIGIN. A premium digital artifact: a cinematic field manual for inner sovereignty in a collapsing economic world." />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:#0A0B10; --text:#EAEAF5; --muted:#A2A8BD;
+  --gold:#FFB86C; --cyan:#00CFFF;
+  --glass:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  --brd:rgba(255,255,255,.10); --radius:22px; --shadow:0 20px 60px rgba(0,0,0,.45);
+}
+
+/* Base */
+*{box-sizing:border-box}
+html,body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+  line-height:1.6;
+}
+a{color:var(--cyan); text-decoration:none}
+.wrap{width:min(1100px,92%); margin:0 auto}
+
+/* Header */
+header{
+  position:sticky; top:0; z-index:40; backdrop-filter:saturate(160%) blur(10px);
+  background:linear-gradient(180deg, rgba(10,11,16,.92), rgba(10,11,16,.65));
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+nav{display:flex; align-items:center; justify-content:space-between; padding:12px 0}
+.brand{display:flex; align-items:center; gap:12px}
+.brand img{height:70px; width:auto; display:block}
+.navlinks a{margin-left:14px; color:#A2A8BD; font-size:14px}
+
+/* Buttons */
+.btn{
+  display:inline-flex; align-items:center; gap:10px; padding:14px 22px; border-radius:14px; font-weight:600;
+  border:1px solid rgba(255,255,255,.09); background:var(--glass); box-shadow:var(--shadow);
+}
+.btn.gold{background:linear-gradient(120deg,#2a1200,#1a0800); border-color:#5a2c00; color:#FEE8C0}
+.btn .dot{width:10px; height:10px; border-radius:50%; background:var(--gold); box-shadow:0 0 16px rgba(255,184,108,.7)}
+
+/* Sections - sprite com 5 faixas */
+.section{
+  position:relative; min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center;
+  background-image:url("Freedom Protocol Site 2.png");
+  background-repeat:no-repeat;
+  background-size:100% 500%;  /* 5 “fatias” verticais */
+  background-attachment:fixed;
+  isolation:isolate;
+}
+.section::after{
+  content:""; position:absolute; inset:0;
+  background:
+    radial-gradient(1100px 700px at 50% -10%, rgba(255,184,108,.16), transparent 60%),
+    radial-gradient(900px 540px at 10% 100%, rgba(0,207,255,.12), transparent 60%),
+    linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.62));
+  pointer-events:none;
+}
+.panel{
+  position:relative; z-index:2; backdrop-filter:blur(6px);
+  border:1px solid var(--brd); background:var(--glass);
+  padding:28px 26px; border-radius:var(--radius); box-shadow:var(--shadow); width:min(840px,92%);
+}
+.kicker{color:#F7C2B5; font-weight:600; letter-spacing:.18em; margin-bottom:8px; text-transform:uppercase; font-size:12px}
+h2{font-family:Cinzel,serif; font-size:34px; margin:0 0 10px; color:var(--gold); text-shadow:0 8px 24px rgba(0,0,0,.45)}
+.lead{color:#DDE3F7; font-size:17px; margin:6px 0 10px}
+.note{color:#EAEAF5; font-size:15px; opacity:.9}
+
+/* Background positions */
+.s1{ background-position:center 0% }
+.s2{ background-position:center 25% }
+.s3{ background-position:center 50% }
+.s4{ background-position:center 75% }
+.s5{ background-position:center 100% }
+
+/* Animation */
+.reveal{opacity:0; transform:translateY(14px); transition:opacity .9s ease, transform .9s ease}
+.reveal.in{opacity:1; transform:none}
+
+/* Footer */
+footer{padding:40px 0 60px; color:#A2A8BD; border-top:1px solid rgba(255,255,255,.06); text-align:center}
+
+/* Mobile */
+@media (max-width:900px){
+  h2{font-size:28px}
+  .navlinks{display:none}
+  .brand img{height:58px}
+  .section{background-attachment:scroll}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <div class="brand">
+        <img src="Logo_Ultimate_2.png" alt="MINDFAX logo">
+        <div class="navlinks">
+          <a href="index.html#origin">Overview</a>
+          <a href="index.html#prison">Prison</a>
+          <a href="index.html#break">Break</a>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn" href="index.html">Back to Overview</a>
+        <a class="btn gold" href="https://payhip.com/b/TmvM2" target="_blank" rel="noopener noreferrer" aria-label="Buy The Freedom Protocol — ORIGIN on Payhip">
+          <span class="dot"></span> Enter the Protocol — $97
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- SECTION I — THE VISION -->
+<section class="section s1" role="region" aria-label="Vision">
+  <div class="panel reveal">
+    <div class="kicker">THE FREEDOM PROTOCOL · ORIGIN MANUSCRIPT</div>
+    <h2>From economic collapse to inner sovereignty.</h2>
+    <p class="lead" style="color:var(--cyan);opacity:.9">
+      This book began as a silent investigation into why modern economies keep people exhausted, obedient and afraid.
+    </p>
+    <p class="note">
+      The Origin Manuscript turns that investigation into a protocol. It reads like a cinematic essay on inflation,
+      debt and manipulation — and then quietly rewires how you perceive power, value and your own time.
+      Not a motivational speech, not a productivity manual: a philosophical weapon built for those who refuse to live sedated.
+    </p>
+  </div>
+</section>
+
+<!-- SECTION II — ANATOMY OF CONTROL -->
+<section class="section s2" role="region" aria-label="Anatomy of Control">
+  <div class="panel reveal">
+    <div class="kicker">ANATOMY OF CONTROL</div>
+    <h2>The system was not built for your freedom — it was built for your compliance.</h2>
+    <p class="lead" style="color:var(--cyan);opacity:.9">
+      Debt, inflation, distraction and emotional overload form a single architecture: a soft cage that feels normal.
+    </p>
+    <p class="note" style="max-width:760px;margin:8px auto 0">
+      The Freedom Protocol maps how this cage is assembled. It shows how money is weaponized through inflation, how fear
+      is recycled as policy, and how algorithms learn your weaknesses faster than you do.
+      Once you see the pattern, you can no longer pretend it is accidental.  
+      Clarity is the first act of rebellion.
+    </p>
+  </div>
+</section>
+
+<!-- SECTION III — THE INNER MAP -->
+<section class="section s3" role="region" aria-label="Inner Map">
+  <div class="panel reveal">
+    <div class="kicker">THE INNER MAP OF THE PROTOCOL</div>
+    <h2>Freedom is not a feeling. It’s a sequence.</h2>
+    <p class="lead" style="color:var(--cyan);opacity:.9">
+      ORIGIN organizes your internal world into fields: perception, belief, emotion, behavior and economic reality.
+    </p>
+    <p class="note" style="max-width:780px;margin:8px auto 14px">
+      Inside the manuscript, each field is treated as a precise layer of the same machine.
+      You will see how a single belief can distort an entire financial life, how a childhood script locks you into
+      underpricing yourself, how fear of uncertainty keeps you employed by systems you no longer respect.
+      Page by page, the map reveals where your autonomy was traded away — and how to reclaim it without burning your life down.
+    </p>
+  </div>
+</section>
+
+<!-- SECTION IV — HOW THE PROTOCOL OPERATES -->
+<section class="section s4" role="region" aria-label="How the Protocol Operates">
+  <div class="panel reveal">
+    <div class="kicker">FROM MANUSCRIPT TO MOVEMENT</div>
+    <h2>A protocol you carry, not a slogan you repeat.</h2>
+    <p class="lead" style="color:var(--cyan);opacity:.9">
+      ORIGIN is structured to be re-read as a field manual: you return to it every time you hit a new wall.
+    </p>
+    <p class="note" style="max-width:780px;margin:8px auto 14px">
+      The work gives you practical sequences:
+      <br>• how to detect when you are negotiating from fear instead of clarity;
+      <br>• how to exit economic spirals that keep you busy but not free;
+      <br>• how to rebuild standards, boundaries and prices from a place of inner authority.
+      <br><br>
+      This is not therapy, not coaching, not “mindset tips”.
+      It is an operating system for sovereign adults in a collapsing world.
+    </p>
+  </div>
+</section>
+
+<!-- SECTION V — THE PROMISE / CTA -->
+<section class="section s5" id="join" role="region" aria-label="The Promise">
+  <div class="panel reveal">
+    <div class="kicker">ORIGIN · FIRST EDITION</div>
+    <h2>A finite protocol for those who will not outsource their freedom.</h2>
+    <p class="lead" style="color:var(--cyan);opacity:.9">
+      The Origin Manuscript is released as a premium digital artifact — priced as philosophy and design, not as disposable content.
+    </p>
+    <p class="note" style="max-width:780px;margin:8px auto 14px">
+      When you acquire The Freedom Protocol — ORIGIN, you are not buying a feeling or a promise of quick change.
+      You are committing to a different way of reading your life: one where you no longer confuse survival with freedom.
+      This is a covenant between your intelligence and your future self — and between you and a small lineage of minds
+      who refuse to live on autopilot.
+    </p>
+
+    <div style="margin-top:18px;display:flex;justify-content:center">
+      <a class="btn gold" href="https://payhip.com/b/TmvM2" target="_blank" rel="noopener noreferrer" aria-label="Secure checkout on Payhip">
+        <span class="dot"></span> Enter the Protocol — $97
+      </a>
+    </div>
+
+    <p class="note" style="max-width:780px;margin:14px auto 0;opacity:.8;text-align:center">
+      Secure checkout via Payhip · PayPal / Credit & Debit Cards (USD).<br/>
+      Instant PDF download upon confirmation · First Edition digital artifact.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="text-align:center">
+    <img src="Logo_Ultimate_2.png" alt="MINDFAX" style="height:120px;width:auto;opacity:.9;margin-bottom:12px">
+    <div style="color:#A2A8BD">© 2025 MINDFAX · IA Media Factory Publishing™ · mindfax.art</div>
+    <div style="color:#A2A8BD">Contact: iamediafactory.studio@gmail.com</div>
+  </div>
+</footer>
+
+<script>
+// IntersectionObserver para animação suave
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('in');
+      obs.unobserve(e.target);
+    }
+  });
+},{threshold:.18});
+
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+
+</body>
+</html>
 
