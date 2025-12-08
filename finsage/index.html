@@ -1,1 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>FINSAGE — The Automated Wealth Engine | MINDFAX</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="FINSAGE — The Automated Wealth Engine for Financial Sovereignty. A clear, repeatable system to eliminate leakage, neutralize debt and automate long-term wealth." />
+
+  <!-- Fonte -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* PALETA FINSAGE – quente / ouro / pôr-do-sol */
+      --bg: #050208;
+      --bg-alt: #120a06;
+      --accent: #f4c970;
+      --accent-soft: rgba(244, 201, 112, 0.12);
+      --text: #f6f2e9;
+      --muted: #c2b6a1;
+      --border: #3a2d1e;
+      --radius: 18px;
+      --shadow-soft: 0 32px 80px rgba(0, 0, 0, 0.8);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top, #402010 0, #050208 55%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+      padding: 5rem 0 4rem;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at top, rgba(244, 201, 112, 0.18) 0, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0, transparent 45%);
+      opacity: 0.55;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+        text-align: left;
+      }
+    }
+
+    .brand-logo {
+      margin-bottom: 1.2rem;
+      max-width: 160px;
+    }
+
+    .brand-logo img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .hero-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 0.75rem;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-subtitle {
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 1.6rem;
+    }
+
+    .hero-quote {
+      font-size: 1.05rem;
+      font-weight: 400;
+      margin-bottom: 2rem;
+      max-width: 30rem;
+    }
+
+    .hero-quote strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.9rem 1.6rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #ffe3a6);
+      color: #1a0b02;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.7);
+      font-weight: 600;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
+    }
+
+    .btn-ghost {
+      border-color: var(--border);
+      color: var(--muted);
+      background: rgba(5, 2, 8, 0.7);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent-soft);
+      background: rgba(20, 10, 5, 0.9);
+      color: var(--text);
+    }
+
+    .btn-disabled {
+      opacity: 0.4;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    .hero-note {
+      font-size: 0.78rem;
+      color: var(--muted);
+      max-width: 23rem;
+    }
+
+    .hero-cover {
+      position: relative;
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-cover-inner {
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      background: radial-gradient(circle at top, #281209 0, #050208 60%);
+    }
+
+    .hero-cover img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .hero-cover-glow {
+      position: absolute;
+      inset: -15%;
+      background: radial-gradient(circle at 50% 10%, rgba(244, 201, 112, 0.4), transparent 60%);
+      mix-blend-mode: screen;
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    section {
+      padding: 3.5rem 0;
+    }
+
+    .section-header {
+      text-align: left;
+      margin-bottom: 1.8rem;
+    }
+
+    .section-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.7rem;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-sub {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 34rem;
+    }
+
+    .section-body {
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 46rem;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 2.5rem;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 900px) {
+      .about-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .about-card {
+      background: radial-gradient(circle at top left, rgba(244, 201, 112, 0.08), #050208);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 1.5rem 1.6rem;
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.75);
+      font-size: 0.95rem;
+    }
+
+    .about-card strong {
+      color: var(--accent);
+    }
+
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    @media (max-width: 900px) {
+      .preview-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .preview-item {
+      border-radius: 16px;
+      overflow: hidden;
+      background: #120a06;
+      border: 1px solid var(--border);
+      box-shadow: 0 16px 50px rgba(0, 0, 0, 0.85);
+      position: relative;
+      isolation: isolate;
+    }
+
+    .preview-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: saturate(1.15);
+      transition: transform 0.4s ease, filter 0.4s ease;
+    }
+
+    .preview-item:hover img {
+      transform: scale(1.04);
+      filter: saturate(1.35);
+    }
+
+    .preview-label {
+      position: absolute;
+      bottom: 0.9rem;
+      left: 1rem;
+      right: 1rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #f8edd7;
+      text-shadow: 0 6px 18px rgba(0, 0, 0, 0.9);
+    }
+
+    .preview-tag {
+      display: inline-block;
+      padding: 0.2rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(5, 2, 8, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      font-size: 0.65rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .offer-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2rem;
+    }
+
+    @media (max-width: 900px) {
+      .offer-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .offer-card {
+      background: radial-gradient(circle at top, rgba(244, 201, 112, 0.08), #050208);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 1.6rem 1.8rem 1.8rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .offer-title {
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .offer-price {
+      font-size: 0.95rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .offer-list {
+      list-style: none;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .offer-list li {
+      margin-bottom: 0.45rem;
+      display: flex;
+      gap: 0.4rem;
+      align-items: flex-start;
+    }
+
+    .offer-list li::before {
+      content: "✦";
+      color: var(--accent);
+      font-size: 0.75rem;
+      margin-top: 0.15rem;
+    }
+
+    .quote-block {
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 2.3rem 2rem;
+      background: radial-gradient(circle at top, rgba(244, 201, 112, 0.14), #050208);
+      text-align: center;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .quote-block p {
+      max-width: 34rem;
+      margin: 0 auto;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .quote-block strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .cta-final {
+      text-align: center;
+      padding-bottom: 4rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+
+    .cta-note {
+      margin-top: 0.8rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.8rem 0 2.2rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .footer-right {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 700px) {
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-inner">
+      <div>
+        <div class="brand-logo">
+          <!-- Logo Finsage (já está na pasta finsage) -->
+          <img src="finsage-logo-site.png" alt="FINSAGE logo" />
+        </div>
+        <div class="hero-kicker">MINDFAX • THE ARCHITECT UNIVERSE</div>
+        <h1 class="hero-title">FINSAGE — THE AUTOMATED WEALTH ENGINE</h1>
+        <p class="hero-subtitle">MONEY • MINDSET • FREEDOM</p>
+        <p class="hero-quote">
+          <strong>Clarity creates wealth.</strong><br />
+          FINSAGE is a financial operating system designed to eliminate leakage, automate discipline,
+          and turn your income into an engine of sovereignty.
+        </p>
+
+        <div class="hero-cta-row">
+          <a class="btn btn-primary" href="https://payhip.com/b/HIboL" target="_blank" rel="noopener">
+            Digital Edition (Payhip)
+          </a>
+          <button class="btn btn-ghost btn-disabled">
+            Kindle Edition – Coming Soon
+          </button>
+        </div>
+
+        <p class="hero-note">
+          This is not a budgeting spreadsheet. It is a clear, repeatable protocol that turns
+          automation into your primary source of financial power.
+        </p>
+      </div>
+
+      <div class="hero-cover">
+        <div class="hero-cover-inner">
+          <!-- Mockup principal da obra -->
+          <img src="Finsage_Mockup.png" alt="FINSAGE – The Automated Wealth Engine cover" />
+        </div>
+        <div class="hero-cover-glow"></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ABOUT -->
+    <section>
+      <div class="container about-grid">
+        <div>
+          <div class="section-header">
+            <div class="section-kicker">About the system</div>
+            <h2 class="section-title">A wealth engine, not another money book.</h2>
+          </div>
+          <div class="section-body">
+            <p>
+              <strong>FINSAGE</strong> was built to solve a simple problem: most people don’t need more motivation,
+              they need a structure that does not depend on motivation at all. Willpower is volatile.
+              Systems are permanent.
+            </p>
+            <br />
+            <p>
+              The Automated Wealth Engine gives you a way to think, earn, save, and allocate capital with
+              clarity—even when life is chaotic. It turns abstract financial advice into a concrete protocol
+              you can execute once and let it run in the background.
+            </p>
+            <br />
+            <p>
+              You are not trying to “beat the market.” You are building a machine that quietly works for you
+              every month, neutralizing leaks, redirecting surplus, and attacking debt with algorithmic coldness. :contentReference[oaicite:0]{index=0}
+            </p>
+          </div>
+        </div>
+
+        <aside>
+          <div class="about-card">
+            <p><strong>This system is for you if:</strong></p>
+            <br />
+            <p>• You are tired of feeling in control for 3 days and lost for the rest of the month.</p>
+            <p>• You earn well, but your money disappears into invisible leaks and scattered decisions.</p>
+            <p>• You want an <strong>automatic protocol</strong> that runs even when you are exhausted, busy, or unfocused.</p>
+            <br />
+            <p>
+              FINSAGE turns your role from “panicked decision-maker” into <strong>strategic overseer</strong> of an
+              autonomous wealth machine.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- PREVIEW -->
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Inside the pages</div>
+          <h2 class="section-title">The architecture of your new financial system</h2>
+          <p class="section-sub">
+            Each spread combines visual design and engineered language to walk you through the protocol step by step.
+          </p>
+        </div>
+
+        <div class="preview-grid">
+          <div class="preview-item">
+            <img src="Finsage_E-Book Premium_01.jpg" alt="FINSAGE preview – cover & overview" />
+            <div class="preview-label">
+              <div class="preview-tag">Section I</div>
+              AUTHORITY & ACCESS — why your brain is the weakest link and systems win.
+            </div>
+          </div>
+
+          <div class="preview-item">
+            <img src="Page 2.png" alt="FINSAGE preview – Zero-Leakage Protocol" />
+            <div class="preview-label">
+              <div class="preview-tag">Mechanic 1</div>
+              THE FINANCIAL FIREWALL — the Zero-Leakage Protocol that seals capital drains. :contentReference[oaicite:1]{index=1}
+            </div>
+          </div>
+
+          <div class="preview-item">
+            <img src="Page 4.png" alt="FINSAGE preview – Asymmetry Engine" />
+            <div class="preview-label">
+              <div class="preview-tag">Mechanic 2</div>
+              THE ASYMMETRY ENGINE — automated compounding and the Avalanche Protocol for debt. :contentReference[oaicite:2]{index=2}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFFER -->
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Your access</div>
+          <h2 class="section-title">One protocol. Lifetime utility.</h2>
+          <p class="section-sub">
+            FINSAGE was designed as a premium digital manual: a system you can revisit every time your
+            finances or life enter a new phase.
+          </p>
+        </div>
+
+        <div class="offer-grid">
+          <!-- DIGITAL PDF -->
+          <div class="offer-card">
+            <div class="offer-title">Digital Wealth Engine Edition (PDF)</div>
+            <div class="offer-price">US$ 27 • Premium digital download</div>
+            <ul class="offer-list">
+              <li>The complete FINSAGE protocol with all visuals, diagrams, and step-by-step flows.</li>
+              <li>Mechanic 1: The Financial Firewall & Zero-Leakage Protocol.</li>
+              <li>Mechanic 2: The Asymmetry Engine & automated compounding.</li>
+              <li>Mechanic 3: The Avalanche Method for debt annihilation.</li>
+              <li>7-Day Implementation Sprint + Final Launch Sequence. :contentReference[oaicite:3]{index=3}</li>
+              <li>Designed for desktop, tablet and large-phone reading.</li>
+            </ul>
+            <div style="margin-top:1.3rem;">
+              <a class="btn btn-primary" href="https://payhip.com/b/HIboL" target="_blank" rel="noopener">
+                Get the Digital Edition
+              </a>
+            </div>
+          </div>
+
+          <!-- KINDLE PLACEHOLDER -->
+          <div class="offer-card">
+            <div class="offer-title">Kindle Edition</div>
+            <div class="offer-price">Coming soon • Amazon global release</div>
+            <ul class="offer-list">
+              <li>Text-optimized version of the full protocol.</li>
+              <li>Ideal for on-the-go reading and quick refreshers.</li>
+              <li>Will be announced first to Mindfax / Finsage subscribers.</li>
+            </ul>
+            <div style="margin-top:1.3rem;">
+              <button class="btn btn-ghost btn-disabled">
+                Kindle Edition — Coming Soon
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUOTE BLOCK -->
+    <section>
+      <div class="container">
+        <div class="quote-block">
+          <p>
+            <strong>“You don’t need more willpower.</strong><br />
+            You need a system that keeps building wealth even on your worst days.”
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-final">
+      <div class="container">
+        <div class="section-header" style="text-align:center;">
+          <div class="section-kicker">Activate the engine</div>
+          <h2 class="section-title">Clarity is the first asset. Structure is the second.</h2>
+          <p class="section-sub" style="margin:0 auto;">
+            FINSAGE turns your finances into an autonomous system. The sooner you install it,
+            the longer time compounds in your favor.
+          </p>
+        </div>
+
+        <div class="cta-buttons">
+          <a class="btn btn-primary" href="https://payhip.com/b/HIboL" target="_blank" rel="noopener">
+            Access the Wealth Engine
+          </a>
+        </div>
+
+        <div class="cta-note">
+          Written by <strong>The Architect</strong> • A FINSAGE / MINDFAX • IA Media Factory Publishing™ work.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        © <span id="year"></span> FINSAGE • MINDFAX • IA Media Factory Publishing™ · All rights reserved.
+      </div>
+      <div class="footer-right">
+        <span>Universe: THE ARCHITECT</span>
+        <span>Domain: mindfax.art</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
 
