@@ -1,1 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>NEURABYTE – The Neuro-Optimized AI Prompt Kit | IA Media Factory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="NEURABYTE – The Neuro-Optimized AI Prompt Kit. 30 proprietary prompts to automate deep work, destroy cognitive overload and turn AI into a focus engine." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #02030a;
+      --bg-alt: #050818;
+      --accent: #33c7ff;
+      --accent-soft: rgba(51, 199, 255, 0.1);
+      --text: #eaeff7;
+      --muted: #8f99b3;
+      --border: #1d2333;
+      --radius: 18px;
+      --shadow-soft: 0 32px 80px rgba(0, 0, 0, 0.7);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top, #04142b 0, #02030a 50%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+      padding: 5rem 0 4rem;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at top, rgba(51, 199, 255, 0.18) 0, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 140, 0, 0.16) 0, transparent 45%);
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+        text-align: left;
+      }
+    }
+
+    /* LOGO */
+
+    .brand-logo {
+      margin-bottom: 1.2rem;
+      max-width: 180px;
+    }
+
+    .brand-logo img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .hero-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 0.75rem;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.4rem, 4vw, 3.4rem);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 1.8rem;
+    }
+
+    .hero-quote {
+      font-size: 1.05rem;
+      font-weight: 400;
+      margin-bottom: 2rem;
+    }
+
+    .hero-quote strong {
+      color: #ff9440;
+      font-weight: 600;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.9rem 1.6rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #7af3ff);
+      color: #02030a;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.7);
+      font-weight: 600;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.85);
+    }
+
+    .btn-ghost {
+      border-color: var(--border);
+      color: var(--muted);
+      background: rgba(2, 3, 10, 0.7);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent-soft);
+      background: rgba(6, 12, 30, 0.9);
+      color: var(--text);
+    }
+
+    .hero-note {
+      font-size: 0.75rem;
+      color: var(--muted);
+      max-width: 23rem;
+    }
+
+    .hero-cover {
+      position: relative;
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-cover-inner {
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      background: radial-gradient(circle at top, #0a1630 0, #02030a 60%);
+    }
+
+    .hero-cover img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .hero-cover-glow {
+      position: absolute;
+      inset: -15%;
+      background: radial-gradient(circle at 50% 10%, rgba(51, 199, 255, 0.4), transparent 60%);
+      mix-blend-mode: screen;
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    /* SEÇÃO GENÉRICA */
+
+    section {
+      padding: 3.5rem 0;
+    }
+
+    .section-header {
+      text-align: left;
+      margin-bottom: 1.8rem;
+    }
+
+    .section-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.7rem;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-sub {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 34rem;
+    }
+
+    .section-body {
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 46rem;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 2.5rem;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 900px) {
+      .about-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .about-card {
+      background: radial-gradient(circle at top left, rgba(51, 199, 255, 0.06), #02030a);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 1.5rem 1.6rem;
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.75);
+      font-size: 0.95rem;
+    }
+
+    .about-card strong {
+      color: var(--accent);
+    }
+
+    /* PREVIEW */
+
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    @media (max-width: 900px) {
+      .preview-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .preview-item {
+      border-radius: 16px;
+      overflow: hidden;
+      background: #050816;
+      border: 1px solid var(--border);
+      box-shadow: 0 16px 50px rgba(0, 0, 0, 0.8);
+      position: relative;
+      isolation: isolate;
+    }
+
+    .preview-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: saturate(1.15);
+      transition: transform 0.4s ease, filter 0.4s ease;
+    }
+
+    .preview-item:hover img {
+      transform: scale(1.04);
+      filter: saturate(1.35);
+    }
+
+    .preview-label {
+      position: absolute;
+      bottom: 0.9rem;
+      left: 1rem;
+      right: 1rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #dbe9ff;
+      text-shadow: 0 6px 18px rgba(0, 0, 0, 0.9);
+    }
+
+    .preview-tag {
+      display: inline-block;
+      padding: 0.2rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(2, 3, 10, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      font-size: 0.65rem;
+      margin-bottom: 0.25rem;
+    }
+
+    /* FEATURES / OFFER */
+
+    .offer-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2rem;
+    }
+
+    @media (max-width: 900px) {
+      .offer-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .offer-card {
+      background: radial-gradient(circle at top, rgba(51, 199, 255, 0.08), #02030a);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 1.6rem 1.8rem 1.8rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .offer-title {
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .offer-price {
+      font-size: 0.95rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .offer-list {
+      list-style: none;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .offer-list li {
+      margin-bottom: 0.45rem;
+      display: flex;
+      gap: 0.4rem;
+      align-items: flex-start;
+    }
+
+    .offer-list li::before {
+      content: "✦";
+      color: var(--accent);
+      font-size: 0.75rem;
+      margin-top: 0.15rem;
+    }
+
+    /* QUOTE BLOCK */
+
+    .quote-block {
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 2.3rem 2rem;
+      background:
+        radial-gradient(circle at top, rgba(51, 199, 255, 0.12), #02030a);
+      text-align: center;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .quote-block p {
+      max-width: 34rem;
+      margin: 0 auto;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .quote-block strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* CTA FINAL */
+
+    .cta-final {
+      text-align: center;
+      padding-bottom: 4rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+
+    .cta-note {
+      margin-top: 0.8rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.8rem 0 2.2rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .footer-right {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 700px) {
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-inner">
+      <div>
+        <div class="brand-logo">
+          <img src="/neurabyte-protocol/neurabyte-logo-site.png" alt="NEURABYTE logo" />
+        </div>
+        <div class="hero-kicker">NEURABYTE • DECODE YOUR MIND</div>
+        <h1 class="hero-title">The Neuro-Optimized AI Prompt Kit</h1>
+        <p class="hero-subtitle">30 Prompts to Automate Deep Work & Focus</p>
+        <p class="hero-quote">
+          <strong>Your brain isn’t broken.</strong> It’s running outdated software. This Kit installs a new system.:contentReference[oaicite:0]{index=0}
+        </p>
+
+        <div class="hero-cta-row">
+          <a class="btn btn-primary" href="https://payhip.com/b/E3olR" target="_blank" rel="noopener">
+            Download Digital Edition
+          </a>
+          <a class="btn btn-ghost" href="#" style="pointer-events:none; opacity:0.6;">
+            Kindle Edition · Coming Soon
+          </a>
+        </div>
+
+        <p class="hero-note">
+          30 proprietary prompts engineered as a cognitive operating system: automate focus, destroy
+          context switching and turn AI into a precision engine for deep work.
+        </p>
+      </div>
+
+      <div class="hero-cover">
+        <div class="hero-cover-inner">
+          <img src="NEURABYTE_Mockup.png" alt="NEURABYTE – The Neuro-Optimized AI Prompt Kit cover" />
+        </div>
+        <div class="hero-cover-glow"></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ABOUT -->
+    <section>
+      <div class="container about-grid">
+        <div>
+          <div class="section-header">
+            <div class="section-kicker">About the system</div>
+            <h2 class="section-title">You don’t need more motivation. You need a protocol.</h2>
+          </div>
+          <div class="section-body">
+            <p>
+              <strong>NEURABYTE – The Neuro-Optimized AI Prompt Kit</strong> was designed for one reality:
+              the attention economy hijacked your focus, monetized your dopamine and left you with
+              fragmented cognition. You are not tired — you are overloaded.:contentReference[oaicite:1]{index=1}
+            </p>
+            <br />
+            <p>
+              This Kit is not “self-help content”. It’s a <strong>neural reboot</strong>: 30 execution prompts
+              built as a system. Each one operates inside a 3-step protocol — Role, Constraint, Execution —
+              translating your intention into clean, automated AI action.:contentReference[oaicite:2]{index=2}
+            </p>
+            <br />
+            <p>
+              Instead of fighting distraction with willpower, you architect an environment where focus is the
+              default state and AI runs the repetitive cognitive load for you.
+            </p>
+          </div>
+        </div>
+
+        <aside>
+          <div class="about-card">
+            <p><strong>This Kit is for you if:</strong></p>
+            <br />
+            <p>• You work with AI daily and still feel mentally exhausted at the end of every session.</p>
+            <p>• You keep switching tasks, tools and tabs — and lose clarity every time you transition.</p>
+            <p>• You want AI to build, summarize, triage and structure for you, not just “chat”.</p>
+            <br />
+            <p>
+              NEURABYTE replaces <strong>willpower with systems</strong>. You stop reacting to your day and start
+              architecting it.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- PREVIEW -->
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Inside the Kit</div>
+          <h2 class="section-title">Built as a visual operating manual for your mind</h2>
+          <p class="section-sub">
+            Every page is a cognitive diagram: brain-state, concept and execution, laid out as a visual
+            field manual for deep work and automation.
+          </p>
+        </div>
+
+        <div class="preview-grid">
+          <div class="preview-item">
+            <img src="Neurabyte_E-Book_Page 1.png" alt="Preview – Cognitive Overload" />
+            <div class="preview-label">
+              <div class="preview-tag">Fragment I</div>
+              COGNITIVE OVERLOAD — why you’re not tired, just fragmented.
+            </div>
+          </div>
+
+          <div class="preview-item">
+            <img src="Neurabyte_E-Book_Page 3.png" alt="Preview – The Myth of Willpower" />
+            <div class="preview-label">
+              <div class="preview-tag">Fragment II</div>
+              THE MYTH OF WILLPOWER — systems, not strength, sustain execution.
+            </div>
+          </div>
+
+          <div class="preview-item">
+            <img src="Neurabyte_E-Book_Page 19.png" alt="Preview – System Online" />
+            <div class="preview-label">
+              <div class="preview-tag">Fragment III</div>
+              SYSTEM ONLINE — from chaos to clarity in three blocks of code.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFFER -->
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Choose your format</div>
+          <h2 class="section-title">The complete Neuro-Optimized Prompt System</h2>
+          <p class="section-sub">
+            One premium digital edition now. Kindle text-only edition will arrive later
+            for reach — but the full system lives here.
+          </p>
+        </div>
+
+        <div class="offer-grid">
+          <!-- PDF -->
+          <div class="offer-card">
+            <div class="offer-title">PDF Neuro-Optimized Edition</div>
+            <div class="offer-price">US$ 17 • Premium digital download</div>
+            <ul class="offer-list">
+              <li>Full NEURABYTE visual manual with all 20+ pages and diagrams.</li>
+              <li>30 proprietary prompts grouped into Focus, Transition and Communication blocks.:contentReference[oaicite:3]{index=3}</li>
+              <li>3-Step Execution Protocol (Role · Constraint · Execution) explained and ready to copy.:contentReference[oaicite:4]{index=4}</li>
+              <li>Deep Work Stack & Automation Map to structure your entire cognitive workflow.:contentReference[oaicite:5]{index=5}</li>
+              <li>High-resolution design, optimized for desktop, tablet and large screens.</li>
+            </ul>
+            <div style="margin-top:1.3rem;">
+              <a class="btn btn-primary" href="https://payhip.com/b/E3olR" target="_blank" rel="noopener">
+                Get the Kit Now
+              </a>
+            </div>
+          </div>
+
+          <!-- KINDLE (COMING SOON) -->
+          <div class="offer-card">
+            <div class="offer-title">Kindle Edition</div>
+            <div class="offer-price">Coming Soon • Text-only version</div>
+            <ul class="offer-list">
+              <li>Optimized for Kindle devices and apps.</li>
+              <li>Ideal for quick reference and on-the-go reading.</li>
+              <li>Will include the full text of the NEURABYTE system.</li>
+              <li>Release date will be announced inside the NEURABYTE ecosystem.</li>
+            </ul>
+            <div style="margin-top:1.3rem;">
+              <a class="btn btn-ghost" href="#" style="pointer-events:none; opacity:0.6;">
+                Kindle Edition · Coming Soon
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUOTE BLOCK -->
+    <section>
+      <div class="container">
+        <div class="quote-block">
+          <p>
+            <strong>“Deep Work isn’t a mindset. It’s a machine.”</strong><br />
+            NEURABYTE removes friction layer by layer, stacking flow upon flow until automation
+            protects your focus instead of destroying it.:contentReference[oaicite:6]{index=6}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-final">
+      <div class="container">
+        <div class="section-header" style="text-align:center;">
+          <div class="section-kicker">System online</div>
+          <h2 class="section-title">You’re not upgrading software. You’re upgrading consciousness.</h2>
+          <p class="section-sub" style="margin:0 auto;">
+            Install the NEURABYTE Protocol once, and every AI session becomes a structured execution
+            block — not another tab stealing your energy.
+          </p>
+        </div>
+
+        <div class="cta-buttons">
+          <a class="btn btn-primary" href="https://payhip.com/b/E3olR" target="_blank" rel="noopener">
+            Begin Neuro-Optimization
+          </a>
+        </div>
+
+        <div class="cta-note">
+          Created by <strong>The Architect</strong> • A NEURABYTE / IA Media Factory Publishing™ system.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        © <span id="year"></span> NEURABYTE • IA Media Factory Publishing™ · All rights reserved.
+      </div>
+      <div class="footer-right">
+        <span>Universe: NEURABYTE</span>
+        <span>Domain: mindfax.art</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  // Atualiza o ano automaticamente
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
 
