@@ -1,1 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>The Freedom Protocol — ORIGIN · MINDFAX</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#0A0B10" />
+<meta name="description" content="The Freedom Protocol — ORIGIN. A cinematic field manual for inner sovereignty in a collapsing economic world. MINDFAX." />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0A0B10; --text:#EAEAF5; --muted:#A2A8BD;
+  --gold:#FFB86C; --cyan:#00CFFF; --red:#ff4b4b;
+  --glass: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  --brd: rgba(255,255,255,.10); --radius:22px; --shadow:0 20px 60px rgba(0,0,0,.45);
+}
+
+*{box-sizing:border-box}
+html,body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:"IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  line-height:1.6;
+}
+a{color:var(--cyan); text-decoration:none}
+.wrap{width:min(1100px,92%); margin:0 auto}
+
+/* HEADER */
+header{
+  position:sticky; top:0; z-index:40;
+  backdrop-filter:saturate(160%) blur(10px);
+  background:linear-gradient(180deg, rgba(10,11,16,.94), rgba(10,11,16,.70));
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+nav{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:12px 0;
+}
+.brand{display:flex; align-items:center; gap:12px}
+.brand img{height:80px; width:auto; display:block}
+.navlinks a{
+  margin-left:14px;
+  color:var(--muted);
+  font-size:14px;
+}
+.btn{
+  display:inline-flex; align-items:center; gap:10px;
+  padding:14px 20px;
+  border-radius:14px;
+  font-weight:600;
+  border:1px solid rgba(255,255,255,.09);
+  background:var(--glass);
+  box-shadow:var(--shadow);
+}
+.btn.gold{
+  background:linear-gradient(120deg,#2a1200,#1a0800);
+  border-color:#5a2c00;
+  color:#FEE8C0;
+}
+.btn .dot{
+  width:10px; height:10px; border-radius:50%;
+  background:var(--gold);
+  box-shadow:0 0 16px rgba(255,184,108,.7);
+}
+
+/* SECTIONS (único background em sprite) */
+.section{
+  position:relative;
+  min-height:100vh;
+  display:flex; align-items:center; justify-content:center;
+  text-align:center;
+  background-image:url("Freedom Protocol Site 1.png");
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  color:var(--text);
+}
+.section::after{
+  content:""; position:absolute; inset:0;
+  background:
+    radial-gradient(1100px 650px at 50% -10%, rgba(255,75,75,.18), transparent 60%),
+    radial-gradient(900px 540px at 10% 100%, rgba(0,207,255,.10), transparent 60%),
+    linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.65));
+  pointer-events:none;
+}
+.panel{
+  position:relative; z-index:2;
+  backdrop-filter: blur(6px);
+  border:1px solid var(--brd);
+  background:var(--glass);
+  padding:28px 26px;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  width:min(840px,92%);
+}
+.section h2{
+  font-family:Cinzel,serif;
+  font-size:34px;
+  margin:0 0 10px;
+  color:var(--gold);
+  text-shadow:0 8px 24px rgba(0,0,0,.45);
+}
+.section p.lead{
+  color:#F4F6FF;
+  font-size:16px;
+  margin:4px 0 10px;
+}
+.kicker{
+  color:#F4B1B1;
+  font-weight:600;
+  letter-spacing:.24em;
+  font-size:12px;
+  margin-bottom:8px;
+  text-transform:uppercase;
+}
+.note{
+  color:#EAEAF5;
+  font-size:15px;
+  opacity:.9;
+}
+
+/* background positions (mesmo sprite, posições diferentes) */
+.section.top  { background-position:center 0% }
+.section.mid  { background-position:center 33% }
+.section.bot  { background-position:center 66% }
+.section.last { background-position:center 100% }
+
+.scroll{margin-top:14px}
+
+/* FOOTER */
+footer{
+  padding:40px 0 60px;
+  color:var(--muted);
+  border-top:1px solid rgba(255,255,255,.06);
+  text-align:center;
+}
+
+/* MOBILE */
+@media (max-width:900px){
+  .section{ background-attachment:scroll; }
+  .section h2{font-size:26px}
+  .navlinks{display:none}
+  .brand img{height:70px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <div class="brand">
+        <img src="Logo_Ultimate_2.png" alt="MINDFAX logo">
+      </div>
+      <div class="navlinks">
+        <a href="#origin">Origin</a>
+        <a href="#prison">Prison</a>
+        <a href="#break">Break</a>
+        <a href="#artifact">Artifact</a>
+      </div>
+      <a class="btn gold" href="origin.html">
+        <span class="dot"></span> Enter the Protocol
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- SECTION 1 — ORIGIN -->
+<section id="origin" class="section top" role="region" aria-label="Origin">
+  <div class="panel">
+    <div class="kicker">THE FREEDOM PROTOCOL · ORIGIN</div>
+    <h2>Freedom is not a mood. It’s an internal architecture.</h2>
+    <p class="lead">
+      This work is a field manual for dismantling the invisible scripts that quietly run your life.
+    </p>
+    <p class="note">
+      Not mindset hacks. Not hustle. A cinematic protocol for inner sovereignty in a collapsing economic world.
+    </p>
+    <div class="scroll">
+      <a class="btn" href="#prison">Continue</a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2 — INVISIBLE PRISON -->
+<section id="prison" class="section mid" role="region" aria-label="Invisible Prison">
+  <div class="panel">
+    <div class="kicker">THE INVISIBLE PRISON</div>
+    <h2>You were trained to betray your own signal.</h2>
+    <p class="lead">
+      Family, school, work and algorithms all converged to reward obedience, not clarity.
+    </p>
+    <p class="note">
+      The Freedom Protocol maps how this soft cage is assembled. It shows how money is weaponized through
+      inflation, how fear is recycled as policy, and how algorithms learn your weaknesses faster than you do.
+      Once you see the pattern, you can no longer pretend it is accidental. Clarity is the first act of rebellion.
+    </p>
+    <div class="scroll">
+      <a class="btn" href="#break">See the Break in the Code</a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3 — BREAK IN THE CODE -->
+<section id="break" class="section bot" role="region" aria-label="Break in the Code">
+  <div class="panel">
+    <div class="kicker">THE BREAK IN THE CODE</div>
+    <h2>Freedom begins the moment you stop editing yourself.</h2>
+    <p class="lead">
+      ORIGIN is the first fracture: the moment you refuse to keep performing a life that doesn’t belong to you.
+    </p>
+    <p class="note">
+      It gives you a precise map from numbness and autopilot into clear, self-directed action. The protocol does
+      not ask you to burn your life down — it shows you where to withdraw false consent and where to rebuild from
+      inner authority.
+    </p>
+    <div class="scroll">
+      <a class="btn" href="#artifact">Enter ORIGIN</a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4 — ARTIFACT / CTA -->
+<section id="artifact" class="section last" role="region" aria-label="Artifact">
+  <div class="panel">
+    <div class="kicker">ORIGIN · FIRST EDITION</div>
+    <h2>A finite protocol for those who refuse to live sedated.</h2>
+    <p class="lead">
+      The Freedom Protocol — ORIGIN is a premium PDF artifact: philosophy rendered as cinematic design, built to be revisited, not consumed once.
+    </p>
+    <p class="note">
+      When you carry this protocol, you don’t “feel” free — you know exactly where your freedom starts and ends.
+      This is not a motivational product. It is a weaponized clarity document for adults who understand that freedom
+      is a discipline.
+    </p>
+    <div class="scroll">
+      <a class="btn gold" href="origin.html">
+        <span class="dot"></span> Enter the Protocol
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div style="font-size:13px;">© 2025 MINDFAX · IA Media Factory Publishing™ · mindfax.art</div>
+    <div style="font-size:12px; margin-top:4px;">Contact: iamediafactory.studio@gmail.com</div>
+  </div>
+</footer>
+
+<script>
+  // Smooth scroll for internal anchors
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', e=>{
+      const id = a.getAttribute('href');
+      if(id.length>1){
+        e.preventDefault();
+        document.querySelector(id)?.scrollIntoView({behavior:'smooth'});
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
 
