@@ -90,19 +90,14 @@
       gap: 12px;
     }
 
-    .brand-mark {
+    .brand-logo {
       width: 40px;
       height: 40px;
       border-radius: 18px;
       border: 1px solid rgba(255, 255, 255, 0.18);
       background: radial-gradient(circle at 30% 20%, #3f7ad8, #050814);
-      display: flex;
-      align-items: center;
-      justify-content: center;
       box-shadow: 0 0 40px rgba(92, 163, 255, 0.5);
-      font-family: "Cinzel", serif;
-      font-size: 18px;
-      letter-spacing: 3px;
+      object-fit: cover;
     }
 
     .brand-text {
@@ -185,7 +180,7 @@
       padding-left: 14px;
     }
 
-    .mini-logo {
+    .mini-logo-wrapper {
       width: 26px;
       height: 26px;
       border-radius: 999px;
@@ -194,11 +189,13 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 9px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      font-family: "Montserrat", sans-serif;
-      color: var(--text-soft);
+      overflow: hidden;
+    }
+
+    .mini-logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
 
     .mini-logo-labels {
@@ -316,6 +313,7 @@
       letter-spacing: 0.24em;
       text-transform: uppercase;
       color: rgba(201, 208, 214, 0.7);
+      z-index: 2;
     }
 
     .hero-media::after {
@@ -325,6 +323,7 @@
       background: radial-gradient(circle at 10% 0%, rgba(227, 106, 61, 0.26), transparent 55%);
       mix-blend-mode: screen;
       pointer-events: none;
+      z-index: 2;
     }
 
     .hero-video-slot {
@@ -333,19 +332,14 @@
       border-radius: 18px;
       border: 1px solid rgba(201, 208, 214, 0.28);
       overflow: hidden;
-      background: radial-gradient(circle at 40% 0%, #172845, #02040a);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-muted);
-      font-size: 12px;
-      text-align: center;
-      padding: 20px;
+      background: #02040a;
     }
 
-    .hero-video-slot span {
-      max-width: 260px;
-      line-height: 1.6;
+    .hero-video-slot img.hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .hero-float-label {
@@ -356,6 +350,7 @@
       text-transform: uppercase;
       letter-spacing: 0.2em;
       color: rgba(201, 208, 214, 0.7);
+      z-index: 2;
     }
 
     .hero-content {
@@ -728,14 +723,15 @@
     .artifact-media-slot {
       position: relative;
       height: 160px;
-      background: radial-gradient(circle at 20% 0%, rgba(63, 122, 216, 0.6), #050814);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 11px;
-      color: var(--text-muted);
-      text-align: center;
-      padding: 10px;
+      background: #050814;
+      overflow: hidden;
+    }
+
+    .artifact-media-slot img.artifact-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .artifact-label {
@@ -746,6 +742,8 @@
       text-transform: uppercase;
       letter-spacing: 0.2em;
       color: rgba(201, 208, 214, 0.8);
+      z-index: 2;
+      text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
     }
 
     .artifact-body {
@@ -853,6 +851,13 @@
       text-transform: uppercase;
       letter-spacing: 0.16em;
       font-size: 10px;
+    }
+
+    .universe-logo-img {
+      max-width: 100%;
+      max-height: 52px;
+      object-fit: contain;
+      display: block;
     }
 
     /* =============== AUTHOR =============== */
@@ -1103,6 +1108,9 @@
         padding-top: 120px;
         padding-bottom: 80px;
       }
+      .hero-video-slot {
+        inset: 52px 16px 24px 16px;
+      }
     }
 
     @media (max-width: 640px) {
@@ -1119,9 +1127,6 @@
       .hero-media {
         min-height: 220px;
       }
-      .hero-video-slot {
-        inset: 52px 16px 24px 16px;
-      }
     }
   </style>
 </head>
@@ -1132,7 +1137,11 @@
     <header class="site-header">
       <div class="nav-inner">
         <div class="brand">
-          <div class="brand-mark">T2</div>
+          <img
+            src="architect-avatar-logo.png"
+            alt="The Architect emblem"
+            class="brand-logo"
+          />
           <div class="brand-text">
             <div class="brand-title">THE SECOND FOREST</div>
             <div class="brand-subtitle">Mythology - Authority - Commerce</div>
@@ -1154,7 +1163,13 @@
 
         <!-- Brand tree: IA Media Factory > Mindfax / Neurabyte / Finsage -->
         <div class="nav-logos">
-          <div class="mini-logo">IA</div>
+          <div class="mini-logo-wrapper">
+            <img
+              src="IA Media Factory_Logo.png"
+              alt="IA Media Factory logo"
+              class="mini-logo-img"
+            />
+          </div>
           <div class="mini-logo-labels">
             <div>IA MEDIA FACTORY</div>
             <div>MINDFAX · NEURABYTE · FINSAGE</div>
@@ -1169,12 +1184,12 @@
       <section id="hero">
         <div class="hero-inner">
           <div class="hero-media">
-            <!-- Aqui entra o vídeo/cena em loop do Exoshell, Core-World ou Liminari Gate -->
             <div class="hero-video-slot">
-              <span>
-                VIDEO SLOT<br />
-                4–6s loop. Exoshell emerging from the dark or Liminari Gate opening in deep space.
-              </span>
+              <img
+                src="t2f_hero_youtube_frame_1920x1080.png"
+                alt="THE SECOND FOREST cinematic key art"
+                class="hero-image"
+              />
             </div>
             <div class="hero-float-label">
               DEPARTMENT OF COSMIC ORIGINS
@@ -1476,9 +1491,12 @@
           <div class="artifact-grid">
             <article class="artifact-card">
               <div class="artifact-media-slot">
-                <div class="artifact-label">CONCEPT ART SLOT</div>
-                <!-- Futuro: imagem do Exoshell surgindo das sombras -->
-                Exoshell emerging from the dark. High contrast, mythic engineering.
+                <div class="artifact-label">EXOSHELL</div>
+                <img
+                  src="t2f_exoshell_concept_2560x1440.png"
+                  alt="Exoshell concept art"
+                  class="artifact-image"
+                />
               </div>
               <div class="artifact-body">
                 <div class="artifact-title">EXOSHELL</div>
@@ -1490,9 +1508,12 @@
 
             <article class="artifact-card">
               <div class="artifact-media-slot">
-                <div class="artifact-label">CONCEPT ART SLOT</div>
-                <!-- Futuro: mapa estelar do Canon -->
-                Core-World orbiting a dead planet. Starfield density and subtle motion.
+                <div class="artifact-label">CORE-WORLD MAP</div>
+                <img
+                  src="t2f_coreworld_map_2560x1440.png"
+                  alt="Core-World map"
+                  class="artifact-image"
+                />
               </div>
               <div class="artifact-body">
                 <div class="artifact-title">CORE-WORLD MAP</div>
@@ -1504,9 +1525,12 @@
 
             <article class="artifact-card">
               <div class="artifact-media-slot">
-                <div class="artifact-label">MOTIF SLOT</div>
-                <!-- Futuro: motivo fractal -->
-                Fractal motif connecting The Second Forest to The Architect Universe.
+                <div class="artifact-label">FRACTAL MOTIF</div>
+                <img
+                  src="t2f_fractal_motif_architect_universe.png"
+                  alt="Fractal motif of The Architect Universe"
+                  class="artifact-image"
+                />
               </div>
               <div class="artifact-body">
                 <div class="artifact-title">FRACTAL MOTIFS</div>
@@ -1518,9 +1542,12 @@
 
             <article class="artifact-card">
               <div class="artifact-media-slot">
-                <div class="artifact-label">PORTAL SLOT</div>
-                <!-- Futuro: Liminari Gate -->
-                Liminari Gate opening as a ring of light around a black geometry.
+                <div class="artifact-label">LIMINARI GATE</div>
+                <img
+                  src="t2f_liminari_gate_2560x1440.png"
+                  alt="Liminari Gate time-crystal portal"
+                  class="artifact-image"
+                />
               </div>
               <div class="artifact-body">
                 <div class="artifact-title">LIMINARI GATE</div>
@@ -1586,12 +1613,19 @@
                 </a>
               </div>
               <div class="universe-logos-grid">
-                <!-- Slots para logos reais -->
                 <div class="universe-logo-slot">
-                  <span>THE ARCHITECT</span>
+                  <img
+                    src="architect-avatar-logo.png"
+                    alt="The Architect logo"
+                    class="universe-logo-img"
+                  />
                 </div>
                 <div class="universe-logo-slot">
-                  <span>MINDFAX</span>
+                  <img
+                    src="Mindfax_logo_Sites.png"
+                    alt="Mindfax logo"
+                    class="universe-logo-img"
+                  />
                 </div>
                 <div class="universe-logo-slot">
                   <span>THE CONTINUUM</span>
@@ -1611,7 +1645,7 @@
         </div>
       </section>
 
-      <!-- ================= AUTHOR / CONHEÇA O AUTOR ================= -->
+      <!-- ================= AUTHOR / ABOUT THE AUTHOR ================= -->
       <section id="author">
         <div class="section-inner">
           <div class="section-title-row">
@@ -1626,7 +1660,7 @@
 
           <article class="author-card">
             <div class="author-avatar-slot">
-              <!-- Aqui entra o avatar oficial cósmico do autor -->
+              <!-- Quando quiser, substitua pelo avatar cósmico oficial -->
               AUTHOR AVATAR SLOT<br /><br />
               Insert The Architect official cosmic avatar here to visually anchor the brand.
             </div>
@@ -1767,7 +1801,6 @@
   </div>
 
   <script>
-    // Atualiza ano automaticamente
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
