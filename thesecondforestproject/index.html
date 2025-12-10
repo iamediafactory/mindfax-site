@@ -1,1 +1,1695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>THE SECOND FOREST | Official Franchise Dossier</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="THE SECOND FOREST - A new origin myth for humanity. Official transmedia dossier by The Architect." />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=IBM+Plex+Sans:wght@300;400;500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #02040a;
+      --bg-elevated: #050814;
+      --bg-soft: #0b1222;
+      --accent-main: #c2a878;
+      --accent-soft: rgba(194, 168, 120, 0.2);
+      --accent-red: #e36a3d;
+      --text-main: #f5f7ff;
+      --text-soft: #c9d0d6;
+      --text-muted: #7c8797;
+      --border-soft: rgba(255, 255, 255, 0.08);
+      --shadow-soft: 0 24px 80px rgba(0, 0, 0, 0.8);
+      --radius-xl: 26px;
+      --radius-lg: 20px;
+      --radius-pill: 999px;
+      --transition-fast: 180ms ease-out;
+      --transition-med: 260ms ease-out;
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      background: radial-gradient(circle at top, #0b1e36 0%, #02040a 50%, #000000 100%);
+      color: var(--text-main);
+      font-family: "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      min-height: 100vh;
+    }
+
+    /* ================= NAV ================= */
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 40;
+      backdrop-filter: blur(20px);
+      background: linear-gradient(to bottom, rgba(2, 4, 10, 0.9), rgba(2, 4, 10, 0.1));
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: radial-gradient(circle at 30% 20%, #3f7ad8, #050814);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 40px rgba(92, 163, 255, 0.5);
+      font-family: "Cinzel", serif;
+      font-size: 18px;
+      letter-spacing: 3px;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand-title {
+      font-family: "Cinzel", serif;
+      font-size: 14px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+    }
+
+    .brand-subtitle {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-block: 4px;
+      color: var(--text-soft);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent-main);
+      transition: width var(--transition-fast);
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 8px 18px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(194, 168, 120, 0.7);
+      background: radial-gradient(circle at top, rgba(194, 168, 120, 0.16), rgba(2, 4, 10, 1));
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 0 26px rgba(194, 168, 120, 0.35);
+    }
+
+    .nav-cta span {
+      font-size: 14px;
+    }
+
+    .nav-logos {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-left: 1px solid rgba(255, 255, 255, 0.06);
+      padding-left: 14px;
+    }
+
+    .mini-logo {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(11, 30, 54, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-family: "Montserrat", sans-serif;
+      color: var(--text-soft);
+    }
+
+    .mini-logo-labels {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .mini-logo-labels div {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
+
+    /* =============== LAYOUT BASE =============== */
+
+    main {
+      padding-top: 82px;
+    }
+
+    section {
+      padding: 72px 20px;
+    }
+
+    .section-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .section-kicker {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.26em;
+      color: var(--accent-main);
+      margin-bottom: 12px;
+    }
+
+    .section-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 20px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .section-title {
+      font-family: "Cinzel", serif;
+      font-size: 24px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+
+    .section-subtitle {
+      max-width: 360px;
+      font-size: 13px;
+      color: var(--text-soft);
+      line-height: 1.6;
+    }
+
+    .tag-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 5px 12px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(2, 4, 10, 0.85);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
+
+    .tag-pill span {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent-main);
+    }
+
+    /* =============== HERO =============== */
+
+    #hero {
+      padding-top: 120px;
+      padding-bottom: 100px;
+    }
+
+    .hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-media {
+      position: relative;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background: radial-gradient(circle at top, #1f355d, #050814);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: var(--shadow-soft);
+      min-height: 280px;
+    }
+
+    .hero-media::before {
+      content: "EXO-ARCHIVE: T2F-PRIME";
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      font-size: 10px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: rgba(201, 208, 214, 0.7);
+    }
+
+    .hero-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 10% 0%, rgba(227, 106, 61, 0.26), transparent 55%);
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+
+    .hero-video-slot {
+      position: absolute;
+      inset: 48px 36px 26px 36px;
+      border-radius: 18px;
+      border: 1px solid rgba(201, 208, 214, 0.28);
+      overflow: hidden;
+      background: radial-gradient(circle at 40% 0%, #172845, #02040a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 12px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero-video-slot span {
+      max-width: 260px;
+      line-height: 1.6;
+    }
+
+    .hero-float-label {
+      position: absolute;
+      bottom: 20px;
+      right: 22px;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: rgba(201, 208, 214, 0.7);
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .hero-kicker {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.32em;
+      color: var(--accent-main);
+    }
+
+    .hero-title {
+      font-family: "Cinzel", serif;
+      font-size: clamp(28px, 4vw, 36px);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      line-height: 1.4;
+    }
+
+    .hero-subtitle {
+      font-size: 14px;
+      color: var(--text-soft);
+      max-width: 420px;
+      line-height: 1.8;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .hero-meta strong {
+      color: var(--text-soft);
+      font-weight: 500;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .btn-primary {
+      padding: 10px 24px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(194, 168, 120, 0.8);
+      background: radial-gradient(circle at top, rgba(194, 168, 120, 0.24), rgba(2, 4, 10, 1));
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 0 40px rgba(194, 168, 120, 0.5);
+      transition: transform var(--transition-med), box-shadow var(--transition-med), background var(--transition-med);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.9);
+      background: radial-gradient(circle at top, rgba(194, 168, 120, 0.32), rgba(2, 4, 10, 1));
+    }
+
+    .btn-secondary {
+      padding: 9px 18px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(201, 208, 214, 0.4);
+      background: rgba(5, 8, 20, 0.9);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-soft);
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(194, 168, 120, 0.8);
+      color: #ffffff;
+    }
+
+    .hero-tagline {
+      font-family: "Montserrat", sans-serif;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    /* =============== DOSSIER =============== */
+
+    #dossier {
+      background: radial-gradient(circle at top, #050814 0%, #02040a 40%, #000000 100%);
+    }
+
+    .dossier-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 32px;
+      align-items: flex-start;
+    }
+
+    .dossier-blocks {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .dossier-block {
+      border-radius: 18px;
+      border: 1px solid var(--border-soft);
+      background: linear-gradient(135deg, rgba(11, 18, 34, 0.95), rgba(2, 4, 10, 1));
+      padding: 18px 20px 18px 20px;
+    }
+
+    .dossier-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .dossier-title {
+      font-family: "Cinzel", serif;
+      font-size: 16px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .dossier-text {
+      font-size: 13px;
+      color: var(--text-soft);
+      line-height: 1.8;
+    }
+
+    .dossier-text em {
+      color: var(--accent-main);
+      font-style: normal;
+    }
+
+    .dossier-side {
+      border-radius: 20px;
+      border: 1px solid var(--border-soft);
+      background: radial-gradient(circle at top, #0b1222, #02040a);
+      padding: 20px 20px 18px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .dossier-side-title {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--text-soft);
+    }
+
+    .dossier-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .dossier-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .dossier-bullet {
+      width: 14px;
+      margin-top: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      color: var(--accent-main);
+    }
+
+    /* =============== CANON FILES =============== */
+
+    #canon {
+      background: #02040a;
+    }
+
+    .canon-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 28px;
+    }
+
+    .card-slab {
+      border-radius: 20px;
+      border: 1px solid var(--border-soft);
+      background: linear-gradient(145deg, #050814, #02040a);
+      padding: 18px 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+    }
+
+    .card-slab-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+
+    .card-slab-title {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      color: var(--text-soft);
+    }
+
+    .badge {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      padding: 3px 8px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(201, 208, 214, 0.4);
+      color: var(--text-muted);
+    }
+
+    .canon-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--text-soft);
+    }
+
+    .canon-list strong {
+      font-weight: 500;
+      color: #ffffff;
+    }
+
+    .canon-files-links {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .file-chip {
+      padding: 7px 14px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(201, 208, 214, 0.45);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+      background: rgba(2, 4, 10, 0.95);
+    }
+
+    .file-chip span {
+      font-size: 13px;
+      margin-right: 8px;
+      color: var(--accent-main);
+    }
+
+    /* =============== CHARACTERS =============== */
+
+    #characters {
+      background: radial-gradient(circle at top, #050814 0%, #02040a 60%, #000000 100%);
+    }
+
+    .char-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
+      gap: 28px;
+      align-items: flex-start;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+    }
+
+    .char-card {
+      border-radius: 18px;
+      border: 1px solid var(--border-soft);
+      background: linear-gradient(145deg, rgba(11, 18, 34, 0.96), #02040a);
+      padding: 14px 14px 16px 14px;
+    }
+
+    .char-tag {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .char-name {
+      font-family: "Cinzel", serif;
+      font-size: 14px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .char-text {
+      font-size: 12px;
+      color: var(--text-soft);
+      line-height: 1.7;
+    }
+
+    .side-card {
+      border-radius: 20px;
+      border: 1px solid var(--border-soft);
+      background: radial-gradient(circle at top, #0b1222, #02040a);
+      padding: 18px 18px 18px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .side-card-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--text-soft);
+    }
+
+    .side-card-text {
+      font-size: 13px;
+      color: var(--text-soft);
+      line-height: 1.7;
+    }
+
+    /* =============== ARTIFACT ROOM =============== */
+
+    #artifacts {
+      background: #02040a;
+    }
+
+    .artifact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .artifact-card {
+      border-radius: 18px;
+      border: 1px solid var(--border-soft);
+      background: linear-gradient(150deg, #050814, #02040a);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .artifact-media-slot {
+      position: relative;
+      height: 160px;
+      background: radial-gradient(circle at 20% 0%, rgba(63, 122, 216, 0.6), #050814);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: var(--text-muted);
+      text-align: center;
+      padding: 10px;
+    }
+
+    .artifact-label {
+      position: absolute;
+      top: 10px;
+      left: 12px;
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: rgba(201, 208, 214, 0.8);
+    }
+
+    .artifact-body {
+      padding: 12px 14px 16px 14px;
+    }
+
+    .artifact-title {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 6px;
+      color: var(--text-soft);
+    }
+
+    .artifact-text {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* =============== ARCHITECT UNIVERSE =============== */
+
+    #architect-universe {
+      background: radial-gradient(circle at top, #050814 0%, #02040a 70%, #000000 100%);
+    }
+
+    .universe-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 28px;
+      align-items: center;
+    }
+
+    .universe-text {
+      font-size: 13px;
+      color: var(--text-soft);
+      line-height: 1.9;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .universe-tagline {
+      font-family: "Cinzel", serif;
+      font-size: 14px;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--accent-main);
+      margin-top: 6px;
+    }
+
+    .universe-poem {
+      margin-top: 8px;
+      font-size: 13px;
+      color: var(--text-soft);
+      font-style: italic;
+    }
+
+    .universe-logos {
+      border-radius: 22px;
+      border: 1px solid var(--border-soft);
+      background: radial-gradient(circle at top, #0b1222, #02040a);
+      padding: 18px 18px 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .universe-logos-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .universe-logos-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--text-soft);
+    }
+
+    .universe-logos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .universe-logo-slot {
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(5, 8, 20, 0.96);
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      text-align: center;
+      color: var(--text-soft);
+      padding: 8px;
+    }
+
+    .universe-logo-slot span {
+      font-family: "Montserrat", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 10px;
+    }
+
+    /* =============== AUTHOR =============== */
+
+    #author {
+      background: #02040a;
+    }
+
+    .author-card {
+      border-radius: 22px;
+      border: 1px solid var(--border-soft);
+      background: linear-gradient(135deg, #050814, #02040a);
+      padding: 20px 20px 22px 20px;
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.2fr);
+      gap: 22px;
+      align-items: center;
+    }
+
+    .author-avatar-slot {
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: radial-gradient(circle at 20% 0%, #27477c, #050814);
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-soft);
+      padding: 16px;
+    }
+
+    .author-meta-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .author-name {
+      font-family: "Cinzel", serif;
+      font-size: 18px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .author-text {
+      font-size: 13px;
+      color: var(--text-soft);
+      line-height: 1.8;
+      margin-bottom: 10px;
+    }
+
+    .author-text strong {
+      font-weight: 500;
+      color: #ffffff;
+    }
+
+    .author-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .author-link-chip {
+      padding: 7px 14px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(201, 208, 214, 0.42);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-soft);
+      background: rgba(2, 4, 10, 0.95);
+    }
+
+    /* =============== PRESS KIT =============== */
+
+    #press {
+      background: radial-gradient(circle at top, #050814 0%, #02040a 80%, #000000 100%);
+      padding-bottom: 90px;
+    }
+
+    .press-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 28px;
+      align-items: flex-start;
+    }
+
+    .press-text {
+      font-size: 13px;
+      color: var(--text-soft);
+      line-height: 1.8;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .press-files {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .press-chip {
+      padding: 9px 16px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(201, 208, 214, 0.45);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      background: rgba(5, 8, 20, 0.96);
+      color: var(--text-soft);
+    }
+
+    .press-card {
+      border-radius: 22px;
+      border: 1px solid var(--border-soft);
+      background: radial-gradient(circle at top, #0b1222, #02040a);
+      padding: 18px 18px 20px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .press-card-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--text-soft);
+    }
+
+    .press-card-text {
+      font-size: 13px;
+      color: var(--text-soft);
+      line-height: 1.7;
+    }
+
+    .press-cta {
+      margin-top: 8px;
+      display: inline-flex;
+    }
+
+    .press-cta .btn-primary {
+      box-shadow: 0 0 36px rgba(227, 106, 61, 0.5);
+      border-color: var(--accent-red);
+      background: radial-gradient(circle at top, rgba(227, 106, 61, 0.26), rgba(2, 4, 10, 1));
+    }
+
+    /* =============== FOOTER =============== */
+
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 18px 20px 24px;
+      background: #02040a;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .footer-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* =============== RESPONSIVE =============== */
+
+    @media (max-width: 920px) {
+      .hero-inner,
+      .dossier-grid,
+      .canon-grid,
+      .char-layout,
+      .universe-grid,
+      .author-card,
+      .press-layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .nav-inner {
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .nav-links {
+        display: none;
+      }
+      .nav-logos {
+        border-left: none;
+        padding-left: 0;
+      }
+      .author-card {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      #hero {
+        padding-top: 120px;
+        padding-bottom: 80px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      section {
+        padding-inline: 16px;
+      }
+      .section-title {
+        font-size: 20px;
+        letter-spacing: 0.18em;
+      }
+      .hero-title {
+        letter-spacing: 0.18em;
+      }
+      .hero-media {
+        min-height: 220px;
+      }
+      .hero-video-slot {
+        inset: 52px 16px 24px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- ================= HEADER / NAV ================= -->
+    <header class="site-header">
+      <div class="nav-inner">
+        <div class="brand">
+          <div class="brand-mark">T2</div>
+          <div class="brand-text">
+            <div class="brand-title">THE SECOND FOREST</div>
+            <div class="brand-subtitle">Mythology - Authority - Commerce</div>
+          </div>
+        </div>
+
+        <nav class="nav-links">
+          <a href="#dossier">The Dossier</a>
+          <a href="#canon">Canon Files</a>
+          <a href="#characters">Characters</a>
+          <a href="#artifacts">Artifact Room</a>
+          <a href="#architect-universe">The Architect Universe</a>
+          <a href="#author">Author</a>
+          <a href="#press" class="nav-cta">
+            <span>★</span> Request Access
+          </a>
+        </nav>
+
+        <!-- Slots para logo Mindfax e portal The Architect Universe -->
+        <div class="nav-logos">
+          <div class="mini-logo">MF</div>
+          <div class="mini-logo-labels">
+            <div>MINDFAX</div>
+            <div>THE ARCHITECT UNIVERSE</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+
+      <!-- ================= HERO ================= -->
+      <section id="hero">
+        <div class="hero-inner">
+          <div class="hero-media">
+            <!-- Aqui entra o vídeo/cena em loop do Exoshell, Core-World ou Liminari Gate -->
+            <div class="hero-video-slot">
+              <span>
+                VIDEO SLOT<br />
+                4-6s loop. Exoshell emerging from the dark or Liminari Gate opening in deep space.
+              </span>
+            </div>
+            <div class="hero-float-label">
+              DEPARTMENT OF COSMIC ORIGINS
+            </div>
+          </div>
+
+          <div class="hero-content">
+            <div class="hero-kicker">sealed transmedia dossier</div>
+            <div class="hero-title">
+              THE SECOND FOREST<br />
+              A NEW ORIGIN MYTH FOR HUMANITY
+            </div>
+            <div class="hero-subtitle">
+              A premium narrative universe that treats first contact not as the beginning of a story, but as the late echo of a decision taken long before humans were called "human".
+            </div>
+
+            <div class="hero-meta">
+              <div><strong>Created by:</strong> The Architect</div>
+              <div><strong>Franchise scope:</strong> Feature films, series, games, interactive artifacts, publishing</div>
+            </div>
+
+            <div class="hero-cta-row">
+              <a href="#dossier" class="btn-primary">
+                <span>◎</span>
+                ENTER THE DOSSIER
+              </a>
+              <a href="#press" class="btn-secondary">
+                <span>▣</span>
+                Production & Investor Kit
+              </a>
+            </div>
+
+            <div class="hero-tagline">
+              MYTHOLOGY · AUTHORITY · COMMERCIALIZATION
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= THE DOSSIER ================= -->
+      <section id="dossier">
+        <div class="section-inner">
+          <div class="section-title-row">
+            <div>
+              <div class="section-kicker">level 1 - cinematic briefing</div>
+              <div class="section-title">THE DOSSIER</div>
+            </div>
+            <div class="section-subtitle">
+              The entry point for studios, publishers and investors. A clean cinematic map of what this universe is about, without spoilers and without noise.
+            </div>
+          </div>
+
+          <div class="dossier-grid">
+            <div class="dossier-blocks">
+              <article class="dossier-block">
+                <div class="dossier-label">chapter 01</div>
+                <div class="dossier-title">THE SIGNAL INITIATIVE</div>
+                <div class="dossier-text">
+                  In a collapsing information age, a small transnational unit is created to hunt for patterns that do not belong to human history. It finds one. A recurring harmonic in the cosmic background, pointing not to where we are going, but to a decision already taken about us.
+                </div>
+              </article>
+
+              <article class="dossier-block">
+                <div class="dossier-label">chapter 02</div>
+                <div class="dossier-title">FIRST CONTACT: EXTRACTORS</div>
+                <div class="dossier-text">
+                  Contact does not arrive as a ship in the sky. It arrives as <em>extraction</em>. Cities, memories and entire timelines are selectively removed, as if something upstream was debugging reality. The agents behind it call themselves Extractors, and they insist they are not invading. They are correcting.
+                </div>
+              </article>
+
+              <article class="dossier-block">
+                <div class="dossier-label">chapter 03</div>
+                <div class="dossier-title">SECOND CONTACT: CANTORI</div>
+                <div class="dossier-text">
+                  The Cantori do not travel through space. They travel through <em>consonance</em>. They claim humanity is a branch that split from a much older forest, and that the Signal Initiative has just reopened a gate that was never meant to be silent forever.
+                </div>
+              </article>
+
+              <article class="dossier-block">
+                <div class="dossier-label">chapter 04</div>
+                <div class="dossier-title">THE FIRST BURNING</div>
+                <div class="dossier-text">
+                  Long before written myth, there was a previous harvest. A First Burning that erased an entire pattern of sentient life. What survived is not an accident. It is a selection. Humanity carries a memory of that fire in its genetics, its religions and its fear of the dark.
+                </div>
+              </article>
+
+              <article class="dossier-block">
+                <div class="dossier-label">chapter 05</div>
+                <div class="dossier-title">HUMANITY'S TRUE ORIGIN</div>
+                <div class="dossier-text">
+                  Earth is not the first stage. It is the recovery room. Human beings are not the starting point. They are a second draft. When the Extractors and the Cantori collide, both sides reveal that what we call "evolution" is only one fork of a much larger design.
+                </div>
+              </article>
+
+              <article class="dossier-block">
+                <div class="dossier-label">chapter 06</div>
+                <div class="dossier-title">THE SECOND FOREST</div>
+                <div class="dossier-text">
+                  The Second Forest is the name given to the cycle that repeats when a species approaches the threshold of self-erasure. It is not just a place. It is a protocol that decides who is harvested, who is preserved and who is invited to step beyond their own myth.
+                </div>
+              </article>
+            </div>
+
+            <aside class="dossier-side">
+              <div class="dossier-side-title">FRANCHISE POSITIONING</div>
+              <ul class="dossier-list">
+                <li>
+                  <div class="dossier-bullet">▣</div>
+                  <div>
+                    <strong>Cinematic tone:</strong> Dune and Arrival energy, with the strategic, layered worldbuilding of Mass Effect and Foundation.
+                  </div>
+                </li>
+                <li>
+                  <div class="dossier-bullet">▣</div>
+                  <div>
+                    <strong>Commercial axis:</strong> designed from day one as a premium IP that can live as films, series, games, publishing, audio and interactive experiences.
+                  </div>
+                </li>
+                <li>
+                  <div class="dossier-bullet">▣</div>
+                  <div>
+                    <strong>Mythological core:</strong> a new creation narrative where humanity is not random, but also not a chosen exception. We are one branch inside a much older, much stranger forest.
+                  </div>
+                </li>
+                <li>
+                  <div class="dossier-bullet">▣</div>
+                  <div>
+                    <strong>Authorial seal:</strong> canon curated personally by The Architect, integrated with the broader Architect Universe and Mindfax ecosystem.
+                  </div>
+                </li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= CANON FILES ================= -->
+      <section id="canon">
+        <div class="section-inner">
+          <div class="section-title-row">
+            <div>
+              <div class="section-kicker">level 2 - structural authority</div>
+              <div class="section-title">THE CANON FILES</div>
+            </div>
+            <div class="section-subtitle">
+              Here the mythology stops being a pitch and becomes evidence. Canon, dates, documents and how the work was actually born. This is where IP due diligence begins.
+            </div>
+          </div>
+
+          <div class="canon-grid">
+            <div class="card-slab">
+              <div class="card-slab-header">
+                <div class="card-slab-title">CORE DOCUMENTS</div>
+                <div class="badge">Curated by The Architect</div>
+              </div>
+              <ul class="canon-list">
+                <li>
+                  <strong>Narrative Treatment</strong> - official blueprint of the feature film and series potential, with the main arcs, turning points and universe rules.
+                </li>
+                <li>
+                  <strong>Revised Canon</strong> - live document that preserves every canonical decision, timeline correction and mythological layer.
+                </li>
+                <li>
+                  <strong>Authorial Manifesto</strong> - the philosophical and spiritual statement behind The Second Forest, available as Kindle and PDF for legal traceability.
+                </li>
+                <li>
+                  <strong>Canon Timeline</strong> - the clean chronological backbone, from the First Burning to the present day events of the franchise.
+                </li>
+                <li>
+                  <strong>How the Work Was Born</strong> - documented creative history, including the original videogame concept, early drafts and the moment it became a franchise IP.
+                </li>
+              </ul>
+              <div class="canon-files-links">
+                <!-- Substituir href com os links reais dos arquivos -->
+                <a href="#" class="file-chip"><span>⧉</span>Narrative Treatment</a>
+                <a href="#" class="file-chip"><span>⧉</span>Revised Canon</a>
+                <a href="#" class="file-chip"><span>⧉</span>Authorial Manifesto</a>
+                <a href="#" class="file-chip"><span>⧉</span>Canon Timeline</a>
+              </div>
+            </div>
+
+            <div class="card-slab">
+              <div class="card-slab-header">
+                <div class="card-slab-title">LEGAL & IP TRACE</div>
+                <div class="badge">Public authorship</div>
+              </div>
+              <div class="canon-list">
+                <li>
+                  Public release of the manifesto and canonical material functions as time-stamped authorship trace across platforms.
+                </li>
+                <li>
+                  Integration with Mindfax, The Architect Universe and companion works strengthens the authorial signature and creative continuity.
+                </li>
+                <li>
+                  Ensures investors and partners that they are acquiring a universe with clear ownership, expansion paths and a living canon manager.
+                </li>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= CHARACTERS / FACTIONS ================= -->
+      <section id="characters">
+        <div class="section-inner">
+          <div class="section-title-row">
+            <div>
+              <div class="section-kicker">level 3 - faces of the myth</div>
+              <div class="section-title">CHARACTERS & FACTIONS</div>
+            </div>
+            <div class="section-subtitle">
+              Built with casting, spin offs and cross media in mind. Every character and faction is designed to carry its own gravitational field inside the larger forest.
+            </div>
+          </div>
+
+          <div class="char-layout">
+            <div class="card-grid">
+              <article class="char-card">
+                <div class="char-tag">protagonist</div>
+                <div class="char-name">ELIAS MORENO</div>
+                <div class="char-text">
+                  Data-architect turned reluctant field operative. Elias is the first to notice that the Signal is not just information. It is memory. He carries a silent connection to the First Burning that no one fully understands.
+                </div>
+              </article>
+
+              <article class="char-card">
+                <div class="char-tag">commander</div>
+                <div class="char-name">AMIRA SOLACE</div>
+                <div class="char-text">
+                  Head of the Signal Initiative. Trained to distrust belief, forced to negotiate with entities that treat faith as physics. Her arc is the line between military protocol and metaphysical responsibility.
+                </div>
+              </article>
+
+              <article class="char-card">
+                <div class="char-tag">specialist</div>
+                <div class="char-name">DR. NADIA KWAN</div>
+                <div class="char-text">
+                  Harmonic physicist. She maps reality as waves and dissonances, making her the only human who can hear the difference between an Extractor operation and a Cantori invitation.
+                </div>
+              </article>
+
+              <article class="char-card">
+                <div class="char-tag">ground truth</div>
+                <div class="char-name">JONAH REYES</div>
+                <div class="char-text">
+                  Former war correspondent, now embedded with the Initiative. Jonah documents the silent evacuation of cities and becomes the human lens for the audience inside an inhuman decision.
+                </div>
+              </article>
+
+              <article class="char-card">
+                <div class="char-tag">bridge</div>
+                <div class="char-name">MINA OKAFOR</div>
+                <div class="char-text">
+                  Child of a forgotten experiment, Mina feels the Second Forest before it arrives. She is both prophecy and proof, living evidence that the myth was never fully erased from human blood.
+                </div>
+              </article>
+
+              <article class="char-card">
+                <div class="char-tag">cantori ambassador</div>
+                <div class="char-name">KAEL</div>
+                <div class="char-text">
+                  A being that wears human shape like a translation. Kael insists the Cantori are not gods, not saviors and not executioners. They are gardeners trying to prevent another burning.
+                </div>
+              </article>
+            </div>
+
+            <aside class="side-card">
+              <div class="side-card-title">FACTIONS</div>
+              <div class="side-card-text">
+                <strong>Modern Humans</strong> - fractured, brilliant, on the brink of self-induced extinction.  
+                <br/><br/>
+                <strong>Extractors</strong> - operators of a reality-scale debugging protocol. They remove corrupted branches to protect a much older design.  
+                <br/><br/>
+                <strong>Harmonics</strong> - humans who can hear structural shifts in reality as sound, light or intuition, often mistaken for illness or mysticism.  
+                <br/><br/>
+                <strong>Cantori</strong> - a civilization living in consonant layers of existence, seeing forests where humans see void. They remember the First Burning.  
+                <br/><br/>
+                <strong>Hybrid Forces</strong> - emergent groups formed where human free will collides with non-human protocols. They do not fully belong to either side.
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= ARTIFACT ROOM ================= -->
+      <section id="artifacts">
+        <div class="section-inner">
+          <div class="section-title-row">
+            <div>
+              <div class="section-kicker">level 4 - visual gravity</div>
+              <div class="section-title">THE ARTIFACT ROOM</div>
+            </div>
+            <div class="section-subtitle">
+              Concept art, maps, fractal motifs and key visuals. This gallery exists to prove that this IP has a visual DNA ready to move into production.
+            </div>
+          </div>
+
+          <div class="artifact-grid">
+            <article class="artifact-card">
+              <div class="artifact-media-slot">
+                <div class="artifact-label">CONCEPT ART SLOT</div>
+                <!-- Futuro: imagem do Exoshell surgindo das sombras -->
+                Exoshell emerging from the dark. High contrast, mythic engineering.
+              </div>
+              <div class="artifact-body">
+                <div class="artifact-title">EXOSHELL</div>
+                <div class="artifact-text">
+                  The mobile architecture used to stabilize contact zones. Part machine, part ritual device, built to withstand both physics and myth.
+                </div>
+              </div>
+            </article>
+
+            <article class="artifact-card">
+              <div class="artifact-media-slot">
+                <div class="artifact-label">CONCEPT ART SLOT</div>
+                <!-- Futuro: mapa estelar do Canon -->
+                Core-World orbiting a dead planet. Starfield density and subtle motion.
+              </div>
+              <div class="artifact-body">
+                <div class="artifact-title">CORE-WORLD MAP</div>
+                <div class="artifact-text">
+                  A cartographic view of the canonical sectors where the Second Forest protocol has already been activated.
+                </div>
+              </div>
+            </article>
+
+            <article class="artifact-card">
+              <div class="artifact-media-slot">
+                <div class="artifact-label">MOTIF SLOT</div>
+                <!-- Futuro: motivo fractal -->
+                Fractal motif connecting The Second Forest to The Architect Universe.
+              </div>
+              <div class="artifact-body">
+                <div class="artifact-title">FRACTAL MOTIFS</div>
+                <div class="artifact-text">
+                  Visual patterns tying the franchise to the larger Architect Universe, recognizable across books, websites and cinematic material.
+                </div>
+              </div>
+            </article>
+
+            <article class="artifact-card">
+              <div class="artifact-media-slot">
+                <div class="artifact-label">PORTAL SLOT</div>
+                <!-- Futuro: Liminari Gate -->
+                Liminari Gate opening as a ring of light around a black geometry.
+              </div>
+              <div class="artifact-body">
+                <div class="artifact-title">LIMINARI GATE</div>
+                <div class="artifact-text">
+                  The boundary between the First and Second Forests. A recurring image for posters, trailers and in-universe documents.
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= THE ARCHITECT UNIVERSE ================= -->
+      <section id="architect-universe">
+        <div class="section-inner">
+          <div class="section-title-row">
+            <div>
+              <div class="section-kicker">level 5 - universe integration</div>
+              <div class="section-title">THE ARCHITECT UNIVERSE</div>
+            </div>
+            <div class="section-subtitle">
+              The Second Forest is not an island. It is a constellation inside a larger authorial system that includes finance, neuroscience and cosmic mythology.
+            </div>
+          </div>
+
+          <div class="universe-grid">
+            <div class="universe-text">
+              <div class="tag-pill">
+                <span></span>
+                Connected Works
+              </div>
+              <p>
+                The Architect Universe is the primary portal where all authorial lines converge: cosmic philosophy, high-end science communication, financial sovereignty and narrative mythology.
+              </p>
+              <p>
+                The Second Forest is the cinematic branch that treats humanity's origin and destiny as a negotiation between free will and older protocols. It converses directly with:
+              </p>
+              <ul style="margin-left:16px; margin-top:4px; color:var(--text-soft); font-size:13px; line-height:1.7;">
+                <li>The Architect - Early Edition</li>
+                <li>Mindfax - The Artifact: The Continuum</li>
+                <li>Fractal Project</li>
+                <li>The Freedom Protocol</li>
+                <li>Neurabyte</li>
+                <li>Finsage</li>
+              </ul>
+              <div class="universe-tagline">
+                IF YOU FOUND THIS, YOU WEREN'T SEARCHING.<br />
+                YOU WERE REMEMBERING.
+              </div>
+              <div class="universe-poem">
+                This is the silent contract with the audience: you are not buying content. You are reclaiming a language you already carried inside.
+              </div>
+            </div>
+
+            <aside class="universe-logos">
+              <div class="universe-logos-header">
+                <div class="universe-logos-title">BRAND NEXUS</div>
+                <a href="https://mindfax.art/thearchitectuniverse" target="_blank" class="btn-secondary" style="padding-inline:14px;">
+                  Visit The Architect Universe
+                </a>
+              </div>
+              <div class="universe-logos-grid">
+                <!-- Slots para logos reais -->
+                <div class="universe-logo-slot">
+                  <span>MINDFAX</span>
+                </div>
+                <div class="universe-logo-slot">
+                  <span>THE ARCHITECT</span>
+                </div>
+                <div class="universe-logo-slot">
+                  <span>THE CONTINUUM</span>
+                </div>
+                <div class="universe-logo-slot">
+                  <span>FRACTAL PROJECT</span>
+                </div>
+                <div class="universe-logo-slot">
+                  <span>NEURABYTE</span>
+                </div>
+                <div class="universe-logo-slot">
+                  <span>FINSAGE</span>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= AUTHOR / CONHEÇA O AUTOR ================= -->
+      <section id="author">
+        <div class="section-inner">
+          <div class="section-title-row">
+            <div>
+              <div class="section-kicker">level 6 - authorial authority</div>
+              <div class="section-title">ABOUT THE AUTHOR</div>
+            </div>
+            <div class="section-subtitle">
+              The Architect is not a generic pen name. It is an ongoing experiment in how one consciousness can host many universes at once.
+            </div>
+          </div>
+
+          <article class="author-card">
+            <div class="author-avatar-slot">
+              <!-- Aqui entra o avatar oficial cósmico do autor -->
+              AUTHOR AVATAR SLOT<br /><br />
+              Insert The Architect official cosmic avatar here to visually anchor the brand.
+            </div>
+            <div>
+              <div class="author-meta-title">pseudonym</div>
+              <div class="author-name">THE ARCHITECT</div>
+              <div class="author-text">
+                The Architect is the authorial entity behind The Second Forest and the broader Architect Universe. Under this name, the creator weaves together:
+                <strong>cosmic mythology</strong>, <strong>scientific awe</strong>, <strong>financial sovereignty</strong> and <strong>spiritual responsibility</strong>.
+              </div>
+              <div class="author-text">
+                Across two decades of work with education, emotional support and spiritual assistance, the human behind this pseudonym has treated narrative not as entertainment, but as technology for healing, clarity and courage.
+              </div>
+              <div class="author-text">
+                The Second Forest is the cinematic branch of this life work. It exists to give the next generation a language to face extinction narratives without surrendering to them.
+              </div>
+              <div class="author-links">
+                <!-- Substituir href com links reais -->
+                <a href="https://mindfax.art/thearchitectuniverse" target="_blank" class="author-link-chip">Author Portal</a>
+                <a href="#" class="author-link-chip">Kindle Author Page</a>
+                <a href="#" class="author-link-chip">Media & Speaking</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ================= PRESS / PRODUCTION KIT ================= -->
+      <section id="press">
+        <div class="section-inner">
+          <div class="section-title-row">
+            <div>
+              <div class="section-kicker">level 7 - production interface</div>
+              <div class="section-title">PRESS & PRODUCTION KIT</div>
+            </div>
+            <div class="section-subtitle">
+              This is the operational layer for studios, publishers and investors. Clean, downloadable and ready to plug into your pipeline.
+            </div>
+          </div>
+
+          <div class="press-layout">
+            <div class="press-text">
+              <p>
+                Below you will find the core production assets for The Second Forest franchise. Every document is curated to balance:
+              </p>
+              <ul style="margin-left:16px; margin-top:4px; color:var(--text-soft); font-size:13px; line-height:1.7;">
+                <li>High level understanding for executives</li>
+                <li>Concrete data for producers and legal teams</li>
+                <li>Mythological depth for writers and worldbuilders</li>
+              </ul>
+              <div class="press-files">
+                <!-- Substituir href com arquivos reais -->
+                <a href="#" class="press-chip">Pitch Deck (PDF)</a>
+                <a href="#" class="press-chip">One-Pager</a>
+                <a href="#" class="press-chip">Narrative Treatment</a>
+                <a href="#" class="press-chip">Canon Document</a>
+              </div>
+              <p style="margin-top:10px;">
+                For full access, co-development conversations or acquisition of rights, use the sealed request channel below.
+              </p>
+            </div>
+
+            <aside class="press-card">
+              <div class="press-card-title">ACCESS PROTOCOL</div>
+              <div class="press-card-text">
+                "You are the mirror where both futures meet."
+                <br /><br />
+                This line is the ethical center of the franchise. It applies equally to the audience and to the partners who choose to build with this universe.
+                <br /><br />
+                Requesting full access implies a commitment to treat this IP not as disposable content, but as a long term narrative ecosystem.
+              </div>
+              <div class="press-cta">
+                <a
+                  href="mailto:contact@mindfax.art?subject=The Second Forest - Access Request"
+                  class="btn-primary"
+                >
+                  <span>🎬</span>
+                  REQUEST FULL ACCESS
+                </a>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+      <div class="footer-inner">
+        <div>
+          © <span id="year"></span> THE SECOND FOREST · A Mindfax / The Architect Universe property.
+        </div>
+        <div class="footer-right">
+          <span>Mythology</span>
+          <span>·</span>
+          <span>Authority</span>
+          <span>·</span>
+          <span>Commercialization</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Atualiza ano automaticamente
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
 
