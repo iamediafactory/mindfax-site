@@ -91,13 +91,14 @@
     }
 
     .brand-logo {
-      width: 40px;
-      height: 40px;
+      width: 64px;
+      height: 64px;
       border-radius: 18px;
       border: 1px solid rgba(255, 255, 255, 0.18);
       background: radial-gradient(circle at 30% 20%, #3f7ad8, #050814);
       box-shadow: 0 0 40px rgba(92, 163, 255, 0.5);
-      object-fit: cover;
+      object-fit: contain;
+      background-color: #02040a;
     }
 
     .brand-text {
@@ -181,8 +182,8 @@
     }
 
     .mini-logo-wrapper {
-      width: 26px;
-      height: 26px;
+      width: 64px;
+      height: 64px;
       border-radius: 999px;
       border: 1px solid rgba(255, 255, 255, 0.18);
       background: rgba(11, 30, 54, 0.9);
@@ -333,12 +334,15 @@
       border: 1px solid rgba(201, 208, 214, 0.28);
       overflow: hidden;
       background: #02040a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .hero-video-slot img.hero-image {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
+      object-fit: contain;
       display: block;
     }
 
@@ -545,7 +549,7 @@
       color: var(--accent-main);
     }
 
-    /* =============== CANON FILES =============== */
+    /* =============== AUTHORIAL MANIFESTO =============== */
 
     #canon {
       background: #02040a;
@@ -555,6 +559,7 @@
       display: grid;
       grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
       gap: 28px;
+      align-items: stretch;
     }
 
     .card-slab {
@@ -599,12 +604,7 @@
       color: var(--text-soft);
     }
 
-    .canon-list strong {
-      font-weight: 500;
-      color: #ffffff;
-    }
-
-    .canon-files-links {
+    .canon-cta-row {
       margin-top: 18px;
       display: flex;
       flex-wrap: wrap;
@@ -620,12 +620,42 @@
       letter-spacing: 0.16em;
       color: var(--text-soft);
       background: rgba(2, 4, 10, 0.95);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
 
     .file-chip span {
       font-size: 13px;
-      margin-right: 8px;
       color: var(--accent-main);
+    }
+
+    .manifesto-mockup {
+      border-radius: 18px;
+      border: 1px solid var(--border-soft);
+      background: radial-gradient(circle at top, #0b1222, #02040a);
+      padding: 16px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .manifesto-mockup-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--text-soft);
+      margin-bottom: 4px;
+    }
+
+    .manifesto-mockup img {
+      max-height: 260px;
+      object-fit: contain;
+      border-radius: 14px;
+      box-shadow: var(--shadow-soft);
     }
 
     /* =============== CHARACTERS =============== */
@@ -860,6 +890,13 @@
       display: block;
     }
 
+    .universe-channels {
+      margin-top: 4px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
     /* =============== AUTHOR =============== */
 
     #author {
@@ -881,14 +918,18 @@
       border-radius: 18px;
       border: 1px solid rgba(255, 255, 255, 0.16);
       background: radial-gradient(circle at 20% 0%, #27477c, #050814);
-      height: 200px;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      font-size: 12px;
-      color: var(--text-soft);
       padding: 16px;
+    }
+
+    .author-avatar-img {
+      max-height: 260px;
+      width: auto;
+      border-radius: 16px;
+      object-fit: contain;
+      box-shadow: var(--shadow-soft);
     }
 
     .author-meta-title {
@@ -946,7 +987,7 @@
 
     .press-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1.2fr);
       gap: 28px;
       align-items: flex-start;
     }
@@ -960,56 +1001,11 @@
       gap: 16px;
     }
 
-    .press-files {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 6px;
-    }
-
-    .press-chip {
-      padding: 9px 16px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(201, 208, 214, 0.45);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      background: rgba(5, 8, 20, 0.96);
-      color: var(--text-soft);
-    }
-
-    .press-card {
-      border-radius: 22px;
-      border: 1px solid var(--border-soft);
-      background: radial-gradient(circle at top, #0b1222, #02040a);
-      padding: 18px 18px 20px 18px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
     .press-card-title {
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 0.22em;
       color: var(--text-soft);
-    }
-
-    .press-card-text {
-      font-size: 13px;
-      color: var(--text-soft);
-      line-height: 1.7;
-    }
-
-    .press-cta {
-      margin-top: 8px;
-      display: inline-flex;
-    }
-
-    .press-cta .btn-primary {
-      box-shadow: 0 0 36px rgba(227, 106, 61, 0.5);
-      border-color: var(--accent-red);
-      background: radial-gradient(circle at top, rgba(227, 106, 61, 0.26), rgba(2, 4, 10, 1));
     }
 
     /* =============== CONTACT & PARTNERSHIPS =============== */
@@ -1067,8 +1063,21 @@
       gap: 12px;
       justify-content: space-between;
       align-items: center;
-      font-size: 11px;
+      font-size: 14px;
       color: var(--text-muted);
+    }
+
+    .footer-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo {
+      height: 24px;
+      width: auto;
+      object-fit: contain;
     }
 
     .footer-right {
@@ -1138,8 +1147,8 @@
       <div class="nav-inner">
         <div class="brand">
           <img
-            src="architect-avatar-logo.png"
-            alt="The Architect emblem"
+            src="Mindfax_logo_Sites.png"
+            alt="Mindfax emblem"
             class="brand-logo"
           />
           <div class="brand-text">
@@ -1150,7 +1159,7 @@
 
         <nav class="nav-links">
           <a href="#dossier">The Dossier</a>
-          <a href="#canon">Canon Files</a>
+          <a href="#canon">Authorial Manifesto</a>
           <a href="#characters">Characters</a>
           <a href="#artifacts">Artifact Room</a>
           <a href="#architect-universe">The Architect Universe</a>
@@ -1327,68 +1336,57 @@
         </div>
       </section>
 
-      <!-- ================= CANON FILES ================= -->
+      <!-- ================= AUTHORIAL MANIFESTO ================= -->
       <section id="canon">
         <div class="section-inner">
           <div class="section-title-row">
             <div>
               <div class="section-kicker">level 2 - structural authority</div>
-              <div class="section-title">THE CANON FILES</div>
+              <div class="section-title">AUTHORIAL MANIFESTO</div>
             </div>
             <div class="section-subtitle">
-              Here the mythology stops being a pitch and becomes evidence. Canon, dates, documents and how the work was actually born. This is where IP due diligence begins.
+              The public manifesto is the ethical and legal spine of this universe. By existing as a time-stamped publication and a downloadable document, it guarantees authorship while opening the work to serious partners.
             </div>
           </div>
 
           <div class="canon-grid">
             <div class="card-slab">
               <div class="card-slab-header">
-                <div class="card-slab-title">CORE DOCUMENTS</div>
+                <div class="card-slab-title">CORE AUTHORIAL SEAL</div>
                 <div class="badge">Curated by The Architect</div>
               </div>
               <ul class="canon-list">
                 <li>
-                  <strong>Narrative Treatment</strong> - official blueprint of the feature film and series potential, with the main arcs, turning points and universe rules.
+                  The <strong>Authorial Manifesto</strong> is the primary canonical document behind <em>The Second Forest</em>. It states the philosophical, narrative and spiritual foundations of the work.
                 </li>
                 <li>
-                  <strong>Revised Canon</strong> - live document that preserves every canonical decision, timeline correction and mythological layer.
+                  It exists as a <strong>published Kindle edition</strong> and as a <strong>PDF dossier</strong>, both functioning as public records of authorship and intent.
                 </li>
                 <li>
-                  <strong>Authorial Manifesto</strong> - the philosophical and spiritual statement behind The Second Forest, available as Kindle and PDF for legal traceability.
+                  This dual existence (Amazon Kindle + sealed PDF) acts as a structural shield against plagiarism and informal appropriation of the universe.
                 </li>
                 <li>
-                  <strong>Canon Timeline</strong> - the clean chronological backbone, from the First Burning to the present day events of the franchise.
-                </li>
-                <li>
-                  <strong>How the Work Was Born</strong> - documented creative history, including the original videogame concept, early drafts and the moment it became a franchise IP.
+                  Studios, publishers and investors can treat the Manifesto as an anchor: if it is not aligned with the Manifesto, it is not canonical.
                 </li>
               </ul>
-              <div class="canon-files-links">
-                <!-- Substituir href com os links reais dos arquivos -->
-                <a href="#" class="file-chip"><span>⧉</span>Narrative Treatment</a>
-                <a href="#" class="file-chip"><span>⧉</span>Revised Canon</a>
-                <a href="#" class="file-chip"><span>⧉</span>Authorial Manifesto</a>
-                <a href="#" class="file-chip"><span>⧉</span>Canon Timeline</a>
+
+              <div class="canon-cta-row">
+                <a href="AUTHORIAL_MANIFESTO.pdf" class="file-chip">
+                  <span>⧉</span> Download Manifesto (PDF)
+                </a>
+                <a href="#" class="file-chip">
+                  <span>⧉</span> View Manifesto on Kindle
+                </a>
               </div>
             </div>
 
-            <div class="card-slab">
-              <div class="card-slab-header">
-                <div class="card-slab-title">LEGAL & IP TRACE</div>
-                <div class="badge">Public authorship</div>
-              </div>
-              <div class="canon-list">
-                <li>
-                  Public release of the manifesto and canonical material functions as time-stamped authorship trace across platforms.
-                </li>
-                <li>
-                  Integration with The Architect Universe and IA Media Factory worlds (Mindfax, Neurabyte, Finsage) strengthens the authorial signature and creative continuity.
-                </li>
-                <li>
-                  Ensures investors and partners that they are acquiring a universe with clear ownership, expansion paths and a living canon manager.
-                </li>
-              </div>
-            </div>
+            <aside class="manifesto-mockup">
+              <div class="manifesto-mockup-title">AUTHORIAL MANIFESTO · VISUAL MOCKUP</div>
+              <img
+                src="Manifesto_Cover_Mockup.png"
+                alt="Authorial Manifesto cover mockup"
+              />
+            </aside>
           </div>
         </div>
       </section>
@@ -1589,12 +1587,15 @@
                 The Second Forest is the cinematic branch that treats humanity's origin and destiny as a negotiation between free will and older protocols. It converses directly with:
               </p>
               <ul style="margin-left:16px; margin-top:4px; color:var(--text-soft); font-size:13px; line-height:1.7;">
-                <li>The Architect - Early Edition</li>
-                <li>Mindfax - The Artifact: The Continuum</li>
-                <li>Fractal Project</li>
-                <li>The Freedom Protocol</li>
-                <li>Neurabyte</li>
-                <li>Finsage</li>
+                <li><a href="https://mindfax.art" target="_blank">PRIMARY PORTAL — The Architect Universe (mindfax.art)</a></li>
+                <li><a href="https://mindfax.art/thesecondforestprojetc" target="_blank">THE SECOND FOREST — Project Portal</a></li>
+                <li><a href="https://mindfax.art/fractalprojetc" target="_blank">FRACTAL — The Consciousness Project</a></li>
+                <li><a href="https://mindfax.art/architect-early/" target="_blank">THE ARCHITECT — Early Edition</a></li>
+                <li><a href="https://mindfax.art/thecontinuum/" target="_blank">THE CONTINUUM — Artifact Series</a></li>
+                <li><a href="https://mindfax.art/thefreedomprotocol/" target="_blank">THE FREEDOM PROTOCOL</a></li>
+                <li><a href="https://mindfax.art/neurabyte-protocol/" target="_blank">NEURABYTE — The Cognitive Protocol</a></li>
+                <li><a href="https://mindfax.art/thefinancialtriadprotocol" target="_blank">FINSAGE — The Financial Triad Protocol</a></li>
+                <li><a href="https://mindfax.art/finsage/" target="_blank">FINSAGE — The Wealth System</a></li>
               </ul>
               <div class="universe-tagline">
                 IF YOU FOUND THIS, YOU WEREN'T SEARCHING.<br />
@@ -1614,31 +1615,62 @@
               </div>
               <div class="universe-logos-grid">
                 <div class="universe-logo-slot">
-                  <img
-                    src="architect-avatar-logo.png"
-                    alt="The Architect logo"
-                    class="universe-logo-img"
-                  />
+                  <a href="https://mindfax.art/architect-early/" target="_blank">
+                    <img
+                      src="Early Edition_Mocup.png"
+                      alt="The Architect Early Edition mockup"
+                      class="universe-logo-img"
+                    />
+                  </a>
                 </div>
                 <div class="universe-logo-slot">
-                  <img
-                    src="Mindfax_logo_Sites.png"
-                    alt="Mindfax logo"
-                    class="universe-logo-img"
-                  />
+                  <a href="https://mindfax.art" target="_blank">
+                    <img
+                      src="Mindfax_logo_Sites.png"
+                      alt="Mindfax logo"
+                      class="universe-logo-img"
+                    />
+                  </a>
                 </div>
                 <div class="universe-logo-slot">
-                  <span>THE CONTINUUM</span>
+                  <a href="https://mindfax.art/thecontinuum/" target="_blank">
+                    <img
+                      src="The Continuum_Mockup_Epic.png"
+                      alt="The Continuum mockup"
+                      class="universe-logo-img"
+                    />
+                  </a>
                 </div>
                 <div class="universe-logo-slot">
-                  <span>FRACTAL PROJECT</span>
+                  <a href="https://mindfax.art/thefreedomprotocol/" target="_blank">
+                    <img
+                      src="The Freedom Protocol_Capa_Mockup.png"
+                      alt="The Freedom Protocol mockup"
+                      class="universe-logo-img"
+                    />
+                  </a>
                 </div>
                 <div class="universe-logo-slot">
-                  <span>NEURABYTE</span>
+                  <a href="https://mindfax.art/neurabyte-protocol/" target="_blank">
+                    <span>NEURABYTE</span>
+                  </a>
                 </div>
                 <div class="universe-logo-slot">
-                  <span>FINSAGE</span>
+                  <a href="https://mindfax.art/finsage/" target="_blank">
+                    <img
+                      src="finsage-logo-site.png"
+                      alt="Finsage logo"
+                      class="universe-logo-img"
+                    />
+                  </a>
                 </div>
+              </div>
+
+              <div class="press-card-title" style="margin-top:8px;">YOUTUBE CHANNELS</div>
+              <div class="universe-channels">
+                <a href="https://www.youtube.com/@mindfaxart" target="_blank" class="author-link-chip">Mindfax · YouTube</a>
+                <a href="https://www.youtube.com/@NeuraByteIA" target="_blank" class="author-link-chip">Neurabyte · YouTube</a>
+                <a href="https://www.youtube.com/@FinSageIA" target="_blank" class="author-link-chip">Finsage · YouTube</a>
               </div>
             </aside>
           </div>
@@ -1660,9 +1692,11 @@
 
           <article class="author-card">
             <div class="author-avatar-slot">
-              <!-- Quando quiser, substitua pelo avatar cósmico oficial -->
-              AUTHOR AVATAR SLOT<br /><br />
-              Insert The Architect official cosmic avatar here to visually anchor the brand.
+              <img
+                src="architect-avatar.png"
+                alt="The Architect cosmic avatar"
+                class="author-avatar-img"
+              />
             </div>
             <div>
               <div class="author-meta-title">pseudonym</div>
@@ -1678,10 +1712,10 @@
                 Across two decades of work with education, emotional support and spiritual assistance, the human behind this pseudonym has treated narrative not as entertainment, but as technology for healing, clarity and courage. The Second Forest is the cinematic branch of this life work, giving the next generation a language to face extinction narratives without surrendering to them.
               </div>
               <div class="author-links">
-                <!-- Substituir href com links reais -->
                 <a href="https://mindfax.art/thearchitectuniverse" target="_blank" class="author-link-chip">Author Portal</a>
                 <a href="#" class="author-link-chip">Kindle Author Page</a>
-                <a href="#" class="author-link-chip">Media & Speaking</a>
+                <a href="#" class="author-link-chip">Media &amp; Speaking</a>
+                <a href="https://medium.com/@iamediafactory.studio" target="_blank" class="author-link-chip">Medium Publishers</a>
               </div>
             </div>
           </article>
@@ -1697,51 +1731,25 @@
               <div class="section-title">PRESS & PRODUCTION KIT</div>
             </div>
             <div class="section-subtitle">
-              This is the operational layer for studios, publishers and investors. Clean, downloadable and ready to plug into your pipeline.
+              A discreet production layer for studios, publishers and investors. All strategic documents are available after direct professional contact.
             </div>
           </div>
 
           <div class="press-layout">
             <div class="press-text">
               <p>
-                Below you will find the core production assets for The Second Forest franchise. Every document is curated to balance:
+                The following assets are prepared and curated, ready to be shared once a formal conversation with the appropriate business department is initiated:
               </p>
               <ul style="margin-left:16px; margin-top:4px; color:var(--text-soft); font-size:13px; line-height:1.7;">
-                <li>High level understanding for executives</li>
-                <li>Concrete data for producers and legal teams</li>
-                <li>Mythological depth for writers and worldbuilders</li>
+                <li><strong>Pitch Deck (PDF)</strong> – executive overview of the franchise, visuals and expansion roadmap.</li>
+                <li><strong>One-Pager</strong> – concise summary for quick decision makers and catalog inclusion.</li>
+                <li><strong>Narrative Treatment</strong> – detailed structure of the film/series potential and universe rules.</li>
+                <li><strong>Canon Document</strong> – technical register of timelines, factions and non-negotiable mythological points.</li>
               </ul>
-              <div class="press-files">
-                <!-- Substituir href com arquivos reais -->
-                <a href="#" class="press-chip">Pitch Deck (PDF)</a>
-                <a href="#" class="press-chip">One-Pager</a>
-                <a href="#" class="press-chip">Narrative Treatment</a>
-                <a href="#" class="press-chip">Canon Document</a>
-              </div>
-              <p style="margin-top:10px;">
-                For full access, co-development conversations or acquisition of rights, use the sealed request channel below or the official IA Media Factory contact in the Contact & Partnerships section.
+              <p>
+                These materials are <strong>not publicly downloadable</strong>. They are provided upon request after professional contact from studios, publishers, agents or investors, ensuring that the IP remains protected while fully accessible to serious partners.
               </p>
             </div>
-
-            <aside class="press-card">
-              <div class="press-card-title">ACCESS PROTOCOL</div>
-              <div class="press-card-text">
-                "You are the mirror where both futures meet."
-                <br /><br />
-                This line is the ethical center of the franchise. It applies equally to the audience and to the partners who choose to build with this universe.
-                <br /><br />
-                Requesting full access implies a commitment to treat this IP not as disposable content, but as a long term narrative ecosystem.
-              </div>
-              <div class="press-cta">
-                <a
-                  href="mailto:iamediafactory.studio@gmail.com?subject=THE SECOND FOREST - Access Request"
-                  class="btn-primary"
-                >
-                  <span>🎬</span>
-                  REQUEST FULL ACCESS
-                </a>
-              </div>
-            </aside>
           </div>
         </div>
       </section>
@@ -1767,14 +1775,6 @@
             <div class="contact-email">
               iamediafactory.studio@gmail.com
             </div>
-            <div class="hero-cta-row" style="margin-top:10px;">
-              <a
-                href="mailto:iamediafactory.studio@gmail.com?subject=IA Media Factory - Partnership Inquiry (The Second Forest)"
-                class="btn-secondary"
-              >
-                ✉ Business Contact
-              </a>
-            </div>
             <div class="contact-text" style="font-size:12px; color:var(--text-muted); margin-top:4px;">
               Messages are received and curated directly by IA Media Factory, on behalf of The Architect and the Mindfax / Neurabyte / Finsage worlds.
             </div>
@@ -1786,8 +1786,15 @@
     <!-- ================= FOOTER ================= -->
     <footer>
       <div class="footer-inner">
-        <div>
-          © <span id="year"></span> IA Media Factory · THE SECOND FOREST — A franchise within The Architect Universe · Mindfax.
+        <div class="footer-left">
+          <img
+            src="IA Media Factory_Logo.png"
+            alt="IA Media Factory logo"
+            class="footer-logo"
+          />
+          <span>
+            © <span id="year"></span> IA Media Factory · THE SECOND FOREST — A franchise within The Architect Universe · Mindfax.
+          </span>
         </div>
         <div class="footer-right">
           <span>Mythology</span>
