@@ -81,7 +81,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
+      gap: 40px; /* aumentado para dar mais respiro antes do menu */
     }
 
     .brand {
@@ -103,8 +103,10 @@
 
     .brand-text {
       display: flex;
-      flex-direction: column;
-      gap: 2px;
+      flex-direction: row;   /* antes era column */
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
     }
 
     .brand-title {
@@ -290,8 +292,8 @@
       max-width: var(--max-width);
       margin: 0 auto;
       display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-      gap: 40px;
+      grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); /* imagem mais protagonista */
+      gap: 46px;
       align-items: center;
     }
 
@@ -302,7 +304,7 @@
       background: radial-gradient(circle at top, #1f355d, #050814);
       border: 1px solid rgba(255, 255, 255, 0.12);
       box-shadow: var(--shadow-soft);
-      min-height: 280px;
+      min-height: 380px; /* antes 280px */
     }
 
     .hero-media::before {
@@ -329,7 +331,7 @@
 
     .hero-video-slot {
       position: absolute;
-      inset: 48px 36px 26px 36px;
+      inset: 28px 26px 22px 26px; /* frame mais aberto dentro do hero */
       border-radius: 18px;
       border: 1px solid rgba(201, 208, 214, 0.28);
       overflow: hidden;
