@@ -81,7 +81,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 40px; /* aumentado para dar mais respiro antes do menu */
+      gap: 40px;
     }
 
     .brand {
@@ -101,9 +101,10 @@
       background-color: #02040a;
     }
 
+    /* AJUSTE 1: texto em linha, literal, no início da faixa */
     .brand-text {
       display: flex;
-      flex-direction: row;   /* antes era column */
+      flex-direction: row;
       align-items: center;
       gap: 10px;
       white-space: nowrap;
@@ -292,7 +293,8 @@
       max-width: var(--max-width);
       margin: 0 auto;
       display: grid;
-      grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); /* imagem mais protagonista */
+      /* AJUSTE 2: mais espaço para a imagem na coluna esquerda */
+      grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr);
       gap: 46px;
       align-items: center;
     }
@@ -304,7 +306,9 @@
       background: radial-gradient(circle at top, #1f355d, #050814);
       border: 1px solid rgba(255, 255, 255, 0.12);
       box-shadow: var(--shadow-soft);
-      min-height: 380px; /* antes 280px */
+      /* maior altura + levemente mais alta na seção */
+      min-height: 440px;
+      margin-top: -16px;
     }
 
     .hero-media::before {
@@ -331,7 +335,8 @@
 
     .hero-video-slot {
       position: absolute;
-      inset: 28px 26px 22px 26px; /* frame mais aberto dentro do hero */
+      /* frame mais aberto, ocupando mais da área */
+      inset: 24px 22px 18px 22px;
       border-radius: 18px;
       border: 1px solid rgba(201, 208, 214, 0.28);
       overflow: hidden;
@@ -350,8 +355,8 @@
 
     .hero-float-label {
       position: absolute;
-      bottom: 20px;
-      right: 22px;
+      bottom: 24px;
+      right: 24px;
       font-size: 10px;
       text-transform: uppercase;
       letter-spacing: 0.2em;
@@ -1136,7 +1141,8 @@
         letter-spacing: 0.18em;
       }
       .hero-media {
-        min-height: 220px;
+        min-height: 260px;
+        margin-top: 0;
       }
     }
   </style>
@@ -1154,8 +1160,8 @@
             class="brand-logo"
           />
           <div class="brand-text">
-            <div class="brand-title">THE SECOND FOREST</div>
-            <div class="brand-subtitle">Mythology - Authority - Commerce</div>
+            <span class="brand-title">THE SECOND FOREST</span>
+            <span class="brand-subtitle">Mythology - Authority - Commerce</span>
           </div>
         </div>
 
@@ -1588,7 +1594,7 @@
               <p>
                 The Second Forest is the cinematic branch that treats humanity's origin and destiny as a negotiation between free will and older protocols. It converses directly with:
               </p>
-              <ul style="margin-left:16px; margin-top:4px; color:var(--text-soft); font-size:13px; line-height:1.7;">
+              <ul style="margin-left:16px; margin-top:4px; color:var(--text-soft); font-size:13px; line-height:1.7%;">
                 <li><a href="https://mindfax.art" target="_blank">PRIMARY PORTAL — The Architect Universe (mindfax.art)</a></li>
                 <li><a href="https://mindfax.art/thesecondforestprojetc" target="_blank">THE SECOND FOREST — Project Portal</a></li>
                 <li><a href="https://mindfax.art/fractalprojetc" target="_blank">FRACTAL — The Consciousness Project</a></li>
@@ -1742,7 +1748,7 @@
               <p>
                 The following assets are prepared and curated, ready to be shared once a formal conversation with the appropriate business department is initiated:
               </p>
-              <ul style="margin-left:16px; margin-top:4px; color:var(--text-soft); font-size:13px; line-height:1.7;">
+              <ul style="margin-left:16px; margin-top:4px; color:var(--text-soft); font-size:13px; line-height:1.7%;">
                 <li><strong>Pitch Deck (PDF)</strong> – executive overview of the franchise, visuals and expansion roadmap.</li>
                 <li><strong>One-Pager</strong> – concise summary for quick decision makers and catalog inclusion.</li>
                 <li><strong>Narrative Treatment</strong> – detailed structure of the film/series potential and universe rules.</li>
