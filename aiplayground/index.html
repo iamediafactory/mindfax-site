@@ -1,1 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI PLAYGROUND | Official Franchise Portal</title>
+  <meta name="description" content="AI PLAYGROUND — Real Strategies for Parents Thinking with Intelligence, Not Fear. The official franchise portal by The Architect. Published by IA Media Factory Publishing™." />
+
+  <!-- Fonts (safe + premium) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#060812;
+      --bg2:#0a0f22;
+      --panel:rgba(255,255,255,.06);
+      --panel2:rgba(255,255,255,.09);
+      --line:rgba(255,255,255,.12);
+      --text:rgba(255,255,255,.88);
+      --muted:rgba(255,255,255,.62);
+      --muted2:rgba(255,255,255,.48);
+      --gold:#cdb38a;
+      --cyan:#6fe8ff;
+      --glow:rgba(111,232,255,.22);
+      --radius:18px;
+      --radius2:26px;
+      --shadow:0 18px 70px rgba(0,0,0,.55);
+      --shadow2:0 12px 40px rgba(0,0,0,.45);
+      --max:1180px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family:"IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1100px 700px at 30% 10%, rgba(111,232,255,.14), transparent 60%),
+        radial-gradient(1200px 900px at 70% 20%, rgba(205,179,138,.10), transparent 62%),
+        radial-gradient(900px 600px at 50% 80%, rgba(111,232,255,.08), transparent 60%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+      overflow-x:hidden;
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ width:min(var(--max), calc(100% - 44px)); margin:0 auto; }
+
+    /* ---------- Top Bar ---------- */
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(180deg, rgba(6,8,18,.82) 0%, rgba(6,8,18,.55) 100%);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .topbar-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; min-width:240px;
+    }
+    .logo-slot{
+      width:42px; height:42px;
+      border-radius:12px;
+      border:1px dashed rgba(255,255,255,.30);
+      background: rgba(255,255,255,.04);
+      display:grid; place-items:center;
+      color:rgba(255,255,255,.55);
+      font-size:10px; letter-spacing:.08em;
+      text-transform:uppercase;
+      flex:0 0 auto;
+    }
+    .brand-title{
+      display:flex; flex-direction:column; line-height:1.05;
+    }
+    .brand-title strong{
+      font-family:"Cinzel", serif;
+      font-weight:700;
+      letter-spacing:.08em;
+      font-size:14px;
+    }
+    .brand-title span{
+      color:var(--muted);
+      font-size:12px;
+      letter-spacing:.02em;
+    }
+
+    nav{
+      display:flex; align-items:center; gap:16px; flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .navlink{
+      color:var(--muted);
+      font-size:12px;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      padding:10px 10px;
+      border-radius:999px;
+      transition: all .18s ease;
+    }
+    .navlink:hover{
+      color:rgba(255,255,255,.88);
+      background:rgba(255,255,255,.06);
+    }
+    .cta{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.16);
+      background: linear-gradient(180deg, rgba(111,232,255,.14), rgba(111,232,255,.05));
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      color:rgba(255,255,255,.92);
+      font-size:12px;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+      cursor:pointer;
+    }
+    .cta:hover{
+      transform: translateY(-1px);
+      border-color: rgba(111,232,255,.35);
+      background: linear-gradient(180deg, rgba(111,232,255,.20), rgba(111,232,255,.06));
+    }
+    .pill{
+      display:inline-flex; align-items:center;
+      padding:5px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.04);
+      color:rgba(255,255,255,.72);
+      font-size:11px;
+      letter-spacing:.02em;
+      white-space:nowrap;
+    }
+
+    /* ---------- Hero ---------- */
+    .hero{
+      position:relative;
+      padding:84px 0 34px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:28px;
+      align-items:stretch;
+    }
+    .hero-card{
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.12);
+      background:
+        radial-gradient(900px 600px at 20% 10%, rgba(111,232,255,.18), transparent 60%),
+        radial-gradient(900px 700px at 80% 30%, rgba(205,179,138,.12), transparent 58%),
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+      padding:28px;
+      min-height:420px;
+    }
+    .hero-card:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(500px 300px at 20% 15%, rgba(111,232,255,.16), transparent 60%),
+        radial-gradient(420px 360px at 80% 35%, rgba(205,179,138,.10), transparent 62%);
+      filter: blur(14px);
+      opacity:.9;
+      pointer-events:none;
+    }
+    .hero-inner{ position:relative; z-index:1; }
+    .kicker{
+      display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+      margin-bottom:14px;
+    }
+    .kicker .dot{
+      width:8px; height:8px; border-radius:50%;
+      background: var(--cyan);
+      box-shadow: 0 0 0 6px rgba(111,232,255,.08);
+    }
+    .kicker .text{
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.70);
+    }
+    h1{
+      font-family:"Cinzel", serif;
+      margin:10px 0 10px;
+      font-size:44px;
+      letter-spacing:.08em;
+      line-height:1.05;
+    }
+    .subtitle{
+      margin:0;
+      color:rgba(255,255,255,.80);
+      font-size:16px;
+      line-height:1.6;
+      max-width:60ch;
+    }
+    .hero-actions{
+      display:flex; gap:12px; flex-wrap:wrap;
+      margin-top:18px;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 16px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+      color:rgba(255,255,255,.92);
+      font-size:13px;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      cursor:pointer;
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+    }
+    .btn:hover{ transform: translateY(-1px); border-color: rgba(255,255,255,.22); background: rgba(255,255,255,.06); }
+    .btn.primary{
+      border-color: rgba(111,232,255,.26);
+      background: linear-gradient(180deg, rgba(111,232,255,.18), rgba(111,232,255,.06));
+      box-shadow: 0 14px 40px rgba(0,0,0,.35);
+    }
+    .btn.primary:hover{
+      border-color: rgba(111,232,255,.38);
+      background: linear-gradient(180deg, rgba(111,232,255,.22), rgba(111,232,255,.08));
+    }
+    .hero-note{
+      margin-top:16px;
+      display:flex; gap:10px; flex-wrap:wrap;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.5;
+    }
+
+    .hero-art{
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.10);
+      background:
+        radial-gradient(1000px 700px at 60% 20%, rgba(111,232,255,.12), transparent 58%),
+        radial-gradient(800px 600px at 30% 70%, rgba(205,179,138,.10), transparent 62%),
+        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      box-shadow: var(--shadow2);
+      position:relative;
+      overflow:hidden;
+      min-height:420px;
+      display:flex;
+      align-items:flex-end;
+      padding:18px;
+    }
+    .hero-art .art-placeholder{
+      position:absolute; inset:0;
+      background:
+        radial-gradient(900px 600px at 50% 40%, rgba(0,0,0,.12), transparent 60%),
+        linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.28));
+      pointer-events:none;
+    }
+    .hero-art .caption{
+      position:relative;
+      z-index:1;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.22);
+      padding:12px 12px;
+      width:100%;
+      color:rgba(255,255,255,.84);
+      font-size:13px;
+      line-height:1.5;
+    }
+    .mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+
+    /* ---------- Sections ---------- */
+    section{
+      padding:54px 0;
+      border-top:1px solid rgba(255,255,255,.06);
+    }
+    .section-head{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap;
+      margin-bottom:18px;
+    }
+    h2{
+      font-family:"Cinzel", serif;
+      font-weight:700;
+      letter-spacing:.08em;
+      margin:0;
+      font-size:22px;
+      line-height:1.2;
+    }
+    .lead{
+      margin:10px 0 0;
+      color:var(--muted);
+      line-height:1.7;
+      max-width:78ch;
+      font-size:14px;
+    }
+    .tagrow{ display:flex; gap:10px; flex-wrap:wrap; }
+
+    .grid2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:18px;
+      margin-top:18px;
+    }
+    .panel{
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      padding:18px;
+      box-shadow: 0 10px 34px rgba(0,0,0,.20);
+    }
+    .panel strong{ color:rgba(255,255,255,.90); }
+    .panel p{ margin:10px 0 0; color:var(--muted); line-height:1.7; font-size:14px; }
+    .panel hr{
+      border:none;
+      border-top:1px solid rgba(255,255,255,.10);
+      margin:14px 0;
+    }
+
+    /* ---------- Franchise Cards ---------- */
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:14px;
+      margin-top:18px;
+    }
+    .card{
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.10);
+      background:
+        radial-gradient(600px 300px at 20% 10%, rgba(111,232,255,.10), transparent 58%),
+        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+      padding:16px;
+      box-shadow: 0 12px 40px rgba(0,0,0,.22);
+      position:relative;
+      overflow:hidden;
+      min-height:220px;
+      display:flex; flex-direction:column;
+    }
+    .card:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(420px 220px at 70% 20%, rgba(205,179,138,.10), transparent 60%);
+      filter: blur(14px);
+      opacity:.9;
+      pointer-events:none;
+    }
+    .card > *{ position:relative; z-index:1; }
+    .status{
+      display:inline-flex; align-items:center; gap:8px;
+      margin-bottom:10px;
+      color:rgba(255,255,255,.78);
+      font-size:12px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .status .lamp{
+      width:9px; height:9px; border-radius:50%;
+      background: rgba(255,255,255,.22);
+      box-shadow: 0 0 0 6px rgba(255,255,255,.06);
+    }
+    .status.live .lamp{ background: rgba(111,232,255,.85); box-shadow: 0 0 0 6px rgba(111,232,255,.10); }
+    .status.next .lamp{ background: rgba(205,179,138,.85); box-shadow: 0 0 0 6px rgba(205,179,138,.10); }
+    .booktitle{
+      font-family:"Cinzel", serif;
+      letter-spacing:.06em;
+      margin:0 0 6px;
+      font-size:16px;
+      line-height:1.25;
+    }
+    .booksub{
+      margin:0 0 12px;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.6;
+      min-height:42px;
+    }
+    .card .meta{
+      margin-top:auto;
+      display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap;
+      padding-top:10px;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+    .mini{
+      color:rgba(255,255,255,.70);
+      font-size:12px;
+    }
+    .card .btn{
+      padding:10px 12px;
+      border-radius:12px;
+      font-size:12px;
+    }
+
+    /* ---------- Validation / Reviews ---------- */
+    .featured-review{
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.12);
+      background:
+        radial-gradient(900px 500px at 20% 10%, rgba(111,232,255,.14), transparent 60%),
+        radial-gradient(900px 600px at 85% 35%, rgba(205,179,138,.12), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      padding:18px;
+      box-shadow: var(--shadow2);
+    }
+    .featured-review .top{
+      display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      margin-bottom:10px;
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      font-size:12px;
+      color:rgba(255,255,255,.82);
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+    .badge .spark{
+      width:9px; height:9px; border-radius:50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 6px rgba(205,179,138,.10);
+    }
+    blockquote{
+      margin:10px 0 0;
+      padding:14px 14px;
+      border-left:3px solid rgba(111,232,255,.55);
+      background: rgba(0,0,0,.14);
+      border-radius: 14px;
+      color:rgba(255,255,255,.84);
+      line-height:1.8;
+    }
+    .sig{
+      margin-top:12px;
+      color:var(--muted);
+      font-size:12px;
+      letter-spacing:.03em;
+    }
+
+    /* Carousel */
+    .carousel{
+      margin-top:14px;
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      overflow:hidden;
+    }
+    .car-top{
+      display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap;
+      padding:12px 12px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .car-top .title{
+      color:rgba(255,255,255,.86);
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+    .car-controls{
+      display:flex; gap:10px; align-items:center;
+    }
+    .iconbtn{
+      width:34px; height:34px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      cursor:pointer;
+      color:rgba(255,255,255,.78);
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+    }
+    .iconbtn:hover{ transform: translateY(-1px); border-color: rgba(255,255,255,.18); background: rgba(255,255,255,.06); }
+    .car-body{
+      position:relative;
+      height:auto;
+      min-height:140px;
+      padding:14px;
+    }
+    .slide{
+      display:none;
+      gap:12px;
+    }
+    .slide.active{ display:grid; grid-template-columns: 1fr; }
+    .slide .who{
+      display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap;
+    }
+    .slide .who strong{
+      font-family:"Cinzel", serif;
+      letter-spacing:.06em;
+      font-size:15px;
+    }
+    .slide .who span{
+      color:var(--muted2);
+      font-size:12px;
+    }
+    .slide p{
+      margin:10px 0 0;
+      color:var(--muted);
+      line-height:1.8;
+      font-size:14px;
+    }
+    .dots{
+      display:flex; gap:8px; align-items:center; justify-content:center;
+      padding:12px;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+    .dotbtn{
+      width:8px; height:8px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.22);
+      background: transparent;
+      cursor:pointer;
+      opacity:.9;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+    }
+    .dotbtn.active{
+      background: rgba(111,232,255,.65);
+      border-color: rgba(111,232,255,.75);
+      transform: scale(1.2);
+    }
+
+    /* ---------- Start / Buy ---------- */
+    .start-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:18px;
+      margin-top:18px;
+    }
+    .option{
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      padding:16px;
+      box-shadow: 0 12px 38px rgba(0,0,0,.18);
+    }
+    .option h3{
+      margin:0 0 8px;
+      font-family:"Cinzel", serif;
+      letter-spacing:.06em;
+      font-size:16px;
+    }
+    .option p{
+      margin:0 0 12px;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:14px;
+    }
+    .option .btn{ width:100%; }
+
+    .fineprint{
+      margin-top:12px;
+      color:var(--muted2);
+      font-size:12px;
+      line-height:1.7;
+    }
+
+    /* ---------- Footer ---------- */
+    footer{
+      padding:44px 0 54px;
+      border-top:1px solid rgba(255,255,255,.06);
+    }
+    .footer-top{
+      display:flex; align-items:flex-start; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      margin-bottom:18px;
+    }
+    .footer-logos{
+      display:flex; gap:12px; align-items:center; flex-wrap:wrap;
+    }
+    .logo-slot.large{
+      width:54px; height:54px;
+      border-radius:16px;
+      font-size:10px;
+    }
+    .footer-links{
+      display:flex; gap:10px; flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .footer-links a{
+      color:var(--muted);
+      font-size:12px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      transition: all .18s ease;
+    }
+    .footer-links a:hover{
+      color:rgba(255,255,255,.84);
+      border-color: rgba(255,255,255,.16);
+      background: rgba(255,255,255,.05);
+    }
+    .footer-note{
+      color:var(--muted2);
+      font-size:12px;
+      line-height:1.8;
+      max-width:90ch;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 980px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .start-grid{ grid-template-columns: 1fr; }
+      .cards{ grid-template-columns: repeat(2, 1fr); }
+      h1{ font-size:38px; }
+    }
+    @media (max-width: 560px){
+      .cards{ grid-template-columns: 1fr; }
+      h1{ font-size:34px; }
+      .brand{ min-width:unset; }
+      nav{ gap:8px; }
+      .navlink{ padding:8px 8px; }
+    }
+
+    /* Smooth anchor offset for sticky header */
+    :target{ scroll-margin-top: 88px; }
+  </style>
+</head>
+
+<body>
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="wrap">
+      <div class="topbar-inner">
+        <div class="brand">
+          <!-- FRANCHISE LOGO SLOT (TOP) -->
+          <div class="logo-slot" title="Franchise Logo (placeholder)">LOGO</div>
+          <div class="brand-title">
+            <strong>AI PLAYGROUND</strong>
+            <span>Official Franchise Portal</span>
+          </div>
+          <span class="pill">mindfax.art/aiplayground</span>
+        </div>
+
+        <nav aria-label="Primary">
+          <a class="navlink" href="#what">What it is</a>
+          <a class="navlink" href="#franchise">Franchise</a>
+          <a class="navlink" href="#validation">Validation</a>
+          <a class="navlink" href="#start">Start</a>
+          <button class="cta" onclick="scrollToId('start')">Explore</button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <div class="hero">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div class="hero-card">
+            <div class="hero-inner">
+              <div class="kicker">
+                <span class="dot"></span>
+                <span class="text">A cognitive franchise for parents & children</span>
+                <span class="pill">Posture · Practice · Judgment · Autonomy</span>
+              </div>
+
+              <h1>AI PLAYGROUND</h1>
+              <p class="subtitle">
+                Real Strategies for Parents Thinking with Intelligence, Not Fear.
+                <br />
+                A cinematic educational artbook and a family system designed to protect thinking in a world assisted by AI.
+              </p>
+
+              <div class="hero-actions">
+                <button class="btn primary" onclick="scrollToId('franchise')">Enter the Playground</button>
+                <button class="btn" onclick="scrollToId('validation')">Independent Validation</button>
+              </div>
+
+              <div class="hero-note">
+                <span>Published by <strong>IA Media Factory Publishing™</strong></span>
+                <span>·</span>
+                <span>Powered by <strong>Neurabyte™</strong> (AI Cognitive Extension)</span>
+              </div>
+
+              <div class="hero-note" style="margin-top:10px;">
+                <span class="mono" style="color:rgba(111,232,255,.85);">Before you use, you understand.</span>
+                <span class="mono" style="color:rgba(205,179,138,.85);">Before you act, you think.</span>
+              </div>
+            </div>
+          </div>
+
+          <aside class="hero-art" aria-label="Hero artwork area">
+            <!-- Replace this whole block with your hero image if desired -->
+            <div class="art-placeholder"></div>
+            <div class="caption">
+              <strong>Hero Key Art (placeholder)</strong><br/>
+              Replace with your cinematic AI PLAYGROUND artbook cover/key visual.<br/>
+              Suggested file: <span class="mono">/assets/aiplayground_hero_2560x1440.jpg</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION: WHAT -->
+    <section id="what">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>WHAT AI PLAYGROUND IS</h2>
+            <p class="lead">
+              AI PLAYGROUND is not a course. Not a list of hacks. Not a product chasing trends.
+              It is a family posture: a calm, structured way to mediate technology so children grow with judgment, not dependence.
+            </p>
+          </div>
+          <div class="tagrow">
+            <span class="pill">Honest by design</span>
+            <span class="pill">Built for longevity</span>
+            <span class="pill">Cinematic artbook</span>
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div class="panel">
+            <strong>What it is NOT</strong>
+            <p>
+              Not a fear campaign. Not a permissive “anything goes” philosophy. Not a tool obsession.
+              It does not promise miracles, speed, or “smarter kids overnight”.
+            </p>
+            <hr/>
+            <strong>What it IS</strong>
+            <p>
+              A structured path for parents and children to think clearly, practice daily, negotiate responsibly,
+              and build autonomy as development progresses.
+            </p>
+          </div>
+
+          <div class="panel">
+            <strong>The Core Principle</strong>
+            <p>
+              The tools will change. Your child will change. The structure must adapt.
+              This system exists to protect thinking as children grow.
+            </p>
+            <hr/>
+            <strong>The Golden Rule</strong>
+            <p>
+              Try first. Mediate second. Expand last.<br/>
+              AI enters only after human effort begins.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: FRANCHISE -->
+    <section id="franchise">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>THE FRANCHISE</h2>
+            <p class="lead">
+              One system. Four phases. Each book is a portal.
+              AI PLAYGROUND establishes posture. The MISSIONS volumes train practice across development.
+            </p>
+          </div>
+          <div class="tagrow">
+            <span class="pill">Master Book</span>
+            <span class="pill">Kids</span>
+            <span class="pill">Pre-Teens</span>
+            <span class="pill">Teens</span>
+          </div>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <div class="status live"><span class="lamp"></span> Available now</div>
+            <div class="booktitle">AI PLAYGROUND</div>
+            <div class="booksub">Real Strategies for Parents Thinking with Intelligence, Not Fear</div>
+            <div class="mini">Foundation · Posture · Mediation</div>
+            <div class="meta">
+              <span class="mini">Cinematic Educational Artbook</span>
+              <a class="btn primary" href="#start">Explore</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="status live"><span class="lamp"></span> Available now</div>
+            <div class="booktitle">AI PLAYGROUND: MISSIONS</div>
+            <div class="booksub">A 10-Day AI Thinking System for Kids (5–9)</div>
+            <div class="mini">Daily missions · Practice-first · Adult mediation</div>
+            <div class="meta">
+              <span class="mini">Official Practice Companion</span>
+              <a class="btn primary" href="#start">Explore</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="status next"><span class="lamp"></span> Coming next</div>
+            <div class="booktitle">AI PLAYGROUND: PRE-TEENS</div>
+            <div class="booksub">Training Judgment Before Autonomy (10–13)</div>
+            <div class="mini">Negotiation · Decision-making · Responsibility</div>
+            <div class="meta">
+              <span class="mini">Release: TBD</span>
+              <a class="btn" href="#start">Join the Early List</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="status next"><span class="lamp"></span> In development</div>
+            <div class="booktitle">AI PLAYGROUND: TEENS</div>
+            <div class="booksub">Thinking Before Automation (14–17)</div>
+            <div class="mini">Identity · Ethics · Long-term autonomy</div>
+            <div class="meta">
+              <span class="mini">Release: TBD</span>
+              <a class="btn" href="#start">Follow the Release</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel" style="margin-top:16px;">
+          <strong>A Shared Principle</strong>
+          <p>
+            AI PLAYGROUND is about posture before performance, judgment before autonomy, structure before freedom.
+            The MISSIONS volumes turn that posture into repeatable daily practice, adapted to each phase of development.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: VALIDATION -->
+    <section id="validation">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>INDEPENDENT VALIDATION</h2>
+            <p class="lead">
+              This franchise was not validated by marketing personas.
+              It was reviewed by independent AI systems and educators trained to analyze cognition, education, and long-term development.
+            </p>
+          </div>
+          <div class="tagrow">
+            <span class="pill">Grok · xAI</span>
+            <span class="pill">Gemini</span>
+            <span class="pill">DeepSeek</span>
+            <span class="pill">ChatGPT</span>
+          </div>
+        </div>
+
+        <!-- Featured Grok Review -->
+        <div class="featured-review">
+          <div class="top">
+            <div class="badge"><span class="spark"></span> Featured: Grok Review (xAI)</div>
+            <span class="pill">Independent analysis</span>
+          </div>
+
+          <blockquote>
+            <strong>“AI PLAYGROUND: the franchise every conscious family should know in 2025.”</strong><br/>
+            A rare exception that resists rigorous scrutiny: structure instead of fear, judgment instead of hype,
+            calm authority in a chaotic market.<br/><br/>
+            Tools will come and go. Children will grow fast.
+            Human judgment, trained early, stays.
+          </blockquote>
+
+          <div class="sig">
+            Grok Review · xAI · Technology, Education & Parenting (independent perspective)
+          </div>
+        </div>
+
+        <!-- Carousel: other AIs -->
+        <div class="carousel" style="margin-top:14px;">
+          <div class="car-top">
+            <div class="title">Cross-system consensus</div>
+            <div class="car-controls">
+              <button class="iconbtn" aria-label="Previous" onclick="carouselPrev()">‹</button>
+              <button class="iconbtn" aria-label="Next" onclick="carouselNext()">›</button>
+            </div>
+          </div>
+
+          <div class="car-body" aria-live="polite">
+            <div class="slide active" data-index="0">
+              <div class="who">
+                <strong>Gemini</strong>
+                <span>Independent AI perspective</span>
+              </div>
+              <p>
+                Clear separation between posture and practice, with an ethical spine that protects families from tool obsession.
+                The franchise structure is unusually coherent and durable.
+              </p>
+            </div>
+
+            <div class="slide" data-index="1">
+              <div class="who">
+                <strong>DeepSeek</strong>
+                <span>Independent AI perspective</span>
+              </div>
+              <p>
+                This reads like product architecture, not content dumping.
+                High franchise potential because it trains judgment rather than chasing changing tools.
+              </p>
+            </div>
+
+            <div class="slide" data-index="2">
+              <div class="who">
+                <strong>ChatGPT</strong>
+                <span>Independent AI perspective</span>
+              </div>
+              <p>
+                Built for long-term trust: honest positioning, repeatable practice, and a scalable system across developmental phases.
+                Aggressive in conversion, not predatory in tone.
+              </p>
+            </div>
+          </div>
+
+          <div class="dots" aria-label="Carousel dots">
+            <button class="dotbtn active" aria-label="Gemini" onclick="carouselGo(0)"></button>
+            <button class="dotbtn" aria-label="DeepSeek" onclick="carouselGo(1)"></button>
+            <button class="dotbtn" aria-label="ChatGPT" onclick="carouselGo(2)"></button>
+          </div>
+        </div>
+
+        <!-- Educator approvals placeholder -->
+        <div class="panel" style="margin-top:16px;">
+          <strong>Approved by educators (placeholder)</strong>
+          <p>
+            Add your masters in education approvals here as short, direct quotes (name + role).
+            Keep them calm, specific, and practitioner-focused.
+          </p>
+          <hr/>
+          <p class="mono" style="margin:0; color:rgba(255,255,255,.70);">
+            Example format:<br/>
+            “What impressed me was not the technology, but the restraint. This trains thinking.” — Name, M.Ed.
+          </p>
+        </div>
+
+        <div class="panel" style="margin-top:14px;">
+          <strong>Now comes the only opinion that truly matters.</strong>
+          <p>
+            These perspectives come from advanced analytical systems and experienced educators.
+            They don’t need this book.<br/>
+            <strong>Your family does.</strong><br/><br/>
+            Now comes the only opinion that truly matters: <strong>yours.</strong>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: WHY -->
+    <section id="why">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>WHY THIS EXISTS</h2>
+            <p class="lead">
+              Children will use AI. The question is whether they will think without it.
+              AI PLAYGROUND exists to keep judgment human.
+            </p>
+          </div>
+          <div class="tagrow">
+            <span class="pill">Calm ≠ passive</span>
+            <span class="pill">Structure ≠ control</span>
+            <span class="pill">Autonomy ≠ abandonment</span>
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div class="panel">
+            <strong>The real risk</strong>
+            <p>
+              Not the existence of tools. The risk is dependence without judgment, performance without understanding,
+              and convenience replacing effort.
+            </p>
+          </div>
+          <div class="panel">
+            <strong>The real goal</strong>
+            <p>
+              Children who can try, explain, adjust, verify, and decide.
+              Families who can mediate calmly without fear or resignation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: START -->
+    <section id="start">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>WHERE TO START</h2>
+            <p class="lead">
+              Start calm. Start structured. Grow through every stage.
+              Choose the entry point that matches your family right now.
+            </p>
+          </div>
+          <div class="tagrow">
+            <span class="pill">Master Book</span>
+            <span class="pill">Missions</span>
+            <span class="pill">Bundle</span>
+          </div>
+        </div>
+
+        <div class="start-grid">
+          <div class="panel">
+            <strong>Start with the Master Book</strong>
+            <p>
+              Begin with posture: how to think, mediate, and decide in a world assisted by AI.
+              Designed for parents before any tool becomes central.
+            </p>
+            <button class="btn primary" style="width:100%;" onclick="fakeBuy('AI PLAYGROUND')">Get AI PLAYGROUND</button>
+            <div class="fineprint">
+              Replace this button action with your store link (Payhip / Kindle / etc.).
+            </div>
+          </div>
+
+          <div class="panel">
+            <strong>Begin with Missions (Kids)</strong>
+            <p>
+              Ten days. Short missions. Practical outputs.
+              Designed for children (5–9) with parental mediation.
+            </p>
+            <button class="btn primary" style="width:100%;" onclick="fakeBuy('AI PLAYGROUND: MISSIONS')">Get MISSIONS</button>
+            <div class="fineprint">
+              Replace this button action with your store link (Payhip / etc.).
+            </div>
+          </div>
+        </div>
+
+        <div class="option" style="margin-top:16px;">
+          <h3>Get the Family Bundle</h3>
+          <p>
+            The Master Book + MISSIONS now, with early access tracking for the next phases (Pre-Teens and Teens).
+            Built for long-term continuity.
+          </p>
+          <button class="btn primary" onclick="fakeBuy('AI PLAYGROUND Bundle')">Get the Bundle</button>
+          <div class="fineprint">
+            Keep the bundle promise honest: don’t sell what isn’t ready.
+            Use “early list / release notification” until those volumes are published.
+          </div>
+        </div>
+
+        <div class="panel" style="margin-top:16px;">
+          <strong>Legal & responsibility (placeholder)</strong>
+          <p>
+            AI PLAYGROUND is a parental empowerment system and does not replace professional clinical, legal, or educational services.
+            Safety first. Shame never.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-logos">
+          <!-- FRANCHISE LOGO SLOT (FOOTER) -->
+          <div class="logo-slot large" title="Franchise Logo (placeholder)">LOGO</div>
+
+          <!-- IA MEDIA FACTORY LOGO SLOT (FOOTER) -->
+          <div class="logo-slot large" title="IA Media Factory Logo (placeholder)">IA MF</div>
+
+          <div>
+            <div style="font-family:'Cinzel',serif;letter-spacing:.08em;font-weight:700;">AI PLAYGROUND</div>
+            <div style="color:var(--muted);font-size:12px;margin-top:4px;">
+              Published by IA Media Factory Publishing™ · Powered by Neurabyte™
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <a href="#what">What it is</a>
+          <a href="#franchise">Franchise</a>
+          <a href="#validation">Validation</a>
+          <a href="#start">Start</a>
+          <a href="#top" onclick="scrollToTop(event)">Back to top</a>
+        </div>
+      </div>
+
+      <div class="footer-note">
+        <strong>About The Architect (placeholder)</strong><br/>
+        Add a short author bio here, plus contact, press-kit link, and bibliography references page when ready.<br/><br/>
+        <span class="mono" style="color:rgba(205,179,138,.85);">AI PLAYGROUND — Because thinking never goes out of style.</span>
+      </div>
+
+      <div style="margin-top:18px; color:var(--muted2); font-size:12px;">
+        © <span id="year"></span> The Architect · IA Media Factory Publishing™. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Smooth scroll helper
+    function scrollToId(id){
+      const el = document.getElementById(id);
+      if(!el) return;
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function scrollToTop(e){
+      if(e) e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // Fake buy handler (replace with real links)
+    function fakeBuy(product){
+      alert("Replace this action with your store link for: " + product);
+    }
+
+    // Carousel logic
+    const slides = Array.from(document.querySelectorAll(".slide"));
+    const dots = Array.from(document.querySelectorAll(".dotbtn"));
+    let idx = 0;
+
+    function setSlide(next){
+      idx = (next + slides.length) % slides.length;
+      slides.forEach(s => s.classList.remove("active"));
+      dots.forEach(d => d.classList.remove("active"));
+      slides[idx].classList.add("active");
+      dots[idx].classList.add("active");
+    }
+
+    function carouselNext(){ setSlide(idx + 1); }
+    function carouselPrev(){ setSlide(idx - 1); }
+    function carouselGo(n){ setSlide(n); }
+
+    // Optional auto-advance (comment out if you want static)
+    let auto = setInterval(() => carouselNext(), 7000);
+
+    // Pause auto on hover
+    const car = document.querySelector(".carousel");
+    if(car){
+      car.addEventListener("mouseenter", () => clearInterval(auto));
+      car.addEventListener("mouseleave", () => auto = setInterval(() => carouselNext(), 7000));
+    }
+  </script>
+</body>
+</html>
 
