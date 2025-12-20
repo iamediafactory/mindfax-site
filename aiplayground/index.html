@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI PLAYGROUND | Official Franchise Portal</title>
-  <meta name="description" content="AI PLAYGROUND — Real Strategies for Parents Thinking with Intelligence, Not Fear. The official franchise portal by The Architect. Published by IA Media Factory Publishing™." />
+  <meta name="description" content="AI PLAYGROUND — Real Strategies for Parents Thinking with Intelligence, Not Fear. The official franchise portal by The Architect. Published by IA Media Factory Studio™." />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,12 +13,10 @@
 
   <style>
     :root{
-      /* ===== AI PLAYGROUND (Mother Book) Palette =====
-         Based on cover vibe: warm amber/orange + teal/cyan tech over deep night.
-         (See cover split-tone + circuitry aesthetic.) */
-      --bg:#05070d;              /* deep near-black */
-      --bg2:#070c16;             /* night navy */
-      --ink:#0a1224;             /* panel depth */
+      /* ===== AI PLAYGROUND (Mother Book) Palette ===== */
+      --bg:#05070d;
+      --bg2:#070c16;
+      --ink:#0a1224;
       --panel:rgba(255,255,255,.055);
       --panel2:rgba(255,255,255,.085);
       --line:rgba(255,255,255,.12);
@@ -27,13 +25,11 @@
       --muted:rgba(255,255,255,.66);
       --muted2:rgba(255,255,255,.48);
 
-      /* Accents: cover-like */
-      --ember:#d28a2f;           /* amber/orange */
-      --ember2:#b86e1e;          /* deeper ember */
-      --teal:#35d6d2;            /* teal core */
-      --cyan:#6fe8ff;            /* cyan highlight (kept, but less dominant) */
+      --ember:#d28a2f;
+      --ember2:#b86e1e;
+      --teal:#35d6d2;
+      --cyan:#6fe8ff;
 
-      /* Glow control */
       --glow-teal:rgba(53,214,210,.22);
       --glow-ember:rgba(210,138,47,.18);
       --glow-cyan:rgba(111,232,255,.16);
@@ -52,7 +48,6 @@
       font-family:"IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--text);
 
-      /* Background: emulate cover split-tone + cinematic depth */
       background:
         radial-gradient(900px 650px at 18% 18%, var(--glow-ember), transparent 62%),
         radial-gradient(980px 720px at 82% 22%, var(--glow-teal), transparent 60%),
@@ -77,25 +72,56 @@
       padding:14px 0;
       gap:14px;
     }
+
     .brand{
       display:flex; align-items:center; gap:12px; min-width:240px;
     }
 
-    /* Logo slots now match the “cover tech” feel */
-    .logo-slot{
-      width:42px; height:42px;
-      border-radius:12px;
-      border:1px dashed rgba(255,255,255,.30);
-      background:
-        radial-gradient(120px 80px at 30% 30%, rgba(53,214,210,.10), transparent 60%),
-        radial-gradient(120px 80px at 70% 70%, rgba(210,138,47,.10), transparent 62%),
-        rgba(255,255,255,.03);
-      display:grid; place-items:center;
-      color:rgba(255,255,255,.62);
-      font-size:10px; letter-spacing:.08em;
-      text-transform:uppercase;
+    /* ===== 3-logo system (Topbar + Footer) ===== */
+    .brand-logos{
+      display:flex; align-items:center; gap:10px;
+      padding:6px 8px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      box-shadow: 0 10px 26px rgba(0,0,0,.18);
       flex:0 0 auto;
     }
+
+    .logo-chip{
+      width:42px; height:42px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.14);
+      background:
+        radial-gradient(120px 80px at 30% 30%, rgba(53,214,210,.08), transparent 60%),
+        radial-gradient(120px 80px at 70% 70%, rgba(210,138,47,.08), transparent 62%),
+        rgba(255,255,255,.02);
+      display:grid;
+      place-items:center;
+      overflow:hidden;
+    }
+
+    .logo-chip img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      display:block;
+      padding:6px;
+      filter: drop-shadow(0 10px 18px rgba(0,0,0,.35));
+    }
+
+    /* fallback if images fail */
+    .logo-fallback{
+      display:grid; place-items:center;
+      width:100%; height:100%;
+      color:rgba(255,255,255,.70);
+      font-size:10px;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      padding:6px;
+      text-align:center;
+    }
+
     .brand-title{
       display:flex; flex-direction:column; line-height:1.05;
     }
@@ -129,7 +155,6 @@
       background:rgba(255,255,255,.06);
     }
 
-    /* CTA: teal+ember edge */
     .cta{
       display:inline-flex; align-items:center; gap:10px;
       padding:10px 14px;
@@ -187,13 +212,10 @@
     .hero-card{
       border-radius: var(--radius2);
       border:1px solid rgba(255,255,255,.12);
-
-      /* More “cover-like”: left ember wash + right teal wash */
       background:
         radial-gradient(900px 620px at 18% 20%, rgba(210,138,47,.18), transparent 62%),
         radial-gradient(900px 680px at 82% 30%, rgba(53,214,210,.18), transparent 60%),
         linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-
       box-shadow: var(--shadow);
       overflow:hidden;
       position:relative;
@@ -201,7 +223,6 @@
       min-height:420px;
     }
 
-    /* subtle “circuit” texture overlay (no image needed) */
     .hero-card:after{
       content:"";
       position:absolute; inset:0;
@@ -283,7 +304,6 @@
       background: rgba(255,255,255,.06);
     }
 
-    /* Primary = teal glow, Secondary accents ember */
     .btn.primary{
       border-color: rgba(53,214,210,.34);
       background:
@@ -316,6 +336,7 @@
 
     .mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
 
+    /* ===== HERO COVER: show full image (no crop) ===== */
     .hero-art{
       border-radius: var(--radius2);
       border:1px solid rgba(255,255,255,.10);
@@ -326,29 +347,39 @@
       box-shadow: var(--shadow2);
       position:relative;
       overflow:hidden;
+
+      /* remove forced cropping behavior */
       min-height:420px;
       display:flex;
-      align-items:flex-end;
-      padding:18px;
+      align-items:center;
+      justify-content:center;
+      padding:14px;
     }
-    .hero-art .art-placeholder{
-      position:absolute; inset:0;
-      background:
-        radial-gradient(900px 620px at 65% 35%, rgba(0,0,0,.12), transparent 60%),
-        linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.34));
-      pointer-events:none;
+
+    .hero-cover{
+      width:100%;
+      height:100%;
+      max-height:520px; /* keeps layout elegant; still no crop */
+      object-fit:contain; /* critical: never cut the cover */
+      display:block;
+      filter: drop-shadow(0 18px 40px rgba(0,0,0,.45));
+      border-radius: 18px;
     }
+
     .hero-art .caption{
-      position:relative;
-      z-index:1;
+      position:absolute;
+      left:14px;
+      right:14px;
+      bottom:14px;
+      z-index:2;
       border-radius: 16px;
       border:1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.24);
+      background: rgba(0,0,0,.28);
       padding:12px 12px;
-      width:100%;
       color:rgba(255,255,255,.84);
       font-size:13px;
       line-height:1.5;
+      pointer-events:none;
     }
 
     /* ---------- Sections ---------- */
@@ -656,14 +687,17 @@
       display:flex; align-items:flex-start; justify-content:space-between; gap:18px; flex-wrap:wrap;
       margin-bottom:18px;
     }
+
     .footer-logos{
       display:flex; gap:12px; align-items:center; flex-wrap:wrap;
     }
-    .logo-slot.large{
+
+    .logo-chip.large{
       width:54px; height:54px;
       border-radius:16px;
-      font-size:10px;
     }
+    .logo-chip.large img{ padding:8px; }
+
     .footer-links{
       display:flex; gap:10px; flex-wrap:wrap;
       justify-content:flex-end;
@@ -695,6 +729,7 @@
       .start-grid{ grid-template-columns: 1fr; }
       .cards{ grid-template-columns: repeat(2, 1fr); }
       h1{ font-size:38px; }
+      .hero-cover{ max-height:620px; }
     }
     @media (max-width: 560px){
       .cards{ grid-template-columns: 1fr; }
@@ -702,9 +737,12 @@
       .brand{ min-width:unset; }
       nav{ gap:8px; }
       .navlink{ padding:8px 8px; }
+
+      .brand-logos{ gap:8px; padding:6px 7px; }
+      .logo-chip{ width:38px; height:38px; }
+      .logo-chip img{ padding:6px; }
     }
 
-    /* Smooth anchor offset for sticky header */
     :target{ scroll-margin-top: 88px; }
   </style>
 </head>
@@ -715,8 +753,36 @@
     <div class="wrap">
       <div class="topbar-inner">
         <div class="brand">
-          <!-- FRANCHISE LOGO SLOT (TOP) -->
-          <div class="logo-slot" title="Franchise Logo (placeholder)">LOGO</div>
+          <!-- 3 LOGOS (TOPBAR) -->
+          <div class="brand-logos" aria-label="Brand logos">
+            <!-- AI PLAYGROUND -->
+            <div class="logo-chip" title="AI PLAYGROUND (Franchise)">
+              <img
+                src="./AI%20PLAYGROUND_Logo%20sem%20fundo.png"
+                alt="AI PLAYGROUND logo"
+                onerror="this.outerHTML='<div class=&quot;logo-fallback&quot;>AI<br/>PG</div>'"
+              />
+            </div>
+
+            <!-- NEURABYTE -->
+            <div class="logo-chip" title="Neurabyte (AI Cognitive Extension)">
+              <img
+                src="./Neurabyte_Logo%202.0.png"
+                alt="Neurabyte logo"
+                onerror="this.outerHTML='<div class=&quot;logo-fallback&quot;>NEURA</div>'"
+              />
+            </div>
+
+            <!-- IA MEDIA FACTORY STUDIO -->
+            <div class="logo-chip" title="IA Media Factory Studio">
+              <img
+                src="./IA%20Media%20Factory_Logo.png"
+                alt="IA Media Factory Studio logo"
+                onerror="this.outerHTML='<div class=&quot;logo-fallback&quot;>IA<br/>MF</div>'"
+              />
+            </div>
+          </div>
+
           <div class="brand-title">
             <strong>AI PLAYGROUND</strong>
             <span>Official Franchise Portal</span>
@@ -761,7 +827,7 @@
               </div>
 
               <div class="hero-note">
-                <span>Published by <strong>IA Media Factory Publishing™</strong></span>
+                <span>Published by <strong>IA Media Factory Studio™</strong></span>
                 <span>·</span>
                 <span>Powered by <strong>Neurabyte™</strong> (AI Cognitive Extension)</span>
               </div>
@@ -773,13 +839,17 @@
             </div>
           </div>
 
-          <aside class="hero-art" aria-label="Hero artwork area">
-            <!-- Replace this whole block with your hero image if desired -->
-            <div class="art-placeholder"></div>
+          <aside class="hero-art" aria-label="Hero cover area">
+            <!-- FULL COVER (no crop) -->
+            <img
+              class="hero-cover"
+              src="./AI%20PLAYGROUND_Capa.png"
+              alt="AI PLAYGROUND cover"
+              onerror="this.style.display='none';"
+            />
             <div class="caption">
-              <strong>Hero Key Art (placeholder)</strong><br/>
-              Replace with your cinematic AI PLAYGROUND cover/key visual.<br/>
-              Suggested file: <span class="mono">/assets/aiplayground_hero_2560x1440.jpg</span>
+              <strong>Official Cover</strong><br/>
+              Loaded from: <span class="mono">./AI PLAYGROUND_Capa.png</span>
             </div>
           </aside>
         </div>
@@ -1136,16 +1206,35 @@
     <div class="wrap">
       <div class="footer-top">
         <div class="footer-logos">
-          <!-- FRANCHISE LOGO SLOT (FOOTER) -->
-          <div class="logo-slot large" title="Franchise Logo (placeholder)">LOGO</div>
+          <!-- 3 LOGOS (FOOTER) -->
+          <div class="logo-chip large" title="AI PLAYGROUND (Franchise)">
+            <img
+              src="./AI%20PLAYGROUND_Logo%20sem%20fundo.png"
+              alt="AI PLAYGROUND logo"
+              onerror="this.outerHTML='<div class=&quot;logo-fallback&quot;>AI<br/>PG</div>'"
+            />
+          </div>
 
-          <!-- IA MEDIA FACTORY LOGO SLOT (FOOTER) -->
-          <div class="logo-slot large" title="IA Media Factory Logo (placeholder)">IA MF</div>
+          <div class="logo-chip large" title="Neurabyte (AI Cognitive Extension)">
+            <img
+              src="./Neurabyte_Logo%202.0.png"
+              alt="Neurabyte logo"
+              onerror="this.outerHTML='<div class=&quot;logo-fallback&quot;>NEURA</div>'"
+            />
+          </div>
+
+          <div class="logo-chip large" title="IA Media Factory Studio">
+            <img
+              src="./IA%20Media%20Factory_Logo.png"
+              alt="IA Media Factory Studio logo"
+              onerror="this.outerHTML='<div class=&quot;logo-fallback&quot;>IA<br/>MF</div>'"
+            />
+          </div>
 
           <div>
             <div style="font-family:'Cinzel',serif;letter-spacing:.10em;font-weight:700;">AI PLAYGROUND</div>
             <div style="color:var(--muted);font-size:12px;margin-top:4px;">
-              Published by IA Media Factory Publishing™ · Powered by Neurabyte™
+              Published by IA Media Factory Studio™ · Powered by Neurabyte™
             </div>
           </div>
         </div>
@@ -1167,7 +1256,7 @@
       </div>
 
       <div style="margin-top:18px; color:var(--muted2); font-size:12px;">
-        © <span id="year"></span> The Architect · IA Media Factory Publishing™. All rights reserved.
+        © <span id="year"></span> The Architect · IA Media Factory Studio™. All rights reserved.
       </div>
     </div>
   </footer>
