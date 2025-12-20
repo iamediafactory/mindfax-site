@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI PLAYGROUND | Official Franchise Portal</title>
-  <meta name="description" content="AI PLAYGROUND — Real Strategies for Parents Thinking with Intelligence, Not Fear. The official franchise portal by The Architect. Published by IA Media Factory Studio™." />
+  <title>AI PLAYGROUND | Official System Portal</title>
+  <meta name="description" content="AI PLAYGROUND — Real Strategies for Parents Thinking with Intelligence, Not Fear. The official system portal by The Architect. Published by IA Media Factory Studio™." />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,6 +39,31 @@
       --shadow:0 18px 70px rgba(0,0,0,.58);
       --shadow2:0 12px 40px rgba(0,0,0,.46);
       --max:1180px;
+
+      /* ===== SITE BACKGROUNDS (18-image catalog) ===== */
+      --img-hero-cover: url("./ap__hero__cover__01__book-cover-split-human-ai__1920x2560.jpg");
+      --img-hero-bg: url("./ap__hero__background__02__contemplation-father-child-cosmos__2560x1440.jpg");
+
+      --img-a1-01: url("./ap__carousel-a1__page__01__raising-children-new-world__1600x900.jpg");
+      --img-a1-02: url("./ap__carousel-a1__page__02__technology-changes-guidance-remains__1600x900.jpg");
+      --img-a1-03: url("./ap__carousel-a1__page__03__authors-note-silence-presence__1600x900.jpg");
+      --img-a1-04: url("./ap__carousel-a1__page__04__block1-rupture-threshold__1600x900.jpg");
+      --img-a1-05: url("./ap__carousel-a1__page__05__block2-real-risk-edge__1600x900.jpg");
+
+      --img-sys-bg: url("./ap__system__background__01__progression-index-structure__2560x1440.jpg");
+      --img-sys-02: url("./ap__system__page__02__how-to-use-playbook__1600x900.jpg");
+      --img-sys-03: url("./ap__system__page__03__how-children-learn-effort__1600x900.jpg");
+
+      --img-mis-01: url("./ap__missions__page__01__golden-rule-try-mediate-expand__1600x900.jpg");
+      --img-mis-02: url("./ap__missions__page__02__risk-traffic-light-judgment__1600x900.jpg");
+
+      --img-neu-02: url("./ap__neurabyte__page__02__first-contact-ai-supervised__1600x900.jpg");
+      --img-neu-03: url("./ap__neurabyte__page__03__questioning-ai-authority__1600x900.jpg");
+      --img-neu-04: url("./ap__neurabyte__page__04__authorship-with-ai__1600x900.jpg");
+      --img-neu-wall: url("./ap__neurabyte__wallpaper__01__human-ai-interface-entry__2560x1440.jpg");
+
+      --img-author-bg: url("./ap__author__background__01__authors-note-calm-silence__2560x1440.jpg");
+      --img-author-detail: url("./ap__author__detail__02__soft-cosmos-texture__1200x800.jpg");
     }
 
     *{ box-sizing:border-box; }
@@ -74,43 +99,32 @@
     }
 
     .brand{
-      display:flex; align-items:center; gap:12px; min-width:240px;
+      display:flex; align-items:center; gap:14px; min-width:260px;
     }
 
-    /* ===== 3-logo system (Topbar + Footer) ===== */
-    .brand-logos{
-      display:flex; align-items:center; gap:10px;
-      padding:6px 8px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.03);
-      box-shadow: 0 10px 26px rgba(0,0,0,.18);
-      flex:0 0 auto;
-    }
-
-    .logo-chip{
-      width:42px; height:42px;
-      border-radius:12px;
+    /* ===== Topbar only: AI PLAYGROUND logo (bigger, as requested) ===== */
+    .top-logo{
+      width:84px; height:84px;
+      border-radius:18px;
       border:1px solid rgba(255,255,255,.14);
       background:
-        radial-gradient(120px 80px at 30% 30%, rgba(53,214,210,.08), transparent 60%),
-        radial-gradient(120px 80px at 70% 70%, rgba(210,138,47,.08), transparent 62%),
+        radial-gradient(140px 90px at 30% 30%, rgba(53,214,210,.08), transparent 60%),
+        radial-gradient(140px 90px at 70% 70%, rgba(210,138,47,.08), transparent 62%),
         rgba(255,255,255,.02);
       display:grid;
       place-items:center;
       overflow:hidden;
+      box-shadow: 0 18px 48px rgba(0,0,0,.30);
+      flex:0 0 auto;
     }
-
-    .logo-chip img{
+    .top-logo img{
       width:100%;
       height:100%;
       object-fit:contain;
       display:block;
-      padding:6px;
+      padding:10px;
       filter: drop-shadow(0 10px 18px rgba(0,0,0,.35));
     }
-
-    /* fallback if images fail */
     .logo-fallback{
       display:grid; place-items:center;
       width:100%; height:100%;
@@ -201,13 +215,37 @@
       white-space:nowrap;
     }
 
-    /* ---------- Hero ---------- */
+    /* ---------- Hero (now alive: wallpaper + image strip) ---------- */
     .hero{ position:relative; padding:84px 0 34px; }
+    .hero:before{
+      content:"";
+      position:absolute;
+      inset:-10px 0 -40px 0;
+      background: var(--img-hero-bg);
+      background-size: cover;
+      background-position: center;
+      filter: saturate(1.06) contrast(1.04);
+      opacity:.28;
+      pointer-events:none;
+      mask-image: radial-gradient(900px 520px at 50% 35%, rgba(0,0,0,.92), transparent 70%);
+    }
+    .hero:after{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        radial-gradient(900px 650px at 18% 18%, var(--glow-ember), transparent 62%),
+        radial-gradient(980px 720px at 82% 22%, var(--glow-teal), transparent 60%),
+        linear-gradient(180deg, rgba(5,7,13,.65) 0%, rgba(7,12,22,.85) 70%, rgba(7,12,22,.96) 100%);
+      pointer-events:none;
+    }
+
     .hero-grid{
       display:grid;
       grid-template-columns: 1.15fr .85fr;
       gap:28px;
       align-items:stretch;
+      position:relative;
+      z-index:1;
     }
     .hero-card{
       border-radius: var(--radius2);
@@ -294,7 +332,7 @@
       letter-spacing:.08em;
       text-transform:uppercase;
       cursor:pointer;
-      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+      transition: transform .18s ease, border-color .18s ease, background .18s ease, opacity .18s ease;
       position:relative;
       overflow:hidden;
     }
@@ -303,7 +341,6 @@
       border-color: rgba(255,255,255,.22);
       background: rgba(255,255,255,.06);
     }
-
     .btn.primary{
       border-color: rgba(53,214,210,.34);
       background:
@@ -324,6 +361,13 @@
     .btn.primary:hover{
       border-color: rgba(53,214,210,.48);
       background: linear-gradient(180deg, rgba(53,214,210,.26), rgba(53,214,210,.10));
+    }
+
+    .btn.disabled,
+    .btn[disabled]{
+      opacity:.55;
+      cursor:not-allowed;
+      transform:none !important;
     }
 
     .hero-note{
@@ -348,19 +392,19 @@
       position:relative;
       overflow:hidden;
 
-      /* remove forced cropping behavior */
       min-height:420px;
       display:flex;
       align-items:center;
       justify-content:center;
       padding:14px;
+      z-index:1;
     }
 
     .hero-cover{
       width:100%;
       height:100%;
-      max-height:520px; /* keeps layout elegant; still no crop */
-      object-fit:contain; /* critical: never cut the cover */
+      max-height:520px;
+      object-fit:contain;
       display:block;
       filter: drop-shadow(0 18px 40px rgba(0,0,0,.45));
       border-radius: 18px;
@@ -382,11 +426,101 @@
       pointer-events:none;
     }
 
-    /* ---------- Sections ---------- */
+    /* ===== Alive strip under hero (artbook feeling) ===== */
+    .hero-strip{
+      margin-top:18px;
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      overflow:hidden;
+      box-shadow: 0 14px 44px rgba(0,0,0,.20);
+      position:relative;
+      z-index:1;
+    }
+    .strip-top{
+      display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap;
+      padding:12px 12px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .strip-top .title{
+      color:rgba(255,255,255,.86);
+      font-size:12px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+    .strip-controls{ display:flex; gap:10px; align-items:center; }
+    .iconbtn{
+      width:34px; height:34px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      cursor:pointer;
+      color:rgba(255,255,255,.78);
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+    }
+    .iconbtn:hover{
+      transform: translateY(-1px);
+      border-color: rgba(53,214,210,.22);
+      background: rgba(255,255,255,.06);
+    }
+    .strip-body{
+      padding:14px;
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap:12px;
+    }
+    .thumb{
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.20);
+      overflow:hidden;
+      position:relative;
+      min-height:128px;
+    }
+    .thumb img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      filter: saturate(1.06) contrast(1.03);
+      transform: scale(1.02);
+    }
+    .thumb:after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,.05) 0%, rgba(0,0,0,.35) 100%);
+      pointer-events:none;
+    }
+
+    /* ---------- Sections + wallpapers ---------- */
     section{
       padding:54px 0;
       border-top:1px solid rgba(255,255,255,.06);
+      position:relative;
+      overflow:hidden;
     }
+    .section-wall:before{
+      content:"";
+      position:absolute; inset:0;
+      background: var(--wall);
+      background-size: cover;
+      background-position: center;
+      opacity:.18;
+      filter: saturate(1.05) contrast(1.03);
+      pointer-events:none;
+      mask-image: radial-gradient(920px 520px at 50% 35%, rgba(0,0,0,.90), transparent 70%);
+    }
+    .section-wall:after{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        radial-gradient(900px 520px at 18% 18%, rgba(210,138,47,.10), transparent 62%),
+        radial-gradient(900px 600px at 84% 35%, rgba(53,214,210,.10), transparent 60%),
+        linear-gradient(180deg, rgba(5,7,13,.70), rgba(7,12,22,.86));
+      pointer-events:none;
+    }
+    .section-wall > .wrap{ position:relative; z-index:1; }
+
     .section-head{
       display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap;
       margin-bottom:18px;
@@ -432,7 +566,7 @@
       margin:14px 0;
     }
 
-    /* ---------- Franchise Cards ---------- */
+    /* ---------- System Cards (renamed from Franchise) ---------- */
     .cards{
       display:grid;
       grid-template-columns: repeat(4, 1fr);
@@ -450,7 +584,7 @@
       box-shadow: 0 12px 40px rgba(0,0,0,.22);
       position:relative;
       overflow:hidden;
-      min-height:220px;
+      min-height:240px;
       display:flex; flex-direction:column;
     }
     .card:before{
@@ -493,7 +627,7 @@
       color:var(--muted);
       font-size:13px;
       line-height:1.6;
-      min-height:42px;
+      min-height:46px;
     }
     .card .meta{
       margin-top:auto;
@@ -509,6 +643,45 @@
       padding:10px 12px;
       border-radius:12px;
       font-size:12px;
+    }
+
+    /* ---------- Neurabyte brand chip (distributed along site) ---------- */
+    .brandline{
+      display:flex; align-items:center; gap:12px; flex-wrap:wrap;
+      margin-top:14px;
+      padding:12px 12px;
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+    }
+    .brandline .chip{
+      width:48px; height:48px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.16);
+      display:grid;
+      place-items:center;
+      overflow:hidden;
+      flex:0 0 auto;
+    }
+    .brandline .chip img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      padding:8px;
+      display:block;
+    }
+    .brandline strong{
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-size:12px;
+      color:rgba(255,255,255,.88);
+    }
+    .brandline span{
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.6;
+      max-width:90ch;
     }
 
     /* ---------- Validation / Reviews ---------- */
@@ -558,7 +731,7 @@
       letter-spacing:.03em;
     }
 
-    /* Carousel */
+    /* Carousel (text consensus) */
     .carousel{
       margin-top:14px;
       border-radius: var(--radius);
@@ -579,20 +752,6 @@
     }
     .car-controls{
       display:flex; gap:10px; align-items:center;
-    }
-    .iconbtn{
-      width:34px; height:34px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-      cursor:pointer;
-      color:rgba(255,255,255,.78);
-      transition: transform .15s ease, background .15s ease, border-color .15s ease;
-    }
-    .iconbtn:hover{
-      transform: translateY(-1px);
-      border-color: rgba(53,214,210,.22);
-      background: rgba(255,255,255,.06);
     }
     .car-body{
       position:relative;
@@ -678,6 +837,45 @@
       line-height:1.7;
     }
 
+    /* ---------- Author Section (final, official) ---------- */
+    .author-card{
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.12);
+      background:
+        radial-gradient(900px 520px at 18% 18%, rgba(210,138,47,.12), transparent 62%),
+        radial-gradient(900px 600px at 84% 35%, rgba(53,214,210,.12), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      padding:18px;
+      box-shadow: var(--shadow2);
+      position:relative;
+      overflow:hidden;
+    }
+    .author-card:before{
+      content:"";
+      position:absolute; inset:0;
+      background: var(--img-author-detail);
+      background-size: cover;
+      background-position: center;
+      opacity:.14;
+      filter: saturate(1.05) contrast(1.02);
+      pointer-events:none;
+      mask-image: radial-gradient(780px 420px at 30% 35%, rgba(0,0,0,.90), transparent 70%);
+    }
+    .author-card > *{ position:relative; z-index:1; }
+    .author-text{
+      color:rgba(255,255,255,.84);
+      line-height:1.85;
+      font-size:14px;
+      max-width:86ch;
+      white-space:pre-line;
+    }
+    .author-sig{
+      margin-top:14px;
+      color:var(--muted);
+      font-size:12px;
+      letter-spacing:.04em;
+    }
+
     /* ---------- Footer ---------- */
     footer{
       padding:44px 0 54px;
@@ -687,16 +885,6 @@
       display:flex; align-items:flex-start; justify-content:space-between; gap:18px; flex-wrap:wrap;
       margin-bottom:18px;
     }
-
-    .footer-logos{
-      display:flex; gap:12px; align-items:center; flex-wrap:wrap;
-    }
-
-    .logo-chip.large{
-      width:54px; height:54px;
-      border-radius:16px;
-    }
-    .logo-chip.large img{ padding:8px; }
 
     .footer-links{
       display:flex; gap:10px; flex-wrap:wrap;
@@ -723,7 +911,7 @@
       max-width:90ch;
     }
 
-    /* ---------- BUY MODAL (added) ---------- */
+    /* ---------- BUY MODAL (kept) ---------- */
     .modal{
       position:fixed;
       inset:0;
@@ -860,6 +1048,8 @@
       .cards{ grid-template-columns: repeat(2, 1fr); }
       h1{ font-size:38px; }
       .hero-cover{ max-height:620px; }
+      .strip-body{ grid-template-columns: 1fr; }
+      .top-logo{ width:76px; height:76px; }
     }
     @media (max-width: 560px){
       .cards{ grid-template-columns: 1fr; }
@@ -867,15 +1057,11 @@
       .brand{ min-width:unset; }
       nav{ gap:8px; }
       .navlink{ padding:8px 8px; }
-
-      .brand-logos{ gap:8px; padding:6px 7px; }
-      .logo-chip{ width:38px; height:38px; }
-      .logo-chip img{ padding:6px; }
-
       .store-grid{ grid-template-columns: 1fr; }
+      .top-logo{ width:70px; height:70px; }
     }
 
-    :target{ scroll-margin-top: 88px; }
+    :target{ scroll-margin-top: 92px; }
   </style>
 </head>
 
@@ -885,50 +1071,33 @@
     <div class="wrap">
       <div class="topbar-inner">
         <div class="brand">
-          <!-- 3 LOGOS (TOPBAR) -->
-          <div class="brand-logos" aria-label="Brand logos">
-            <!-- AI PLAYGROUND -->
-            <div class="logo-chip" title="AI PLAYGROUND (Franchise)">
-              <img
-                src="./AI%20PLAYGROUND_Logo%20sem%20fundo.png"
-                alt="AI PLAYGROUND logo"
-                onerror="this.outerHTML='<div class=&quot;logo-fallback&quot;>AI<br/>PG</div>'"
-              />
-            </div>
-
-            <!-- NEURABYTE -->
-            <div class="logo-chip" title="Neurabyte (AI Cognitive Extension)">
-              <img
-                src="./Neurabyte_Logo%202.0.png"
-                alt="Neurabyte logo"
-                onerror="this.outerHTML='<div class=&quot;logo-fallback&quot;>NEURA</div>'"
-              />
-            </div>
-
-            <!-- IA MEDIA FACTORY STUDIO -->
-            <div class="logo-chip" title="IA Media Factory Studio">
-              <img
-                src="./IA%20Media%20Factory_Logo.png"
-                alt="IA Media Factory Studio logo"
-                onerror="this.outerHTML='<div class=&quot;logo-fallback&quot;>IA<br/>MF</div>'"
-              />
-            </div>
+          <!-- TOPBAR: ONLY AI PLAYGROUND LOGO (bigger) -->
+          <div class="top-logo" title="AI PLAYGROUND">
+            <img
+              src="./AI%20PLAYGROUND_Logo%20sem%20fundo.png"
+              alt="AI PLAYGROUND logo"
+              onerror="this.outerHTML='<div class=&quot;logo-fallback&quot;>AI<br/>PG</div>'"
+            />
           </div>
 
           <div class="brand-title">
             <strong>AI PLAYGROUND</strong>
-            <span>Official Franchise Portal</span>
+            <span>Official System Portal</span>
           </div>
+
           <span class="pill">mindfax.art/aiplayground</span>
         </div>
 
         <nav aria-label="Primary">
           <a class="navlink" href="#what">What it is</a>
-          <a class="navlink" href="#franchise">Franchise</a>
+          <a class="navlink" href="#system">System</a>
           <a class="navlink" href="#validation">Validation</a>
           <a class="navlink" href="#start">Start</a>
-          <button class="cta" onclick="scrollToId('start')">Buy</button>
-          <button class="cta" onclick="scrollToId('start')">Explore</button>
+          <a class="navlink" href="#author">Author</a>
+
+          <!-- CTA improved: one clear money CTA + one clear follow CTA -->
+          <button class="cta" onclick="scrollToId('start')">Get AI PLAYGROUND</button>
+          <button class="cta" onclick="scrollToId('missions')">Missions Updates</button>
         </nav>
       </div>
     </div>
@@ -943,7 +1112,7 @@
             <div class="hero-inner">
               <div class="kicker">
                 <span class="dot"></span>
-                <span class="text">A cognitive franchise for parents & children</span>
+                <span class="text">A system for parents & children</span>
                 <span class="pill">Posture · Practice · Judgment · Autonomy</span>
               </div>
 
@@ -955,8 +1124,8 @@
               </p>
 
               <div class="hero-actions">
-                <button class="btn primary" onclick="scrollToId('franchise')">Enter the Playground</button>
-                <button class="btn" onclick="scrollToId('validation')">Independent Validation</button>
+                <button class="btn primary" onclick="scrollToId('start')">Get the Master Book</button>
+                <button class="btn" onclick="scrollToId('system')">Enter the System</button>
               </div>
 
               <div class="hero-note">
@@ -986,11 +1155,25 @@
             </div>
           </aside>
         </div>
+
+        <!-- Artbook strip (alive images) -->
+        <div class="hero-strip" aria-label="Artbook strip">
+          <div class="strip-top">
+            <div class="title">Inside the artbook</div>
+            <div class="strip-controls">
+              <button class="iconbtn" aria-label="Previous images" onclick="stripPrev()">‹</button>
+              <button class="iconbtn" aria-label="Next images" onclick="stripNext()">›</button>
+            </div>
+          </div>
+          <div class="strip-body" id="stripBody">
+            <!-- injected by JS -->
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- SECTION: WHAT -->
-    <section id="what">
+    <section id="what" class="section-wall" style="--wall: var(--img-a1-01);">
       <div class="wrap">
         <div class="section-head">
           <div>
@@ -1039,89 +1222,125 @@
       </div>
     </section>
 
-    <!-- SECTION: FRANCHISE -->
-    <section id="franchise">
+    <!-- SECTION: SYSTEM (renamed + reframed) -->
+    <section id="system" class="section-wall" style="--wall: var(--img-sys-bg);">
       <div class="wrap">
         <div class="section-head">
           <div>
-            <h2>THE FRANCHISE</h2>
+            <h2>THE AI PLAYGROUND SYSTEM</h2>
             <p class="lead">
-              One system. Four phases. Each book is a portal.
-              AI PLAYGROUND establishes posture. The MISSIONS volumes train practice across development.
+              AI PLAYGROUND was never designed to be a standalone book.
+              It was designed as the foundation of a system that grows with your child.
+              As children develop, the way they think, decide, learn, and relate to technology changes.
+              A method that works in early childhood will not work in the same way during pre-adolescence or adolescence.
+              For this reason, AI PLAYGROUND exists as the foundational posture of a broader system, not as a single solution.
             </p>
           </div>
           <div class="tagrow">
-            <span class="pill">Master Book</span>
-            <span class="pill">Kids</span>
-            <span class="pill">Pre-Teens</span>
-            <span class="pill">Teens</span>
+            <span class="pill">Core Work</span>
+            <span class="pill">Practice Systems</span>
+            <span class="pill">Developmental phases</span>
           </div>
         </div>
 
-        <div class="cards">
+        <div class="panel">
+          <strong>A shared principle</strong>
+          <p>
+            The tools will change. Your child will change. The structure must adapt.
+            This system is not about keeping up with technology.
+            It is about protecting thinking as children grow.
+          </p>
+        </div>
+
+        <div class="cards" style="margin-top:16px;">
           <div class="card">
             <div class="status live"><span class="lamp"></span> Available now</div>
-            <div class="booktitle">AI PLAYGROUND</div>
+            <div class="booktitle">THE CORE WORK — AI PLAYGROUND</div>
             <div class="booksub">Real Strategies for Parents Thinking with Intelligence, Not Fear</div>
-            <div class="mini">Foundation · Posture · Mediation</div>
+            <div class="mini">Foundation · Posture · Judgment · Mediation</div>
             <div class="meta">
-              <span class="mini">Cinematic Educational Artbook</span>
-              <a class="btn primary" href="#start">Explore</a>
+              <span class="mini">Does not teach tools. Teaches how to think.</span>
+              <a class="btn primary" href="#start">Get it</a>
             </div>
           </div>
 
-          <div class="card">
-            <div class="status live"><span class="lamp"></span> Available now</div>
-            <div class="booktitle">AI PLAYGROUND: MISSIONS</div>
-            <div class="booksub">A 10-Day AI Thinking System for Kids (5–9)</div>
-            <div class="mini">Daily missions · Practice-first · Adult mediation</div>
+          <div class="card" id="missions">
+            <div class="status next"><span class="lamp"></span> In development</div>
+            <div class="booktitle">THE PRACTICE SYSTEMS — MISSIONS</div>
+            <div class="booksub">One umbrella concept that expands into three playbooks: Kids, Pre-Teens, Teens.</div>
+            <div class="mini">A system of guided practice that adapts as autonomy grows.</div>
             <div class="meta">
-              <span class="mini">Official Practice Companion</span>
-              <a class="btn primary" href="#start">Explore</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="status next"><span class="lamp"></span> Coming next</div>
-            <div class="booktitle">AI PLAYGROUND: PRE-TEENS</div>
-            <div class="booksub">Training Judgment Before Autonomy (10–13)</div>
-            <div class="mini">Negotiation · Decision-making · Responsibility</div>
-            <div class="meta">
-              <span class="mini">Release: TBD</span>
-              <a class="btn" href="#start">Join the Early List</a>
+              <span class="mini">Full development in progress</span>
+              <button class="btn" onclick="scrollToId('missions-dev')">See status</button>
             </div>
           </div>
 
           <div class="card">
             <div class="status next"><span class="lamp"></span> In development</div>
-            <div class="booktitle">AI PLAYGROUND: TEENS</div>
-            <div class="booksub">Thinking Before Automation (14–17)</div>
-            <div class="mini">Identity · Ethics · Long-term autonomy</div>
+            <div class="booktitle">MISSIONS — KIDS</div>
+            <div class="booksub">A 10-Day AI Thinking System for Children</div>
+            <div class="mini">Daily missions · Effort-first · Parent mediation</div>
             <div class="meta">
               <span class="mini">Release: TBD</span>
-              <a class="btn" href="#start">Follow the Release</a>
+              <button class="btn" onclick="scrollToId('missions-dev')">Join updates</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="status next"><span class="lamp"></span> In development</div>
+            <div class="booktitle">MISSIONS — PRE-TEENS / TEENS</div>
+            <div class="booksub">Training Judgment Before Autonomy · Thinking Before Automation</div>
+            <div class="mini">Negotiation · Responsibility · Identity · Ethics</div>
+            <div class="meta">
+              <span class="mini">Release: TBD</span>
+              <button class="btn" onclick="scrollToId('missions-dev')">Follow releases</button>
             </div>
           </div>
         </div>
 
-        <div class="panel" style="margin-top:16px;">
-          <strong>A Shared Principle</strong>
+        <div class="panel" id="missions-dev" style="margin-top:16px;">
+          <strong>MISSIONS development status</strong>
           <p>
-            AI PLAYGROUND is about posture before performance, judgment before autonomy, structure before freedom.
-            The MISSIONS volumes turn that posture into repeatable daily practice, adapted to each phase of development.
+            The MISSIONS playbooks are in full development with specialists and masters in education and technology,
+            supervised by doctoral-level expertise. The work is real, practical, and built for long-term validity.
+            The author writes under a pseudonym: <strong>The Architect</strong>.
           </p>
+          <hr/>
+          <p style="margin:0;">
+            <span class="mono" style="color:rgba(53,214,210,.92);">Rule:</span>
+            <span class="mono" style="color:rgba(210,138,47,.92);">We do not sell what is not ready.</span><br/>
+            Until publication, MISSIONS remains “in development” and updates are the only CTA.
+          </p>
+        </div>
+
+        <!-- Distributed brand reference (Neurabyte) -->
+        <div class="brandline" aria-label="Neurabyte brand line">
+          <div class="chip" title="Neurabyte - AI Cognitive Extension">
+            <img
+              src="./Neurabyte_Logo%202.0.png"
+              alt="Neurabyte logo"
+              onerror="this.outerHTML='<div class=&quot;logo-fallback&quot;>NEURA</div>'"
+            />
+          </div>
+          <div style="display:flex; flex-direction:column; gap:2px;">
+            <strong>Neurabyte™ — AI Cognitive Extension</strong>
+            <span>
+              Neurabyte is the cognitive extension layer behind the system’s AI posture: restraint, verification, authorship, and judgment.
+              It is not “tool worship”. It is the discipline that keeps thinking human.
+            </span>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- SECTION: VALIDATION -->
-    <section id="validation">
+    <section id="validation" class="section-wall" style="--wall: var(--img-a1-04);">
       <div class="wrap">
         <div class="section-head">
           <div>
             <h2>INDEPENDENT VALIDATION</h2>
             <p class="lead">
-              This franchise was not validated by marketing personas.
+              This system was not validated by marketing personas.
               It was reviewed by independent AI systems and educators trained to analyze cognition, education, and long-term development.
             </p>
           </div>
@@ -1140,9 +1359,9 @@
           </div>
 
           <blockquote>
-            <strong>“AI PLAYGROUND: the franchise every conscious family should know in 2025.”</strong><br/>
-            A rare exception that resists rigorous scrutiny: structure instead of fear, judgment instead of hype,
-            calm authority in a chaotic market.<br/><br/>
+            <strong>“AI PLAYGROUND: a calm exception in a chaotic market.”</strong><br/>
+            Structure instead of fear, judgment instead of hype,
+            and an unusually coherent system architecture that can scale across developmental stages.<br/><br/>
             Tools will come and go. Children will grow fast.
             Human judgment, trained early, stays.
           </blockquote>
@@ -1169,7 +1388,7 @@
               </div>
               <p>
                 Clear separation between posture and practice, with an ethical spine that protects families from tool obsession.
-                The franchise structure is unusually coherent and durable.
+                The system structure is unusually coherent and durable.
               </p>
             </div>
 
@@ -1180,7 +1399,7 @@
               </div>
               <p>
                 This reads like product architecture, not content dumping.
-                High franchise potential because it trains judgment rather than chasing changing tools.
+                High system potential because it trains judgment rather than chasing changing tools.
               </p>
             </div>
 
@@ -1191,7 +1410,7 @@
               </div>
               <p>
                 Built for long-term trust: honest positioning, repeatable practice, and a scalable system across developmental phases.
-                Aggressive in conversion, not predatory in tone.
+                Aggressive in clarity, not predatory in tone.
               </p>
             </div>
           </div>
@@ -1204,23 +1423,18 @@
         </div>
 
         <div class="panel" style="margin-top:16px;">
-          <strong>Approved by educators (placeholder)</strong>
+          <strong>Educator supervision (real, in development)</strong>
           <p>
-            Add your masters in education approvals here as short, direct quotes (name + role).
-            Keep them calm, specific, and practitioner-focused.
-          </p>
-          <hr/>
-          <p class="mono" style="margin:0; color:rgba(255,255,255,.70);">
-            Example format:<br/>
-            “What impressed me was not the technology, but the restraint. This trains thinking.” — Name, M.Ed.
+            The MISSIONS playbooks are being developed with education and technology specialists,
+            with doctoral-level supervision to keep the method practical, honest, and durable.
           </p>
         </div>
 
         <div class="panel" style="margin-top:14px;">
           <strong>Now comes the only opinion that truly matters.</strong>
           <p>
-            These perspectives come from advanced analytical systems and experienced educators.
-            They don’t need this book.<br/>
+            These perspectives come from analytical systems and educators.
+            They don’t need this system.<br/>
             <strong>Your family does.</strong><br/><br/>
             Now comes the only opinion that truly matters: <strong>yours.</strong>
           </p>
@@ -1229,7 +1443,7 @@
     </section>
 
     <!-- SECTION: WHY -->
-    <section id="why">
+    <section id="why" class="section-wall" style="--wall: var(--img-a1-05);">
       <div class="wrap">
         <div class="section-head">
           <div>
@@ -1266,7 +1480,7 @@
     </section>
 
     <!-- SECTION: START -->
-    <section id="start">
+    <section id="start" class="section-wall" style="--wall: var(--img-mis-01);">
       <div class="wrap">
         <div class="section-head">
           <div>
@@ -1278,8 +1492,8 @@
           </div>
           <div class="tagrow">
             <span class="pill">Master Book</span>
-            <span class="pill">Missions</span>
-            <span class="pill">Bundle</span>
+            <span class="pill">Missions Updates</span>
+            <span class="pill">Honest bundle</span>
           </div>
         </div>
 
@@ -1297,33 +1511,32 @@
           </div>
 
           <div class="panel">
-            <strong>Begin with Missions (Kids)</strong>
+            <strong>Follow MISSIONS (in development)</strong>
             <p>
-              Ten days. Short missions. Practical outputs.
-              Designed for children (5–9) with parental mediation.
+              MISSIONS is a concept that contains three playbooks: Kids, Pre-Teens, Teens.
+              Built with education and technology specialists, supervised by doctoral expertise.
             </p>
-            <button class="btn primary" style="width:100%;" onclick="openBuy('AI PLAYGROUND: MISSIONS')">Get MISSIONS</button>
+            <button class="btn" style="width:100%;" onclick="scrollToId('missions-dev')">Get release updates</button>
             <div class="fineprint">
-              Choose your store (Official Edition, Payhip, Gumroad, Amazon).
+              We only sell MISSIONS after publication. Until then: updates only.
             </div>
           </div>
         </div>
 
         <div class="option" style="margin-top:16px;">
-          <h3>Get the Family Bundle</h3>
+          <h3>The honest bundle promise</h3>
           <p>
-            The Master Book + MISSIONS now, with early access tracking for the next phases (Pre-Teens and Teens).
-            Built for long-term continuity.
+            The Master Book is available now. MISSIONS is in development.
+            This site will not sell future volumes before they exist.
           </p>
-          <button class="btn primary" onclick="openBuy('AI PLAYGROUND Bundle')">Get the Bundle</button>
+          <button class="btn primary" onclick="scrollToId('missions-dev')">Track MISSIONS releases</button>
           <div class="fineprint">
-            Keep the bundle promise honest: don’t sell what isn’t ready.
-            Use “early list / release notification” until those volumes are published.
+            When MISSIONS launches, a clean bundle can be offered without breaking trust.
           </div>
         </div>
 
         <div class="panel" style="margin-top:16px;">
-          <strong>Legal & responsibility (placeholder)</strong>
+          <strong>Legal & responsibility</strong>
           <p>
             AI PLAYGROUND is a parental empowerment system and does not replace professional clinical, legal, or educational services.
             Safety first. Shame never.
@@ -1332,9 +1545,74 @@
       </div>
     </section>
 
+    <!-- SECTION: AUTHOR (final, requested) -->
+    <section id="author" class="section-wall" style="--wall: var(--img-author-bg);">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>THE AUTHOR</h2>
+            <p class="lead">
+              A calm posture. A strict ethic. A system built to protect the human process of thinking.
+            </p>
+          </div>
+          <div class="tagrow">
+            <span class="pill">Pseudonym</span>
+            <span class="pill">Function, not brand</span>
+            <span class="pill">Responsibility first</span>
+          </div>
+        </div>
+
+        <div class="author-card">
+          <div class="author-text">
+I write under the name The Architect.
+
+Not as a character.
+Not as a brand.
+As a function.
+
+This book was not written from theory alone.
+It comes from years of teaching, observing, testing, failing, and adjusting in real environments.
+
+I have worked with learning systems, language, cognition, and education long enough to see a pattern repeat itself:
+when adults rush to explain, thinking weakens.
+when systems promise efficiency, autonomy disappears.
+
+This playbook exists to protect something simple and fragile:
+the human process of thinking.
+
+It does not ask parents to become experts.
+It does not ask children to adapt faster.
+
+It asks adults to slow down,
+to stay present,
+and to mediate the moment where thinking forms.
+
+Artificial intelligence appears here not as a solution,
+but as a field of training.
+A tool that must enter after effort, not before it.
+
+If this material feels calm, it is intentional.
+If it feels demanding, it is honest.
+
+Nothing here replaces responsibility.
+Nothing here guarantees results.
+
+This book only offers structure.
+What grows from it depends on what you do at home.
+
+— The Architect
+          </div>
+
+          <div class="author-sig">
+            Published by <strong>IA Media Factory Studio™</strong> · Powered by <strong>Neurabyte™</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <!-- BUY MODAL (added) -->
+  <!-- BUY MODAL (kept) -->
   <div class="modal" id="buyModal" role="dialog" aria-modal="true" aria-labelledby="buyTitle" onclick="modalBackdropClose(event)">
     <div class="modal-card">
       <div class="modal-inner">
@@ -1362,53 +1640,35 @@
   <footer>
     <div class="wrap">
       <div class="footer-top">
-        <div class="footer-logos">
-          <!-- 3 LOGOS (FOOTER) -->
-          <div class="logo-chip large" title="AI PLAYGROUND (Franchise)">
-            <img
-              src="./AI%20PLAYGROUND_Logo%20sem%20fundo.png"
-              alt="AI PLAYGROUND logo"
-              onerror="this.outerHTML='<div class=&quot;logo-fallback&quot;>AI<br/>PG</div>'"
-            />
-          </div>
-
-          <div class="logo-chip large" title="Neurabyte (AI Cognitive Extension)">
-            <img
-              src="./Neurabyte_Logo%202.0.png"
-              alt="Neurabyte logo"
-              onerror="this.outerHTML='<div class=&quot;logo-fallback&quot;>NEURA</div>'"
-            />
-          </div>
-
-          <div class="logo-chip large" title="IA Media Factory Studio">
-            <img
-              src="./IA%20Media%20Factory_Logo.png"
-              alt="IA Media Factory Studio logo"
-              onerror="this.outerHTML='<div class=&quot;logo-fallback&quot;>IA<br/>MF</div>'"
-            />
-          </div>
-
-          <div>
-            <div style="font-family:'Cinzel',serif;letter-spacing:.10em;font-weight:700;">AI PLAYGROUND</div>
-            <div style="color:var(--muted);font-size:12px;margin-top:4px;">
-              Published by IA Media Factory Studio™ · Powered by Neurabyte™
+        <div>
+          <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+            <div class="top-logo" style="width:64px;height:64px;border-radius:16px;">
+              <img
+                src="./AI%20PLAYGROUND_Logo%20sem%20fundo.png"
+                alt="AI PLAYGROUND logo"
+                onerror="this.outerHTML='<div class=&quot;logo-fallback&quot;>AI<br/>PG</div>'"
+              />
+            </div>
+            <div>
+              <div style="font-family:'Cinzel',serif;letter-spacing:.10em;font-weight:700;">AI PLAYGROUND</div>
+              <div style="color:var(--muted);font-size:12px;margin-top:4px;">
+                Official System Portal · Published by IA Media Factory Studio™ · Powered by Neurabyte™
+              </div>
             </div>
           </div>
         </div>
 
         <div class="footer-links">
           <a href="#what">What it is</a>
-          <a href="#franchise">Franchise</a>
+          <a href="#system">System</a>
           <a href="#validation">Validation</a>
           <a href="#start">Start</a>
+          <a href="#author">Author</a>
           <a href="#top" onclick="scrollToTop(event)">Back to top</a>
         </div>
       </div>
 
-      <!-- ✅ AUTHOR BLOCK IS HERE (NOT CUT) -->
       <div class="footer-note">
-        <strong>About The Architect (placeholder)</strong><br/>
-        Add a short author bio here, plus contact, press-kit link, and bibliography references page when ready.<br/><br/>
         <span class="mono" style="color:rgba(53,214,210,.92);">AI PLAYGROUND —</span>
         <span class="mono" style="color:rgba(210,138,47,.92);">Because thinking never goes out of style.</span>
       </div>
@@ -1545,7 +1805,7 @@
       if(e.key === "Escape" && modal.classList.contains("show")) closeBuy();
     });
 
-    // Carousel logic
+    // Carousel logic (text consensus)
     const slides = Array.from(document.querySelectorAll(".slide"));
     const dots = Array.from(document.querySelectorAll(".dotbtn"));
     let idx = 0;
@@ -1571,6 +1831,41 @@
       car.addEventListener("mouseenter", () => clearInterval(auto));
       car.addEventListener("mouseleave", () => auto = setInterval(() => carouselNext(), 7000));
     }
+
+    // ===== HERO STRIP (artbook images, 18-image catalog) =====
+    const STRIP = [
+      "./ap__carousel-a1__page__01__raising-children-new-world__1600x900.jpg",
+      "./ap__carousel-a1__page__02__technology-changes-guidance-remains__1600x900.jpg",
+      "./ap__carousel-a1__page__04__block1-rupture-threshold__1600x900.jpg",
+      "./ap__carousel-a1__page__05__block2-real-risk-edge__1600x900.jpg",
+      "./ap__missions__page__01__golden-rule-try-mediate-expand__1600x900.jpg",
+      "./ap__missions__page__02__risk-traffic-light-judgment__1600x900.jpg",
+      "./ap__neurabyte__page__02__first-contact-ai-supervised__1600x900.jpg",
+      "./ap__neurabyte__page__03__questioning-ai-authority__1600x900.jpg",
+      "./ap__neurabyte__page__04__authorship-with-ai__1600x900.jpg"
+    ];
+
+    const stripBody = document.getElementById("stripBody");
+    let stripIndex = 0;
+
+    function renderStrip(){
+      if(!stripBody) return;
+      const a = STRIP[stripIndex % STRIP.length];
+      const b = STRIP[(stripIndex + 1) % STRIP.length];
+      const c = STRIP[(stripIndex + 2) % STRIP.length];
+
+      stripBody.innerHTML = `
+        <div class="thumb"><img src="${a}" alt="AI PLAYGROUND art frame" onerror="this.style.display='none';"/></div>
+        <div class="thumb"><img src="${b}" alt="AI PLAYGROUND art frame" onerror="this.style.display='none';"/></div>
+        <div class="thumb"><img src="${c}" alt="AI PLAYGROUND art frame" onerror="this.style.display='none';"/></div>
+      `;
+    }
+
+    function stripNext(){ stripIndex = (stripIndex + 1) % STRIP.length; renderStrip(); }
+    function stripPrev(){ stripIndex = (stripIndex - 1 + STRIP.length) % STRIP.length; renderStrip(); }
+
+    renderStrip();
+    setInterval(() => stripNext(), 9000);
   </script>
 </body>
 </html>
