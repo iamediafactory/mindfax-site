@@ -723,169 +723,134 @@
       max-width:90ch;
     }
 
-    /* ---------- BUY MODAL (added, harmony-safe) ---------- */
-    .buy-modal{
-      position:fixed; inset:0;
+    /* ---------- BUY MODAL (added) ---------- */
+    .modal{
+      position:fixed;
+      inset:0;
+      z-index:1000;
       display:none;
-      align-items:center; justify-content:center;
-      z-index:200;
+      align-items:center;
+      justify-content:center;
       padding:22px;
-      background:
-        radial-gradient(900px 520px at 20% 18%, rgba(210,138,47,.14), transparent 62%),
-        radial-gradient(900px 600px at 84% 35%, rgba(53,214,210,.14), transparent 60%),
-        rgba(0,0,0,.62);
-      backdrop-filter: blur(12px);
+      background: rgba(0,0,0,.62);
+      backdrop-filter: blur(10px);
     }
-    .buy-modal.open{ display:flex; }
-
-    .buy-box{
-      width:min(720px, 100%);
+    .modal.show{ display:flex; }
+    .modal-card{
+      width:min(760px, 100%);
       border-radius: var(--radius2);
-      border:1px solid rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.14);
       background:
-        radial-gradient(900px 620px at 18% 20%, rgba(210,138,47,.14), transparent 62%),
-        radial-gradient(900px 680px at 82% 30%, rgba(53,214,210,.14), transparent 60%),
+        radial-gradient(900px 520px at 18% 18%, rgba(210,138,47,.14), transparent 62%),
+        radial-gradient(900px 600px at 84% 35%, rgba(53,214,210,.14), transparent 60%),
         linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
       box-shadow: var(--shadow);
       overflow:hidden;
       position:relative;
     }
-
-    .buy-box:after{
+    .modal-card:before{
       content:"";
-      position:absolute; inset:0;
+      position:absolute; inset:-2px;
       background:
-        repeating-linear-gradient(90deg, rgba(111,232,255,.06) 0 1px, transparent 1px 18px),
-        repeating-linear-gradient(180deg, rgba(53,214,210,.04) 0 1px, transparent 1px 22px);
-      mask-image: radial-gradient(900px 600px at 70% 40%, rgba(0,0,0,.85), transparent 70%);
-      opacity:.22;
+        radial-gradient(520px 320px at 22% 18%, rgba(210,138,47,.14), transparent 60%),
+        radial-gradient(520px 360px at 78% 34%, rgba(53,214,210,.16), transparent 62%);
+      filter: blur(14px);
+      opacity:.9;
       pointer-events:none;
     }
-
-    .buy-head{
-      position:relative;
-      z-index:1;
-      display:flex; align-items:flex-start; justify-content:space-between; gap:12px; flex-wrap:wrap;
-      padding:16px 16px;
-      border-bottom:1px solid rgba(255,255,255,.08);
+    .modal-inner{ position:relative; z-index:1; padding:18px; }
+    .modal-top{
+      display:flex; align-items:flex-start; justify-content:space-between; gap:12px;
+      margin-bottom:12px;
     }
-
-    .buy-title{
+    .modal-title{
+      display:flex; flex-direction:column; gap:6px;
+    }
+    .modal-title strong{
       font-family:"Cinzel", serif;
       letter-spacing:.10em;
-      font-weight:700;
-      margin:0;
       font-size:16px;
-      line-height:1.25;
     }
-    .buy-sub{
-      margin:6px 0 0;
+    .modal-title span{
       color:var(--muted);
       font-size:13px;
-      line-height:1.6;
-      max-width:64ch;
+      line-height:1.5;
+      max-width:70ch;
     }
-
-    .buy-close{
-      width:42px; height:42px;
+    .closebtn{
+      width:38px; height:38px;
       border-radius:14px;
-      border:1px solid rgba(255,255,255,.14);
+      border:1px solid rgba(255,255,255,.12);
       background: rgba(255,255,255,.04);
       cursor:pointer;
-      color:rgba(255,255,255,.84);
+      color:rgba(255,255,255,.86);
       transition: transform .15s ease, background .15s ease, border-color .15s ease;
-      position:relative;
-      z-index:2;
     }
-    .buy-close:hover{
+    .closebtn:hover{
       transform: translateY(-1px);
       border-color: rgba(53,214,210,.22);
       background: rgba(255,255,255,.06);
     }
-
-    .buy-body{
-      position:relative;
-      z-index:1;
-      padding:16px;
-    }
-
-    .buy-grid{
+    .store-grid{
       display:grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, 1fr);
       gap:12px;
+      margin-top:14px;
     }
-
-    .buy-link{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
+    .store{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
       padding:12px 12px;
-      border-radius:16px;
+      border-radius: 16px;
       border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-      transition: transform .15s ease, border-color .15s ease, background .15s ease;
+      background: rgba(0,0,0,.14);
+      transition: transform .16s ease, border-color .16s ease, background .16s ease;
+      cursor:pointer;
+      user-select:none;
     }
-    .buy-link:hover{
+    .store:hover{
       transform: translateY(-1px);
-      border-color: rgba(255,255,255,.22);
-      background: rgba(255,255,255,.06);
+      border-color: rgba(53,214,210,.22);
+      background: rgba(255,255,255,.04);
     }
-
-    .buy-left{
+    .store .left{
       display:flex; flex-direction:column; gap:4px;
     }
-    .buy-left strong{
-      font-size:12px;
-      letter-spacing:.10em;
-      text-transform:uppercase;
-      color:rgba(255,255,255,.88);
-    }
-    .buy-left span{
-      font-size:12px;
-      color:var(--muted2);
-      line-height:1.4;
-    }
-
-    .buy-chip{
-      display:inline-flex;
-      align-items:center;
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid rgba(53,214,210,.30);
-      background: linear-gradient(180deg, rgba(53,214,210,.18), rgba(53,214,210,.06));
-      color:rgba(255,255,255,.90);
-      font-size:11px;
+    .store .left strong{
       letter-spacing:.08em;
       text-transform:uppercase;
-      white-space:nowrap;
+      font-size:12px;
+      color:rgba(255,255,255,.90);
     }
-
-    .buy-link.featured{
-      border-color: rgba(53,214,210,.30);
-      background:
-        radial-gradient(320px 160px at 20% 40%, rgba(210,138,47,.10), transparent 60%),
-        radial-gradient(320px 160px at 80% 60%, rgba(53,214,210,.16), transparent 62%),
-        rgba(255,255,255,.04);
+    .store .left span{
+      font-size:12px;
+      color:var(--muted);
+      line-height:1.5;
     }
-
-    .buy-link.disabled{
+    .store .right{
+      color:rgba(255,255,255,.72);
+      font-size:14px;
+    }
+    .store.disabled{
       opacity:.45;
       cursor:not-allowed;
-      pointer-events:none;
     }
-    .buy-foot{
-      position:relative;
-      z-index:1;
-      padding:12px 16px 16px;
-      border-top:1px solid rgba(255,255,255,.08);
+    .store.disabled:hover{
+      transform:none;
+      border-color: rgba(255,255,255,.12);
+      background: rgba(0,0,0,.14);
+    }
+    .modal-foot{
+      margin-top:14px;
+      padding-top:12px;
+      border-top:1px solid rgba(255,255,255,.10);
       color:var(--muted2);
       font-size:12px;
       line-height:1.7;
-    }
-
-    @media (max-width: 640px){
-      .buy-grid{ grid-template-columns: 1fr; }
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
     }
 
     /* ---------- Responsive ---------- */
@@ -906,6 +871,8 @@
       .brand-logos{ gap:8px; padding:6px 7px; }
       .logo-chip{ width:38px; height:38px; }
       .logo-chip img{ padding:6px; }
+
+      .store-grid{ grid-template-columns: 1fr; }
     }
 
     :target{ scroll-margin-top: 88px; }
@@ -960,6 +927,7 @@
           <a class="navlink" href="#franchise">Franchise</a>
           <a class="navlink" href="#validation">Validation</a>
           <a class="navlink" href="#start">Start</a>
+          <button class="cta" onclick="scrollToId('start')">Buy</button>
           <button class="cta" onclick="scrollToId('start')">Explore</button>
         </nav>
       </div>
@@ -1322,9 +1290,9 @@
               Begin with posture: how to think, mediate, and decide in a world assisted by AI.
               Designed for parents before any tool becomes central.
             </p>
-            <button class="btn primary" style="width:100%;" onclick="openBuy('master')">Get AI PLAYGROUND</button>
+            <button class="btn primary" style="width:100%;" onclick="openBuy('AI PLAYGROUND')">Get AI PLAYGROUND</button>
             <div class="fineprint">
-              Choose your preferred storefront. Lemon is the official edition.
+              Choose your store (Official Edition, Payhip, Gumroad, Amazon).
             </div>
           </div>
 
@@ -1334,9 +1302,9 @@
               Ten days. Short missions. Practical outputs.
               Designed for children (5–9) with parental mediation.
             </p>
-            <button class="btn primary" style="width:100%;" onclick="openBuy('missions')">Get MISSIONS</button>
+            <button class="btn primary" style="width:100%;" onclick="openBuy('AI PLAYGROUND: MISSIONS')">Get MISSIONS</button>
             <div class="fineprint">
-              Choose your preferred storefront. Lemon is the official edition.
+              Choose your store (Official Edition, Payhip, Gumroad, Amazon).
             </div>
           </div>
         </div>
@@ -1347,7 +1315,7 @@
             The Master Book + MISSIONS now, with early access tracking for the next phases (Pre-Teens and Teens).
             Built for long-term continuity.
           </p>
-          <button class="btn primary" onclick="openBuy('bundle')">Get the Bundle</button>
+          <button class="btn primary" onclick="openBuy('AI PLAYGROUND Bundle')">Get the Bundle</button>
           <div class="fineprint">
             Keep the bundle promise honest: don’t sell what isn’t ready.
             Use “early list / release notification” until those volumes are published.
@@ -1366,81 +1334,26 @@
 
   </main>
 
-  <!-- BUY MODAL (added, harmony-safe) -->
-  <div class="buy-modal" id="buyModal" role="dialog" aria-modal="true" aria-labelledby="buyModalTitle">
-    <div class="buy-box">
-      <div class="buy-head">
-        <div>
-          <h3 class="buy-title" id="buyModalTitle">CHOOSE A STOREFRONT</h3>
-          <p class="buy-sub" id="buyModalSub">
-            Select where you want to purchase. Lemon is the official edition.
-          </p>
+  <!-- BUY MODAL (added) -->
+  <div class="modal" id="buyModal" role="dialog" aria-modal="true" aria-labelledby="buyTitle" onclick="modalBackdropClose(event)">
+    <div class="modal-card">
+      <div class="modal-inner">
+        <div class="modal-top">
+          <div class="modal-title">
+            <strong id="buyTitle">Choose a store</strong>
+            <span id="buySubtitle">Select where you want to purchase.</span>
+          </div>
+          <button class="closebtn" aria-label="Close" onclick="closeBuy()">✕</button>
         </div>
-        <button class="buy-close" aria-label="Close" onclick="closeBuy()">✕</button>
-      </div>
 
-      <div class="buy-body">
-        <div class="buy-grid">
-          <a class="buy-link featured" id="buyLemon" href="#" target="_blank" rel="noopener">
-            <div class="buy-left">
-              <strong>Lemon</strong>
-              <span>Official Edition (recommended)</span>
-            </div>
-            <span class="buy-chip">Official</span>
-          </a>
-
-          <a class="buy-link" id="buyPayhip" href="#" target="_blank" rel="noopener">
-            <div class="buy-left">
-              <strong>Payhip</strong>
-              <span>Direct download</span>
-            </div>
-            <span class="buy-chip" style="border-color:rgba(255,255,255,.16);background:rgba(255,255,255,.04);">Alt</span>
-          </a>
-
-          <a class="buy-link" id="buyGumroad" href="#" target="_blank" rel="noopener">
-            <div class="buy-left">
-              <strong>Gumroad</strong>
-              <span>Direct checkout</span>
-            </div>
-            <span class="buy-chip" style="border-color:rgba(255,255,255,.16);background:rgba(255,255,255,.04);">Alt</span>
-          </a>
-
-          <a class="buy-link" id="buyKindle" href="#" target="_blank" rel="noopener">
-            <div class="buy-left">
-              <strong>Amazon Kindle</strong>
-              <span>E-book on Amazon</span>
-            </div>
-            <span class="buy-chip" style="border-color:rgba(255,255,255,.16);background:rgba(255,255,255,.04);">Amazon</span>
-          </a>
-
-          <a class="buy-link" id="buyPaperback" href="#" target="_blank" rel="noopener">
-            <div class="buy-left">
-              <strong>Amazon Paperback</strong>
-              <span>Print edition</span>
-            </div>
-            <span class="buy-chip" style="border-color:rgba(255,255,255,.16);background:rgba(255,255,255,.04);">Print</span>
-          </a>
-
-          <a class="buy-link disabled" href="javascript:void(0)">
-            <div class="buy-left">
-              <strong>Google Play Books</strong>
-              <span>Pending</span>
-            </div>
-            <span class="buy-chip" style="border-color:rgba(255,255,255,.16);background:rgba(255,255,255,.04);">Soon</span>
-          </a>
-
-          <a class="buy-link disabled" href="javascript:void(0)">
-            <div class="buy-left">
-              <strong>Kobo</strong>
-              <span>Pending</span>
-            </div>
-            <span class="buy-chip" style="border-color:rgba(255,255,255,.16);background:rgba(255,255,255,.04);">Soon</span>
-          </a>
+        <div class="store-grid" id="storeGrid">
+          <!-- injected by JS -->
         </div>
-      </div>
 
-      <div class="buy-foot">
-        Tip: If you’re buying for a family device, Kindle is great. If you want the canonical “official edition” checkout, use Lemon.
+        <div class="modal-foot">
+          <span class="mono">Canon links are fixed in code.</span>
+          <span>Tip: “Official Edition” is the cleanest checkout flow.</span>
+        </div>
       </div>
     </div>
   </div>
@@ -1492,6 +1405,7 @@
         </div>
       </div>
 
+      <!-- ✅ AUTHOR BLOCK IS HERE (NOT CUT) -->
       <div class="footer-note">
         <strong>About The Architect (placeholder)</strong><br/>
         Add a short author bio here, plus contact, press-kit link, and bibliography references page when ready.<br/><br/>
@@ -1521,71 +1435,114 @@
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
-    // ===== CANONICAL BUY LINKS (fixed in code) =====
+    // ===== CANONICAL LINKS (fixed in code) =====
     const CANON = {
       lemon: "https://iamediafactory.lemonsqueezy.com/checkout/buy/c21841d3-ba51-4e94-9959-97a42ca9d682",
       payhip: "https://payhip.com/b/n3ZJ1",
       gumroad: "https://mediacraft03.gumroad.com/l/ai-playground",
       kindle: "https://www.amazon.com/dp/B0G9V2HHW9",
-      paperback: "https://www.amazon.com/dp/B0G9T3VQZ5"
+      paperback: "https://www.amazon.com/dp/B0G9T3VQZ5",
+      google: null, // pending
+      kobo: null   // pending
     };
 
-    // Modal open/close
-    const buyModal = document.getElementById("buyModal");
-    const buyTitle = document.getElementById("buyModalTitle");
-    const buySub = document.getElementById("buyModalSub");
+    // ===== BUY MODAL =====
+    const modal = document.getElementById("buyModal");
+    const storeGrid = document.getElementById("storeGrid");
+    const buyTitle = document.getElementById("buyTitle");
+    const buySubtitle = document.getElementById("buySubtitle");
 
-    const buyLemon = document.getElementById("buyLemon");
-    const buyPayhip = document.getElementById("buyPayhip");
-    const buyGumroad = document.getElementById("buyGumroad");
-    const buyKindle = document.getElementById("buyKindle");
-    const buyPaperback = document.getElementById("buyPaperback");
+    function openBuy(product){
+      buyTitle.textContent = "Choose a store";
+      buySubtitle.textContent = "Purchasing: " + product;
 
-    function openBuy(productKey){
-      // set links (canonical)
-      buyLemon.href = CANON.lemon;
-      buyPayhip.href = CANON.payhip;
-      buyGumroad.href = CANON.gumroad;
-      buyKindle.href = CANON.kindle;
-      buyPaperback.href = CANON.paperback;
-
-      // contextual copy (no structural changes)
-      const labels = {
-        master: {
-          t: "GET AI PLAYGROUND",
-          s: "Choose your preferred storefront. Lemon is the official edition."
+      const stores = [
+        {
+          key:"lemon",
+          name:"Official Edition",
+          desc:"Lemon Squeezy checkout",
+          url: CANON.lemon,
+          hint:"Fastest + cleanest"
         },
-        missions: {
-          t: "GET AI PLAYGROUND: MISSIONS",
-          s: "Choose your preferred storefront. Lemon is the official edition."
+        {
+          key:"payhip",
+          name:"Payhip",
+          desc:"Official product page",
+          url: CANON.payhip,
+          hint:"Direct storefront"
         },
-        bundle: {
-          t: "GET THE FAMILY BUNDLE",
-          s: "Bundle checkout uses the same official storefront. Pick your preferred platform."
+        {
+          key:"gumroad",
+          name:"Gumroad",
+          desc:"Alternative checkout",
+          url: CANON.gumroad,
+          hint:"Good for creators"
+        },
+        {
+          key:"kindle",
+          name:"Amazon Kindle",
+          desc:"Digital edition on Amazon",
+          url: CANON.kindle,
+          hint:"Kindle format"
+        },
+        {
+          key:"paperback",
+          name:"Amazon Paperback",
+          desc:"Print edition on Amazon",
+          url: CANON.paperback,
+          hint:"Paperback"
+        },
+        {
+          key:"google",
+          name:"Google Play Books",
+          desc:"Pending listing",
+          url: CANON.google,
+          hint:"Pending"
+        },
+        {
+          key:"kobo",
+          name:"Kobo",
+          desc:"Pending listing",
+          url: CANON.kobo,
+          hint:"Pending"
         }
-      };
+      ];
 
-      const cfg = labels[productKey] || labels.master;
-      buyTitle.textContent = cfg.t;
-      buySub.textContent = cfg.s;
+      storeGrid.innerHTML = stores.map(s => {
+        const disabled = !s.url;
+        const cls = "store" + (disabled ? " disabled" : "");
+        const click = disabled ? "" : `onclick="goStore('${s.url}')"`
+        return `
+          <div class="${cls}" ${click}>
+            <div class="left">
+              <strong>${s.name}</strong>
+              <span>${s.desc}</span>
+            </div>
+            <div class="right">${disabled ? "Pending" : "→"}</div>
+          </div>
+        `;
+      }).join("");
 
-      buyModal.classList.add("open");
+      modal.classList.add("show");
       document.body.style.overflow = "hidden";
     }
 
     function closeBuy(){
-      buyModal.classList.remove("open");
+      modal.classList.remove("show");
       document.body.style.overflow = "";
     }
 
-    // Close modal on backdrop click
-    buyModal.addEventListener("click", (e) => {
-      if(e.target === buyModal) closeBuy();
-    });
+    function modalBackdropClose(e){
+      if(e.target === modal) closeBuy();
+    }
 
-    // Close on ESC
+    function goStore(url){
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
+
+    // ESC to close
     document.addEventListener("keydown", (e) => {
-      if(e.key === "Escape" && buyModal.classList.contains("open")) closeBuy();
+      if(e.key === "Escape" && modal.classList.contains("show")) closeBuy();
     });
 
     // Carousel logic
