@@ -2,31 +2,412 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Redirecting · The Architect Universe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="refresh" content="0; url=/thearchitectuniverse/">
-  <meta name="robots" content="noindex">
+  <title>MINDFAX — AI-Native Intellectual Property Studio</title>
+  <meta name="description" content="MINDFAX is the home of The Architect Universe: books, systems and digital products built where philosophy, artificial intelligence and human judgment meet." />
+  <link rel="canonical" href="https://mindfax.art/" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Mateus Lolas" />
+  <meta name="theme-color" content="#050711" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="MINDFAX" />
+  <meta property="og:url" content="https://mindfax.art/" />
+  <meta property="og:title" content="MINDFAX — AI-Native Intellectual Property Studio" />
+  <meta property="og:description" content="The Architect Universe: books, systems and digital products built where philosophy, artificial intelligence and human judgment meet." />
+  <meta property="og:image" content="https://mindfax.art/assets/og-mindfax.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MINDFAX — AI-Native Intellectual Property Studio" />
+  <meta name="twitter:description" content="The Architect Universe: books, systems and digital products built where philosophy, artificial intelligence and human judgment meet." />
+  <meta name="twitter:image" content="https://mindfax.art/assets/og-mindfax.jpg" />
+
+  <link rel="apple-touch-icon" href="/assets/icon-180.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "MINDFAX",
+    "url": "https://mindfax.art/",
+    "description": "AI-native intellectual property studio and home of The Architect Universe.",
+    "author": { "@type": "Person", "name": "Mateus Lolas" }
+  }
+  </script>
+
   <style>
-    body{
-      margin:0;
-      background:#050711;
-      color:#e5e7f5;
-      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      min-height:100vh;
-      text-align:center;
+    *,*::before,*::after{box-sizing:border-box}
+    :root{
+      --bg:#050711; --bg-elevated:#0b0f1f; --bg-soft:#111626;
+      --accent:#4fd1ff; --accent-soft:rgba(79,209,255,.14);
+      --gold:#ffd77a; --text:#e5e7f5; --muted:#9da3c4;
+      --border:rgba(255,255,255,.08);
+      --radius:22px;
+      --shadow:0 24px 60px rgba(0,0,0,.65);
+      --maxw:1180px;
     }
-    .box{max-width:480px;padding:24px}
-    a{color:#4fd1ff;text-decoration:none}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; background:var(--bg); color:var(--text);
+      font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      line-height:1.65; -webkit-font-smoothing:antialiased;
+      background-image:radial-gradient(ellipse 80% 55% at 50% -8%, #1a2145 0%, transparent 62%);
+      background-repeat:no-repeat;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .wrap{width:min(var(--maxw),92vw);margin-inline:auto}
+    .eyebrow{
+      font-family:"Cinzel",serif;font-size:.72rem;letter-spacing:.28em;
+      text-transform:uppercase;color:var(--accent);margin:0 0 1rem
+    }
+    h1,h2,h3{font-family:"Cinzel",serif;line-height:1.18;margin:0}
+
+    /* ---------- HEADER ---------- */
+    header.site{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:saturate(160%) blur(14px);
+      background:linear-gradient(180deg,rgba(5,7,17,.94),rgba(5,7,17,.72),transparent);
+      border-bottom:1px solid var(--border);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.9rem 0}
+    .brand{display:flex;align-items:center;gap:.7rem;font-family:"Cinzel",serif;
+      font-weight:700;letter-spacing:.16em;font-size:.95rem}
+    .brand img{width:32px;height:32px;border-radius:8px}
+    .navlinks{display:flex;gap:1.6rem;font-size:.87rem;color:var(--muted)}
+    .navlinks a{transition:color .2s}
+    .navlinks a:hover,.navlinks a:focus-visible{color:var(--accent)}
+    @media(max-width:720px){.navlinks{display:none}}
+
+    /* ---------- HERO ---------- */
+    .hero{padding:clamp(4rem,11vw,8rem) 0 clamp(3rem,7vw,5rem);text-align:center}
+    .hero h1{font-size:clamp(2.1rem,6vw,4rem);letter-spacing:.01em}
+    .hero h1 em{font-style:normal;color:var(--gold)}
+    .hero p.lead{
+      max-width:62ch;margin:1.6rem auto 0;color:var(--muted);
+      font-size:clamp(1rem,1.6vw,1.14rem)
+    }
+    .cta{display:flex;gap:.85rem;justify-content:center;flex-wrap:wrap;margin-top:2.4rem}
+    .btn{
+      display:inline-flex;align-items:center;gap:.5rem;
+      padding:.82rem 1.6rem;border-radius:999px;font-size:.9rem;font-weight:500;
+      border:1px solid transparent;transition:transform .18s,background .2s,border-color .2s
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:var(--accent);color:#04121c;font-weight:600}
+    .btn-primary:hover{background:#7ee0ff}
+    .btn-ghost{border-color:var(--border);color:var(--text);background:rgba(255,255,255,.03)}
+    .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+
+    /* ---------- FAIXA DE NUMEROS ---------- */
+    .facts{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;
+      background:var(--border);border:1px solid var(--border);
+      border-radius:var(--radius);overflow:hidden;margin:clamp(2rem,5vw,3.5rem) 0
+    }
+    .facts div{background:var(--bg-elevated);padding:1.5rem 1.3rem;text-align:center}
+    .facts strong{display:block;font-family:"Cinzel",serif;font-size:1.6rem;color:var(--gold)}
+    .facts span{font-size:.8rem;color:var(--muted);letter-spacing:.04em}
+
+    /* ---------- SECOES ---------- */
+    section.block{padding:clamp(3rem,7vw,5.5rem) 0}
+    .headline{max-width:64ch;margin-bottom:2.8rem}
+    .headline h2{font-size:clamp(1.5rem,3.4vw,2.3rem)}
+    .headline p{color:var(--muted);margin:.9rem 0 0}
+
+    /* ---------- GRID DE PROPRIEDADES ---------- */
+    .grid{
+      display:grid;gap:1.4rem;
+      grid-template-columns:repeat(auto-fill,minmax(255px,1fr))
+    }
+    .card{
+      display:flex;flex-direction:column;position:relative;
+      background:var(--bg-elevated);border:1px solid var(--border);
+      border-radius:var(--radius);overflow:hidden;
+      transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease
+    }
+    .card:hover,.card:focus-within{
+      transform:translateY(-5px);border-color:rgba(79,209,255,.42);box-shadow:var(--shadow)
+    }
+    .card .media{position:relative;aspect-ratio:2/3;background:var(--bg-soft);overflow:hidden}
+    .card .media img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+    .card:hover .media img{transform:scale(1.04)}
+    .tag{
+      position:absolute;top:.85rem;left:.85rem;z-index:2;
+      font-size:.63rem;letter-spacing:.18em;text-transform:uppercase;
+      padding:.32rem .7rem;border-radius:999px;
+      background:rgba(5,7,17,.82);border:1px solid var(--border);color:var(--muted);
+      backdrop-filter:blur(6px)
+    }
+    .tag.live{color:var(--accent);border-color:rgba(79,209,255,.4)}
+    .body{padding:1.25rem 1.3rem 1.5rem;display:flex;flex-direction:column;flex:1}
+    .body h3{font-size:1.05rem;margin-bottom:.4rem}
+    .body p{font-size:.87rem;color:var(--muted);margin:0 0 1.1rem;flex:1}
+    .go{font-size:.82rem;color:var(--accent);font-weight:500;display:inline-flex;gap:.35rem}
+    .card a.stretched::after{content:"";position:absolute;inset:0;z-index:1}
+
+    /* ---------- CANAIS ---------- */
+    .channels{
+      display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))
+    }
+    .chan{
+      border:1px solid var(--border);border-radius:16px;padding:1.1rem 1.2rem;
+      background:rgba(255,255,255,.02);transition:border-color .2s,background .2s
+    }
+    .chan:hover{border-color:rgba(79,209,255,.4);background:var(--accent-soft)}
+    .chan strong{display:block;font-size:.92rem;margin-bottom:.15rem}
+    .chan span{font-size:.78rem;color:var(--muted)}
+
+    /* ---------- STUDIO ---------- */
+    .studio{
+      border:1px solid var(--border);border-radius:var(--radius);
+      background:linear-gradient(150deg,var(--bg-elevated),rgba(17,22,38,.4));
+      padding:clamp(1.8rem,4vw,3rem)
+    }
+    .studio ul{margin:1.4rem 0 0;padding:0;list-style:none;
+      display:grid;gap:.7rem;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+    .studio li{font-size:.88rem;color:var(--muted);padding-left:1.3rem;position:relative}
+    .studio li::before{content:"◆";position:absolute;left:0;color:var(--accent);font-size:.65rem;top:.35rem}
+
+    /* ---------- FOOTER ---------- */
+    footer.site{border-top:1px solid var(--border);margin-top:clamp(3rem,7vw,5rem);padding:2.6rem 0}
+    .foot{display:flex;flex-wrap:wrap;gap:1.4rem;justify-content:space-between;align-items:flex-start}
+    .foot-links{display:flex;flex-wrap:wrap;gap:.5rem 1.3rem;font-size:.82rem;color:var(--muted)}
+    .foot-links a:hover{color:var(--accent)}
+    .copy{font-size:.78rem;color:var(--muted);margin-top:1.8rem}
+    :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+    @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
   </style>
 </head>
 <body>
-  <div class="box">
-    <h1>The Architect Universe</h1>
-    <p>Redirecting to the main portal…</p>
-    <p>If nothing happens, <a href="/thearchitectuniverse/">click here</a>.</p>
-  </div>
+
+  <header class="site">
+    <div class="wrap nav">
+      <a class="brand" href="/" aria-label="MINDFAX home">
+        <img src="/assets/icon-180.png" alt="" width="32" height="32" />
+        <span>MINDFAX</span>
+      </a>
+      <nav class="navlinks" aria-label="Primary">
+        <a href="#universe">Universe</a>
+        <a href="#works">Works</a>
+        <a href="#studio">Studio</a>
+        <a href="#channels">Channels</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <p class="eyebrow">AI-Native Intellectual Property Studio</p>
+      <h1>Books, systems and worlds built where<br /><em>thought meets machine.</em></h1>
+      <p class="lead">
+        MINDFAX is the home of The Architect Universe — a body of work about consciousness, time,
+        money and the discipline of staying human while building with artificial intelligence.
+        Every property below is written, designed and published here.
+      </p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#works">Explore the works</a>
+        <a class="btn btn-ghost" href="/thearchitectuniverse/">Enter The Architect Universe →</a>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <div class="facts">
+        <div><strong>8</strong><span>Published properties</span></div>
+        <div><strong>4</strong><span>Brands in the ecosystem</span></div>
+        <div><strong>4</strong><span>Multimedia channels</span></div>
+        <div><strong>1</strong><span>Human author, AI-augmented</span></div>
+      </div>
+    </div>
+
+    <section class="block wrap" id="universe">
+      <div class="headline">
+        <p class="eyebrow">The cosmos</p>
+        <h2>One universe, four brands.</h2>
+        <p>
+          The Architect is the central axis — biography, collapse and reconstruction. From it, three
+          worlds branch out to protect different layers of existence: the mind, the matter and the cosmos.
+        </p>
+      </div>
+      <div class="channels">
+        <a class="chan" href="/thearchitectuniverse/"><strong>The Architect ↗</strong><span>The central axis · time and consciousness</span></a>
+        <a class="chan" href="/thecontinuum/"><strong>Mindfax ↗</strong><span>The cosmos · science, philosophy, design</span></a>
+        <a class="chan" href="/neurabyte-protocol/"><strong>Neurabyte ↗</strong><span>The mind · focus and applied cognition</span></a>
+        <a class="chan" href="/finsage/"><strong>Finsage ↗</strong><span>The matter · money as stored time</span></a>
+      </div>
+    </section>
+
+    <section class="block wrap" id="works">
+      <div class="headline">
+        <p class="eyebrow">Works</p>
+        <h2>Every book is a portal.</h2>
+        <p>
+          Some protect your mind. Others your money. All of them are training simulations for a world
+          that rarely announces its transitions in advance.
+        </p>
+      </div>
+
+      <div class="grid">
+
+        <article class="card">
+          <div class="media">
+            <span class="tag live">Portal</span>
+            <img src="/assets/covers/architect-universe.webp" alt="The Architect Universe" loading="lazy" decoding="async" width="640" height="960" />
+          </div>
+          <div class="body">
+            <h3>The Architect Universe</h3>
+            <p>The central portal. Cosmology, worlds and the thread that connects every other property.</p>
+            <a class="go stretched" href="/thearchitectuniverse/">Enter the universe →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="media">
+            <span class="tag live">Published</span>
+            <img src="/assets/covers/early-edition.webp" alt="The Architect — Early Edition" loading="lazy" decoding="async" width="640" height="960" />
+          </div>
+          <div class="body">
+            <h3>The Architect · Early Edition</h3>
+            <p>The first rupture. A manifesto born from collapse, written for those still standing at the edge.</p>
+            <a class="go stretched" href="/architect-early/">Open the book →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="media">
+            <span class="tag live">Published</span>
+            <img src="/assets/covers/the-continuum.webp" alt="Artifact — The Continuum" loading="lazy" decoding="async" width="640" height="960" />
+          </div>
+          <div class="body">
+            <h3>Artifact · The Continuum</h3>
+            <p>Consciousness as software that changes density — a metaphysical framework in a small book.</p>
+            <a class="go stretched" href="/thecontinuum/">Open the artifact →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="media">
+            <span class="tag live">Published</span>
+            <img src="/assets/covers/freedom-protocol.webp" alt="The Freedom Protocol" loading="lazy" decoding="async" width="640" height="960" />
+          </div>
+          <div class="body">
+            <h3>The Freedom Protocol</h3>
+            <p>Collapse as the first portal. A blade against staying spiritually and financially domesticated.</p>
+            <a class="go stretched" href="/thefreedomprotocol/">Open the protocol →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="media">
+            <span class="tag live">Product</span>
+            <img src="/assets/covers/finsage.webp" alt="Finsage" loading="lazy" decoding="async" width="640" height="960" />
+          </div>
+          <div class="body">
+            <h3>Finsage</h3>
+            <p>The automated wealth engine: seal the leaks, neutralize debt, let the system do the discipline.</p>
+            <a class="go stretched" href="/finsage/">Open Finsage →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="media">
+            <span class="tag live">Product</span>
+            <img src="/assets/covers/neurabyte.webp" alt="Neurabyte" loading="lazy" decoding="async" width="640" height="960" />
+          </div>
+          <div class="body">
+            <h3>Neurabyte</h3>
+            <p>Thirty neuro-optimized prompts to automate deep work and end the fragmentation of attention.</p>
+            <a class="go stretched" href="/neurabyte-protocol/">Open Neurabyte →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="media">
+            <span class="tag live">Published</span>
+            <img src="/assets/covers/ai-playground.webp" alt="AI Playground" loading="lazy" decoding="async" width="640" height="960" />
+          </div>
+          <div class="body">
+            <h3>AI Playground</h3>
+            <p>Raising children in a world that already thinks back — strategies built on judgment, not fear.</p>
+            <a class="go stretched" href="/aiplayground/">Open the system →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="media">
+            <span class="tag">Dossier</span>
+            <img src="/assets/covers/second-forest.webp" alt="The Second Forest" loading="lazy" decoding="async" width="640" height="960" />
+          </div>
+          <div class="body">
+            <h3>The Second Forest</h3>
+            <p>A new origin myth for humanity. Transmedia dossier: worlds, gates and what grows back after the fire.</p>
+            <a class="go stretched" href="/thesecondforestproject/">Enter the dossier →</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="block wrap" id="studio">
+      <div class="studio">
+        <p class="eyebrow">The studio</p>
+        <h2>One human. Multiple specialized AI systems. Complete delivery.</h2>
+        <p style="color:var(--muted);max-width:64ch;margin-top:.9rem">
+          MINDFAX is produced as a one-person, AI-augmented studio. Artificial intelligence acts as a
+          research, drafting and production collaborator — never as author or final authority. Concept,
+          architecture, acceptance criteria and responsibility remain human.
+        </p>
+        <ul>
+          <li>Concept and narrative architecture</li>
+          <li>Writing, editing and art direction</li>
+          <li>Web design and deployment</li>
+          <li>Digital publishing and distribution</li>
+          <li>Multimedia production</li>
+          <li>Documentation and version control</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="block wrap" id="channels">
+      <div class="headline">
+        <p class="eyebrow">Channels</p>
+        <h2>Where the work lives outside this domain.</h2>
+      </div>
+      <div class="channels">
+        <a class="chan" href="https://www.youtube.com/@mindfaxart" target="_blank" rel="noopener"><strong>YouTube · Mindfax ↗</strong><span>Science, philosophy and design</span></a>
+        <a class="chan" href="https://www.youtube.com/@NeuraByteIA" target="_blank" rel="noopener"><strong>YouTube · Neurabyte ↗</strong><span>Cognition and AI workflows</span></a>
+        <a class="chan" href="https://www.youtube.com/@FinSageIA" target="_blank" rel="noopener"><strong>YouTube · Finsage ↗</strong><span>Money, systems and behaviour</span></a>
+        <a class="chan" href="https://www.youtube.com/@AIPlaygroundSystem" target="_blank" rel="noopener"><strong>YouTube · AI Playground ↗</strong><span>Families and artificial intelligence</span></a>
+        <a class="chan" href="https://medium.com/@iamediafactory.studio" target="_blank" rel="noopener"><strong>Medium ↗</strong><span>Essays and long-form writing</span></a>
+        <a class="chan" href="https://github.com/iamediafactory/mindfax-site" target="_blank" rel="noopener"><strong>GitHub ↗</strong><span>Source of this ecosystem</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <div class="foot">
+        <div class="brand"><img src="/assets/icon-180.png" alt="" width="32" height="32" /><span>MINDFAX</span></div>
+        <nav class="foot-links" aria-label="All properties">
+          <a href="/thearchitectuniverse/">The Architect Universe</a>
+          <a href="/architect-early/">Early Edition</a>
+          <a href="/thecontinuum/">The Continuum</a>
+          <a href="/thefreedomprotocol/">Freedom Protocol</a>
+          <a href="/finsage/">Finsage</a>
+          <a href="/neurabyte-protocol/">Neurabyte</a>
+          <a href="/aiplayground/">AI Playground</a>
+          <a href="/thesecondforestproject/">The Second Forest</a>
+        </nav>
+      </div>
+      <p class="copy">
+        © <span id="y"></span> MINDFAX · IA Media Factory Publishing™ · Created by Mateus Lolas ·
+        All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script>document.getElementById("y").textContent=new Date().getFullYear();</script>
 </body>
 </html>
