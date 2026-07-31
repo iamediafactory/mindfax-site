@@ -99,6 +99,7 @@
       display: flex;
       align-items: center;
       gap: 12px;
+      flex-shrink: 0;
     }
 
     .brand-logo {
@@ -115,10 +116,11 @@
     /* AJUSTE 1: texto em linha, literal, no início da faixa */
     .brand-text {
       display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 10px;
-      white-space: nowrap;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
+      line-height: 1.25;
+      min-width: 0;
     }
 
     .brand-title {
@@ -138,10 +140,14 @@
     .nav-links {
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      row-gap: 6px;
       gap: 18px;
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 0.18em;
+      min-width: 0;
     }
 
     .nav-links a {
@@ -1605,7 +1611,7 @@
               <p>
                 The Second Forest is the cinematic branch that treats humanity's origin and destiny as a negotiation between free will and older protocols. It converses directly with:
               </p>
-              <ul style="margin-left:16px; margin-top:4px; color:var(--text-soft); font-size:13px; line-height:1.7%;">
+              <ul style="margin-left:16px; margin-top:4px; color:var(--text-soft); font-size:13px; line-height:1.7;">
                 <li><a href="https://mindfax.art" target="_blank">PRIMARY PORTAL — The Architect Universe (mindfax.art)</a></li>
                 <li><a href="https://mindfax.art/thesecondforestproject/" target="_blank">THE SECOND FOREST — Project Portal</a></li>
                 <li><a href="https://mindfax.art/thearchitectuniverse/#portals" target="_blank">FRACTAL — The Consciousness Project</a></li>
@@ -1759,7 +1765,7 @@
               <p>
                 The following assets are prepared and curated, ready to be shared once a formal conversation with the appropriate business department is initiated:
               </p>
-              <ul style="margin-left:16px; margin-top:4px; color:var(--text-soft); font-size:13px; line-height:1.7%;">
+              <ul style="margin-left:16px; margin-top:4px; color:var(--text-soft); font-size:13px; line-height:1.7;">
                 <li><strong>Pitch Deck (PDF)</strong> – executive overview of the franchise, visuals and expansion roadmap.</li>
                 <li><strong>One-Pager</strong> – concise summary for quick decision makers and catalog inclusion.</li>
                 <li><strong>Narrative Treatment</strong> – detailed structure of the film/series potential and universe rules.</li>
