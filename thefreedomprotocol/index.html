@@ -275,6 +275,30 @@ footer{
   });
 </script>
 
+
+<!-- ===== MINDFAX ecosystem nav (cross-links) ===== -->
+<nav class="mfx-eco" aria-label="MINDFAX ecosystem">
+  <style>
+    .mfx-eco{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      background:#050711;border-top:1px solid rgba(255,255,255,.09);
+      padding:2rem 1.25rem 2.4rem;color:#9da3c4;font-size:.8rem;line-height:1.7}
+    .mfx-eco .mfx-in{width:min(1120px,94vw);margin:0 auto;text-align:center}
+    .mfx-eco .mfx-lbl{display:block;font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;
+      color:#4fd1ff;margin-bottom:.9rem}
+    .mfx-eco .mfx-links{display:flex;flex-wrap:wrap;gap:.45rem 1.15rem;justify-content:center}
+    .mfx-eco a{color:#9da3c4;text-decoration:none;transition:color .2s}
+    .mfx-eco a:hover,.mfx-eco a:focus-visible{color:#4fd1ff}
+    .mfx-eco [aria-current]{color:#e5e7f5;font-weight:600}
+    .mfx-eco .mfx-cp{margin-top:1.4rem;font-size:.72rem;opacity:.75}
+  </style>
+  <div class="mfx-in">
+    <span class="mfx-lbl">The MINDFAX ecosystem</span>
+    <div class="mfx-links"><a href="/">Home</a><a href="/thearchitectuniverse/">The Architect Universe</a><a href="/architect-early/">Early Edition</a><a href="/thecontinuum/">The Continuum</a><span aria-current="page">Freedom Protocol</span><a href="/finsage/">Finsage</a><a href="/neurabyte-protocol/">Neurabyte</a><a href="/aiplayground/">AI Playground</a><a href="/thesecondforestproject/">The Second Forest</a></div>
+    <p class="mfx-cp">© <span class="mfx-y"></span> MINDFAX · IA Media Factory Publishing™ · All rights reserved.</p>
+  </div>
+  <script>document.querySelectorAll(".mfx-y").forEach(function(e){e.textContent=new Date().getFullYear()});</script>
+</nav>
+<!-- ===== /MINDFAX ecosystem nav ===== -->
 </body>
 </html>
 
