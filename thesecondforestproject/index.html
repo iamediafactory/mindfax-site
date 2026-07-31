@@ -1393,8 +1393,8 @@
                 <a href="AUTHORIAL_MANIFESTO.pdf" class="file-chip">
                   <span>⧉</span> Download Manifesto (PDF)
                 </a>
-                <a href="#" class="file-chip">
-                  <span>⧉</span> View Manifesto on Kindle
+                <a href="#" class="file-chip" aria-disabled="true" style="pointer-events:none;opacity:.55;">
+                  <span>⧉</span> Kindle edition · Coming soon
                 </a>
               </div>
             </div>
@@ -1607,13 +1607,13 @@
               </p>
               <ul style="margin-left:16px; margin-top:4px; color:var(--text-soft); font-size:13px; line-height:1.7%;">
                 <li><a href="https://mindfax.art" target="_blank">PRIMARY PORTAL — The Architect Universe (mindfax.art)</a></li>
-                <li><a href="https://mindfax.art/thesecondforestprojetc" target="_blank">THE SECOND FOREST — Project Portal</a></li>
-                <li><a href="https://mindfax.art/fractalprojetc" target="_blank">FRACTAL — The Consciousness Project</a></li>
+                <li><a href="https://mindfax.art/thesecondforestproject/" target="_blank">THE SECOND FOREST — Project Portal</a></li>
+                <li><a href="https://mindfax.art/thearchitectuniverse/#portals" target="_blank">FRACTAL — The Consciousness Project</a></li>
                 <li><a href="https://mindfax.art/architect-early/" target="_blank">THE ARCHITECT — Early Edition</a></li>
                 <li><a href="https://mindfax.art/thecontinuum/" target="_blank">THE CONTINUUM — Artifact Series</a></li>
                 <li><a href="https://mindfax.art/thefreedomprotocol/" target="_blank">THE FREEDOM PROTOCOL</a></li>
                 <li><a href="https://mindfax.art/neurabyte-protocol/" target="_blank">NEURABYTE — The Cognitive Protocol</a></li>
-                <li><a href="https://mindfax.art/thefinancialtriadprotocol" target="_blank">FINSAGE — The Financial Triad Protocol</a></li>
+                <li><a href="https://mindfax.art/finsage/" target="_blank">FINSAGE — The Financial Triad Protocol</a></li>
                 <li><a href="https://mindfax.art/finsage/" target="_blank">FINSAGE — The Wealth System</a></li>
               </ul>
               <div class="universe-tagline">
@@ -1628,7 +1628,7 @@
             <aside class="universe-logos">
               <div class="universe-logos-header">
                 <div class="universe-logos-title">BRAND NEXUS</div>
-                <a href="https://mindfax.art/thearchitectuniverse" target="_blank" class="btn-secondary" style="padding-inline:14px;">
+                <a href="https://mindfax.art/thearchitectuniverse/" target="_blank" class="btn-secondary" style="padding-inline:14px;">
                   Visit The Architect Universe
                 </a>
               </div>
@@ -1731,9 +1731,9 @@
                 Across two decades of work with education, emotional support and spiritual assistance, the human behind this pseudonym has treated narrative not as entertainment, but as technology for healing, clarity and courage. The Second Forest is the cinematic branch of this life work, giving the next generation a language to face extinction narratives without surrendering to them.
               </div>
               <div class="author-links">
-                <a href="https://mindfax.art/thearchitectuniverse" target="_blank" class="author-link-chip">Author Portal</a>
-                <a href="#" class="author-link-chip">Kindle Author Page</a>
-                <a href="#" class="author-link-chip">Media &amp; Speaking</a>
+                <a href="https://mindfax.art/thearchitectuniverse/" target="_blank" class="author-link-chip">Author Portal</a>
+                <a href="#" class="author-link-chip" aria-disabled="true" style="pointer-events:none;opacity:.55;">Kindle Author Page · Coming soon</a>
+                <a href="mailto:mateus.lolas.unb@gmail.com" class="author-link-chip">Media &amp; Speaking</a>
                 <a href="https://medium.com/@iamediafactory.studio" target="_blank" class="author-link-chip">Medium Publishers</a>
               </div>
             </div>
@@ -1829,5 +1829,29 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+
+<!-- ===== MINDFAX ecosystem nav (cross-links) ===== -->
+<nav class="mfx-eco" aria-label="MINDFAX ecosystem">
+  <style>
+    .mfx-eco{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      background:#050711;border-top:1px solid rgba(255,255,255,.09);
+      padding:2rem 1.25rem 2.4rem;color:#9da3c4;font-size:.8rem;line-height:1.7}
+    .mfx-eco .mfx-in{width:min(1120px,94vw);margin:0 auto;text-align:center}
+    .mfx-eco .mfx-lbl{display:block;font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;
+      color:#4fd1ff;margin-bottom:.9rem}
+    .mfx-eco .mfx-links{display:flex;flex-wrap:wrap;gap:.45rem 1.15rem;justify-content:center}
+    .mfx-eco a{color:#9da3c4;text-decoration:none;transition:color .2s}
+    .mfx-eco a:hover,.mfx-eco a:focus-visible{color:#4fd1ff}
+    .mfx-eco [aria-current]{color:#e5e7f5;font-weight:600}
+    .mfx-eco .mfx-cp{margin-top:1.4rem;font-size:.72rem;opacity:.75}
+  </style>
+  <div class="mfx-in">
+    <span class="mfx-lbl">The MINDFAX ecosystem</span>
+    <div class="mfx-links"><a href="/">Home</a><a href="/thearchitectuniverse/">The Architect Universe</a><a href="/architect-early/">Early Edition</a><a href="/thecontinuum/">The Continuum</a><a href="/thefreedomprotocol/">Freedom Protocol</a><a href="/finsage/">Finsage</a><a href="/neurabyte-protocol/">Neurabyte</a><a href="/aiplayground/">AI Playground</a><span aria-current="page">The Second Forest</span></div>
+    <p class="mfx-cp">© <span class="mfx-y"></span> MINDFAX · IA Media Factory Publishing™ · All rights reserved.</p>
+  </div>
+  <script>document.querySelectorAll(".mfx-y").forEach(function(e){e.textContent=new Date().getFullYear()});</script>
+</nav>
+<!-- ===== /MINDFAX ecosystem nav ===== -->
 </body>
 </html>
