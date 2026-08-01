@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FINSAGE — Money, Mindset, Freedom · The Matter Arm</title>
+<meta name="description" content="FINSAGE is the financial arm of The Architect Universe: financial sovereignty, libertarian economics, cryptocurrency and DeFi. Home of The Automated Wealth Engine." />
+<link rel="canonical" href="https://mindfax.art/finsage-universe/" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Mateus Lolas" />
+<meta name="theme-color" content="#050208" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="MINDFAX" />
+<meta property="og:url" content="https://mindfax.art/finsage-universe/" />
+<meta property="og:title" content="FINSAGE — Money, Mindset, Freedom" />
+<meta property="og:description" content="Financial sovereignty, libertarian economics, cryptocurrency and DeFi. Clarity creates wealth." />
+<meta property="og:image" content="https://mindfax.art/assets/brand/cover-finsage.webp" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="FINSAGE — Money, Mindset, Freedom" />
+<meta name="twitter:description" content="Financial sovereignty, libertarian economics, cryptocurrency and DeFi." />
+<meta name="twitter:image" content="https://mindfax.art/assets/brand/cover-finsage.webp" />
+<link rel="apple-touch-icon" href="/assets/icon-180.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CollectionPage","name":"FINSAGE — The Matter Arm","url":"https://mindfax.art/finsage-universe/","isPartOf":{"@type":"WebSite","name":"MINDFAX","url":"https://mindfax.art/"},"author":{"@type":"Person","name":"Mateus Lolas"}}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#050208; --bg-2:#0d0703; --panel:#150c05; --panel-2:#1c1108;
+  --gold:#f4c970; --gold-deep:#c9973f; --cream:#f8edd7; --ember:#e0761f;
+  --gold-soft:rgba(244,201,112,.12);
+  --text:#f4ece0; --muted:#b3a68f;
+  --border:rgba(244,201,112,.2); --radius:18px; --maxw:1180px;
+}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);
+  font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{width:min(var(--maxw),92vw);margin-inline:auto;position:relative;z-index:2}
+h1,h2,h3{font-family:"Cinzel",serif;line-height:1.16;margin:0}
+.eyebrow{font-family:"Cinzel",serif;font-size:.7rem;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--gold);margin:0 0 1rem}
+
+.field{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 55% 40% at 82% 4%, rgba(224,118,31,.16), transparent 62%),
+    radial-gradient(ellipse 60% 44% at 12% 18%, rgba(244,201,112,.10), transparent 64%),
+    radial-gradient(ellipse 100% 55% at 50% 110%, rgba(201,151,63,.10), transparent 62%)}
+.ledger{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.22;
+  background-image:linear-gradient(rgba(244,201,112,.10) 1px,transparent 1px);
+  background-size:100% 46px;
+  mask-image:radial-gradient(ellipse 85% 60% at 50% 18%,#000 15%,transparent 76%);
+  -webkit-mask-image:radial-gradient(ellipse 85% 60% at 50% 18%,#000 15%,transparent 76%)}
+
+header.site{position:sticky;top:0;z-index:60;backdrop-filter:saturate(150%) blur(16px);
+  background:linear-gradient(180deg,rgba(5,2,8,.96),rgba(5,2,8,.72),transparent);
+  border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.75rem 0;flex-wrap:wrap}
+.brandmark{display:flex;align-items:center;gap:.65rem;font-family:"Cinzel",serif;font-weight:700;
+  letter-spacing:.18em;font-size:.9rem;color:var(--gold)}
+.brandmark img{width:34px;height:34px;border-radius:50%}
+.navlinks{display:flex;gap:1.35rem;font-size:.82rem;color:#a8977f;flex-wrap:wrap}
+.navlinks a:hover{color:var(--gold)}
+.navlinks a.on{color:var(--gold)}
+
+.hero{position:relative;padding:4.2rem 0 3rem}
+.hero-grid{display:grid;gap:2.6rem;align-items:center}
+@media(min-width:900px){.hero-grid{grid-template-columns:1.1fr .9fr}}
+.hero h1{font-size:clamp(2.1rem,5.4vw,3.8rem)}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero .lede{max-width:55ch;color:#b3a68f;margin:1.5rem 0 0;font-size:1.04rem}
+.trail{font-size:.75rem;color:#8f8069;letter-spacing:.12em;margin:0 0 1.1rem;text-transform:uppercase}
+.trail a{color:var(--gold-deep)}
+.cta{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:2.1rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.82rem 1.55rem;border-radius:999px;
+  font-size:.88rem;font-weight:500;border:1px solid var(--border);transition:.22s}
+.btn.primary{background:linear-gradient(100deg,var(--gold),var(--gold-deep));color:#1a0e02;border-color:transparent;font-weight:600}
+.btn.primary:hover{filter:brightness(1.08);transform:translateY(-2px)}
+.btn.ghost{color:var(--gold)}
+.btn.ghost:hover{background:var(--gold-soft);transform:translateY(-2px)}
+
+.crest{justify-self:center;width:min(400px,86vw);position:relative}
+.crest img{width:100%;filter:drop-shadow(0 0 44px rgba(244,201,112,.28))}
+.crest .halo{position:absolute;inset:-18% -6%;border:1px solid rgba(244,201,112,.18);border-radius:50%;
+  animation:breathe 8s ease-in-out infinite}
+@keyframes breathe{0%,100%{transform:scale(1);opacity:.45}50%{transform:scale(1.05);opacity:.9}}
+
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;
+  background:rgba(244,201,112,.16);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-top:1rem}
+.facts div{background:linear-gradient(160deg,var(--panel),var(--bg-2));padding:1.35rem 1.2rem;text-align:center}
+.facts b{display:block;font-family:"Cinzel",serif;font-size:1.65rem;color:var(--gold)}
+.facts span{font-size:.73rem;color:#a8977f;letter-spacing:.08em}
+
+section{padding:clamp(3rem,7vw,5.5rem) 0;position:relative}
+.sechead{max-width:62ch;margin-bottom:2.4rem}
+.sechead h2{font-size:clamp(1.45rem,3.2vw,2.15rem)}
+.sechead p:not(.eyebrow){color:#b3a68f;margin:.9rem 0 0}
+.rule{height:1px;background:linear-gradient(90deg,var(--gold),rgba(244,201,112,.2),transparent);margin:0 0 2.3rem}
+
+/* pillars */
+.pill{display:grid;gap:1.2rem}
+@media(min-width:860px){.pill{grid-template-columns:repeat(3,1fr)}}
+.p{border:1px solid var(--border);border-radius:var(--radius);padding:1.6rem;
+  background:linear-gradient(160deg,var(--panel),rgba(6,3,10,.6));display:flex;flex-direction:column;gap:.7rem;transition:.25s}
+.p:hover{transform:translateY(-4px);border-color:rgba(244,201,112,.45)}
+.p .n{font-family:"Cinzel",serif;font-size:.8rem;color:var(--gold-deep);letter-spacing:.2em}
+.p h3{font-size:1.05rem}
+.p p{margin:0;color:#b3a68f;font-size:.9rem}
+
+/* freedom protocol hybrid */
+.hybrid{position:relative;border-radius:26px;overflow:hidden;border:1px solid rgba(244,201,112,.3);
+  background:#04100e}
+.hybrid .bg{position:absolute;inset:0}
+.hybrid .bg img{width:100%;height:100%;object-fit:cover;object-position:top;opacity:.4}
+.hybrid .veil{position:absolute;inset:0;background:linear-gradient(120deg,rgba(4,12,11,.96) 10%,rgba(4,12,11,.8) 48%,rgba(4,12,11,.4))}
+.hybrid .inner{position:relative;z-index:2;padding:clamp(1.8rem,4.5vw,3.4rem)}
+.hybrid h3{font-size:clamp(1.6rem,3.6vw,2.4rem);color:var(--gold)}
+.hybrid .sub{color:#c6b79c;max-width:62ch;margin:1rem 0 0}
+.layers{display:grid;gap:.9rem;margin-top:2rem}
+@media(min-width:760px){.layers{grid-template-columns:repeat(2,1fr)}}
+.layer{border:1px solid rgba(244,201,112,.18);border-left:2px solid var(--gold);border-radius:12px;
+  padding:1rem 1.1rem;background:rgba(255,255,255,.03)}
+.layer b{display:block;font-family:"Cinzel",serif;font-size:.86rem;color:var(--cream);letter-spacing:.06em}
+.layer span{font-size:.85rem;color:#a89478}
+.layer p{margin:.35rem 0 0;font-size:.86rem;color:#ab9d85}
+.layer.mine{border-left-color:var(--gold)}
+
+/* work cards */
+.works{display:grid;gap:1.5rem}
+@media(min-width:820px){.works{grid-template-columns:repeat(2,1fr)}}
+.work{position:relative;display:grid;grid-template-columns:150px 1fr;gap:1.3rem;
+  background:linear-gradient(155deg,var(--panel),rgba(6,3,10,.7));border:1px solid var(--border);
+  border-radius:var(--radius);padding:1.4rem;transition:.26s}
+.work:hover{border-color:rgba(244,201,112,.5);transform:translateY(-4px)}
+.work .cov{border-radius:10px;overflow:hidden;box-shadow:0 16px 40px rgba(0,0,0,.7);align-self:start}
+.work .cov img{width:100%;aspect-ratio:2/3;object-fit:cover;transition:transform .5s}
+.work:hover .cov img{transform:scale(1.05)}
+.work .meat{display:flex;flex-direction:column;gap:.6rem;min-width:0}
+.work h3{font-size:1.05rem}
+.work p{margin:0;color:#b3a68f;font-size:.89rem}
+.work .go{margin-top:auto;font-size:.82rem;color:var(--gold);font-weight:500}
+.work .id{font-size:.7rem;color:#8f8069;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  border-top:1px dashed rgba(244,201,112,.22);padding-top:.55rem;letter-spacing:.03em}
+@media(max-width:520px){.work{grid-template-columns:108px 1fr;gap:1rem;padding:1.1rem}}
+
+.tag{display:inline-flex;align-self:flex-start;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;
+  padding:.3rem .68rem;border-radius:999px;border:1px solid var(--border);color:#a8977f}
+.tag.pub{color:#8ce8b4;border-color:rgba(140,232,180,.3);background:rgba(140,232,180,.06)}
+.tag.built{color:var(--gold);border-color:rgba(244,201,112,.4);background:var(--gold-soft)}
+.tag.lab{color:var(--ember);border-color:rgba(224,118,31,.4);background:rgba(224,118,31,.08)}
+
+.gal{display:grid;gap:1rem;margin-top:1.5rem}
+@media(min-width:720px){.gal{grid-template-columns:repeat(3,1fr)}}
+.gal figure{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--border);position:relative;background:#0b0603}
+.gal img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top;opacity:.9;transition:transform .6s,opacity .3s}
+.gal figure:hover img{transform:scale(1.05);opacity:1}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:.75rem .9rem;font-size:.71rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--cream);
+  background:linear-gradient(180deg,transparent,rgba(5,2,8,.94))}
+
+/* lab */
+.lab{border:1px solid rgba(224,118,31,.3);border-radius:var(--radius);padding:clamp(1.5rem,4vw,2.6rem);
+  background:linear-gradient(150deg,#160b04,rgba(6,3,10,.6))}
+.lab h3{font-size:1.35rem;color:var(--ember)}
+.lab p{color:#b3a68f}
+.lab ul{margin:1rem 0 0;padding-left:1.1rem;color:#b3a68f;font-size:.9rem}
+.lab li{margin-bottom:.45rem}
+
+.note{border-left:2px solid var(--gold);padding:.15rem 0 .15rem 1.2rem;color:#a89478;
+  font-size:.9rem;max-width:66ch;margin:2.2rem 0 0}
+
+.arms{display:grid;gap:1.2rem}
+@media(min-width:820px){.arms{grid-template-columns:repeat(3,1fr)}}
+.arm{border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;
+  background:linear-gradient(160deg,var(--panel),rgba(6,3,10,.5));transition:.25s;display:flex;flex-direction:column;gap:.55rem}
+.arm:hover{transform:translateY(-4px);border-color:rgba(244,201,112,.45)}
+.arm h3{font-size:1.02rem}
+.arm p{margin:0;color:#b3a68f;font-size:.87rem}
+.arm .go{font-size:.79rem;color:var(--gold);margin-top:auto;padding-top:.5rem}
+
+.chans{display:grid;gap:1.1rem}
+@media(min-width:720px){.chans{grid-template-columns:repeat(2,1fr)}}
+.chan{display:flex;align-items:center;gap:1rem;border:1px solid var(--border);border-radius:12px;
+  padding:1.1rem 1.3rem;background:rgba(255,255,255,.02);transition:.22s}
+.chan:hover{border-color:rgba(244,201,112,.5);background:var(--gold-soft);transform:translateY(-2px)}
+.chan .dot{width:9px;height:9px;border-radius:50%;background:var(--gold);flex:none;box-shadow:0 0 12px var(--gold)}
+.chan strong{display:block;font-family:"Cinzel",serif;font-size:.94rem}
+.chan span{font-size:.79rem;color:#a8977f}
+
+footer.site{border-top:1px solid var(--border);padding:3rem 0 4rem;margin-top:2rem;color:#a8977f;font-size:.85rem;position:relative;z-index:2}
+.footgrid{display:grid;gap:2rem}
+@media(min-width:800px){.footgrid{grid-template-columns:1.5fr 1fr 1fr}}
+.footgrid h4{font-family:"Cinzel",serif;font-size:.73rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin:0 0 .9rem}
+.footgrid a{display:block;padding:.2rem 0}
+.footgrid a:hover{color:var(--gold)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+:root{--vline:rgba(244,201,112,.24);--vaccent:#f4c970;--vmuted:#a8977f}
+
+/* ---------- video system ---------- */
+.vwrap{margin-top:.4rem}
+.vhero{position:relative;border-radius:22px;overflow:hidden;border:1px solid var(--vline);
+  background:#05060c;cursor:pointer;display:block}
+.vhero .th{position:relative;aspect-ratio:16/9;overflow:hidden}
+.vhero .th img{width:100%;height:100%;object-fit:cover;transition:transform .7s,filter .4s;filter:saturate(1.05)}
+.vhero:hover .th img{transform:scale(1.04)}
+.vhero .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15) 30%,rgba(0,0,0,.86))}
+.vhero .cap{position:absolute;left:0;right:0;bottom:0;padding:clamp(1.1rem,3vw,2rem);z-index:3}
+.vhero .cap h3{font-size:clamp(1.05rem,2.4vw,1.6rem);margin:0 0 .4rem}
+.vhero .cap p{margin:0;color:#c9c9dd;font-size:.9rem;max-width:60ch}
+.play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:4;
+  width:78px;height:78px;border-radius:50%;display:grid;place-items:center;
+  background:rgba(10,10,18,.55);border:1px solid var(--vaccent);backdrop-filter:blur(6px);transition:.25s}
+.play::after{content:"";width:0;height:0;margin-left:5px;
+  border-left:20px solid var(--vaccent);border-top:13px solid transparent;border-bottom:13px solid transparent}
+.vhero:hover .play,.vcard:hover .play{transform:translate(-50%,-50%) scale(1.09);background:rgba(10,10,18,.78)}
+.vhero iframe,.vcard iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:9}
+
+.vgrid{display:grid;gap:1.1rem;margin-top:1.3rem}
+@media(min-width:640px){.vgrid.long{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.vgrid.long{grid-template-columns:repeat(3,1fr)}}
+.vgrid.short{grid-template-columns:repeat(2,1fr)}
+@media(min-width:640px){.vgrid.short{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:1000px){.vgrid.short{grid-template-columns:repeat(6,1fr)}}
+.vcard{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--vline);
+  background:#05060c;cursor:pointer;display:block;transition:.25s}
+.vcard:hover{border-color:var(--vaccent);transform:translateY(-3px)}
+.vcard .th{position:relative;aspect-ratio:16/9;overflow:hidden}
+.vgrid.short .vcard .th{aspect-ratio:9/16}
+.vcard .th img{width:100%;height:100%;object-fit:cover;opacity:.92;transition:transform .6s,opacity .3s}
+.vcard:hover .th img{transform:scale(1.06);opacity:1}
+.vcard .shade{position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(0,0,0,.9))}
+.vcard .play{width:46px;height:46px}
+.vcard .play::after{border-left-width:14px;border-top-width:9px;border-bottom-width:9px;margin-left:3px}
+.vcard .cap{position:absolute;left:0;right:0;bottom:0;padding:.7rem .8rem;z-index:3}
+.vcard .cap b{display:block;font-size:.78rem;font-weight:600;line-height:1.3;color:#f0eefb}
+.vcard .cap span{display:block;font-size:.66rem;color:#a9a6c0;margin-top:.2rem;letter-spacing:.06em}
+.vmeta{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;margin-top:1.4rem;font-size:.76rem;color:var(--vmuted)}
+.vmeta a{border:1px solid var(--vline);border-radius:999px;padding:.34rem .8rem;transition:.2s}
+.vmeta a:hover{border-color:var(--vaccent);color:var(--vaccent)}
+.vnote{font-size:.78rem;color:var(--vmuted);margin-top:1rem;max-width:70ch}
+
+</style>
+</head>
+<body>
+<div class="field"></div><div class="ledger"></div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brandmark" href="/"><img src="/assets/brand/mindfax-logo.webp" alt="" width="34" height="34" /><span>MINDFAX</span></a>
+    <nav class="navlinks">
+      <a href="/">Studio</a>
+      <a href="/thearchitectuniverse/">The Architect</a>
+      <a href="/thefreedomprotocol/">Volume Zero</a>
+      <a href="/mindfax/">Mindfax</a>
+      <a href="/neurabyte/">Neurabyte</a>
+      <a class="on" href="/finsage-universe/">Finsage</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="trail"><a href="/">Mindfax studio</a> &nbsp;·&nbsp; <a href="/thearchitectuniverse/">The Architect Universe</a> &nbsp;·&nbsp; the matter arm</p>
+      <p class="eyebrow">Money · Mindset · Freedom</p>
+      <h1>Money is stored time.<br /><em>Sovereignty is the interest.</em></h1>
+      <p class="lede">
+        Finsage is the financial arm of The Architect Universe. It treats money as the material layer
+        of freedom — and takes seriously what that implies: sound-money and libertarian economics,
+        cryptocurrency, decentralised finance, and systems that keep working when discipline runs out.
+        Not market tips. Architecture for a life that does not need permission.
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="#works">The works</a>
+        <a class="btn ghost" href="https://www.youtube.com/@FinSageIA" target="_blank" rel="noopener">The channel ↗</a>
+      </div>
+    </div>
+    <div class="crest">
+      <div class="halo"></div>
+      <img src="/assets/brand/finsage-logo.webp" alt="Finsage — money, mindset, freedom. Clarity creates wealth." width="400" height="225" />
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="facts">
+      <div><b>1</b><span>Published edition</span></div>
+      <div><b>3</b><span>Domains: sovereignty, crypto, DeFi</span></div>
+      <div><b>1</b><span>Working laboratory</span></div>
+      <div><b>1</b><span>Own video channel</span></div>
+    </div>
+  </div>
+</div>
+
+<section class="wrap">
+  <div class="sechead">
+    <p class="eyebrow">The position</p>
+    <h2>Three questions this arm refuses to separate.</h2>
+    <p>
+      Most financial writing answers one and pretends the other two are somebody else's department.
+      Finsage treats them as the same question asked at three depths.
+    </p>
+  </div>
+  <div class="rule"></div>
+  <div class="pill">
+    <div class="p">
+      <span class="n">I</span>
+      <h3>Sovereignty</h3>
+      <p>
+        Who has the authority to move your capital, freeze it, dilute it or watch it. Sound-money
+        and libertarian economics enter here not as ideology but as a working question: what does
+        a currency do to a person when its supply is decided by someone else?
+      </p>
+    </div>
+    <div class="p">
+      <span class="n">II</span>
+      <h3>Crypto &amp; DeFi</h3>
+      <p>
+        Self-custody, permissionless settlement and decentralised finance as the practical answer to
+        the first question — with the risks named rather than sold. Custody, counterparty, protocol
+        and regulatory exposure are part of the analysis, not a disclaimer at the bottom.
+      </p>
+    </div>
+    <div class="p">
+      <span class="n">III</span>
+      <h3>Automation</h3>
+      <p>
+        Willpower is volatile; systems are permanent. The engine seals the leaks, redirects surplus
+        and attacks debt with algorithmic coldness — so the human is a strategic overseer rather
+        than a panicked decision-maker at the end of every month.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="works">
+  <div class="sechead">
+    <p class="eyebrow">The works</p>
+    <h2>What already exists in the world.</h2>
+  </div>
+  <div class="rule"></div>
+  <div class="works">
+    <a class="work" href="/finsage-universe/">
+      <div class="cov"><img src="/assets/brand/cover-finsage.webp" alt="Finsage — The Automated Wealth Engine cover" width="280" height="420" loading="lazy" /></div>
+      <div class="meat">
+        <span class="tag pub">Published · Payhip · Kindle pending</span>
+        <h3>The Automated Wealth Engine</h3>
+        <p>
+          A financial operating system rather than another money book: the Financial Firewall and its
+          Zero-Leakage Protocol, surplus redirection, and debt attacked by rule instead of by mood.
+          Written for people who do not need more motivation — they need a structure that does not
+          depend on motivation at all.
+        </p>
+        <span class="go">Open the engine →</span>
+        <span class="id">Digital edition live · master PDF ≈47.2 MB · Kindle announced</span>
+      </div>
+    </a>
+
+    <a class="work" href="/thefreedomprotocol/">
+      <div class="cov"><img src="/assets/brand/mockup-freedom.webp" alt="The Freedom Protocol — ORIGIN" width="280" height="420" loading="lazy" /></div>
+      <div class="meat">
+        <span class="tag built">Volume Zero · the doctrine</span>
+        <h3>The Freedom Protocol — ORIGIN</h3>
+        <p>
+          The founding work, and the reason this arm exists. It is where the economics stop being
+          technical: inflation read as a transfer, fear recycled as policy, and the soft cage built
+          out of both. Finsage is the engineering that follows from it.
+        </p>
+        <span class="go">Read Volume Zero →</span>
+        <span class="id">Published · Payhip TmvM2 · hybrid work, see below</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="gal">
+    <figure><img src="/assets/brand/fs-page2.webp" alt="Finsage interior — the financial firewall" loading="lazy" /><figcaption>The Financial Firewall</figcaption></figure>
+    <figure><img src="/assets/brand/fs-page4.webp" alt="Finsage interior spread" loading="lazy" /><figcaption>Inside the pages</figcaption></figure>
+    <figure><img src="/assets/brand/fs-premium.webp" alt="Finsage premium edition" loading="lazy" /><figcaption>Premium edition</figcaption></figure>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="hybrid">
+    <div class="bg"><img src="/assets/brand/fp-site1.webp" alt="" loading="lazy" /></div>
+    <div class="veil"></div>
+    <div class="inner">
+      <p class="eyebrow">The hybrid · why Volume Zero is not filed under any one arm</p>
+      <h3>The Freedom Protocol runs through all three.</h3>
+      <p class="sub">
+        The archive names it twice, independently, and both names say the same thing: in the canonical
+        catalogue it is <b style="color:var(--cream)">Volume Zero</b>; on its own page it is
+        <b style="color:var(--cream)">ORIGIN</b>. It is not a book inside a collection — it is the
+        point the collection starts from. That is why filing it under Finsage alone would shrink it
+        to a finance title, and filing it under Mindfax would shrink it to a collector's artifact.
+        It is prior to the specialisation. Each arm inherits one of its layers.
+      </p>
+      <div class="layers">
+        <div class="layer mine">
+          <b>The financial layer → Finsage</b>
+          <p>Money weaponised through inflation; fear recycled as policy; a collapsing economic order read as a design, not an accident. This is the layer Finsage engineers into a system.</p>
+        </div>
+        <div class="layer">
+          <b>The cognitive layer → Neurabyte</b>
+          <p>“You were trained to betray your own signal.” Family, school, work and algorithm converging to reward obedience over clarity — the argument Neurabyte turns into trained attention.</p>
+        </div>
+        <div class="layer">
+          <b>The aesthetic layer → Mindfax</b>
+          <p>Philosophy rendered as cinematic design, built to be revisited rather than consumed once. Formally it belongs to the Mindfax line of artifact-books.</p>
+        </div>
+        <div class="layer">
+          <b>The biographical layer → The Architect</b>
+          <p>ORIGIN as the first fracture: the collapse that the axis narrates, named and converted into a doorway rather than a wound.</p>
+        </div>
+      </div>
+      <p style="margin-top:1.8rem"><a class="btn ghost" href="/thefreedomprotocol/">Enter Volume Zero →</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="sechead">
+    <p class="eyebrow">The laboratory</p>
+    <h2>Where the theory is actually being tested.</h2>
+  </div>
+  <div class="rule"></div>
+  <div class="lab">
+    <span class="tag lab">Informal startup · in testing</span>
+    <h3 style="margin-top:.8rem">Symbiosis Fractal Capital</h3>
+    <p style="margin-top:.9rem">
+      Finsage argues that a system should hold the discipline a human cannot. SFC is where that
+      argument is being put under load: a human-governed autonomous protocol operating on live
+      market and exchange APIs, built so that no part of it can quietly decide on its own.
+    </p>
+    <ul>
+      <li><b style="color:var(--cream)">An AI council.</b> Specialised models analyse the same decision independently; divergence is surfaced rather than averaged away; the human makes the final call.</li>
+      <li><b style="color:var(--cream)">Separation of powers.</b> Decision, execution and reporting are architecturally distinct. Credential scope and fund-movement limits are explicit; canonical risk parameters cannot be changed silently.</li>
+      <li><b style="color:var(--cream)">Ghost Trade.</b> A virtual-execution protocol that tracks decisions as if they were real, so a strategy is validated against outcomes before capital is exposed.</li>
+      <li><b style="color:var(--cream)">Evidence discipline.</b> A readiness review scoring 45/100 and a documented operating failure are kept in the record rather than removed. AI-generated performance figures that failed internal audit were discarded rather than published.</li>
+    </ul>
+    <p class="note" style="margin-top:1.6rem">
+      What is not on this page, deliberately: strategy parameters, positions, returns. No performance
+      is claimed here and none should be inferred. The architecture is disclosable; the edge is not —
+      and unverified numbers are worse than no numbers.
+    </p>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="sechead">
+    <p class="eyebrow">The channel</p>
+    <h2>Money, systems and behaviour.</h2>
+  </div>
+  <div class="chans">
+    <a class="chan" href="https://www.youtube.com/@FinSageIA" target="_blank" rel="noopener">
+      <span class="dot"></span>
+      <span><strong>YouTube · @FinSageIA</strong><span>Sovereignty, sound money, crypto and the systems that hold discipline</span></span>
+    </a>
+    <a class="chan" href="/finsage-universe/">
+      <span class="dot" style="background:var(--ember);box-shadow:0 0 12px var(--ember)"></span>
+      <span><strong>The Automated Wealth Engine</strong><span>A página completa do produto, com o protocolo apresentado passo a passo</span></span>
+    </a>
+  </div>
+  <p class="note">
+    A necessary line, and it stays on the page: nothing here is investment advice, and none of it is
+    personalised. Cryptocurrency and decentralised finance carry custody, counterparty, protocol and
+    regulatory risk that no system removes. Finsage is about architecture and authority over your own
+    capital — the decisions remain yours.
+  </p>
+</section>
+
+<section class="wrap">
+  <div class="sechead">
+    <p class="eyebrow">Position</p>
+    <h2>One axis, one doctrine, three arms.</h2>
+  </div>
+  <div class="arms">
+    <a class="arm" href="/thearchitectuniverse/">
+      <span class="tag">The axis</span>
+      <h3>The Architect</h3>
+      <p>Biography, collapse and reconstruction. The thread every other property is tied to.</p>
+      <span class="go">Enter the universe →</span>
+    </a>
+    <a class="arm" href="/mindfax/">
+      <span class="tag">The cosmos</span>
+      <h3>Mindfax</h3>
+      <p>The creative arm: literary fiction, speculative science and metaphysical design.</p>
+      <span class="go">Open Mindfax →</span>
+    </a>
+    <a class="arm" href="/neurabyte/">
+      <span class="tag">The mind</span>
+      <h3>Neurabyte</h3>
+      <p>The cognitive arm: attention, judgment and human cognition in the age of AI.</p>
+      <span class="go">Open Neurabyte →</span>
+    </a>
+  </div>
+</section>
+
+
+<section class="wrap" id="film">
+  <div class="sechead">
+    <p class="eyebrow">The moving image</p>
+    <h2>Sovereignty, argued out loud.</h2>
+    <p>
+      The channel is where the economics of this arm are stated without the book's structure around
+      them — inflation as a transfer, discipline as an engineering problem, and the quiet arithmetic
+      that decides whether a life is owned or rented.
+    </p>
+  </div>
+  <div class="rule"></div>
+
+  <div class="vwrap">
+  <div class="vhero" role="button" tabindex="0" data-yt="hymFqpenYUw" data-title="The 1% Rule of Wealth — how to retire ten years earlier" data-short="0">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/hymFqpenYUw/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/hymFqpenYUw/hqdefault.jpg'" alt="The 1% Rule of Wealth — how to retire ten years earlier" loading="lazy" />
+    <div class="shade"></div>
+    <div class="play" aria-hidden="true"></div>
+    <div class="cap"><h3>The 1% Rule of Wealth — how to retire ten years earlier</h3><p>The long-form case for the whole arm: compounding treated as a system rather than a slogan, and why the margin that decides a decade is smaller than anyone expects.</p></div>
+  </div>
+</div>
+  </div>
+
+  <div class="sechead" style="margin-top:3.2rem">
+    <p class="eyebrow">Short form</p>
+    <h2>The doctrine, in sixty seconds.</h2>
+    <p>
+      The first two are the sharpest statement of the arm's position: inflation read as a tax you did
+      not vote for, and the engine built to survive it.
+    </p>
+  </div>
+  <div class="vgrid short">
+    <div class="vcard" role="button" tabindex="0" data-yt="6ThOBkRe6mE" data-title="The Inflation Tax — Why Your Savings Are a Liability" data-short="1">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/6ThOBkRe6mE/hqdefault.jpg" alt="The Inflation Tax — Why Your Savings Are a Liability" loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>The Inflation Tax — Why Your Savings Are a Liability</b><span>Zero-Inertia Protocol</span></div>
+  </div>
+</div><div class="vcard" role="button" tabindex="0" data-yt="c4faKu2kAzM" data-title="The Automated Wealth Engine" data-short="1">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/c4faKu2kAzM/hqdefault.jpg" alt="The Automated Wealth Engine" loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>The Automated Wealth Engine</b><span>The book, in sixty seconds</span></div>
+  </div>
+</div><div class="vcard" role="button" tabindex="0" data-yt="3shNlh6vURY" data-title="The Willpower Fallacy" data-short="1">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/3shNlh6vURY/hqdefault.jpg" alt="The Willpower Fallacy" loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>The Willpower Fallacy</b><span>Most watched</span></div>
+  </div>
+</div><div class="vcard" role="button" tabindex="0" data-yt="TgQHTMGPn30" data-title="The Invisible Financial Trauma" data-short="1">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/TgQHTMGPn30/hqdefault.jpg" alt="The Invisible Financial Trauma" loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>The Invisible Financial Trauma</b><span></span></div>
+  </div>
+</div><div class="vcard" role="button" tabindex="0" data-yt="-xEIYUNxJFc" data-title="Discipline Beats Genius" data-short="1">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/-xEIYUNxJFc/hqdefault.jpg" alt="Discipline Beats Genius" loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>Discipline Beats Genius</b><span></span></div>
+  </div>
+</div><div class="vcard" role="button" tabindex="0" data-yt="o8c4rvnV_Ao" data-title="Consistency Is Rarer Than Talent" data-short="1">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/o8c4rvnV_Ao/hqdefault.jpg" alt="Consistency Is Rarer Than Talent" loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>Consistency Is Rarer Than Talent</b><span></span></div>
+  </div>
+</div>
+  </div>
+
+  <div class="sechead" style="margin-top:3.2rem">
+    <p class="eyebrow">Long form</p>
+    <h2>The full arguments.</h2>
+  </div>
+  <div class="vgrid long">
+    <div class="vcard" role="button" tabindex="0" data-yt="hymFqpenYUw" data-title="The 1% Rule of Wealth" data-short="0">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/hymFqpenYUw/hqdefault.jpg" alt="The 1% Rule of Wealth" loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>The 1% Rule of Wealth</b><span>8:31 · retire ten years earlier</span></div>
+  </div>
+</div><div class="vcard" role="button" tabindex="0" data-yt="RWLlzl0cE4w" data-title="Break Financial Autopilot" data-short="0">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/RWLlzl0cE4w/hqdefault.jpg" alt="Break Financial Autopilot" loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>Break Financial Autopilot</b><span>2:28 · reprogram for real wealth</span></div>
+  </div>
+</div>
+  </div>
+
+  <div class="vmeta">
+    <a href="https://www.youtube.com/@FinSageIA" target="_blank" rel="noopener">@FinSageIA ↗</a>
+    <span>Money · Mindset · Freedom</span>
+  </div>
+  <p class="vnote">
+    Nothing loads until you press play. None of this is investment advice or personalised guidance,
+    and no performance is claimed — see the note above.
+  </p>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap footgrid">
+    <div>
+      <h4>Finsage</h4>
+      <p style="margin:0;max-width:46ch">
+        The matter arm of The Architect Universe. Financial sovereignty, libertarian economics,
+        cryptocurrency and DeFi — money treated as stored time. Clarity creates wealth.
+      </p>
+    </div>
+    <div>
+      <h4>Works</h4>
+      <a href="/finsage-universe/">The Automated Wealth Engine</a>
+      <a href="/thefreedomprotocol/">The Freedom Protocol — Volume Zero</a>
+      <a href="/thearchitectuniverse/">The Architect Universe</a>
+    </div>
+    <div>
+      <h4>Elsewhere</h4>
+      <a href="https://www.youtube.com/@FinSageIA" target="_blank" rel="noopener">YouTube ↗</a>
+      <a href="/mindfax/">Mindfax · the cosmos arm</a>
+      <a href="/">Back to the studio</a>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+(function(){
+  function mount(el){
+    if(el.dataset.on) return; el.dataset.on='1';
+    var id=el.dataset.yt, sh=el.dataset.short==='1';
+    var f=document.createElement('iframe');
+    f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1';
+    f.title=el.dataset.title||'Video';
+    f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture';
+    f.allowFullscreen=true;
+    el.querySelector('.th').appendChild(f);
+  }
+  document.addEventListener('click',function(e){
+    var t=e.target.closest('[data-yt]');
+    if(t){ e.preventDefault(); mount(t); }
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key!=='Enter'&&e.key!==' ')return;
+    var t=document.activeElement&&document.activeElement.closest&&document.activeElement.closest('[data-yt]');
+    if(t){ e.preventDefault(); mount(t); }
+  });
+})();
+</script>
+
+</body>
+</html>
