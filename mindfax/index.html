@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MINDFAX — The Cosmos Arm of The Architect Universe</title>
+<meta name="description" content="MINDFAX is the creative arm of The Architect Universe: literary fiction, speculative science and metaphysical design. Home of Artifact — The Continuum, The Fractal Trilogy and The Second Forest." />
+<link rel="canonical" href="https://mindfax.art/mindfax/" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Mateus Lolas" />
+<meta name="theme-color" content="#06030f" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="MINDFAX" />
+<meta property="og:url" content="https://mindfax.art/mindfax/" />
+<meta property="og:title" content="MINDFAX — The Cosmos Arm of The Architect Universe" />
+<meta property="og:description" content="For those who think in light. Literary fiction, speculative science and metaphysical design." />
+<meta property="og:image" content="https://mindfax.art/assets/brand/mindfax-logo.webp" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="MINDFAX — The Cosmos Arm" />
+<meta name="twitter:description" content="For those who think in light." />
+<meta name="twitter:image" content="https://mindfax.art/assets/brand/mindfax-logo.webp" />
+<link rel="apple-touch-icon" href="/assets/icon-180.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CollectionPage","name":"MINDFAX — The Cosmos Arm","url":"https://mindfax.art/mindfax/","isPartOf":{"@type":"WebSite","name":"MINDFAX","url":"https://mindfax.art/"},"author":{"@type":"Person","name":"Mateus Lolas"}}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#06030f; --bg-2:#0d0720; --panel:#120a26; --panel-2:#170d2e;
+  --violet:#8b5cf6; --magenta:#d946ef; --cyan:#22a7ff;
+  --gold:#e8c07a; --gold-soft:rgba(232,192,122,.16);
+  --text:#ece9f7; --muted:#a396c4; --border:rgba(232,192,122,.16);
+  --radius:20px; --maxw:1180px;
+}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);
+  font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{width:min(var(--maxw),92vw);margin-inline:auto;position:relative;z-index:2}
+h1,h2,h3{font-family:"Cinzel",serif;line-height:1.16;margin:0}
+.eyebrow{font-family:"Cinzel",serif;font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;
+  color:var(--gold);margin:0 0 1rem}
+
+/* ---------- cosmic field ---------- */
+.field{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 60% 42% at 78% 8%, rgba(217,70,239,.20), transparent 60%),
+    radial-gradient(ellipse 55% 40% at 16% 20%, rgba(34,167,255,.16), transparent 62%),
+    radial-gradient(ellipse 90% 60% at 50% 108%, rgba(139,92,246,.14), transparent 65%);
+}
+.stars{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+  background-image:
+    radial-gradient(1.4px 1.4px at 12% 18%, #fff, transparent),
+    radial-gradient(1.1px 1.1px at 68% 12%, #d9c8ff, transparent),
+    radial-gradient(1.6px 1.6px at 34% 62%, #fff, transparent),
+    radial-gradient(1.2px 1.2px at 84% 48%, #a8e0ff, transparent),
+    radial-gradient(1px 1px at 22% 88%, #fff, transparent),
+    radial-gradient(1.3px 1.3px at 58% 78%, #f0d9ff, transparent),
+    radial-gradient(1px 1px at 92% 82%, #fff, transparent),
+    radial-gradient(1.1px 1.1px at 46% 30%, #fff, transparent);
+  animation:twinkle 7s ease-in-out infinite alternate}
+@keyframes twinkle{from{opacity:.32}to{opacity:.62}}
+
+/* ---------- header ---------- */
+header.site{position:sticky;top:0;z-index:60;backdrop-filter:saturate(150%) blur(16px);
+  background:linear-gradient(180deg,rgba(6,3,15,.95),rgba(6,3,15,.7),transparent);
+  border-bottom:1px solid rgba(255,255,255,.06)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.75rem 0;flex-wrap:wrap}
+.brandmark{display:flex;align-items:center;gap:.65rem;font-family:"Cinzel",serif;font-weight:700;
+  letter-spacing:.18em;font-size:.9rem;color:var(--gold)}
+.brandmark img{width:34px;height:34px;border-radius:50%}
+.navlinks{display:flex;gap:1.35rem;font-size:.82rem;color:var(--muted);flex-wrap:wrap}
+.navlinks a{transition:color .2s}
+.navlinks a:hover{color:var(--gold)}
+.navlinks a.on{color:var(--gold)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding:4.5rem 0 3.5rem;overflow:hidden}
+.hero-grid{display:grid;gap:3rem;align-items:center}
+@media(min-width:900px){.hero-grid{grid-template-columns:1.15fr .85fr}}
+.hero h1{font-size:clamp(2.3rem,5.8vw,4.1rem)}
+.hero h1 em{font-style:normal;
+  background:linear-gradient(100deg,var(--cyan),var(--violet) 45%,var(--magenta));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lede{max-width:54ch;color:var(--muted);margin:1.5rem 0 0;font-size:1.05rem}
+.trail{font-size:.76rem;color:var(--muted);letter-spacing:.1em;margin:0 0 1.2rem;text-transform:uppercase}
+.trail a{color:var(--cyan)}
+.cta{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:2.2rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.82rem 1.55rem;border-radius:999px;
+  font-size:.88rem;font-weight:500;border:1px solid var(--border);transition:.22s}
+.btn.primary{background:linear-gradient(100deg,var(--violet),var(--magenta));color:#fff;border-color:transparent}
+.btn.primary:hover{filter:brightness(1.12);transform:translateY(-2px)}
+.btn.ghost{color:var(--gold)}
+.btn.ghost:hover{background:var(--gold-soft);transform:translateY(-2px)}
+
+/* orb */
+.orb{position:relative;justify-self:center;width:min(360px,80vw);aspect-ratio:1}
+.orb img{width:100%;border-radius:50%;
+  filter:drop-shadow(0 0 60px rgba(139,92,246,.55)) drop-shadow(0 0 120px rgba(217,70,239,.28));
+  animation:float 9s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.orb .ring{position:absolute;inset:-10%;border:1px solid rgba(232,192,122,.28);border-radius:50%;
+  animation:spin 46s linear infinite}
+.orb .ring.b{inset:-22%;border-color:rgba(34,167,255,.18);border-style:dashed;animation-duration:78s;animation-direction:reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.orb svg{position:absolute;inset:-6%;width:112%;height:112%;opacity:.5;animation:spin 120s linear infinite}
+
+/* ---------- stats ---------- */
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;
+  background:rgba(232,192,122,.14);border:1px solid var(--border);border-radius:var(--radius);
+  overflow:hidden;margin:1rem 0 0}
+.facts div{background:linear-gradient(160deg,var(--panel),var(--bg-2));padding:1.4rem 1.2rem;text-align:center}
+.facts b{display:block;font-family:"Cinzel",serif;font-size:1.7rem;color:var(--gold)}
+.facts span{font-size:.74rem;color:var(--muted);letter-spacing:.08em}
+
+/* ---------- sections ---------- */
+section{padding:clamp(3rem,7vw,5.5rem) 0;position:relative}
+.sechead{max-width:60ch;margin-bottom:2.6rem}
+.sechead h2{font-size:clamp(1.5rem,3.3vw,2.25rem)}
+.sechead p:not(.eyebrow){color:var(--muted);margin:.9rem 0 0}
+.rule{height:1px;background:linear-gradient(90deg,transparent,rgba(232,192,122,.4),transparent);margin:0 0 2.4rem}
+
+/* ---------- work cards ---------- */
+.works{display:grid;gap:1.6rem}
+@media(min-width:760px){.works{grid-template-columns:repeat(2,1fr)}}
+.work{position:relative;display:grid;grid-template-columns:150px 1fr;gap:1.3rem;
+  background:linear-gradient(155deg,var(--panel),rgba(10,5,22,.7));
+  border:1px solid var(--border);border-radius:var(--radius);padding:1.4rem;transition:.26s;overflow:hidden}
+.work::after{content:"";position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 60% at 12% 0%, rgba(139,92,246,.18), transparent 70%);
+  opacity:0;transition:.3s;pointer-events:none}
+.work:hover{border-color:rgba(232,192,122,.44);transform:translateY(-4px)}
+.work:hover::after{opacity:1}
+.work .cov{border-radius:12px;overflow:hidden;box-shadow:0 16px 40px rgba(0,0,0,.6);align-self:start}
+.work .cov img{width:100%;aspect-ratio:2/3;object-fit:cover;transition:transform .5s}
+.work:hover .cov img{transform:scale(1.05)}
+.work .meat{display:flex;flex-direction:column;gap:.6rem;min-width:0}
+.work h3{font-size:1.08rem}
+.work p{margin:0;color:var(--muted);font-size:.9rem}
+.work .go{margin-top:auto;font-size:.82rem;color:var(--gold);font-weight:500}
+.work .id{font-size:.7rem;color:#8b7fae;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  border-top:1px dashed rgba(232,192,122,.22);padding-top:.55rem;letter-spacing:.03em}
+@media(max-width:520px){.work{grid-template-columns:110px 1fr;gap:1rem;padding:1.1rem}}
+
+.tag{display:inline-flex;align-self:flex-start;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;
+  padding:.3rem .68rem;border-radius:999px;border:1px solid var(--border);color:var(--muted)}
+.tag.pub{color:#8ce8b4;border-color:rgba(140,232,180,.34);background:rgba(140,232,180,.07)}
+.tag.built{color:var(--gold);border-color:rgba(232,192,122,.36);background:var(--gold-soft)}
+.tag.world{color:#c4a7ff;border-color:rgba(196,167,255,.36);background:rgba(196,167,255,.08)}
+.tag.rev{color:#ffa9b8;border-color:rgba(255,169,184,.32);background:rgba(255,169,184,.07)}
+
+/* ---------- fractal feature ---------- */
+.feature{position:relative;border-radius:26px;overflow:hidden;border:1px solid rgba(224,138,46,.3);
+  background:#0d1f26}
+.feature .bg{position:absolute;inset:0}
+.feature .bg img{width:100%;height:100%;object-fit:cover;opacity:.62}
+.feature .veil{position:absolute;inset:0;
+  background:linear-gradient(100deg,rgba(8,17,21,.95) 8%,rgba(8,17,21,.72) 42%,rgba(8,17,21,.25))}
+.feature .inner{position:relative;z-index:2;padding:clamp(1.8rem,4.5vw,3.4rem);max-width:60ch}
+.feature h3{font-size:clamp(1.6rem,3.6vw,2.5rem);color:#f0b25f;letter-spacing:.04em}
+.feature p{color:#cfc0aa}
+.feature .id{color:#a3927a}
+.amber{color:#e08a2e}
+
+/* ---------- gallery ---------- */
+.gal{display:grid;gap:1rem}
+@media(min-width:720px){.gal{grid-template-columns:repeat(3,1fr)}}
+.gal figure{margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--border);position:relative;background:#080513}
+.gal img{width:100%;aspect-ratio:16/10;object-fit:cover;transition:transform .6s,opacity .3s;opacity:.88}
+.gal figure:hover img{transform:scale(1.06);opacity:1}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:.8rem .9rem;font-size:.74rem;
+  letter-spacing:.1em;text-transform:uppercase;color:#e6ddf5;
+  background:linear-gradient(180deg,transparent,rgba(6,3,15,.9))}
+
+/* ---------- development ---------- */
+.dev{display:grid;gap:1.3rem}
+@media(min-width:860px){.dev{grid-template-columns:repeat(3,1fr)}}
+.devcard{background:linear-gradient(160deg,var(--panel-2),rgba(9,5,20,.6));border:1px solid var(--border);
+  border-radius:var(--radius);padding:1.5rem;display:flex;flex-direction:column;gap:.7rem;transition:.25s}
+.devcard:hover{border-color:rgba(196,167,255,.4);transform:translateY(-3px)}
+.devcard h3{font-size:1.02rem}
+.devcard p{margin:0;color:var(--muted);font-size:.89rem}
+.devcard .id{font-size:.7rem;color:#8b7fae;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  border-top:1px dashed rgba(232,192,122,.22);padding-top:.55rem;margin-top:auto;letter-spacing:.03em}
+.devcard .thumb{border-radius:10px;overflow:hidden;margin:-.3rem 0 .3rem}
+.devcard .thumb img{width:100%;aspect-ratio:16/9;object-fit:cover;opacity:.8}
+
+.note{border-left:2px solid var(--gold);padding:.15rem 0 .15rem 1.2rem;color:var(--muted);
+  font-size:.9rem;max-width:66ch;margin:2.2rem 0 0}
+
+/* ---------- arms ---------- */
+.arms{display:grid;gap:1.2rem}
+@media(min-width:820px){.arms{grid-template-columns:repeat(3,1fr)}}
+.arm{border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;
+  background:linear-gradient(160deg,var(--panel),rgba(8,4,18,.5));transition:.25s;display:flex;flex-direction:column;gap:.55rem}
+.arm:hover{transform:translateY(-4px);border-color:rgba(232,192,122,.42)}
+.arm h3{font-size:1.06rem}
+.arm p{margin:0;color:var(--muted);font-size:.88rem}
+.arm .go{font-size:.8rem;color:var(--gold);margin-top:auto;padding-top:.5rem}
+
+/* ---------- channels ---------- */
+.chans{display:grid;gap:1.1rem}
+@media(min-width:720px){.chans{grid-template-columns:repeat(2,1fr)}}
+.chan{display:flex;align-items:center;gap:1rem;border:1px solid var(--border);border-radius:16px;
+  padding:1.1rem 1.3rem;background:rgba(255,255,255,.02);transition:.22s}
+.chan:hover{border-color:rgba(232,192,122,.45);background:var(--gold-soft);transform:translateY(-2px)}
+.chan .dot{width:9px;height:9px;border-radius:50%;background:var(--magenta);flex:none;
+  box-shadow:0 0 12px var(--magenta)}
+.chan strong{display:block;font-family:"Cinzel",serif;font-size:.95rem}
+.chan span{font-size:.8rem;color:var(--muted)}
+
+footer.site{border-top:1px solid var(--border);padding:3rem 0 4rem;margin-top:2rem;color:var(--muted);font-size:.85rem;position:relative;z-index:2}
+.footgrid{display:grid;gap:2rem}
+@media(min-width:800px){.footgrid{grid-template-columns:1.5fr 1fr 1fr}}
+.footgrid h4{font-family:"Cinzel",serif;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin:0 0 .9rem}
+.footgrid a{display:block;padding:.2rem 0}
+.footgrid a:hover{color:var(--gold)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+:root{--vline:rgba(232,192,122,.22);--vaccent:#e8c07a;--vmuted:#a396c4}
+
+/* ---------- video system ---------- */
+.vwrap{margin-top:.4rem}
+.vhero{position:relative;border-radius:22px;overflow:hidden;border:1px solid var(--vline);
+  background:#05060c;cursor:pointer;display:block}
+.vhero .th{position:relative;aspect-ratio:16/9;overflow:hidden}
+.vhero .th img{width:100%;height:100%;object-fit:cover;transition:transform .7s,filter .4s;filter:saturate(1.05)}
+.vhero:hover .th img{transform:scale(1.04)}
+.vhero .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15) 30%,rgba(0,0,0,.86))}
+.vhero .cap{position:absolute;left:0;right:0;bottom:0;padding:clamp(1.1rem,3vw,2rem);z-index:3}
+.vhero .cap h3{font-size:clamp(1.05rem,2.4vw,1.6rem);margin:0 0 .4rem}
+.vhero .cap p{margin:0;color:#c9c9dd;font-size:.9rem;max-width:60ch}
+.play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:4;
+  width:78px;height:78px;border-radius:50%;display:grid;place-items:center;
+  background:rgba(10,10,18,.55);border:1px solid var(--vaccent);backdrop-filter:blur(6px);transition:.25s}
+.play::after{content:"";width:0;height:0;margin-left:5px;
+  border-left:20px solid var(--vaccent);border-top:13px solid transparent;border-bottom:13px solid transparent}
+.vhero:hover .play,.vcard:hover .play{transform:translate(-50%,-50%) scale(1.09);background:rgba(10,10,18,.78)}
+.vhero iframe,.vcard iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:9}
+
+.vgrid{display:grid;gap:1.1rem;margin-top:1.3rem}
+@media(min-width:640px){.vgrid.long{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.vgrid.long{grid-template-columns:repeat(3,1fr)}}
+.vgrid.short{grid-template-columns:repeat(2,1fr)}
+@media(min-width:640px){.vgrid.short{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:1000px){.vgrid.short{grid-template-columns:repeat(6,1fr)}}
+.vcard{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--vline);
+  background:#05060c;cursor:pointer;display:block;transition:.25s}
+.vcard:hover{border-color:var(--vaccent);transform:translateY(-3px)}
+.vcard .th{position:relative;aspect-ratio:16/9;overflow:hidden}
+.vgrid.short .vcard .th{aspect-ratio:9/16}
+.vcard .th img{width:100%;height:100%;object-fit:cover;opacity:.92;transition:transform .6s,opacity .3s}
+.vcard:hover .th img{transform:scale(1.06);opacity:1}
+.vcard .shade{position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(0,0,0,.9))}
+.vcard .play{width:46px;height:46px}
+.vcard .play::after{border-left-width:14px;border-top-width:9px;border-bottom-width:9px;margin-left:3px}
+.vcard .cap{position:absolute;left:0;right:0;bottom:0;padding:.7rem .8rem;z-index:3}
+.vcard .cap b{display:block;font-size:.78rem;font-weight:600;line-height:1.3;color:#f0eefb}
+.vcard .cap span{display:block;font-size:.66rem;color:#a9a6c0;margin-top:.2rem;letter-spacing:.06em}
+.vmeta{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;margin-top:1.4rem;font-size:.76rem;color:var(--vmuted)}
+.vmeta a{border:1px solid var(--vline);border-radius:999px;padding:.34rem .8rem;transition:.2s}
+.vmeta a:hover{border-color:var(--vaccent);color:var(--vaccent)}
+.vnote{font-size:.78rem;color:var(--vmuted);margin-top:1rem;max-width:70ch}
+
+</style>
+</head>
+<body>
+<div class="field"></div><div class="stars"></div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brandmark" href="/"><img src="/assets/brand/mindfax-logo.webp" alt="" width="34" height="34" /><span>MINDFAX</span></a>
+    <nav class="navlinks">
+      <a href="/">Studio</a>
+      <a href="/thearchitectuniverse/">The Architect</a>
+      <a href="/thefreedomprotocol/">Volume Zero</a>
+      <a class="on" href="/mindfax/">Mindfax</a>
+      <a href="/neurabyte/">Neurabyte</a>
+      <a href="/finsage-universe/">Finsage</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="trail"><a href="/">Mindfax studio</a> &nbsp;·&nbsp; <a href="/thearchitectuniverse/">The Architect Universe</a> &nbsp;·&nbsp; the cosmos arm</p>
+      <p class="eyebrow">For those who think in light</p>
+      <h1>Fiction is the only<br /><em>instrument fine enough.</em></h1>
+      <p class="lede">
+        Mindfax is the creative arm of The Architect Universe — where the work stops explaining and
+        starts imagining. Literary fiction, speculative science, metaphysics and design. If The
+        Architect is the axis and the biography, Mindfax is the cosmos that opens out from it:
+        consciousness treated as physics, time treated as material, and the long human question of
+        what survives a transition.
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="#published">Enter the works</a>
+        <a class="btn ghost" href="https://www.youtube.com/@mindfaxart" target="_blank" rel="noopener">The channel ↗</a>
+      </div>
+    </div>
+    <div class="orb">
+      <div class="ring"></div><div class="ring b"></div>
+      <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
+        <polygon points="100,14 168,54 168,146 100,186 32,146 32,54" stroke="#e8c07a" stroke-opacity=".45" stroke-width=".8"/>
+        <polygon points="100,42 145,68 145,132 100,158 55,132 55,68" stroke="#22a7ff" stroke-opacity=".38" stroke-width=".8"/>
+        <path d="M100 14 100 186 M32 54 168 146 M168 54 32 146" stroke="#e8c07a" stroke-opacity=".2" stroke-width=".6"/>
+        <circle cx="100" cy="100" r="78" stroke="#d946ef" stroke-opacity=".22" stroke-width=".8"/>
+      </svg>
+      <img src="/assets/brand/mindfax-logo.webp" alt="The Mindfax cosmic sphere" width="360" height="360" />
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="facts">
+      <div><b>1</b><span>Published with identifier</span></div>
+      <div><b>2</b><span>Structured universes</span></div>
+      <div><b>3</b><span>Editions in development</span></div>
+      <div><b>1</b><span>Own video channel</span></div>
+    </div>
+  </div>
+</div>
+
+<section class="wrap" id="published">
+  <div class="sechead">
+    <p class="eyebrow">Published &amp; live</p>
+    <h2>What already exists in the world.</h2>
+    <p>Work that carries a commercial identifier or a live public page. Nothing on this list is a plan.</p>
+  </div>
+  <div class="rule"></div>
+
+  <div class="works">
+    <a class="work" href="/thecontinuum/">
+      <div class="cov"><img src="/assets/brand/cover-continuum.webp" alt="Artifact — The Continuum, first edition cover" width="280" height="420" loading="lazy" /></div>
+      <div class="meat">
+        <span class="tag pub">Published · Payhip</span>
+        <h3>Artifact — The Continuum</h3>
+        <p>Consciousness as software that changes density. A metaphysical framework compressed into a small book and released as a collectible digital artifact with its own web experience — the first edition of the Mindfax line, and the clearest statement of what this arm is for.</p>
+        <span class="go">Open the artifact →</span>
+        <span class="id">First Edition · id 6221w · master PDF ≈52 MB</span>
+      </div>
+    </a>
+
+    <a class="work" href="/thesecondforestproject/">
+      <div class="cov"><img src="/assets/brand/cover-secondforest.webp" alt="The Second Forest cover" width="280" height="420" loading="lazy" /></div>
+      <div class="meat">
+        <span class="tag world">Universe structured</span>
+        <h3>The Second Forest</h3>
+        <p>A fiction franchise built as a franchise from the first page: dossier, concept art, world map and authorial planning before a single chapter is sold. Presented here as an authorial project, because that is what it is — the final manuscript is not yet confirmed.</p>
+        <span class="go">Enter the dossier →</span>
+        <span class="id">Official Franchise Dossier · live page · manuscript in progress</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="gal" style="margin-top:1.6rem">
+    <figure><img src="/assets/brand/art-t2f-gate.webp" alt="The Liminari Gate" loading="lazy" /><figcaption>The Liminari Gate</figcaption></figure>
+    <figure><img src="/assets/brand/art-t2f-coreworld.webp" alt="Coreworld map" loading="lazy" /><figcaption>Coreworld · map</figcaption></figure>
+    <figure><img src="/assets/brand/art-t2f-exoshell.webp" alt="Exoshell concept" loading="lazy" /><figcaption>Exoshell · concept</figcaption></figure>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="feature">
+    <div class="bg"><img src="/assets/brand/art-fractal.webp" alt="Fractal — the eye and the branching" loading="lazy" /></div>
+    <div class="veil"></div>
+    <div class="inner">
+      <p class="eyebrow" style="color:#e08a2e">In development · the largest unpublished body of work</p>
+      <h3>FRACTAL</h3>
+      <p style="margin-top:1rem">
+        A science-fiction universe with a canonical document for Book One, a master document carried
+        through many numbered revisions, a Character Bible and a private canon. It is the deepest
+        world in the archive and the one furthest from a bookshelf — and this page will not pretend
+        otherwise. The concept is public. The canon is not.
+      </p>
+      <p style="margin-top:1rem;font-size:.86rem;color:#a3927a;font-family:ui-monospace,Menlo,monospace">
+        Book 1 canonical document · Character Bible · versions through “Final 10” · canonical edition
+        not yet designated
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="sechead">
+    <p class="eyebrow">In development</p>
+    <h2>The work that is still being written.</h2>
+    <p>
+      Shown deliberately, and labelled honestly. A structured universe is a real asset — a canon, a
+      character bible and a sequence are harder to build than a first draft — but it is not a
+      published book, and this page will not blur the two.
+    </p>
+  </div>
+  <div class="rule"></div>
+
+  <div class="dev">
+    <div class="devcard">
+      <span class="tag built">Materialised · offer to validate</span>
+      <h3>Mindfax — Premium Edition</h3>
+      <p>A finished digital editorial product with its own production folder and associated materials. The file exists; the public offer has not been re-validated since the archive audit, so it is listed as built rather than for sale.</p>
+      <span class="id">Product package located · commercial page pending</span>
+    </div>
+
+    <div class="devcard">
+      <span class="tag rev">In revision</span>
+      <h3>Free Edition &amp; Teaser</h3>
+      <p>A free editorial edition and a companion infographic, both flagged for revision in the archive audit. Named here because the record should be complete, and withheld from distribution because neither is a final edition yet.</p>
+      <span class="id">Not canonical until revised</span>
+    </div>
+
+    <div class="devcard">
+      <div class="thumb"><img src="/assets/brand/mockup-manifesto.webp" alt="Authorial Manifesto cover mockup" loading="lazy" /></div>
+      <span class="tag rev">Historical · under review</span>
+      <h3>Authorial Manifesto</h3>
+      <p>An identity statement written in an earlier phase, materialised in three formats, and formally declared inconsistent with the current work. Kept as record rather than retired quietly — the disagreement between past and present is part of the archive.</p>
+      <span class="id">DOCX · PDF · Kindle · superseded</span>
+    </div>
+  </div>
+
+  <p class="note">
+    Why the labels are on the page at all: an archive that presents a planned trilogy and a published
+    book in the same typeface is not a portfolio, it is a claim. Everything here is marked by what it
+    actually is — published with an identifier, materialised but unvalidated, structured as a
+    universe, or under revision. The reader can tell the difference at a glance, which is the point.
+  </p>
+</section>
+
+<section class="wrap">
+  <div class="sechead">
+    <p class="eyebrow">The channel</p>
+    <h2>Mindfax is not only a press.</h2>
+    <p>The written work has a moving-image companion — the cosmos rendered rather than described.</p>
+  </div>
+  <div class="chans">
+    <a class="chan" href="https://www.youtube.com/@mindfaxart" target="_blank" rel="noopener">
+      <span class="dot"></span>
+      <span><strong>YouTube · @mindfaxart</strong><span>Long-form narration and short pieces from the published and unpublished work</span></span>
+    </a>
+    <a class="chan" href="https://medium.com/@iamediafactory.studio" target="_blank" rel="noopener">
+      <span class="dot" style="background:var(--cyan);box-shadow:0 0 12px var(--cyan)"></span>
+      <span><strong>Medium · IA Media Factory</strong><span>Essays and long-form writing from the studio behind every property</span></span>
+    </a>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="sechead">
+    <p class="eyebrow">Position</p>
+    <h2>One axis, one doctrine, three arms.</h2>
+    <p>
+      The Architect is the axis. <a href="/thefreedomprotocol/" style="color:var(--gold)">The Freedom
+      Protocol — Volume Zero</a> is the doctrine that names what the collapse was for. Mindfax is the
+      arm that turns it into worlds.
+    </p>
+  </div>
+  <div class="arms">
+    <a class="arm" href="/thearchitectuniverse/">
+      <span class="tag">The axis</span>
+      <h3>The Architect</h3>
+      <p>Biography, collapse and reconstruction. Time and consciousness. The thread every other property is tied to.</p>
+      <span class="go">Enter the universe →</span>
+    </a>
+    <a class="arm" href="/neurabyte/">
+      <span class="tag">The mind</span>
+      <h3>Neurabyte</h3>
+      <p>The cognitive arm: attention, judgment, and AI Playground — human cognition in the age of AI.</p>
+      <span class="go">Open Neurabyte →</span>
+    </a>
+    <a class="arm" href="/finsage-universe/">
+      <span class="tag">The matter</span>
+      <h3>Finsage</h3>
+      <p>The financial arm: money treated as stored time, and the systems that keep it from leaking.</p>
+      <span class="go">Open Finsage →</span>
+    </a>
+  </div>
+</section>
+
+
+<section class="wrap" id="film">
+  <div class="sechead">
+    <p class="eyebrow">The moving image</p>
+    <h2>The cosmos, rendered.</h2>
+    <p>
+      Every book in this arm has a film beside it — and in more than one case the film came first.
+      What you see below is not promotion attached after the fact: it is where several of these works
+      were born, and where the ideas are still being tested in public.
+    </p>
+  </div>
+  <div class="rule"></div>
+
+  <div class="vwrap">
+  <div class="vhero" role="button" tabindex="0" data-yt="syT-OJEQ9vE" data-title="The Great Filter — Civilization's Ultimate Test" data-short="0">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/syT-OJEQ9vE/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/syT-OJEQ9vE/hqdefault.jpg'" alt="The Great Filter — Civilization's Ultimate Test" loading="lazy" />
+    <div class="shade"></div>
+    <div class="play" aria-hidden="true"></div>
+    <div class="cap"><h3>The Great Filter — Civilization's Ultimate Test</h3><p>Full cinematic documentary. The question the whole Mindfax line circles: if the universe is old and wide, where is everyone — and which side of the filter are we standing on?</p></div>
+  </div>
+</div>
+  </div>
+
+  <div class="vmeta">
+    <span>Full documentary · 5:10</span>
+    <a href="https://www.youtube.com/@mindfaxart" target="_blank" rel="noopener">All 28 pieces on the channel ↗</a>
+  </div>
+
+  <div class="sechead" style="margin-top:3.4rem">
+    <p class="eyebrow">Origins</p>
+    <h2>The films that became books.</h2>
+    <p>
+      The clearest evidence of how this studio actually works: an idea is filmed, tested in the open,
+      and only then written. The Dark Forest short became The Second Forest. The Time Crystal became
+      The Architect — Time.
+    </p>
+  </div>
+  <div class="vgrid short">
+    <div class="vcard" role="button" tabindex="0" data-yt="1MC89Z2gBUE" data-title="The Book That Wasn't Meant for Humans" data-short="1">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/1MC89Z2gBUE/hqdefault.jpg" alt="The Book That Wasn't Meant for Humans" loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>The Book That Wasn't Meant for Humans</b><span>Artifact — The Continuum</span></div>
+  </div>
+</div><div class="vcard" role="button" tabindex="0" data-yt="vfLVtm5SdRI" data-title="The Dark Forest" data-short="1">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/vfLVtm5SdRI/hqdefault.jpg" alt="The Dark Forest" loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>The Dark Forest</b><span>Origin of The Second Forest</span></div>
+  </div>
+</div><div class="vcard" role="button" tabindex="0" data-yt="LgrDrsJ4UzA" data-title="The First Rupture: You Didn't Collapse — You Awakened" data-short="1">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/LgrDrsJ4UzA/hqdefault.jpg" alt="The First Rupture: You Didn't Collapse — You Awakened" loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>The First Rupture: You Didn't Collapse — You Awakened</b><span>The Architect · Early Edition</span></div>
+  </div>
+</div><div class="vcard" role="button" tabindex="0" data-yt="mqrqu_I2RQU" data-title="The Time Crystal: Proof that Physics Can Be Broken" data-short="1">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/mqrqu_I2RQU/hqdefault.jpg" alt="The Time Crystal: Proof that Physics Can Be Broken" loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>The Time Crystal: Proof that Physics Can Be Broken</b><span>Origin of The Architect — Time</span></div>
+  </div>
+</div><div class="vcard" role="button" tabindex="0" data-yt="CLrYJy-5bc4" data-title="Artifact — The Call of Light" data-short="1">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/CLrYJy-5bc4/hqdefault.jpg" alt="Artifact — The Call of Light" loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>Artifact — The Call of Light</b><span>A limited cinematic Continuum</span></div>
+  </div>
+</div><div class="vcard" role="button" tabindex="0" data-yt="6t_4ave0sUE" data-title="We don't archive words. We archive light." data-short="1">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/6t_4ave0sUE/hqdefault.jpg" alt="We don't archive words. We archive light." loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>We don't archive words. We archive light.</b><span>Artifact — The Continuum</span></div>
+  </div>
+</div>
+  </div>
+
+  <div class="sechead" style="margin-top:3.4rem">
+    <p class="eyebrow">The cosmos file</p>
+    <h2>Speculative science, in the open.</h2>
+    <p>Physics at the edge of the known, told as story rather than lecture — the raw material of the arm.</p>
+  </div>
+  <div class="vgrid short">
+    <div class="vcard" role="button" tabindex="0" data-yt="Zs164UnFht8" data-title="The Great Filter: Why We Might Be Alone" data-short="1">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/Zs164UnFht8/hqdefault.jpg" alt="The Great Filter: Why We Might Be Alone" loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>The Great Filter: Why We Might Be Alone</b><span>Most watched</span></div>
+  </div>
+</div><div class="vcard" role="button" tabindex="0" data-yt="CrZIvnsPIY8" data-title="The Scariest Theory in Physics: False Vacuum" data-short="1">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/CrZIvnsPIY8/hqdefault.jpg" alt="The Scariest Theory in Physics: False Vacuum" loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>The Scariest Theory in Physics: False Vacuum</b><span></span></div>
+  </div>
+</div><div class="vcard" role="button" tabindex="0" data-yt="AERETsBy4Go" data-title="White Holes: The Forbidden Side of the Universe" data-short="1">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/AERETsBy4Go/hqdefault.jpg" alt="White Holes: The Forbidden Side of the Universe" loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>White Holes: The Forbidden Side of the Universe</b><span></span></div>
+  </div>
+</div><div class="vcard" role="button" tabindex="0" data-yt="uUr-38Rtp5M" data-title="Baby Universes: Where Reality Splits Itself" data-short="1">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/uUr-38Rtp5M/hqdefault.jpg" alt="Baby Universes: Where Reality Splits Itself" loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>Baby Universes: Where Reality Splits Itself</b><span></span></div>
+  </div>
+</div><div class="vcard" role="button" tabindex="0" data-yt="OvPtOu6Ti9I" data-title="3I/ATLAS — The Object Science Cannot Explain" data-short="1">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/OvPtOu6Ti9I/hqdefault.jpg" alt="3I/ATLAS — The Object Science Cannot Explain" loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>3I/ATLAS — The Object Science Cannot Explain</b><span></span></div>
+  </div>
+</div><div class="vcard" role="button" tabindex="0" data-yt="7NRB6JrZzVA" data-title="The Evil Axis of the Universe" data-short="1">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/7NRB6JrZzVA/hqdefault.jpg" alt="The Evil Axis of the Universe" loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>The Evil Axis of the Universe</b><span></span></div>
+  </div>
+</div><div class="vcard" role="button" tabindex="0" data-yt="teDN1GQASB0" data-title="Time Is Breaking" data-short="1">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/teDN1GQASB0/hqdefault.jpg" alt="Time Is Breaking" loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>Time Is Breaking</b><span></span></div>
+  </div>
+</div><div class="vcard" role="button" tabindex="0" data-yt="__X-N_FlbLM" data-title="The Silence Paradox" data-short="1">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/__X-N_FlbLM/hqdefault.jpg" alt="The Silence Paradox" loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>The Silence Paradox</b><span></span></div>
+  </div>
+</div><div class="vcard" role="button" tabindex="0" data-yt="6wIHVqlZpIk" data-title="The Star That Vanished Without a Supernova" data-short="1">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/6wIHVqlZpIk/hqdefault.jpg" alt="The Star That Vanished Without a Supernova" loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>The Star That Vanished Without a Supernova</b><span></span></div>
+  </div>
+</div><div class="vcard" role="button" tabindex="0" data-yt="TUHnXZXARas" data-title="Black Hole Twists Space-Time" data-short="1">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/TUHnXZXARas/hqdefault.jpg" alt="Black Hole Twists Space-Time" loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>Black Hole Twists Space-Time</b><span></span></div>
+  </div>
+</div><div class="vcard" role="button" tabindex="0" data-yt="NNOdTeLuaz0" data-title="Are Advanced Civilizations Watching Earth?" data-short="1">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/NNOdTeLuaz0/hqdefault.jpg" alt="Are Advanced Civilizations Watching Earth?" loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>Are Advanced Civilizations Watching Earth?</b><span></span></div>
+  </div>
+</div><div class="vcard" role="button" tabindex="0" data-yt="vR1VgW3EBLE" data-title="The Day Time Almost Stopped" data-short="1">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/vR1VgW3EBLE/hqdefault.jpg" alt="The Day Time Almost Stopped" loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>The Day Time Almost Stopped</b><span></span></div>
+  </div>
+</div>
+  </div>
+
+  <div class="vmeta">
+    <a href="https://www.youtube.com/@mindfaxart" target="_blank" rel="noopener">@mindfaxart ↗</a>
+    <span>28 published pieces · 3 documentaries · 25 shorts</span>
+  </div>
+  <p class="vnote">
+    Nothing plays until you press play — no third-party video script loads with this page, and every
+    frame is served by YouTube only after a click. Audience figures are not claimed here; the body of
+    work is.
+  </p>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap footgrid">
+    <div>
+      <h4>Mindfax</h4>
+      <p style="margin:0;max-width:46ch">
+        The cosmos arm of The Architect Universe. Written, designed and published by one author,
+        with AI as an instrument under human direction.
+      </p>
+    </div>
+    <div>
+      <h4>Works</h4>
+      <a href="/thecontinuum/">Artifact — The Continuum</a>
+      <a href="/thesecondforestproject/">The Second Forest</a>
+      <a href="/thefreedomprotocol/">The Freedom Protocol — Volume Zero</a>
+      <a href="/thearchitectuniverse/">The Architect Universe</a>
+    </div>
+    <div>
+      <h4>Elsewhere</h4>
+      <a href="https://www.youtube.com/@mindfaxart" target="_blank" rel="noopener">YouTube ↗</a>
+      <a href="https://medium.com/@iamediafactory.studio" target="_blank" rel="noopener">Medium ↗</a>
+      <a href="/">Back to the studio</a>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+(function(){
+  function mount(el){
+    if(el.dataset.on) return; el.dataset.on='1';
+    var id=el.dataset.yt, sh=el.dataset.short==='1';
+    var f=document.createElement('iframe');
+    f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1';
+    f.title=el.dataset.title||'Video';
+    f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture';
+    f.allowFullscreen=true;
+    el.querySelector('.th').appendChild(f);
+  }
+  document.addEventListener('click',function(e){
+    var t=e.target.closest('[data-yt]');
+    if(t){ e.preventDefault(); mount(t); }
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key!=='Enter'&&e.key!==' ')return;
+    var t=document.activeElement&&document.activeElement.closest&&document.activeElement.closest('[data-yt]');
+    if(t){ e.preventDefault(); mount(t); }
+  });
+})();
+</script>
+
+</body>
+</html>
