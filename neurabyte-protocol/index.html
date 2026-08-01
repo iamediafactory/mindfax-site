@@ -494,6 +494,18 @@
   </style>
 </head>
 <body>
+<style>
+.mfxbar{position:sticky;top:0;z-index:9999;display:flex;gap:0;align-items:center;justify-content:center;
+ flex-wrap:wrap;padding:.5rem .8rem;font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:.74rem;
+ letter-spacing:.13em;text-transform:uppercase;background:rgba(6,6,12,.93);
+ backdrop-filter:saturate(150%) blur(14px);border-bottom:1px solid #f9731633}
+.mfxbar a{color:#9aa0b8;text-decoration:none;padding:.34rem .8rem;transition:color .2s;white-space:nowrap}
+.mfxbar a:hover{color:#f97316}
+.mfxbar a.on{color:#f97316;font-weight:600}
+.mfxbar .sep{color:#3a3f52}
+</style>
+<nav class="mfxbar" aria-label="Ecosystem"><a href="/">Studio</a><a href="/thearchitectuniverse/">The Architect</a><a href="/thefreedomprotocol/">Volume Zero</a><a href="/mindfax/">Mindfax</a><a href="/neurabyte/" class="on">Neurabyte</a><a href="/finsage-universe/">Finsage</a></nav>
+
 <div class="page">
   <!-- HERO -->
   <header class="hero">
@@ -744,12 +756,99 @@
   </style>
   <div class="mfx-in">
     <span class="mfx-lbl">The MINDFAX ecosystem</span>
-    <div class="mfx-links"><a href="/">Home</a><a href="/thearchitectuniverse/">The Architect Universe</a><a href="/architect-early/">Early Edition</a><a href="/thecontinuum/">The Continuum</a><a href="/thefreedomprotocol/">Freedom Protocol</a><a href="/finsage/">Finsage</a><span aria-current="page">Neurabyte</span><a href="/aiplayground/">AI Playground</a><a href="/thesecondforestproject/">The Second Forest</a></div>
+    <div class="mfx-links"><a href="/">Home</a><a href="/thearchitectuniverse/">The Architect Universe</a><a href="/architect-early/">Early Edition</a><a href="/thecontinuum/">The Continuum</a><a href="/thefreedomprotocol/">Freedom Protocol</a><a href="/finsage-universe/">Finsage</a><span aria-current="page">Neurabyte</span><a href="/aiplayground/">AI Playground</a><a href="/thesecondforestproject/">The Second Forest</a></div>
     <p class="mfx-cp">© <span class="mfx-y"></span> MINDFAX · IA Media Factory Publishing™ · All rights reserved.</p>
   </div>
   <script>document.querySelectorAll(".mfx-y").forEach(function(e){e.textContent=new Date().getFullYear()});</script>
 </nav>
 <!-- ===== /MINDFAX ecosystem nav ===== -->
+
+<style>
+.mfxfilm{--a:#f97316;background:#02030a;color:#e8e8f2;padding:clamp(2.6rem,6vw,4.4rem) 0;
+ font-family:"IBM Plex Sans",system-ui,-apple-system,sans-serif;line-height:1.7;
+ border-top:1px solid var(--a)2e}
+.mfxfilm *{box-sizing:border-box}
+.mfxfilm .w{width:min(1180px,92vw);margin-inline:auto}
+.mfxfilm .eb{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--a);margin:0 0 .8rem;font-weight:600}
+.mfxfilm h2{font-size:clamp(1.35rem,3vw,2rem);margin:0 0 .7rem;line-height:1.18;font-weight:700}
+.mfxfilm .sb{color:#9ea4bb;margin:0 0 2rem;max-width:62ch;font-size:.95rem}
+.mfxfilm .hero{position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--a)3d;
+ background:#05060c;cursor:pointer;display:block}
+.mfxfilm .th{position:relative;aspect-ratio:16/9;overflow:hidden}
+.mfxfilm .g9 .th{aspect-ratio:9/16}
+.mfxfilm .th img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.mfxfilm .hero:hover .th img,.mfxfilm .c:hover .th img{transform:scale(1.05)}
+.mfxfilm .sh{position:absolute;inset:0;background:linear-gradient(180deg,transparent 38%,rgba(0,0,0,.9))}
+.mfxfilm .pl{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:4;width:70px;height:70px;
+ border-radius:50%;display:grid;place-items:center;background:rgba(8,8,16,.55);border:1px solid var(--a);
+ backdrop-filter:blur(6px);transition:.25s}
+.mfxfilm .pl::after{content:"";width:0;height:0;margin-left:5px;border-left:18px solid var(--a);
+ border-top:12px solid transparent;border-bottom:12px solid transparent}
+.mfxfilm .hero:hover .pl,.mfxfilm .c:hover .pl{transform:translate(-50%,-50%) scale(1.1);background:rgba(8,8,16,.8)}
+.mfxfilm .c .pl{width:44px;height:44px}
+.mfxfilm .c .pl::after{border-left-width:13px;border-top-width:8px;border-bottom-width:8px;margin-left:3px}
+.mfxfilm .cp{position:absolute;left:0;right:0;bottom:0;padding:clamp(1rem,2.6vw,1.7rem);z-index:3}
+.mfxfilm .cp h3{margin:0 0 .3rem;font-size:clamp(1rem,2vw,1.35rem);font-weight:700}
+.mfxfilm .cp p{margin:0;color:#c4c8da;font-size:.88rem;max-width:58ch}
+.mfxfilm .c .cp{padding:.7rem .8rem}
+.mfxfilm .c .cp b{display:block;font-size:.77rem;line-height:1.3;color:#f0eefb}
+.mfxfilm .c .cp span{display:block;font-size:.65rem;color:#a3a7bd;margin-top:.18rem;letter-spacing:.05em}
+.mfxfilm .gr{display:grid;gap:1rem;margin-top:1.2rem}
+@media(min-width:640px){.mfxfilm .g16{grid-template-columns:repeat(2,1fr)}.mfxfilm .g9{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:1000px){.mfxfilm .g16{grid-template-columns:repeat(3,1fr)}.mfxfilm .g9{grid-template-columns:repeat(6,1fr)}}
+.mfxfilm .c{position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--a)2e;background:#05060c;
+ cursor:pointer;display:block;transition:.25s}
+.mfxfilm .c:hover{border-color:var(--a);transform:translateY(-3px)}
+.mfxfilm iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:9}
+.mfxfilm .mt{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;margin-top:1.5rem;font-size:.76rem;color:#8b90a6}
+.mfxfilm .mt a{border:1px solid var(--a)3d;border-radius:999px;padding:.34rem .85rem;color:#c8ccdc;text-decoration:none;transition:.2s}
+.mfxfilm .mt a:hover{border-color:var(--a);color:var(--a)}
+.mfxfoot{background:#02030a;color:#8b90a6;font-family:"IBM Plex Sans",system-ui,sans-serif;
+ padding:2.4rem 0 3.2rem;font-size:.82rem;border-top:1px solid var(--a,#4fd1ff)1f}
+.mfxfoot .w{width:min(1180px,92vw);margin-inline:auto;display:grid;gap:1.4rem}
+@media(min-width:820px){.mfxfoot .w{grid-template-columns:1.6fr 1fr 1fr 1fr}}
+.mfxfoot h4{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:#f97316;margin:0 0 .6rem;font-weight:700}
+.mfxfoot a{display:block;color:#8b90a6;text-decoration:none;padding:.16rem 0}
+.mfxfoot a:hover{color:#f97316}
+</style>
+
+<section class="mfxfilm"><div class="w">
+<p class="eb">The protocol on film</p><h2>The argument, at length.</h2><p class="sb">Three long-form pieces that carry the position this kit turns into practice: attention under attack, the cost of outsourcing thought, and why more AI tools made people slower.</p>
+<div class="hero" role="button" tabindex="0" data-yt="MIyniiyXHtA" data-title="The BYOAI Failure — why 7 AI apps made you slower"><div class="th">
+<img src="https://i.ytimg.com/vi/MIyniiyXHtA/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/MIyniiyXHtA/hqdefault.jpg'" alt="The BYOAI Failure — why 7 AI apps made you slower" loading="lazy" />
+<div class="sh"></div><div class="pl"></div><div class="cp"><h3>The BYOAI Failure — why 7 AI apps made you slower</h3><p>8:05. The diagnosis the Neurabyte Protocol was written to answer: fragmentation dressed up as productivity.</p></div></div></div><div class="gr g16"><div class="c" role="button" tabindex="0" data-yt="n2MwN1E-VbY" data-title="Cognitive Overload: Why Your Brain Is Breaking"><div class="th">
+<img src="https://i.ytimg.com/vi/n2MwN1E-VbY/hqdefault.jpg" alt="Cognitive Overload: Why Your Brain Is Breaking" loading="lazy" /><div class="sh"></div><div class="pl"></div>
+<div class="cp"><b>Cognitive Overload: Why Your Brain Is Breaking</b><span>8:49</span></div></div></div><div class="c" role="button" tabindex="0" data-yt="OxdDUiPSwaM" data-title="How Algorithms Rewire Your Mind"><div class="th">
+<img src="https://i.ytimg.com/vi/OxdDUiPSwaM/hqdefault.jpg" alt="How Algorithms Rewire Your Mind" loading="lazy" /><div class="sh"></div><div class="pl"></div>
+<div class="cp"><b>How Algorithms Rewire Your Mind</b><span>3:30</span></div></div></div><div class="c" role="button" tabindex="0" data-yt="7tyu_7Eu8ds" data-title="Reality Is a Cognitive Model"><div class="th">
+<img src="https://i.ytimg.com/vi/7tyu_7Eu8ds/hqdefault.jpg" alt="Reality Is a Cognitive Model" loading="lazy" /><div class="sh"></div><div class="pl"></div>
+<div class="cp"><b>Reality Is a Cognitive Model</b><span>Short</span></div></div></div></div>
+<div class="mt"><a href="https://www.youtube.com/@NeuraByteIA" target="_blank" rel="noopener">@NeuraByteIA ↗</a>
+<span>Nothing loads until you press play.</span></div>
+</div></section>
+<footer class="mfxfoot"><div class="w">
+<div><h4>The Architect Universe</h4><p style="margin:0;max-width:42ch;color:#8b90a6">
+One axis, one doctrine, three arms. Written, designed and published by one author, with AI as an
+instrument under human direction.</p></div>
+<div><h4>The arms</h4>
+<a href="/mindfax/">Mindfax · the cosmos</a><a href="/neurabyte/">Neurabyte · the mind</a><a href="/finsage-universe/">Finsage · the matter</a></div>
+<div><h4>The root</h4>
+<a href="/thearchitectuniverse/">The Architect Universe</a><a href="/thefreedomprotocol/">The Freedom Protocol — Volume Zero</a><a href="/architect-early/">The Architect · Early Edition</a></div>
+<div><h4>Channels</h4>
+<a href="https://www.youtube.com/@mindfaxart" target="_blank" rel="noopener">Mindfax ↗</a>
+<a href="https://www.youtube.com/@NeuraByteIA" target="_blank" rel="noopener">Neurabyte ↗</a>
+<a href="https://www.youtube.com/@FinSageIA" target="_blank" rel="noopener">Finsage ↗</a>
+<a href="https://www.youtube.com/@AIPlaygroundSystem" target="_blank" rel="noopener">AI Playground ↗</a></div>
+</div></footer>
+
+<script>(function(){function m(el){if(el.dataset.on)return;el.dataset.on='1';
+var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+el.dataset.yt+'?autoplay=1&rel=0&modestbranding=1';
+f.title=el.dataset.title||'Video';f.allow='accelerometer; autoplay; encrypted-media; picture-in-picture';f.allowFullscreen=true;
+el.querySelector('.th').appendChild(f);}
+document.addEventListener('click',function(e){var t=e.target.closest('.mfxfilm [data-yt]');if(t){e.preventDefault();m(t);}});
+document.addEventListener('keydown',function(e){if(e.key!=='Enter'&&e.key!==' ')return;
+var t=document.activeElement&&document.activeElement.closest&&document.activeElement.closest('.mfxfilm [data-yt]');if(t){e.preventDefault();m(t);}});})();</script>
+
 </body>
 </html>
 
