@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NEURABYTE — Human Cognition in the Age of AI</title>
+<meta name="description" content="NEURABYTE is the cognitive arm of The Architect Universe: attention, deep work and human judgment beside machines. Home of the Neurabyte Protocol and AI Playground." />
+<link rel="canonical" href="https://mindfax.art/neurabyte/" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Mateus Lolas" />
+<meta name="theme-color" content="#071726" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="MINDFAX" />
+<meta property="og:url" content="https://mindfax.art/neurabyte/" />
+<meta property="og:title" content="NEURABYTE — Human Cognition in the Age of AI" />
+<meta property="og:description" content="Attention, deep work and human judgment beside machines. The Neurabyte Protocol and AI Playground." />
+<meta property="og:image" content="https://mindfax.art/assets/brand/neurabyte-logo.webp" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="NEURABYTE — Human Cognition in the Age of AI" />
+<meta name="twitter:description" content="Attention, deep work and human judgment beside machines." />
+<meta name="twitter:image" content="https://mindfax.art/assets/brand/neurabyte-logo.webp" />
+<link rel="apple-touch-icon" href="/assets/icon-180.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CollectionPage","name":"NEURABYTE — The Mind Arm","url":"https://mindfax.art/neurabyte/","isPartOf":{"@type":"WebSite","name":"MINDFAX","url":"https://mindfax.art/"},"author":{"@type":"Person","name":"Mateus Lolas"}}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#071726; --bg-2:#0a2033; --panel:#0d2537; --panel-2:#102b40;
+  --blue:#2b7fc4; --blue-lt:#4aa3e0; --ice:#a8cadf;
+  --orange:#f97316; --orange-soft:rgba(249,115,22,.13);
+  --text:#e6f0f7; --muted:#8fabc2; --border:rgba(74,163,224,.2);
+  --radius:18px; --maxw:1180px;
+}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);
+  font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{width:min(var(--maxw),92vw);margin-inline:auto;position:relative;z-index:2}
+h1,h2,h3{margin:0;font-weight:700;line-height:1.14;letter-spacing:.02em}
+h1,h2{text-transform:uppercase;letter-spacing:.06em}
+.eyebrow{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--orange);
+  font-weight:600;margin:0 0 1rem}
+
+/* circuit field */
+.field{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 55% 40% at 84% 4%, rgba(249,115,22,.13), transparent 62%),
+    radial-gradient(ellipse 60% 45% at 10% 16%, rgba(43,127,196,.20), transparent 65%),
+    radial-gradient(ellipse 100% 55% at 50% 110%, rgba(43,127,196,.12), transparent 62%)}
+.gridlines{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.32;
+  background-image:linear-gradient(rgba(74,163,224,.10) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(74,163,224,.10) 1px,transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(ellipse 80% 60% at 50% 20%,#000 20%,transparent 78%);
+  -webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 20%,#000 20%,transparent 78%)}
+
+header.site{position:sticky;top:0;z-index:60;backdrop-filter:saturate(150%) blur(16px);
+  background:linear-gradient(180deg,rgba(7,23,38,.96),rgba(7,23,38,.72),transparent);
+  border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.75rem 0;flex-wrap:wrap}
+.brandmark{display:flex;align-items:center;gap:.6rem;font-weight:700;letter-spacing:.22em;font-size:.85rem;
+  text-transform:uppercase;color:var(--ice)}
+.brandmark img{width:34px;height:34px;border-radius:8px}
+.navlinks{display:flex;gap:1.35rem;font-size:.82rem;color:var(--muted);flex-wrap:wrap}
+.navlinks a:hover{color:var(--orange)}
+.navlinks a.on{color:var(--orange)}
+
+.hero{position:relative;padding:4.5rem 0 3.2rem}
+.hero-grid{display:grid;gap:3rem;align-items:center}
+@media(min-width:900px){.hero-grid{grid-template-columns:1.1fr .9fr}}
+.hero h1{font-size:clamp(2.1rem,5.4vw,3.7rem)}
+.hero h1 em{font-style:normal;color:var(--orange)}
+.hero .lede{max-width:54ch;color:var(--muted);margin:1.5rem 0 0;font-size:1.04rem}
+.trail{font-size:.74rem;color:var(--muted);letter-spacing:.12em;margin:0 0 1.1rem;text-transform:uppercase}
+.trail a{color:var(--blue-lt)}
+.cta{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:2.1rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.5rem;border-radius:8px;
+  font-size:.85rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  border:1px solid var(--border);transition:.22s}
+.btn.primary{background:var(--orange);color:#12222e;border-color:transparent}
+.btn.primary:hover{filter:brightness(1.1);transform:translateY(-2px)}
+.btn.ghost{color:var(--ice)}
+.btn.ghost:hover{border-color:var(--orange);color:var(--orange);transform:translateY(-2px)}
+
+.mark{position:relative;justify-self:center;width:min(340px,78vw)}
+.mark img{width:100%;border-radius:20px;border:1px solid var(--border);
+  box-shadow:0 24px 70px rgba(0,0,0,.6),0 0 60px rgba(43,127,196,.22)}
+.mark .pulse{position:absolute;inset:-8%;border:1px solid rgba(249,115,22,.28);border-radius:26px;
+  animation:pulse 4.5s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.035);opacity:.95}}
+
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;
+  background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-top:1rem}
+.facts div{background:linear-gradient(160deg,var(--panel),var(--bg-2));padding:1.35rem 1.2rem;text-align:center}
+.facts b{display:block;font-size:1.65rem;font-weight:700;color:var(--orange)}
+.facts span{font-size:.73rem;color:var(--muted);letter-spacing:.08em}
+
+section{padding:clamp(3rem,7vw,5.5rem) 0;position:relative}
+.sechead{max-width:60ch;margin-bottom:2.4rem}
+.sechead h2{font-size:clamp(1.4rem,3.1vw,2.1rem)}
+.sechead p:not(.eyebrow){color:var(--muted);margin:.9rem 0 0;text-transform:none;letter-spacing:0}
+.rule{height:1px;background:linear-gradient(90deg,var(--orange),rgba(74,163,224,.3),transparent);margin:0 0 2.3rem}
+
+/* flagship */
+.flag{position:relative;border-radius:24px;overflow:hidden;border:1px solid rgba(249,115,22,.32);
+  background:#08131c;display:grid;gap:0}
+@media(min-width:940px){.flag{grid-template-columns:1.05fr .95fr}}
+.flag .art{position:relative;min-height:340px}
+.flag .art img{width:100%;height:100%;object-fit:cover;opacity:.9}
+.flag .art::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 40%,rgba(8,19,28,.9))}
+@media(min-width:940px){.flag .art::after{background:linear-gradient(90deg,transparent 45%,rgba(8,19,28,.95))}}
+.flag .txt{padding:clamp(1.6rem,4vw,3rem);display:flex;flex-direction:column;gap:1rem;justify-content:center}
+.flag .txt h3{font-size:clamp(1.6rem,3.4vw,2.3rem);text-transform:uppercase;letter-spacing:.06em}
+.flag .txt p{margin:0;color:var(--muted)}
+.flag .logo{width:120px;margin-bottom:.4rem;opacity:.95}
+.flag .id{font-size:.72rem;color:#6f90a8;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  border-top:1px dashed var(--border);padding-top:.7rem;letter-spacing:.03em}
+.flag .go{color:var(--orange);font-weight:600;font-size:.84rem;letter-spacing:.08em;text-transform:uppercase}
+
+.tag{display:inline-flex;align-self:flex-start;font-size:.61rem;letter-spacing:.2em;text-transform:uppercase;
+  font-weight:600;padding:.3rem .7rem;border-radius:6px;border:1px solid var(--border);color:var(--muted)}
+.tag.pub{color:#7fe0a5;border-color:rgba(127,224,165,.34);background:rgba(127,224,165,.07)}
+.tag.built{color:#ffd07a;border-color:rgba(255,208,122,.32);background:rgba(255,208,122,.06)}
+.tag.fs{color:var(--orange);border-color:rgba(249,115,22,.44);background:var(--orange-soft)}
+.tag.method{color:var(--blue-lt);border-color:rgba(74,163,224,.4);background:rgba(74,163,224,.08)}
+
+.gal{display:grid;gap:1rem;margin-top:1.5rem}
+@media(min-width:720px){.gal{grid-template-columns:repeat(3,1fr)}}
+.gal figure{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--border);position:relative;background:#08131c}
+.gal img{width:100%;aspect-ratio:16/10;object-fit:cover;opacity:.86;transition:transform .6s,opacity .3s}
+.gal figure:hover img{transform:scale(1.06);opacity:1}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:.75rem .9rem;font-size:.71rem;
+  font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#d6e7f2;
+  background:linear-gradient(180deg,transparent,rgba(7,23,38,.92))}
+
+.works{display:grid;gap:1.5rem;margin-top:1.6rem}
+@media(min-width:820px){.works{grid-template-columns:repeat(2,1fr)}}
+.work{position:relative;display:grid;grid-template-columns:150px 1fr;gap:1.3rem;
+  background:linear-gradient(155deg,var(--panel),rgba(8,19,28,.7));border:1px solid var(--border);
+  border-radius:var(--radius);padding:1.4rem;transition:.26s}
+.work:hover{border-color:rgba(249,115,22,.45);transform:translateY(-4px)}
+.work .cov{border-radius:10px;overflow:hidden;box-shadow:0 16px 40px rgba(0,0,0,.6);align-self:start}
+.work .cov img{width:100%;aspect-ratio:2/3;object-fit:cover;transition:transform .5s}
+.work:hover .cov img{transform:scale(1.05)}
+.work .meat{display:flex;flex-direction:column;gap:.6rem;min-width:0}
+.work h3{font-size:1.02rem;text-transform:uppercase;letter-spacing:.05em}
+.work p{margin:0;color:var(--muted);font-size:.89rem}
+.work .go{margin-top:auto;font-size:.79rem;color:var(--orange);font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.work .id{font-size:.7rem;color:#6f90a8;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  border-top:1px dashed var(--border);padding-top:.55rem;letter-spacing:.03em}
+@media(max-width:520px){.work{grid-template-columns:108px 1fr;gap:1rem;padding:1.1rem}}
+
+.note{border-left:2px solid var(--orange);padding:.15rem 0 .15rem 1.2rem;color:var(--muted);
+  font-size:.9rem;max-width:66ch;margin:2.2rem 0 0}
+
+.arms{display:grid;gap:1.2rem}
+@media(min-width:820px){.arms{grid-template-columns:repeat(3,1fr)}}
+.arm{border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;
+  background:linear-gradient(160deg,var(--panel),rgba(7,19,30,.5));transition:.25s;display:flex;flex-direction:column;gap:.55rem}
+.arm:hover{transform:translateY(-4px);border-color:rgba(249,115,22,.42)}
+.arm h3{font-size:1rem;text-transform:uppercase;letter-spacing:.06em}
+.arm p{margin:0;color:var(--muted);font-size:.87rem}
+.arm .go{font-size:.78rem;color:var(--orange);margin-top:auto;padding-top:.5rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+
+.chans{display:grid;gap:1.1rem}
+@media(min-width:720px){.chans{grid-template-columns:repeat(2,1fr)}}
+.chan{display:flex;align-items:center;gap:1rem;border:1px solid var(--border);border-radius:12px;
+  padding:1.1rem 1.3rem;background:rgba(255,255,255,.02);transition:.22s}
+.chan:hover{border-color:rgba(249,115,22,.5);background:var(--orange-soft);transform:translateY(-2px)}
+.chan .dot{width:9px;height:9px;border-radius:50%;background:var(--orange);flex:none;box-shadow:0 0 12px var(--orange)}
+.chan strong{display:block;font-size:.92rem;font-weight:700;letter-spacing:.05em}
+.chan span{font-size:.79rem;color:var(--muted)}
+
+footer.site{border-top:1px solid var(--border);padding:3rem 0 4rem;margin-top:2rem;color:var(--muted);font-size:.85rem;position:relative;z-index:2}
+.footgrid{display:grid;gap:2rem}
+@media(min-width:800px){.footgrid{grid-template-columns:1.5fr 1fr 1fr}}
+.footgrid h4{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--orange);margin:0 0 .9rem;font-weight:700}
+.footgrid a{display:block;padding:.2rem 0}
+.footgrid a:hover{color:var(--orange)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+:root{--vline:rgba(74,163,224,.24);--vaccent:#f97316;--vmuted:#8fabc2}
+
+/* ---------- video system ---------- */
+.vwrap{margin-top:.4rem}
+.vhero{position:relative;border-radius:22px;overflow:hidden;border:1px solid var(--vline);
+  background:#05060c;cursor:pointer;display:block}
+.vhero .th{position:relative;aspect-ratio:16/9;overflow:hidden}
+.vhero .th img{width:100%;height:100%;object-fit:cover;transition:transform .7s,filter .4s;filter:saturate(1.05)}
+.vhero:hover .th img{transform:scale(1.04)}
+.vhero .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15) 30%,rgba(0,0,0,.86))}
+.vhero .cap{position:absolute;left:0;right:0;bottom:0;padding:clamp(1.1rem,3vw,2rem);z-index:3}
+.vhero .cap h3{font-size:clamp(1.05rem,2.4vw,1.6rem);margin:0 0 .4rem}
+.vhero .cap p{margin:0;color:#c9c9dd;font-size:.9rem;max-width:60ch}
+.play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:4;
+  width:78px;height:78px;border-radius:50%;display:grid;place-items:center;
+  background:rgba(10,10,18,.55);border:1px solid var(--vaccent);backdrop-filter:blur(6px);transition:.25s}
+.play::after{content:"";width:0;height:0;margin-left:5px;
+  border-left:20px solid var(--vaccent);border-top:13px solid transparent;border-bottom:13px solid transparent}
+.vhero:hover .play,.vcard:hover .play{transform:translate(-50%,-50%) scale(1.09);background:rgba(10,10,18,.78)}
+.vhero iframe,.vcard iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:9}
+
+.vgrid{display:grid;gap:1.1rem;margin-top:1.3rem}
+@media(min-width:640px){.vgrid.long{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.vgrid.long{grid-template-columns:repeat(3,1fr)}}
+.vgrid.short{grid-template-columns:repeat(2,1fr)}
+@media(min-width:640px){.vgrid.short{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:1000px){.vgrid.short{grid-template-columns:repeat(6,1fr)}}
+.vcard{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--vline);
+  background:#05060c;cursor:pointer;display:block;transition:.25s}
+.vcard:hover{border-color:var(--vaccent);transform:translateY(-3px)}
+.vcard .th{position:relative;aspect-ratio:16/9;overflow:hidden}
+.vgrid.short .vcard .th{aspect-ratio:9/16}
+.vcard .th img{width:100%;height:100%;object-fit:cover;opacity:.92;transition:transform .6s,opacity .3s}
+.vcard:hover .th img{transform:scale(1.06);opacity:1}
+.vcard .shade{position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(0,0,0,.9))}
+.vcard .play{width:46px;height:46px}
+.vcard .play::after{border-left-width:14px;border-top-width:9px;border-bottom-width:9px;margin-left:3px}
+.vcard .cap{position:absolute;left:0;right:0;bottom:0;padding:.7rem .8rem;z-index:3}
+.vcard .cap b{display:block;font-size:.78rem;font-weight:600;line-height:1.3;color:#f0eefb}
+.vcard .cap span{display:block;font-size:.66rem;color:#a9a6c0;margin-top:.2rem;letter-spacing:.06em}
+.vmeta{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;margin-top:1.4rem;font-size:.76rem;color:var(--vmuted)}
+.vmeta a{border:1px solid var(--vline);border-radius:999px;padding:.34rem .8rem;transition:.2s}
+.vmeta a:hover{border-color:var(--vaccent);color:var(--vaccent)}
+.vnote{font-size:.78rem;color:var(--vmuted);margin-top:1rem;max-width:70ch}
+
+</style>
+</head>
+<body>
+<div class="field"></div><div class="gridlines"></div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brandmark" href="/"><img src="/assets/brand/mindfax-logo.webp" alt="" width="34" height="34" style="border-radius:50%" /><span>Mindfax</span></a>
+    <nav class="navlinks">
+      <a href="/">Studio</a>
+      <a href="/thearchitectuniverse/">The Architect</a>
+      <a href="/thefreedomprotocol/">Volume Zero</a>
+      <a href="/mindfax/">Mindfax</a>
+      <a class="on" href="/neurabyte/">Neurabyte</a>
+      <a href="/finsage-universe/">Finsage</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="trail"><a href="/">Mindfax studio</a> &nbsp;·&nbsp; <a href="/thearchitectuniverse/">The Architect Universe</a> &nbsp;·&nbsp; the mind arm</p>
+      <p class="eyebrow">Human cognition in the age of AI</p>
+      <h1>Attention is the last<br /><em>asset you own.</em></h1>
+      <p class="lede">
+        Neurabyte is the cognitive arm of The Architect Universe. Where Mindfax imagines and Finsage
+        accounts, Neurabyte trains: how to hold a thought long enough to finish it, how to work beside
+        a machine without handing it your judgment, and how to raise a mind — your own or a child's —
+        in a world that already thinks back.
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="#flagship">The works</a>
+        <a class="btn ghost" href="https://www.youtube.com/@NeuraByteIA" target="_blank" rel="noopener">The channel ↗</a>
+      </div>
+    </div>
+    <div class="mark">
+      <div class="pulse"></div>
+      <img src="/assets/brand/neurabyte-logo.webp" alt="Neurabyte — human cognition in the age of AI" width="340" height="340" />
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="facts">
+      <div><b>1</b><span>Published with ASIN</span></div>
+      <div><b>1</b><span>Live product portal</span></div>
+      <div><b>1</b><span>Premium edition built</span></div>
+      <div><b>2</b><span>Own video channels</span></div>
+    </div>
+  </div>
+</div>
+
+<section class="wrap" id="flagship">
+  <div class="sechead">
+    <p class="eyebrow">The flagship</p>
+    <h2>AI Playground is the major work of this arm.</h2>
+    <p>
+      It is easy to miss, because it carries its own name and its own channel. But it belongs here: it
+      is the fullest expression of what Neurabyte argues — that the answer to intelligent machines is
+      not fear and not surrender, but trained judgment.
+    </p>
+  </div>
+  <div class="rule"></div>
+
+  <a class="flag" href="/aiplayground/">
+    <div class="art"><img src="/assets/brand/ap-hero.webp" alt="AI Playground — contemplation, father and child before the cosmos" loading="lazy" /></div>
+    <div class="txt">
+      <img class="logo" src="/assets/brand/aiplayground-logo.webp" alt="AI Playground" width="120" height="120" loading="lazy" />
+      <span class="tag fs">Flagship · published with ASIN</span>
+      <h3>AI Playground</h3>
+      <p>
+        Raising children in a world that already thinks back. Not a book about AI safety and not a
+        list of parental controls — a method for building discernment early, so a young mind meets a
+        confident machine with something of its own to say.
+      </p>
+      <p>
+        It outgrew a single book: it is now a system, an ecosystem of documents, a live portal and a
+        dedicated channel.
+      </p>
+      <span class="go">Open the system portal →</span>
+      <span class="id">Amazon ASIN B0G9V2HHW9 · channel @AIPlaygroundSystem · live portal</span>
+    </div>
+  </a>
+
+  <div class="gal">
+    <figure><img src="/assets/brand/ap-raising.webp" alt="Raising children in a new world" loading="lazy" /><figcaption>Raising children in a new world</figcaption></figure>
+    <figure><img src="/assets/brand/ap-missions.webp" alt="Risk traffic light — judgment" loading="lazy" /><figcaption>Risk traffic light · judgment</figcaption></figure>
+    <figure><img src="/assets/brand/ap-learn.webp" alt="How children learn effort" loading="lazy" /><figcaption>How children learn effort</figcaption></figure>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="sechead">
+    <p class="eyebrow">The applied end</p>
+    <h2>Where the argument becomes a Tuesday morning.</h2>
+    <p>The tools that turn the position into something you actually run.</p>
+  </div>
+  <div class="rule"></div>
+
+  <div class="works">
+    <a class="work" href="/neurabyte-protocol/">
+      <div class="cov"><img src="/assets/brand/cover-neurabyte.webp" alt="Neurabyte Protocol cover" width="280" height="420" loading="lazy" /></div>
+      <div class="meat">
+        <span class="tag pub">Live · product page</span>
+        <h3>Neurabyte Protocol</h3>
+        <p>The Neuro-Optimized AI Prompt Kit: thirty prompts designed to automate deep work and end the fragmentation of attention. The hands-on end of the arm — the argument as a thing you run, not a thing you agree with.</p>
+        <span class="go">Open the protocol →</span>
+        <span class="id">Live product page · 30 neuro-optimized prompts</span>
+      </div>
+    </a>
+
+    <div class="work">
+      <div class="cov"><img src="/assets/brand/nb-page1.webp" alt="Neurabyte premium edition, interior page" width="280" height="420" loading="lazy" /></div>
+      <div class="meat">
+        <span class="tag built">Materialised · offer to validate</span>
+        <h3>Neurabyte — Premium Edition</h3>
+        <p>A finished premium e-book, produced end to end and integrated into the editorial ecosystem. The master file is located and complete; the commercial page has not been re-confirmed, so it is presented as built rather than for sale.</p>
+        <span class="id">Master PDF ≈57.5 MB · commercial page pending</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="gal">
+    <figure><img src="/assets/brand/nb-page3.webp" alt="Neurabyte interior spread" loading="lazy" /><figcaption>Premium edition · interior</figcaption></figure>
+    <figure><img src="/assets/brand/mockup-neurabyte.webp" alt="Neurabyte mockup" loading="lazy" /><figcaption>Protocol · edition mockup</figcaption></figure>
+    <figure><img src="/assets/brand/ap-interface.webp" alt="Human-AI interface entry" loading="lazy" /><figcaption>Human–AI interface · entry</figcaption></figure>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="sechead">
+    <p class="eyebrow">The method underneath</p>
+    <h2>The AI Council.</h2>
+    <p>
+      What runs beneath every tool on this page: specialised models analyse the same question
+      independently, disagreement is surfaced rather than averaged away, and the final judgment stays
+      human. The architecture is public. The implementations that use it are not.
+    </p>
+  </div>
+
+  <p class="note">
+    The through-line of this arm, stated plainly: every tool here assumes the machine will be
+    confidently wrong at some point, and that the whole value of a trained mind is being the one who
+    notices. That is why the prompt kit ships with judgment attached, and why AI Playground is
+    addressed to children rather than to professionals — the habit has to be built before it is needed.
+  </p>
+</section>
+
+<section class="wrap">
+  <div class="sechead">
+    <p class="eyebrow">The channels</p>
+    <h2>Two voices, one argument.</h2>
+  </div>
+  <div class="chans">
+    <a class="chan" href="https://www.youtube.com/@NeuraByteIA" target="_blank" rel="noopener">
+      <span class="dot"></span>
+      <span><strong>YouTube · @NeuraByteIA</strong><span>Applied cognition, attention, and working with AI without dissolving into it</span></span>
+    </a>
+    <a class="chan" href="https://www.youtube.com/@AIPlaygroundSystem" target="_blank" rel="noopener">
+      <span class="dot" style="background:var(--blue-lt);box-shadow:0 0 12px var(--blue-lt)"></span>
+      <span><strong>YouTube · @AIPlaygroundSystem</strong><span>The educational and methodological branch of this arm</span></span>
+    </a>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="sechead">
+    <p class="eyebrow">Position</p>
+    <h2>One axis, one doctrine, three arms.</h2>
+    <p>
+      The Architect is the axis. <a href="/thefreedomprotocol/" style="color:var(--orange)">The Freedom
+      Protocol — Volume Zero</a> is the doctrine that names what the collapse was for. Neurabyte is the
+      arm that trains the mind to hold it.
+    </p>
+  </div>
+  <div class="arms">
+    <a class="arm" href="/thearchitectuniverse/">
+      <span class="tag">The axis</span>
+      <h3>The Architect</h3>
+      <p>Biography, collapse and reconstruction. The thread every other property is tied to.</p>
+      <span class="go">Enter the universe →</span>
+    </a>
+    <a class="arm" href="/mindfax/">
+      <span class="tag">The cosmos</span>
+      <h3>Mindfax</h3>
+      <p>The creative arm: literary fiction, speculative science and metaphysical design.</p>
+      <span class="go">Open Mindfax →</span>
+    </a>
+    <a class="arm" href="/finsage-universe/">
+      <span class="tag">The matter</span>
+      <h3>Finsage</h3>
+      <p>The financial arm: money treated as stored time, and the systems that stop it leaking.</p>
+      <span class="go">Open Finsage →</span>
+    </a>
+  </div>
+</section>
+
+
+<section class="wrap" id="film">
+  <div class="sechead">
+    <p class="eyebrow">The launch</p>
+    <h2>AI Playground, in its own voice.</h2>
+    <p>The official launch piece for the flagship work of this arm.</p>
+  </div>
+  <div class="rule"></div>
+  <div class="vwrap">
+  <div class="vhero" role="button" tabindex="0" data-yt="NgBmDVAVVeM" data-title="AI Playground — official launch" data-short="1">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/NgBmDVAVVeM/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/NgBmDVAVVeM/hqdefault.jpg'" alt="AI Playground — official launch" loading="lazy" />
+    <div class="shade"></div>
+    <div class="play" aria-hidden="true"></div>
+    <div class="cap"><h3>AI Playground — official launch</h3><p>The book announced by the argument it makes: not fear, not surrender — a method for building discernment early, so a young mind meets a confident machine with something of its own to say.</p></div>
+  </div>
+</div>
+  </div>
+
+  <div class="sechead" style="margin-top:3.2rem">
+    <p class="eyebrow">The lessons</p>
+    <h2>Where the argument is made at length.</h2>
+    <p>
+      Three long-form pieces that carry the position of this arm: attention as an asset under attack,
+      the cost of outsourcing thinking, and why more AI tools made people slower rather than faster.
+    </p>
+  </div>
+  <div class="vgrid long">
+    <div class="vcard" role="button" tabindex="0" data-yt="MIyniiyXHtA" data-title="The BYOAI Failure: Why 7 AI Apps Made You Slower" data-short="0">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/MIyniiyXHtA/hqdefault.jpg" alt="The BYOAI Failure: Why 7 AI Apps Made You Slower" loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>The BYOAI Failure: Why 7 AI Apps Made You Slower</b><span>8:05 · deep dive</span></div>
+  </div>
+</div><div class="vcard" role="button" tabindex="0" data-yt="n2MwN1E-VbY" data-title="Cognitive Overload: Why Your Brain Is Breaking" data-short="0">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/n2MwN1E-VbY/hqdefault.jpg" alt="Cognitive Overload: Why Your Brain Is Breaking" loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>Cognitive Overload: Why Your Brain Is Breaking</b><span>8:49 · deep dive</span></div>
+  </div>
+</div><div class="vcard" role="button" tabindex="0" data-yt="OxdDUiPSwaM" data-title="How Algorithms Rewire Your Mind" data-short="0">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/OxdDUiPSwaM/hqdefault.jpg" alt="How Algorithms Rewire Your Mind" loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>How Algorithms Rewire Your Mind</b><span>3:30 · the hidden cost of attention</span></div>
+  </div>
+</div>
+  </div>
+
+  <div class="sechead" style="margin-top:3.2rem">
+    <p class="eyebrow">Neurabyte · short form</p>
+    <h2>Sixty seconds, one idea, no comfort.</h2>
+  </div>
+  <div class="vgrid short">
+    <div class="vcard" role="button" tabindex="0" data-yt="i4cISKZ_V94" data-title="Efficiency Is Killing Your Child's Thinking" data-short="1">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/i4cISKZ_V94/hqdefault.jpg" alt="Efficiency Is Killing Your Child's Thinking" loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>Efficiency Is Killing Your Child's Thinking</b><span></span></div>
+  </div>
+</div><div class="vcard" role="button" tabindex="0" data-yt="uuQgn1HaM0Y" data-title="AI Is Not a Solution. It Is a Training Field." data-short="1">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/uuQgn1HaM0Y/hqdefault.jpg" alt="AI Is Not a Solution. It Is a Training Field." loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>AI Is Not a Solution. It Is a Training Field.</b><span></span></div>
+  </div>
+</div><div class="vcard" role="button" tabindex="0" data-yt="9FEjFuW_DFI" data-title="Improvisation Creates Dependency. Structure Trains Intelligence." data-short="1">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/9FEjFuW_DFI/hqdefault.jpg" alt="Improvisation Creates Dependency. Structure Trains Intelligence." loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>Improvisation Creates Dependency. Structure Trains Intelligence.</b><span></span></div>
+  </div>
+</div><div class="vcard" role="button" tabindex="0" data-yt="7tyu_7Eu8ds" data-title="Reality Is a Cognitive Model" data-short="1">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/7tyu_7Eu8ds/hqdefault.jpg" alt="Reality Is a Cognitive Model" loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>Reality Is a Cognitive Model</b><span></span></div>
+  </div>
+</div><div class="vcard" role="button" tabindex="0" data-yt="pq0qxlqrxy8" data-title="Parents Feel Lost With AI. This Is Why." data-short="1">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/pq0qxlqrxy8/hqdefault.jpg" alt="Parents Feel Lost With AI. This Is Why." loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>Parents Feel Lost With AI. This Is Why.</b><span></span></div>
+  </div>
+</div><div class="vcard" role="button" tabindex="0" data-yt="K2cV49fa_hM" data-title="Nothing Changed After the Holidays." data-short="1">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/K2cV49fa_hM/hqdefault.jpg" alt="Nothing Changed After the Holidays." loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>Nothing Changed After the Holidays.</b><span></span></div>
+  </div>
+</div>
+  </div>
+
+  <div class="sechead" style="margin-top:3.2rem">
+    <p class="eyebrow">AI Playground System · short form</p>
+    <h2>Addressed to the parent, not the professional.</h2>
+    <p>The educational branch keeps its own channel, because it speaks to a different room.</p>
+  </div>
+  <div class="vgrid short">
+    <div class="vcard" role="button" tabindex="0" data-yt="X4xhWVvF8eo" data-title="AI Is Not a Solution. It Is a Training Field." data-short="1">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/X4xhWVvF8eo/hqdefault.jpg" alt="AI Is Not a Solution. It Is a Training Field." loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>AI Is Not a Solution. It Is a Training Field.</b><span></span></div>
+  </div>
+</div><div class="vcard" role="button" tabindex="0" data-yt="sSodVi1CSyQ" data-title="The Biggest Mistake Parents Make With AI" data-short="1">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/sSodVi1CSyQ/hqdefault.jpg" alt="The Biggest Mistake Parents Make With AI" loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>The Biggest Mistake Parents Make With AI</b><span></span></div>
+  </div>
+</div><div class="vcard" role="button" tabindex="0" data-yt="n_Jm-Q2GKOo" data-title="Banning AI Makes Children Weaker Thinkers" data-short="1">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/n_Jm-Q2GKOo/hqdefault.jpg" alt="Banning AI Makes Children Weaker Thinkers" loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>Banning AI Makes Children Weaker Thinkers</b><span></span></div>
+  </div>
+</div><div class="vcard" role="button" tabindex="0" data-yt="skav9QTiH_8" data-title="Improvisation Creates Dependency." data-short="1">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/skav9QTiH_8/hqdefault.jpg" alt="Improvisation Creates Dependency." loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>Improvisation Creates Dependency.</b><span></span></div>
+  </div>
+</div><div class="vcard" role="button" tabindex="0" data-yt="hAqh4dkpvLg" data-title="Parents Feel Lost With AI." data-short="1">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/hAqh4dkpvLg/hqdefault.jpg" alt="Parents Feel Lost With AI." loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>Parents Feel Lost With AI.</b><span></span></div>
+  </div>
+</div><div class="vcard" role="button" tabindex="0" data-yt="cxVM1k9UT68" data-title="The Problem Is Still Here." data-short="1">
+  <div class="th">
+    <img src="https://i.ytimg.com/vi/cxVM1k9UT68/hqdefault.jpg" alt="The Problem Is Still Here." loading="lazy" />
+    <div class="shade"></div><div class="play" aria-hidden="true"></div>
+    <div class="cap"><b>The Problem Is Still Here.</b><span></span></div>
+  </div>
+</div>
+  </div>
+
+  <div class="vmeta">
+    <a href="https://www.youtube.com/@NeuraByteIA" target="_blank" rel="noopener">@NeuraByteIA ↗</a>
+    <a href="https://www.youtube.com/@AIPlaygroundSystem" target="_blank" rel="noopener">@AIPlaygroundSystem ↗</a>
+    <span>Two channels · 3 long-form pieces · 12 shorts</span>
+  </div>
+  <p class="vnote">
+    Nothing loads until you press play. Audience figures are not claimed on this page — the argument
+    and the body of work are.
+  </p>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap footgrid">
+    <div>
+      <h4>Neurabyte</h4>
+      <p style="margin:0;max-width:46ch">
+        The mind arm of The Architect Universe. Applied cognition, deep work and human judgment held
+        beside machines rather than replaced by them.
+      </p>
+    </div>
+    <div>
+      <h4>Works</h4>
+      <a href="/aiplayground/">AI Playground</a>
+      <a href="/neurabyte-protocol/">Neurabyte Protocol</a>
+      <a href="/thefreedomprotocol/">The Freedom Protocol — Volume Zero</a>
+      <a href="/thearchitectuniverse/">The Architect Universe</a>
+    </div>
+    <div>
+      <h4>Elsewhere</h4>
+      <a href="https://www.youtube.com/@NeuraByteIA" target="_blank" rel="noopener">YouTube · Neurabyte ↗</a>
+      <a href="https://www.youtube.com/@AIPlaygroundSystem" target="_blank" rel="noopener">YouTube · AI Playground ↗</a>
+      <a href="/">Back to the studio</a>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+(function(){
+  function mount(el){
+    if(el.dataset.on) return; el.dataset.on='1';
+    var id=el.dataset.yt, sh=el.dataset.short==='1';
+    var f=document.createElement('iframe');
+    f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1';
+    f.title=el.dataset.title||'Video';
+    f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture';
+    f.allowFullscreen=true;
+    el.querySelector('.th').appendChild(f);
+  }
+  document.addEventListener('click',function(e){
+    var t=e.target.closest('[data-yt]');
+    if(t){ e.preventDefault(); mount(t); }
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key!=='Enter'&&e.key!==' ')return;
+    var t=document.activeElement&&document.activeElement.closest&&document.activeElement.closest('[data-yt]');
+    if(t){ e.preventDefault(); mount(t); }
+  });
+})();
+</script>
+
+</body>
+</html>
