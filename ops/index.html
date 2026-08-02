@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- MINDFAX OPS — offer page v2.1 · brand per FASE0-0004 (D-064) -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MINDFAX OPS — AI Operations for Agencies &amp; Consultancies</title>
+<meta name="description" content="MINDFAX OPS builds, hosts and monitors AI agents that run your agency's repetitive operations. Subscription from $900/month, first agent included. A human approves anything irreversible.">
+<style>
+  :root{
+    --bg:#0a0d12; --bg2:#0f141c; --panel:#141b26; --line:#232d3d;
+    --text:#e8edf5; --muted:#93a1b5; --dim:#5c6b80;
+    --accent:#4fd1a5; --accent2:#2ba57e; --accent-ink:#062019;
+    --warn:#e8c268;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  a{color:var(--accent);text-decoration:none}
+  h1,h2,h3{line-height:1.15;letter-spacing:-.02em}
+  h2{font-size:clamp(26px,4vw,38px);margin-bottom:14px}
+  .kicker{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+  section{padding:84px 0;border-top:1px solid var(--line)}
+  .sub{color:var(--muted);max-width:640px;font-size:17px}
+  nav{position:sticky;top:0;z-index:50;background:rgba(10,13,18,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-weight:800;font-size:17px;letter-spacing:.20em;color:var(--text);line-height:1.1}
+  .logo .ops{color:var(--accent)}
+  .logo small{display:block;font-size:9px;font-weight:600;letter-spacing:.34em;color:var(--dim)}
+  .nav-links{display:flex;gap:26px;align-items:center;font-size:14px}
+  .nav-links a{color:var(--muted)}
+  .nav-links a:hover{color:var(--text)}
+  @media(max-width:720px){.nav-links a:not(.btn){display:none}}
+  .btn{display:inline-block;padding:13px 26px;border-radius:10px;font-weight:700;font-size:15px;cursor:pointer;border:0;transition:transform .12s ease,box-shadow .12s ease}
+  .btn-primary{background:var(--accent);color:var(--accent-ink)!important}
+  .btn-primary:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(79,209,165,.25)}
+  .btn-ghost{border:1px solid var(--line);color:var(--text)!important}
+  .btn-ghost:hover{border-color:var(--accent)}
+  .btn-sm{padding:9px 18px;font-size:13.5px}
+  header.hero{padding:110px 0 90px;background:
+    radial-gradient(900px 420px at 75% -10%,rgba(79,209,165,.13),transparent 60%),
+    radial-gradient(700px 380px at 10% 110%,rgba(43,110,165,.10),transparent 60%)}
+  .hero h1{font-size:clamp(34px,6vw,58px);font-weight:800;max-width:820px}
+  .hero h1 em{font-style:normal;color:var(--accent)}
+  .hero p{margin:22px 0 34px;max-width:620px;color:var(--muted);font-size:19px}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-note{margin-top:18px;font-size:14px;color:var(--dim)}
+  .grid{display:grid;gap:18px;margin-top:38px}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g4{grid-template-columns:repeat(4,1fr)}
+  @media(max-width:860px){.g3,.g4{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.g3,.g4{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px}
+  .card h3{font-size:17px;margin-bottom:8px}
+  .card p{font-size:14.5px;color:var(--muted)}
+  .num{font-size:13px;font-weight:700;color:var(--accent);letter-spacing:.1em;margin-bottom:10px;display:block}
+  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:38px}
+  @media(max-width:860px){.tiers{grid-template-columns:1fr}}
+  .tier{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:30px;display:flex;flex-direction:column}
+  .tier.featured{border-color:var(--accent);background:linear-gradient(180deg,rgba(79,209,165,.07),var(--panel) 55%)}
+  .tier .name{font-weight:700;font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .tier .price{font-size:40px;font-weight:800;margin:10px 0 2px}
+  .tier .price small{font-size:15px;font-weight:500;color:var(--dim)}
+  .tier .for{font-size:13.5px;color:var(--dim);margin-bottom:18px}
+  .tier ul{list-style:none;margin:0 0 26px;flex:1}
+  .tier li{font-size:14.5px;color:var(--muted);padding:7px 0 7px 26px;position:relative}
+  .tier li::before{content:"✓";position:absolute;left:2px;color:var(--accent);font-weight:700}
+  .badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--accent);color:var(--accent-ink);border-radius:99px;padding:4px 12px;margin-bottom:14px;align-self:flex-start}
+  .calc{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:34px;margin-top:38px;display:grid;grid-template-columns:1fr 1fr;gap:34px}
+  @media(max-width:760px){.calc{grid-template-columns:1fr}}
+  .calc label{display:block;font-size:13.5px;color:var(--muted);margin:16px 0 6px}
+  .calc label:first-child{margin-top:0}
+  .calc input{width:100%;background:var(--bg2);border:1px solid var(--line);border-radius:10px;color:var(--text);font-size:16px;padding:12px 14px;font-family:inherit}
+  .calc input:focus{outline:none;border-color:var(--accent)}
+  .calc-out{border-left:1px solid var(--line);padding-left:34px;display:flex;flex-direction:column;justify-content:center}
+  @media(max-width:760px){.calc-out{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:24px}}
+  .calc-out .big{font-size:44px;font-weight:800;color:var(--accent)}
+  .calc-out .lbl{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+  .calc-out .row{margin-bottom:20px}
+  .calc-note{grid-column:1/-1;font-size:12.5px;color:var(--dim);border-top:1px solid var(--line);padding-top:16px}
+  .guarantee{background:linear-gradient(180deg,rgba(79,209,165,.08),transparent);border:1px solid var(--accent2);border-radius:16px;padding:36px;margin-top:38px}
+  .guarantee h3{font-size:22px;margin-bottom:10px}
+  .guarantee p{color:var(--muted);max-width:720px}
+  details{border:1px solid var(--line);border-radius:12px;background:var(--panel);margin-top:12px;overflow:hidden}
+  summary{cursor:pointer;padding:18px 22px;font-weight:600;font-size:15.5px;list-style:none;position:relative;padding-right:48px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";position:absolute;right:22px;top:14px;font-size:22px;color:var(--accent)}
+  details[open] summary::after{content:"–"}
+  details .a{padding:0 22px 20px;color:var(--muted);font-size:14.5px}
+  .final{padding:100px 0;text-align:center;border-top:1px solid var(--line);background:radial-gradient(700px 300px at 50% 0%,rgba(79,209,165,.10),transparent 65%)}
+  .final h2{max-width:700px;margin:0 auto 16px}
+  .final p{color:var(--muted);margin-bottom:34px}
+  footer{border-top:1px solid var(--line);padding:36px 0;font-size:13.5px;color:var(--dim)}
+  .foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="logo">MINDFAX <span class="ops">OPS</span><small>AI OPERATIONS</small></div>
+    <div class="nav-links">
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#roi">ROI</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn-primary btn-sm js-tg" href="#">Talk to us</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Your agency bills for thinking.<br>So why is your team doing <em>copy-paste work</em>?</h1>
+    <p>MINDFAX OPS builds, hosts and monitors AI agents that run your agency's repetitive operations — reporting, onboarding, data moving between tools. On subscription. First agent included.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary js-tg" href="#">Talk to us on Telegram</a>
+      <a class="btn btn-ghost" href="#roi">Calculate what manual work costs you</a>
+    </div>
+    <p class="hero-note">For agencies and consultancies · Billed in USD · No setup fee · First agent live within 30 days, guaranteed</p>
+  </div>
+</header>
+
+<section id="pain">
+  <div class="wrap">
+    <div class="kicker">The problem</div>
+    <h2>The hours you can't invoice</h2>
+    <p class="sub">Every agency we talk to has the same leak: senior people spending hours on work a machine should do.</p>
+    <div class="grid g4">
+      <div class="card"><h3>Client reporting</h3><p>Pulling numbers from five dashboards into one deck, every week, by hand.</p></div>
+      <div class="card"><h3>Client onboarding</h3><p>The same intake, the same folders, the same kickoff checklist — retyped for every new account.</p></div>
+      <div class="card"><h3>Data shuffling</h3><p>CRM to spreadsheet to project tool to invoice. Nothing talks to anything.</p></div>
+      <div class="card"><h3>Status chasing</h3><p>"Any update on this?" answered twenty times a day, from information that already exists.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="kicker">How it works</div>
+    <h2>We operate it. You watch it work.</h2>
+    <p class="sub">This is not a course, a template pack, or a one-off build you'll have to babysit. It's an operated service.</p>
+    <div class="grid g4">
+      <div class="card"><span class="num">01</span><h3>Map the leak</h3><p>We map where your team's hours actually go and pick the automation with the fastest payback. That map keeps feeding the next builds.</p></div>
+      <div class="card"><span class="num">02</span><h3>First agent — included</h3><p>We build your first agent as part of the subscription. No setup fee, no build invoice.</p></div>
+      <div class="card"><span class="num">03</span><h3>We host and monitor</h3><p>The agent runs on our infrastructure with real telemetry. A workflow can show green and still be silently failing — we watch the data, not the status light.</p></div>
+      <div class="card"><span class="num">04</span><h3>Monthly proof</h3><p>Every month you get a report of what your agents processed, flagged and escalated. You see exactly what you're paying for.</p></div>
+    </div>
+    <div class="grid g3" style="margin-top:18px">
+      <div class="card" style="grid-column:1/-1">
+        <h3>The rule we run everything by</h3>
+        <p>Our agents do the work and escalate exceptions to a human — including ours. Nothing irreversible happens without a person approving it. You're experiencing that philosophy right now: the assistant that answers you on Telegram qualifies and collects, but a human confirms every price and every scope.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <div class="kicker">Pricing</div>
+    <h2>One subscription. No setup fee.</h2>
+    <p class="sub">You're not buying a build — you're subscribing to an operated capability. That's why hosting, monitoring and the monthly report are in every plan.</p>
+    <div class="tiers">
+      <div class="tier">
+        <div class="name">Start</div>
+        <div class="price">$900<small>/mo</small></div>
+        <div class="for">For a first automation done right</div>
+        <ul>
+          <li>1 production agent, built and included</li>
+          <li>Hosting + monitoring with real telemetry</li>
+          <li>Monthly report: processed, flagged, escalated</li>
+          <li>Fixes and adjustments included</li>
+        </ul>
+        <a class="btn btn-ghost js-tg" href="#">Start the conversation</a>
+      </div>
+      <div class="tier featured">
+        <span class="badge">Most agencies land here</span>
+        <div class="name">Operate</div>
+        <div class="price">$1,600<small>/mo</small></div>
+        <div class="for">For running core ops on agents</div>
+        <ul>
+          <li>Up to 3 production agents</li>
+          <li>A new automation from your hours-lost map each quarter</li>
+          <li>Priority support, direct channel</li>
+          <li>Everything in Start</li>
+        </ul>
+        <a class="btn btn-primary js-tg" href="#">Start the conversation</a>
+      </div>
+      <div class="tier">
+        <div class="name">Scale</div>
+        <div class="price">$2,500<small>/mo</small></div>
+        <div class="for">For agencies operating on agents end-to-end</div>
+        <ul>
+          <li>Agent portfolio across your operation</li>
+          <li>Continuous build queue</li>
+          <li>Ops review call every month</li>
+          <li>Everything in Operate</li>
+        </ul>
+        <a class="btn btn-ghost js-tg" href="#">Start the conversation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="roi">
+  <div class="wrap">
+    <div class="kicker">ROI calculator</div>
+    <h2>What does manual work cost you today?</h2>
+    <p class="sub">Three numbers you already know. No email required.</p>
+    <div class="calc">
+      <div>
+        <label for="c-people">People doing repetitive operational work</label>
+        <input id="c-people" type="number" min="1" value="3" inputmode="numeric">
+        <label for="c-hours">Hours per week each spends on it</label>
+        <input id="c-hours" type="number" min="1" value="6" inputmode="numeric">
+        <label for="c-rate">Average loaded cost per hour (USD)</label>
+        <input id="c-rate" type="number" min="1" value="45" inputmode="numeric">
+      </div>
+      <div class="calc-out">
+        <div class="row">
+          <div class="lbl">Manual work costs you</div>
+          <div class="big" id="c-cost">$0</div>
+          <div class="lbl">per month</div>
+        </div>
+        <div class="row">
+          <div class="lbl">Against the Start plan that's</div>
+          <div class="big" id="c-mult" style="font-size:30px">–</div>
+        </div>
+      </div>
+      <div class="calc-note">Assumes 4.33 weeks per month, using only the numbers you typed. Agents typically absorb part of this work, not all of it — that split is exactly what we map in the first conversation.</div>
+    </div>
+  </div>
+</section>
+
+<section id="guarantee-s">
+  <div class="wrap">
+    <div class="guarantee">
+      <h3>The guarantee</h3>
+      <p>If your first agent is not running in production within 30 days of kickoff, you can cancel and the first month is refunded. No lock-in after that — cancel any month. We keep clients with the monthly report, not with a contract trap.</p>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="kicker">FAQ</div>
+    <h2>The questions that matter</h2>
+    <details open>
+      <summary>Who owns the data and the accounts?</summary>
+      <div class="a">You do. You remain the controller of your data and the owner of every tool account the agents use. We operate inside access you grant and can revoke.</div>
+    </details>
+    <details>
+      <summary>What if the agent makes a mistake?</summary>
+      <div class="a">Agents never take irreversible actions on their own — sending, deleting, paying, publishing all require human approval, yours or ours, depending on what we agree per workflow. And because we monitor the data itself, failures surface in our alerts, not in your client's inbox.</div>
+    </details>
+    <details>
+      <summary>Do you build agents that make decisions about people?</summary>
+      <div class="a">No. We don't build automation for hiring, credit, insurance or health decisions about individuals. That's a hard line, for your legal safety and ours.</div>
+    </details>
+    <details>
+      <summary>Why a subscription instead of a one-off build?</summary>
+      <div class="a">Because a one-off build starts dying the day it's delivered — APIs change, rate limits change, formats change. What you're paying for monthly is that someone is watching, fixing and improving it. That's also why we host: without telemetry, nobody sees the failure until your client does.</div>
+    </details>
+    <details>
+      <summary>How do we start?</summary>
+      <div class="a">Message us on Telegram. Our assistant collects what the task is, how often it happens and which tools are involved — then a human comes back to you with scope and price. Usually the same day.</div>
+    </details>
+  </div>
+</section>
+
+<div class="final">
+  <div class="wrap">
+    <h2>The first agent is included.<br>The first conversation is free.</h2>
+    <p>Tell us the most annoying repetitive task in your operation. We'll tell you if it's automatable — honestly, including when it isn't.</p>
+    <a class="btn btn-primary js-tg" href="#">Talk to us on Telegram</a>
+    <p class="hero-note" style="margin-top:16px">Prefer email? <a id="mail-link" href="#">Write to us</a></p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap foot">
+    <div>MINDFAX OPS · AI operations for agencies &amp; consultancies</div>
+    <div>The operations arm of MINDFAX · ops.mindfax.art</div>
+  </div>
+</footer>
+
+<script>
+  var TELEGRAM_URL = "https://t.me/mindfax_ops_bot";
+  var CONTACT_EMAIL = "iamediafactory.studio@gmail.com"; /* trocar para ops@mindfax.art quando o forwarding existir */
+
+  document.querySelectorAll(".js-tg").forEach(function(a){ a.href = TELEGRAM_URL; });
+  document.getElementById("mail-link").href = "mailto:" + CONTACT_EMAIL + "?subject=" + encodeURIComponent("Automation for our agency");
+
+  function fmt(n){ return "$" + Math.round(n).toLocaleString("en-US"); }
+  function calc(){
+    var p = parseFloat(document.getElementById("c-people").value) || 0;
+    var h = parseFloat(document.getElementById("c-hours").value) || 0;
+    var r = parseFloat(document.getElementById("c-rate").value) || 0;
+    var monthly = p * h * r * 4.33;
+    document.getElementById("c-cost").textContent = fmt(monthly);
+    var mult = monthly > 0 ? (monthly / 900) : 0;
+    document.getElementById("c-mult").textContent = mult > 0 ? (mult.toFixed(1) + "× the subscription") : "–";
+  }
+  ["c-people","c-hours","c-rate"].forEach(function(id){
+    document.getElementById(id).addEventListener("input", calc);
+  });
+  calc();
+</script>
+</body>
+  </html>
