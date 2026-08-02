@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- MINDFAX OPS — offer page v3.0 · brand per FASE0-0004 · patterns from market sweep 2026-08-02 -->
+<!-- MINDFAX OPS — offer page v3.1 · brand per FASE0-0004 + identity per FASE0-0007 (C: MINDFAX cyan endorsement, OPS green, gold = human intervention) -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MINDFAX OPS — AI Operations for Agencies &amp; Consultancies</title>
@@ -11,7 +11,7 @@
     --bg:#0a0d12; --bg2:#0f141c; --panel:#141b26; --line:#232d3d;
     --text:#e8edf5; --muted:#93a1b5; --dim:#5c6b80;
     --accent:#4fd1a5; --accent2:#2ba57e; --accent-ink:#062019;
-    --warn:#e8c268; --red:#e87068;
+    --warn:#ffd77a; --red:#e87068;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -33,6 +33,7 @@
   nav{position:sticky;top:0;z-index:50;background:rgba(10,13,18,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
   .logo{font-weight:800;font-size:17px;letter-spacing:.20em;color:var(--text);line-height:1.1}
+  .logo .mf{color:#4fd1ff}
   .logo .ops{color:var(--accent)}
   .logo small{display:block;font-size:9px;font-weight:600;letter-spacing:.34em;color:var(--dim)}
   .nav-links{display:flex;gap:26px;align-items:center;font-size:14px}
@@ -85,7 +86,7 @@
   @media(max-width:820px){.tele{grid-template-columns:1fr}}
   .pulse-line{stroke-dasharray:640;stroke-dashoffset:640;animation:drawpulse 3.2s linear infinite}
   @keyframes drawpulse{40%{stroke-dashoffset:0}70%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
-  .alert-chip{display:inline-flex;align-items:center;gap:8px;background:rgba(232,194,104,.12);border:1px solid rgba(232,194,104,.4);color:var(--warn);font-size:12.5px;font-weight:600;border-radius:99px;padding:5px 12px;margin-top:14px}
+  .alert-chip{display:inline-flex;align-items:center;gap:8px;background:rgba(255,215,122,.12);border:1px solid rgba(255,215,122,.4);color:var(--warn);font-size:12.5px;font-weight:600;border-radius:99px;padding:5px 12px;margin-top:14px}
   .alert-chip .dot{width:7px;height:7px;border-radius:50%;background:var(--warn)}
   .report{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:18px;font-size:13.5px}
   .report .rrow{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--line);color:var(--muted)}
@@ -136,7 +137,7 @@
 
 <nav>
   <div class="wrap nav-in">
-    <div class="logo">MINDFAX <span class="ops">OPS</span><small>AI OPERATIONS</small></div>
+    <div class="logo"><span class="mf">MINDFAX</span> <span class="ops">OPS</span><small>AI OPERATIONS</small></div>
     <div class="nav-links">
       <a href="#how">How it works</a>
       <a href="#telemetry">Monitoring</a>
@@ -178,9 +179,9 @@
         <text x="442" y="118" fill="#4fd1a5" font-size="12" text-anchor="middle">agent · works 24/7</text>
         <circle class="blink" cx="366" cy="86" r="4" fill="#4fd1a5"/>
         <path class="dash" d="M532 103 L 618 103" fill="none" stroke="#2ba57e" stroke-width="2" marker-end="url(#arr)"/>
-        <rect x="622" y="72" width="164" height="62" rx="12" fill="#141b26" stroke="#e8c268" stroke-width="1.4"/>
+        <rect x="622" y="72" width="164" height="62" rx="12" fill="#141b26" stroke="#ffd77a" stroke-width="1.4"/>
         <text x="704" y="98" fill="#e8edf5" font-size="13.5" font-weight="700" text-anchor="middle">Human approves</text>
-        <text x="704" y="118" fill="#e8c268" font-size="12" text-anchor="middle">anything irreversible</text>
+        <text x="704" y="118" fill="#ffd77a" font-size="12" text-anchor="middle">anything irreversible</text>
         <path class="dash" d="M786 96 C 840 84, 850 60, 892 52" fill="none" stroke="#2ba57e" stroke-width="2" marker-end="url(#arr)"/>
         <path class="dash" d="M786 112 C 840 124, 850 148, 892 156" fill="none" stroke="#2ba57e" stroke-width="2" marker-end="url(#arr)"/>
         <g font-size="13">
@@ -501,4 +502,4 @@
   calc();
 </script>
 </body>
-  </html>
+</html>
