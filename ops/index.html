@@ -6,6 +6,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MINDFAX OPS — AI Operations for Agencies &amp; Consultancies</title>
 <meta name="description" content="MINDFAX OPS builds, hosts and monitors AI agents that run your agency's repetitive operations — with a human approving anything irreversible. Subscription from $900/month, first agent included.">
+<link rel="canonical" href="https://mindfax.art/ops/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='31' fill='%230a0d12'/%3E%3Ccircle cx='32' cy='32' r='17.5' fill='none' stroke='%234fd1a5' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%234fd1a5'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MINDFAX OPS">
+<meta property="og:url" content="https://mindfax.art/ops/">
+<meta property="og:title" content="MINDFAX OPS — AI Operations for Agencies &amp; Consultancies">
+<meta property="og:description" content="We build, host and monitor AI agents that run your agency's repetitive operations — with a human approving anything irreversible. From $900/month.">
+<meta property="og:image" content="https://mindfax.art/ops/og-ops.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MINDFAX OPS — AI Operations for Agencies &amp; Consultancies">
+<meta name="twitter:description" content="We build, host and monitor AI agents that run your agency's repetitive operations — with a human on anything irreversible. From $900/month.">
+<meta name="twitter:image" content="https://mindfax.art/ops/og-ops.png">
 <style>
   :root{
     --bg:#0a0d12; --bg2:#0f141c; --panel:#141b26; --line:#232d3d;
@@ -32,10 +46,22 @@
   }
   nav{position:sticky;top:0;z-index:50;background:rgba(10,13,18,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo-lockup{display:flex;align-items:center;gap:11px}
+  .logo-mark{flex:none;display:block}
   .logo{font-weight:800;font-size:17px;letter-spacing:.20em;color:var(--text);line-height:1.1}
   .logo .mf{color:#4fd1ff}
   .logo .ops{color:var(--accent)}
   .logo small{display:block;font-size:9px;font-weight:600;letter-spacing:.34em;color:var(--dim)}
+  /* hero masthead banner */
+  .masthead{display:inline-flex;align-items:center;gap:16px;padding:12px 20px 12px 14px;
+    border:1px solid var(--line);border-radius:14px;background:rgba(20,27,38,.55);
+    margin-bottom:34px}
+  .masthead .mh-mark{flex:none;display:block}
+  .masthead .mh-word{font-weight:800;font-size:22px;letter-spacing:.18em;line-height:1}
+  .masthead .mh-word .mf{color:#4fd1ff}
+  .masthead .mh-word .ops{color:var(--accent)}
+  .masthead .mh-tag{font-size:10px;font-weight:600;letter-spacing:.30em;color:var(--dim);margin-top:6px}
+  @media(max-width:520px){.masthead{gap:12px;padding:10px 16px 10px 12px}.masthead .mh-word{font-size:18px}}
   .nav-links{display:flex;gap:26px;align-items:center;font-size:14px}
   .nav-links a{color:var(--muted)}
   .nav-links a:hover{color:var(--text)}
@@ -137,7 +163,14 @@
 
 <nav>
   <div class="wrap nav-in">
-    <div class="logo"><span class="mf">MINDFAX</span> <span class="ops">OPS</span><small>AI OPERATIONS</small></div>
+    <a href="/ops/" class="logo-lockup" aria-label="MINDFAX OPS home">
+      <svg class="logo-mark" viewBox="0 0 64 64" width="34" height="34" aria-hidden="true" focusable="false">
+        <circle cx="32" cy="32" r="30" fill="#0a0d12" stroke="#e8edf5" stroke-width="1.3"/>
+        <circle cx="32" cy="32" r="17.5" fill="none" stroke="#4fd1a5" stroke-width="3"/>
+        <circle cx="32" cy="32" r="6" fill="#4fd1a5"/>
+      </svg>
+      <span class="logo"><span class="mf">MINDFAX</span> <span class="ops">OPS</span><small>AI OPERATIONS</small></span>
+    </a>
     <div class="nav-links">
       <a href="#how">How it works</a>
       <a href="#telemetry">Monitoring</a>
@@ -151,6 +184,17 @@
 
 <header class="hero">
   <div class="wrap">
+    <div class="masthead rv">
+      <svg class="mh-mark" viewBox="0 0 64 64" width="48" height="48" aria-hidden="true" focusable="false">
+        <circle cx="32" cy="32" r="30" fill="#0a0d12" stroke="#e8edf5" stroke-width="1.3"/>
+        <circle cx="32" cy="32" r="17.5" fill="none" stroke="#4fd1a5" stroke-width="3"/>
+        <circle cx="32" cy="32" r="6" fill="#4fd1a5"/>
+      </svg>
+      <div>
+        <div class="mh-word"><span class="mf">MINDFAX</span> <span class="ops">OPS</span></div>
+        <div class="mh-tag">AI OPERATIONS FOR AGENCIES</div>
+      </div>
+    </div>
     <h1>Your agency bills for thinking.<br>So why is your team doing <em>copy-paste work</em>?</h1>
     <p>MINDFAX OPS builds, hosts and monitors AI agents that run your repetitive operations — reporting, onboarding, data entry between tools. Agents you can <b style="color:var(--text)">see and control</b>: they do the work, a human approves anything irreversible.</p>
     <div class="hero-ctas">
