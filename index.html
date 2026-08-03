@@ -171,6 +171,29 @@
     .studio li{font-size:.88rem;color:var(--muted);padding-left:1.3rem;position:relative}
     .studio li::before{content:"◆";position:absolute;left:0;color:var(--accent);font-size:.65rem;top:.35rem}
 
+    /* ---------- DUO / TWO UNIVERSES ---------- */
+    .duo{display:grid;gap:1.4rem;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+    .world{
+      position:relative;display:flex;flex-direction:column;overflow:hidden;
+      border:1px solid var(--border);border-radius:var(--radius);
+      background:linear-gradient(155deg,var(--bg-elevated),rgba(17,22,38,.35));
+      padding:clamp(1.7rem,3.4vw,2.5rem);
+      transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease
+    }
+    .world:hover{transform:translateY(-4px);border-color:rgba(79,209,255,.42);box-shadow:var(--shadow)}
+    .world-kicker{font-family:"Cinzel",serif;font-size:.72rem;letter-spacing:.24em;
+      text-transform:uppercase;color:var(--accent);margin:0 0 .8rem}
+    .world h3{font-size:1.35rem;margin-bottom:.55rem}
+    .world p{color:var(--muted);font-size:.92rem;margin:0 0 1.5rem;flex:1}
+    .world .go{margin-top:auto}
+    .world-ops{background:linear-gradient(155deg,#0c1613,rgba(11,22,18,.5))}
+    .world-ops:hover{border-color:rgba(79,209,165,.5)}
+    .world-ops .world-kicker,.world-ops .go-ops{color:#4fd1a5}
+    .world-ops::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;
+      background:linear-gradient(90deg,transparent,#4fd1a5,transparent);opacity:.7}
+    .navlinks a.nav-ops{color:#4fd1a5}
+    .navlinks a.nav-ops:hover{color:#8ff0d2}
+
     /* ---------- FOOTER ---------- */
     footer.site{border-top:1px solid var(--border);margin-top:clamp(3rem,7vw,5rem);padding:2.6rem 0}
     .foot{display:flex;flex-wrap:wrap;gap:1.4rem;justify-content:space-between;align-items:flex-start}
@@ -197,6 +220,7 @@
         <a href="#works">Works</a>
         <a href="#studio">Studio</a>
         <a href="#channels">Channels</a>
+        <a class="nav-ops" href="/ops/">OPS ↗</a>
       </nav>
     </div>
   </header>
@@ -224,6 +248,37 @@
         <div><strong>1</strong><span>Human author, AI-augmented</span></div>
       </div>
     </div>
+
+    <section class="block wrap" id="worlds">
+      <div class="headline">
+        <p class="eyebrow">Two universes, one standard</p>
+        <h2>MINDFAX builds worlds — and operates them.</h2>
+        <p>
+          One side of MINDFAX writes the books, systems and fictional universes about staying human
+          while building with artificial intelligence. The other puts that same discipline to work
+          inside other companies — building and running the AI agents that carry an operation's
+          repetitive work, with a human on anything irreversible. Same author, same standard, two
+          distinct worlds.
+        </p>
+      </div>
+      <div class="duo">
+        <article class="world">
+          <p class="world-kicker">The Studio</p>
+          <h3>Intellectual property</h3>
+          <p>The Architect Universe, The Freedom Protocol and the three creative arms — books,
+            worlds and digital products, written, designed and published here.</p>
+          <a class="go" href="#universe">Explore the universe →</a>
+        </article>
+        <article class="world world-ops">
+          <p class="world-kicker">MINDFAX OPS</p>
+          <h3>AI operations for companies</h3>
+          <p>We build, host and monitor AI agents that run the repetitive operations of agencies and
+            consultancies — reporting, onboarding, data entry — as an operated subscription. A human
+            approves anything irreversible.</p>
+          <a class="go go-ops" href="/ops/">Enter MINDFAX OPS →</a>
+        </article>
+      </div>
+    </section>
 
     <section class="block wrap" id="universe">
       <div class="headline">
@@ -421,6 +476,7 @@
       <div class="foot">
         <div class="brand"><img src="/assets/icon-180.png" alt="" width="32" height="32" /><span>MINDFAX</span></div>
         <nav class="foot-links" aria-label="All properties">
+          <a href="/ops/">MINDFAX OPS · the company</a>
           <a href="/thearchitectuniverse/">The Architect Universe</a>
           <a href="/mindfax/">Mindfax · the cosmos arm</a>
           <a href="/neurabyte/">Neurabyte · the mind arm</a>
