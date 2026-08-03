@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- MINDFAX OPS — Operations Catalog (service booklet) · brand identity per /ops v3.1 -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Operations Catalog — MINDFAX OPS</title>
+<meta name="description" content="A guided catalog of the AI agents MINDFAX OPS builds and operates for agencies and consultancies — reporting, onboarding, data sync, lead ops, content, billing and monitoring — with practical examples and complexity levels mapped to each plan.">
+<link rel="canonical" href="https://mindfax.art/ops/services/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='31' fill='%230a0d12'/%3E%3Ccircle cx='32' cy='32' r='17.5' fill='none' stroke='%234fd1a5' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%234fd1a5'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MINDFAX OPS">
+<meta property="og:url" content="https://mindfax.art/ops/services/">
+<meta property="og:title" content="The Operations Catalog — MINDFAX OPS">
+<meta property="og:description" content="Every operation we can run for you, as a guided catalog: practical before→after examples, three complexity levels, and how each maps to a plan. A human approves anything irreversible.">
+<meta property="og:image" content="https://mindfax.art/ops/og-ops.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Operations Catalog — MINDFAX OPS">
+<meta name="twitter:description" content="Every operation we can run for you, as a guided catalog with practical examples and complexity levels mapped to each plan.">
+<meta name="twitter:image" content="https://mindfax.art/ops/og-ops.png">
+<style>
+  :root{
+    --bg:#0a0d12; --bg2:#0f141c; --panel:#141b26; --panel2:#18212e; --line:#232d3d;
+    --text:#e8edf5; --muted:#93a1b5; --dim:#5c6b80;
+    --accent:#4fd1a5; --accent2:#2ba57e; --accent-ink:#062019;
+    --cyan:#4fd1ff; --warn:#ffd77a; --red:#e87068;
+    --l1:#5fbf9c; --l2:#4fd1a5; --l3:#4fd1ff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  a{color:var(--accent);text-decoration:none}
+  h1,h2,h3{line-height:1.14;letter-spacing:-.02em}
+  h2{font-size:clamp(24px,3.6vw,34px);margin-bottom:12px}
+  .kicker{font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+  .sub{color:var(--muted);max-width:720px;font-size:17px}
+  section{padding:74px 0;border-top:1px solid var(--line)}
+  .rv{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+  .rv.on{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:60;background:rgba(10,13,18,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo-lockup{display:flex;align-items:center;gap:11px}
+  .logo-mark{flex:none;display:block}
+  .logo{font-weight:800;font-size:17px;letter-spacing:.20em;color:var(--text);line-height:1.1}
+  .logo .mf{color:var(--cyan)}
+  .logo .ops{color:var(--accent)}
+  .logo small{display:block;font-size:9px;font-weight:600;letter-spacing:.34em;color:var(--dim)}
+  .nav-links{display:flex;gap:24px;align-items:center;font-size:14px}
+  .nav-links a{color:var(--muted)}
+  .nav-links a:hover{color:var(--text)}
+  @media(max-width:760px){.nav-links a:not(.btn){display:none}}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:10px;font-weight:700;font-size:15px;cursor:pointer;border:0;transition:transform .12s ease,box-shadow .12s ease}
+  .btn-primary{background:var(--accent);color:var(--accent-ink)!important}
+  .btn-primary:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(79,209,165,.25)}
+  .btn-ghost{border:1px solid var(--line);color:var(--text)!important}
+  .btn-ghost:hover{border-color:var(--accent)}
+  .btn-sm{padding:9px 18px;font-size:13.5px}
+
+  /* hero */
+  header.hero{padding:78px 0 60px;background:
+    radial-gradient(900px 420px at 78% -12%,rgba(79,209,165,.13),transparent 60%),
+    radial-gradient(700px 380px at 6% 118%,rgba(79,209,255,.08),transparent 60%)}
+  .crumb{font-size:13px;color:var(--dim);margin-bottom:22px;letter-spacing:.02em}
+  .crumb a{color:var(--muted)}
+  .hero h1{font-size:clamp(30px,5vw,50px);font-weight:800;max-width:820px;letter-spacing:-.03em}
+  .hero h1 em{font-style:normal;color:var(--accent)}
+  .hero .lead{margin:20px 0 0;max-width:660px;color:var(--muted);font-size:19px}
+
+  /* level legend */
+  .legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+  .lvl{display:flex;align-items:flex-start;gap:11px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:13px 16px;flex:1 1 240px}
+  .lvl .dot{width:11px;height:11px;border-radius:50%;margin-top:5px;flex:none}
+  .lvl b{font-size:14px;letter-spacing:.02em}
+  .lvl span{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
+  .dot-l1{background:var(--l1)} .dot-l2{background:var(--l2)} .dot-l3{background:var(--l3)}
+  .hero-note{margin-top:22px;font-size:14px;color:var(--dim);display:flex;align-items:center;gap:9px}
+  .hero-note .g{width:9px;height:9px;border-radius:50%;background:var(--warn);flex:none}
+
+  /* how to read */
+  .read-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+  @media(max-width:820px){.read-grid{grid-template-columns:1fr}}
+  .read-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px;position:relative;overflow:hidden}
+  .read-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px}
+  .read-card.c1::before{background:var(--l1)} .read-card.c2::before{background:var(--l2)} .read-card.c3::before{background:var(--l3)}
+  .read-card .tag-lvl{margin-bottom:12px}
+  .read-card h3{font-size:17px;margin-bottom:8px}
+  .read-card p{font-size:14.5px;color:var(--muted)}
+  .read-card .ex{font-size:13px;color:var(--dim);margin-top:12px;border-top:1px dashed var(--line);padding-top:12px}
+
+  .tag-lvl{display:inline-flex;align-items:center;gap:7px;font-size:11.5px;font-weight:700;letter-spacing:.08em;border-radius:99px;padding:4px 11px;border:1px solid}
+  .tag-lvl .d{width:8px;height:8px;border-radius:50%}
+  .lvl1{color:var(--l1);border-color:rgba(95,191,156,.4)} .lvl1 .d{background:var(--l1)}
+  .lvl2{color:var(--l2);border-color:rgba(79,209,165,.4)} .lvl2 .d{background:var(--l2)}
+  .lvl3{color:var(--l3);border-color:rgba(79,209,255,.4)} .lvl3 .d{background:var(--l3)}
+
+  /* matrix */
+  .matrix{margin-top:34px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--panel)}
+  .mrow{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr}
+  .mrow>div{padding:18px 20px;border-bottom:1px solid var(--line);font-size:14px}
+  .mrow:last-child>div{border-bottom:0}
+  .mrow .rl{color:var(--muted);font-weight:600;background:var(--bg2)}
+  .mhead>div{border-bottom:1px solid var(--line)}
+  .mhead .pname{font-weight:800;font-size:15px;letter-spacing:.04em}
+  .mhead .pprice{font-size:13px;color:var(--dim);font-weight:500}
+  .mhead .feat{background:linear-gradient(180deg,rgba(79,209,165,.08),transparent)}
+  .mhead .feat .pname{color:var(--accent)}
+  .mrow .val{color:var(--text)}
+  @media(max-width:820px){
+    .mrow{grid-template-columns:1fr}
+    .mrow .rl{background:var(--panel2);text-transform:uppercase;font-size:12px;letter-spacing:.08em;color:var(--dim)}
+    .mhead{display:none}
+    .mcell::before{content:attr(data-plan) " — ";color:var(--dim);font-weight:700}
+  }
+
+  /* category menu */
+  .menu-band{position:sticky;top:64px;z-index:50;background:rgba(10,13,18,.92);backdrop-filter:blur(10px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .menu-in{display:flex;gap:8px;overflow-x:auto;padding:12px 24px;max-width:1120px;margin:0 auto;scrollbar-width:thin}
+  .menu-in a{white-space:nowrap;font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:7px 15px;background:var(--panel);transition:border-color .15s,color .15s}
+  .menu-in a:hover{border-color:var(--accent);color:var(--text)}
+
+  /* category sections */
+  .cat{padding:64px 0;border-top:1px solid var(--line);scroll-margin-top:120px}
+  .cat-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+  .cat-head .cnum{font-size:13px;font-weight:700;color:var(--accent);letter-spacing:.14em}
+  .cat h2{font-size:clamp(22px,3.2vw,30px)}
+  .cat .cdesc{color:var(--muted);max-width:680px;font-size:16px;margin-bottom:30px}
+
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  @media(max-width:820px){.cards{grid-template-columns:1fr}}
+  .svc{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;flex-direction:column;transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease;position:relative}
+  .svc:hover{border-color:var(--accent2);transform:translateY(-3px);box-shadow:0 18px 44px rgba(0,0,0,.5)}
+  .svc-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+  .svc-idx{font-size:12px;font-weight:700;color:var(--dim);letter-spacing:.1em}
+  .svc h3{font-size:18px;margin-bottom:9px;letter-spacing:-.01em}
+  .svc .does{font-size:14.5px;color:var(--muted);margin-bottom:16px}
+  .ba{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:stretch;margin-bottom:16px}
+  @media(max-width:520px){.ba{grid-template-columns:1fr;gap:8px}}
+  .ba .col{background:var(--bg2);border:1px solid var(--line);border-radius:11px;padding:12px 13px}
+  .ba .lab{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+  .ba .before .lab{color:var(--red)} .ba .after .lab{color:var(--accent)}
+  .ba p{font-size:13px;color:var(--muted);line-height:1.5}
+  .ba .arrow{display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:20px}
+  @media(max-width:520px){.ba .arrow{transform:rotate(90deg);padding:2px 0}}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px}
+  .chip{font-size:11.5px;color:var(--muted);background:var(--bg2);border:1px solid var(--line);border-radius:7px;padding:4px 9px}
+  .impact{font-size:12.5px;color:var(--accent);background:rgba(79,209,165,.06);border:1px solid rgba(79,209,165,.20);border-radius:10px;padding:10px 13px;margin-bottom:14px;display:flex;gap:10px;align-items:flex-start}
+  .impact .lab{font-weight:700;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent2);margin-top:3px;flex:none}
+  .impact span.t{color:var(--text);font-weight:500}
+  .approve{margin-top:auto;font-size:13px;color:var(--warn);display:flex;align-items:flex-start;gap:9px;border-top:1px dashed var(--line);padding-top:13px}
+  .approve .g{width:9px;height:9px;border-radius:50%;background:var(--warn);margin-top:4px;flex:none}
+  .approve b{color:var(--text);font-weight:600}
+  .approve.none{color:var(--dim)} .approve.none .g{background:var(--dim)}
+
+  /* choose plan */
+  .choose{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+  @media(max-width:860px){.choose{grid-template-columns:1fr}}
+  .pick{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:28px;display:flex;flex-direction:column}
+  .pick.feat{border-color:var(--accent);background:linear-gradient(180deg,rgba(79,209,165,.07),var(--panel) 55%)}
+  .pick .pn{font-weight:800;font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .pick .pp{font-size:34px;font-weight:800;margin:8px 0 2px}
+  .pick .pp small{font-size:14px;font-weight:500;color:var(--dim)}
+  .pick .who{font-size:13.5px;color:var(--dim);margin:8px 0 16px}
+  .pick ul{list-style:none;margin:0 0 22px;flex:1}
+  .pick li{font-size:14px;color:var(--muted);padding:6px 0 6px 24px;position:relative}
+  .pick li::before{content:"✓";position:absolute;left:2px;color:var(--accent);font-weight:700}
+  .badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--accent);color:var(--accent-ink);border-radius:99px;padding:4px 12px;margin-bottom:14px;align-self:flex-start}
+
+  .final{padding:96px 0;text-align:center;border-top:1px solid var(--line);background:radial-gradient(700px 300px at 50% 0%,rgba(79,209,165,.10),transparent 65%)}
+  .final h2{max-width:680px;margin:0 auto 14px}
+  .final p{color:var(--muted);margin-bottom:30px}
+  footer{border-top:1px solid var(--line);padding:34px 0;font-size:13.5px;color:var(--dim)}
+  .foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+  .foot a{color:var(--muted)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-in">
+    <a href="/ops/" class="logo-lockup" aria-label="MINDFAX OPS home">
+      <svg class="logo-mark" viewBox="0 0 64 64" width="34" height="34" aria-hidden="true" focusable="false">
+        <circle cx="32" cy="32" r="30" fill="#0a0d12" stroke="#e8edf5" stroke-width="1.3"/>
+        <circle cx="32" cy="32" r="17.5" fill="none" stroke="#4fd1a5" stroke-width="3"/>
+        <circle cx="32" cy="32" r="6" fill="#4fd1a5"/>
+      </svg>
+      <span class="logo"><span class="mf">MINDFAX</span> <span class="ops">OPS</span><small>AI OPERATIONS</small></span>
+    </a>
+    <div class="nav-links">
+      <a href="/ops/">Overview</a>
+      <a href="/ops/services/">Catalog</a>
+      <a href="/ops/#pricing">Pricing</a>
+      <a class="btn btn-primary btn-sm js-tg" href="#">Talk to us</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/ops/">MINDFAX OPS</a> &nbsp;/&nbsp; The Operations Catalog</div>
+    <h1>Every operation we can <em>run for you</em>.</h1>
+    <p class="lead">A guided catalog of the AI agents we build, host and monitor for agencies and
+      consultancies. Browse by category, read a real before&rarr;after example for each, and see the
+      complexity level. Every agent runs on our infrastructure with live telemetry — and a human
+      approves anything irreversible.</p>
+
+    <div class="legend">
+      <div class="lvl"><span class="dot dot-l1"></span><div><b>Level 1 · Simple</b><span>One source to one output — a scheduled sync, a dashboard, an alert.</span></div></div>
+      <div class="lvl"><span class="dot dot-l2"></span><div><b>Level 2 · Standard</b><span>Several tools with logic and branching — the everyday workhorse.</span></div></div>
+      <div class="lvl"><span class="dot dot-l3"></span><div><b>Level 3 · Advanced</b><span>Orchestration, generated drafts, exceptions and judgment across systems.</span></div></div>
+    </div>
+    <div class="hero-note"><span class="g"></span> Gold marks the human gate: sending, deleting, paying or publishing always waits for a person's approval.</div>
+  </div>
+</header>
+
+<!-- HOW TO READ -->
+<section id="how-to-read">
+  <div class="wrap">
+    <div class="kicker rv">How to read this catalog</div>
+    <h2 class="rv">Three levels of complexity. One rule that never changes.</h2>
+    <p class="sub rv">Complexity is about how much wiring, logic and judgment an automation needs — not
+      about how valuable it is. A simple daily alert can save a client relationship; an advanced
+      orchestration can quietly run half your ops. Use the levels to size the effort, then pick the
+      plan by how many you want running and how fast you want new ones built.</p>
+    <div class="read-grid">
+      <div class="read-card c1 rv">
+        <span class="tag-lvl lvl1"><span class="d"></span>LEVEL 1 · SIMPLE</span>
+        <h3>Do one thing, reliably</h3>
+        <p>A single trigger and a few steps across one or two tools. Set it once, it runs forever with monitoring on top.</p>
+        <div class="ex">e.g. a scheduled dashboard refresh, or a Slack alert when a metric drops.</div>
+      </div>
+      <div class="read-card c2 rv">
+        <span class="tag-lvl lvl2"><span class="d"></span>LEVEL 2 · STANDARD</span>
+        <h3>Move work across tools</h3>
+        <p>Several integrations with branching logic — parse, decide, route, write. This is where most agency time actually goes.</p>
+        <div class="ex">e.g. a lead enriched and routed into the CRM, or an invoice drafted for approval.</div>
+      </div>
+      <div class="read-card c3 rv">
+        <span class="tag-lvl lvl3"><span class="d"></span>LEVEL 3 · ADVANCED</span>
+        <h3>Run a whole process</h3>
+        <p>Multiple agents, generated drafts, exception handling and a human decision point. It operates a process, not a step.</p>
+        <div class="ex">e.g. contract-to-kickoff onboarding, or the monitoring layer over every other agent.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MATRIX -->
+<section id="levels-plans">
+  <div class="wrap">
+    <div class="kicker rv">Levels &times; plans</div>
+    <h2 class="rv">What each plan runs</h2>
+    <p class="sub rv">Plans differ by how many agents run and how fast we build new ones — not by a cap
+      on complexity. Even Start can run an advanced agent if that's your highest-impact one. This is
+      where each plan usually lands.</p>
+    <div class="matrix rv">
+      <div class="mrow mhead">
+        <div class="rl">&nbsp;</div>
+        <div><div class="pname">Start</div><div class="pprice">$900 / mo</div></div>
+        <div class="feat"><div class="pname">Operate</div><div class="pprice">$1,600 / mo</div></div>
+        <div><div class="pname">Scale</div><div class="pprice">$2,500 / mo</div></div>
+      </div>
+      <div class="mrow">
+        <div class="rl">Agents running</div>
+        <div class="val mcell" data-plan="Start">1 production agent</div>
+        <div class="val mcell" data-plan="Operate">Up to 3 production agents</div>
+        <div class="val mcell" data-plan="Scale">An agent portfolio across your ops</div>
+      </div>
+      <div class="mrow">
+        <div class="rl">New automations</div>
+        <div class="val mcell" data-plan="Start">First agent built &amp; included</div>
+        <div class="val mcell" data-plan="Operate">+ one new automation each quarter</div>
+        <div class="val mcell" data-plan="Scale">Continuous build queue</div>
+      </div>
+      <div class="mrow">
+        <div class="rl">Complexity you usually run</div>
+        <div class="val mcell" data-plan="Start">Your single highest-impact agent — often L1–L2, L3 if that's the one</div>
+        <div class="val mcell" data-plan="Operate">A working set across L1–L3, including your first orchestration</div>
+        <div class="val mcell" data-plan="Scale">A full L1–L3 portfolio with multi-agent orchestration</div>
+      </div>
+      <div class="mrow">
+        <div class="rl">Hosting, monitoring &amp; monthly report</div>
+        <div class="val mcell" data-plan="Start">Included</div>
+        <div class="val mcell" data-plan="Operate">Included + priority direct channel</div>
+        <div class="val mcell" data-plan="Scale">Included + monthly ops-review call</div>
+      </div>
+      <div class="mrow">
+        <div class="rl">Guarantee</div>
+        <div class="val mcell" data-plan="Start">First agent in production within 30 days or the first month is refunded</div>
+        <div class="val mcell" data-plan="Operate">Same 30-day guarantee</div>
+        <div class="val mcell" data-plan="Scale">Same 30-day guarantee</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORY MENU -->
+<div class="menu-band">
+  <div class="menu-in">
+    <a href="#reporting">01 · Client Reporting</a>
+    <a href="#onboarding">02 · Client Onboarding</a>
+    <a href="#data-sync">03 · Data Movement &amp; Sync</a>
+    <a href="#lead-ops">04 · Lead &amp; Pipeline Ops</a>
+    <a href="#content-ops">05 · Content Ops</a>
+    <a href="#billing">06 · Billing &amp; Finance Ops</a>
+    <a href="#status-qa">07 · Status, Comms &amp; QA</a>
+  </div>
+</div>
+
+<!-- 01 REPORTING -->
+<section class="cat" id="reporting">
+  <div class="wrap">
+    <div class="cat-head"><span class="cnum">CATEGORY 01</span></div>
+    <h2 class="rv">Client Reporting</h2>
+    <p class="cdesc rv">Agents pull performance data from your analytics and ad platforms and assemble branded, on-time client reports, dashboards and alerts — so nobody rebuilds the same deck by hand.</p>
+    <div class="cards">
+
+      <article class="svc rv">
+        <div class="svc-top"><span class="svc-idx">SERVICE 01</span><span class="tag-lvl lvl3"><span class="d"></span>L3 · ADVANCED</span></div>
+        <h3>End-of-month client report assembler</h3>
+        <p class="does">Pulls each client's metrics on schedule, drops them into a branded template with draft commentary, and queues it for sign-off.</p>
+        <div class="ba">
+          <div class="col before"><div class="lab">Before</div><p>An account manager burns most of a week logging into GA4, Search Console, Google Ads and Meta, copying numbers into a deck and writing the "what happened".</p></div>
+          <div class="arrow">&rarr;</div>
+          <div class="col after"><div class="lab">After</div><p>On the 2nd business day the agent builds the branded report with draft commentary and drops it in a review queue.</p></div>
+        </div>
+        <div class="chips"><span class="chip">GA4</span><span class="chip">Search Console</span><span class="chip">Google Ads</span><span class="chip">Meta Ads</span><span class="chip">Slides / Looker</span><span class="chip">Slack</span></div>
+        <div class="impact"><span class="lab">Impact</span> <span class="t">Reclaims about a week of manual reporting each month — and every client report ships on the same day.</span></div>
+        <div class="approve"><span class="g"></span><span>Human approves: reviews the numbers &amp; commentary and <b>clicks send</b> to the client.</span></div>
+      </article>
+
+      <article class="svc rv">
+        <div class="svc-top"><span class="svc-idx">SERVICE 02</span><span class="tag-lvl lvl1"><span class="d"></span>L1 · SIMPLE</span></div>
+        <h3>Live client KPI dashboard refresher</h3>
+        <p class="does">Keeps an always-on dashboard current by syncing platform metrics into one place on a schedule.</p>
+        <div class="ba">
+          <div class="col before"><div class="lab">Before</div><p>A marketer manually exports CSVs each week into a Looker Studio board and hopes nothing broke.</p></div>
+          <div class="arrow">&rarr;</div>
+          <div class="col after"><div class="lab">After</div><p>The agent refreshes every connector on schedule and flags any source that failed to load.</p></div>
+        </div>
+        <div class="chips"><span class="chip">GA4</span><span class="chip">Google Ads</span><span class="chip">Meta Ads</span><span class="chip">Google Sheets</span><span class="chip">Looker Studio</span></div>
+        <div class="impact"><span class="lab">Impact</span> <span class="t">Dashboards stay current on their own; no more weekly CSV exports or a board nobody trusts.</span></div>
+        <div class="approve none"><span class="g"></span><span>Read-only — nothing irreversible. A human only investigates flagged gaps.</span></div>
+      </article>
+
+      <article class="svc rv">
+        <div class="svc-top"><span class="svc-idx">SERVICE 03</span><span class="tag-lvl lvl1"><span class="d"></span>L1 · SIMPLE</span></div>
+        <h3>KPI drop &amp; anomaly alert</h3>
+        <p class="does">Watches key metrics and posts an alert the moment something moves past a threshold.</p>
+        <div class="ba">
+          <div class="col before"><div class="lab">Before</div><p>You find out at month-end that spend spiked or conversions cratered — after the damage.</p></div>
+          <div class="arrow">&rarr;</div>
+          <div class="col after"><div class="lab">After</div><p>The agent checks daily and posts to Slack when a metric moves &gt;15% vs. baseline, tagging the owner.</p></div>
+        </div>
+        <div class="chips"><span class="chip">GA4</span><span class="chip">Google Ads</span><span class="chip">Meta Ads</span><span class="chip">Slack / Email</span></div>
+        <div class="impact"><span class="lab">Impact</span> <span class="t">Catch spend spikes and conversion drops the day they happen, not at month-end.</span></div>
+        <div class="approve none"><span class="g"></span><span>Read-only alert — no irreversible action.</span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- 02 ONBOARDING -->
+<section class="cat" id="onboarding">
+  <div class="wrap">
+    <div class="cat-head"><span class="cnum">CATEGORY 02</span></div>
+    <h2 class="rv">Client Onboarding</h2>
+    <p class="cdesc rv">Agents turn a signed contract into a fully set-up project — accounts, tasks, folders, credentials and a welcome sequence — so "signed" is followed by momentum, not days of silence.</p>
+    <div class="cards">
+
+      <article class="svc rv">
+        <div class="svc-top"><span class="svc-idx">SERVICE 04</span><span class="tag-lvl lvl3"><span class="d"></span>L3 · ADVANCED</span></div>
+        <h3>Contract-to-kickoff onboarding runner</h3>
+        <p class="does">When a contract is signed, it creates the project, tasks and folders, assigns owners and fires the welcome + credentials sequence.</p>
+        <div class="ba">
+          <div class="col before"><div class="lab">Before</div><p>"Signed" is followed by days of nothing while someone manually spins up an Asana project, a Drive folder and a kickoff email.</p></div>
+          <div class="arrow">&rarr;</div>
+          <div class="col after"><div class="lab">After</div><p>Off the DocuSign "completed" event, the agent builds the project from a template, creates the folder and sends the welcome with an access checklist.</p></div>
+        </div>
+        <div class="chips"><span class="chip">DocuSign / PandaDoc</span><span class="chip">Asana / ClickUp</span><span class="chip">Google Drive</span><span class="chip">HubSpot</span><span class="chip">Gmail</span></div>
+        <div class="impact"><span class="lab">Impact</span> <span class="t">Signed-to-kickoff drops from days to hours, and every new client is set up the same way.</span></div>
+        <div class="approve"><span class="g"></span><span>Human approves: reviews the auto-created project &amp; scope before the <b>welcome goes out</b>.</span></div>
+      </article>
+
+      <article class="svc rv">
+        <div class="svc-top"><span class="svc-idx">SERVICE 05</span><span class="tag-lvl lvl1"><span class="d"></span>L1 · SIMPLE</span></div>
+        <h3>Credentials &amp; access chaser</h3>
+        <p class="does">Tracks which client logins and ad-account grants are still missing and nudges until complete.</p>
+        <div class="ba">
+          <div class="col before"><div class="lab">Before</div><p>An account manager keeps forgetting to chase the client for Meta Business Manager access; the project stalls.</p></div>
+          <div class="arrow">&rarr;</div>
+          <div class="col after"><div class="lab">After</div><p>The agent sends day-3 and day-7 reminders and pings the AM in Slack if access is still pending.</p></div>
+        </div>
+        <div class="chips"><span class="chip">Gmail</span><span class="chip">Slack</span><span class="chip">Airtable</span></div>
+        <div class="impact"><span class="lab">Impact</span> <span class="t">No project stalls waiting on access, and nothing gets forgotten.</span></div>
+        <div class="approve none"><span class="g"></span><span>Reminders only — no irreversible action.</span></div>
+      </article>
+
+      <article class="svc rv">
+        <div class="svc-top"><span class="svc-idx">SERVICE 06</span><span class="tag-lvl lvl2"><span class="d"></span>L2 · STANDARD</span></div>
+        <h3>Intake form &rarr; client workspace setup</h3>
+        <p class="does">Turns a completed intake form into structured client records across the CRM and PM tool.</p>
+        <div class="ba">
+          <div class="col before"><div class="lab">Before</div><p>Someone copy-pastes a Typeform intake into HubSpot and Notion by hand, with the usual typos.</p></div>
+          <div class="arrow">&rarr;</div>
+          <div class="col after"><div class="lab">After</div><p>The agent standardizes the fields and creates the client record, project and brief page in one pass.</p></div>
+        </div>
+        <div class="chips"><span class="chip">Typeform</span><span class="chip">HubSpot</span><span class="chip">Notion / Airtable</span></div>
+        <div class="impact"><span class="lab">Impact</span> <span class="t">A new client is fully set up in one pass — no copy-paste, no typos.</span></div>
+        <div class="approve"><span class="g"></span><span>Human approves: optional review of the created records before they go live.</span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- 03 DATA SYNC -->
+<section class="cat" id="data-sync">
+  <div class="wrap">
+    <div class="cat-head"><span class="cnum">CATEGORY 03</span></div>
+    <h2 class="rv">Data Movement &amp; Sync</h2>
+    <p class="cdesc rv">Agents keep the same record consistent across your CRM, project tool, sheets and billing — so nobody re-types data and the tools stop disagreeing with each other.</p>
+    <div class="cards">
+
+      <article class="svc rv">
+        <div class="svc-top"><span class="svc-idx">SERVICE 07</span><span class="tag-lvl lvl2"><span class="d"></span>L2 · STANDARD</span></div>
+        <h3>CRM &harr; project-tool two-way sync</h3>
+        <p class="does">Keeps deal and client status consistent between the CRM and the PM tool so both always agree.</p>
+        <div class="ba">
+          <div class="col before"><div class="lab">Before</div><p>A "won" deal in HubSpot doesn't reach Asana until someone re-enters it; statuses drift apart.</p></div>
+          <div class="arrow">&rarr;</div>
+          <div class="col after"><div class="lab">After</div><p>The agent mirrors stage and status changes both directions and logs any conflict for a human.</p></div>
+        </div>
+        <div class="chips"><span class="chip">HubSpot</span><span class="chip">Asana / ClickUp</span></div>
+        <div class="impact"><span class="lab">Impact</span> <span class="t">The CRM and the project tool always agree; no re-entry, no drift.</span></div>
+        <div class="approve"><span class="g"></span><span>Human approves: resolves flagged sync <b>conflicts</b> only.</span></div>
+      </article>
+
+      <article class="svc rv">
+        <div class="svc-top"><span class="svc-idx">SERVICE 08</span><span class="tag-lvl lvl2"><span class="d"></span>L2 · STANDARD</span></div>
+        <h3>Meeting-notes &rarr; CRM logger</h3>
+        <p class="does">Turns call transcripts into a clean CRM activity with summary, action items and next steps.</p>
+        <div class="ba">
+          <div class="col before"><div class="lab">Before</div><p>A strategist means to type up the call and log it, then forgets; the context is lost.</p></div>
+          <div class="arrow">&rarr;</div>
+          <div class="col after"><div class="lab">After</div><p>The agent summarizes decisions and action items and writes them to the contact's HubSpot timeline with tasks.</p></div>
+        </div>
+        <div class="chips"><span class="chip">Fireflies / Otter</span><span class="chip">HubSpot</span><span class="chip">Asana</span></div>
+        <div class="impact"><span class="lab">Impact</span> <span class="t">Every call is logged with action items; context stops dying after the meeting.</span></div>
+        <div class="approve"><span class="g"></span><span>Human approves: reviews the summary before it becomes client-visible tasks.</span></div>
+      </article>
+
+      <article class="svc rv">
+        <div class="svc-top"><span class="svc-idx">SERVICE 09</span><span class="tag-lvl lvl1"><span class="d"></span>L1 · SIMPLE</span></div>
+        <h3>Spreadsheet &harr; database keeper</h3>
+        <p class="does">Syncs a working Google Sheet with the system of record so exports and imports stop.</p>
+        <div class="ba">
+          <div class="col before"><div class="lab">Before</div><p>Someone re-uploads a campaign tracker CSV into Airtable every week, and versions drift.</p></div>
+          <div class="arrow">&rarr;</div>
+          <div class="col after"><div class="lab">After</div><p>The agent watches for row changes and keeps both sides matched automatically.</p></div>
+        </div>
+        <div class="chips"><span class="chip">Google Sheets</span><span class="chip">Airtable</span></div>
+        <div class="impact"><span class="lab">Impact</span> <span class="t">One source of truth — exports and imports simply disappear.</span></div>
+        <div class="approve none"><span class="g"></span><span>Kept in sync automatically — no irreversible action.</span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- 04 LEAD OPS -->
+<section class="cat" id="lead-ops">
+  <div class="wrap">
+    <div class="cat-head"><span class="cnum">CATEGORY 04</span></div>
+    <h2 class="rv">Lead &amp; Pipeline Ops</h2>
+    <p class="cdesc rv">Agents capture, enrich, route, respond to and nurture inbound leads — so nothing sits cold and your team spends time on conversations, not data entry.</p>
+    <div class="cards">
+
+      <article class="svc rv">
+        <div class="svc-top"><span class="svc-idx">SERVICE 10</span><span class="tag-lvl lvl2"><span class="d"></span>L2 · STANDARD</span></div>
+        <h3>Inbound lead enrichment &amp; router</h3>
+        <p class="does">Cleans a new lead, enriches it with company data, filters junk and creates the CRM record with an owner.</p>
+        <div class="ba">
+          <div class="col before"><div class="lab">Before</div><p>A Typeform lead lands in an inbox and someone eventually looks up the company by hand.</p></div>
+          <div class="arrow">&rarr;</div>
+          <div class="col after"><div class="lab">After</div><p>The agent standardizes fields, drops personal-email domains, appends industry/size, and creates the HubSpot contact for the right rep.</p></div>
+        </div>
+        <div class="chips"><span class="chip">Typeform / Calendly</span><span class="chip">Enrichment</span><span class="chip">HubSpot</span><span class="chip">Slack</span></div>
+        <div class="impact"><span class="lab">Impact</span> <span class="t">Every lead is enriched and assigned in seconds, with junk filtered out before it hits the pipeline.</span></div>
+        <div class="approve none"><span class="g"></span><span>Internal records only — a human handles first outreach.</span></div>
+      </article>
+
+      <article class="svc rv">
+        <div class="svc-top"><span class="svc-idx">SERVICE 11</span><span class="tag-lvl lvl2"><span class="d"></span>L2 · STANDARD</span></div>
+        <h3>Speed-to-lead first responder</h3>
+        <p class="does">Sends an instant, personalized acknowledgment and booking link the moment a qualified lead arrives.</p>
+        <div class="ba">
+          <div class="col before"><div class="lab">Before</div><p>A lead waits until next day for a reply — and conversion quietly dies in the gap.</p></div>
+          <div class="arrow">&rarr;</div>
+          <div class="col after"><div class="lab">After</div><p>The agent replies within minutes with a relevant case study and Calendly link, then stops on reply or booking.</p></div>
+        </div>
+        <div class="chips"><span class="chip">Web forms</span><span class="chip">Gmail</span><span class="chip">Calendly</span><span class="chip">CRM</span></div>
+        <div class="impact"><span class="lab">Impact</span> <span class="t">Leads answered in minutes instead of next-day — protecting the conversions you already paid for.</span></div>
+        <div class="approve"><span class="g"></span><span>Human approves: the message templates up front; sends can require approval if you prefer.</span></div>
+      </article>
+
+      <article class="svc rv">
+        <div class="svc-top"><span class="svc-idx">SERVICE 12</span><span class="tag-lvl lvl2"><span class="d"></span>L2 · STANDARD</span></div>
+        <h3>Multi-touch nurture sequencer</h3>
+        <p class="does">Runs a timed nurture sequence for leads that didn't book, stopping the instant they engage.</p>
+        <div class="ba">
+          <div class="col before"><div class="lab">Before</div><p>The owner means to follow up between client work, and the lead goes cold.</p></div>
+          <div class="arrow">&rarr;</div>
+          <div class="col after"><div class="lab">After</div><p>The agent runs a 5-touch / 14-day sequence and hands off to a human on any reply.</p></div>
+        </div>
+        <div class="chips"><span class="chip">CRM / Email</span><span class="chip">Slack</span></div>
+        <div class="impact"><span class="lab">Impact</span> <span class="t">No lead goes cold in the gap between client work.</span></div>
+        <div class="approve"><span class="g"></span><span>Human approves: sequence content once; a person takes over on reply.</span></div>
+      </article>
+
+      <article class="svc rv">
+        <div class="svc-top"><span class="svc-idx">SERVICE 13</span><span class="tag-lvl lvl3"><span class="d"></span>L3 · ADVANCED</span></div>
+        <h3>Renewal &amp; upsell watchdog</h3>
+        <p class="does">Watches contract end-dates and triggers a staged renewal/upsell workflow with draft materials.</p>
+        <div class="ba">
+          <div class="col before"><div class="lab">Before</div><p>Renewals are handled in a last-minute scramble; upsells never get proposed.</p></div>
+          <div class="arrow">&rarr;</div>
+          <div class="col after"><div class="lab">After</div><p>At 60 days out the agent drafts a strategy review, prepares scope options at 30, and pings the AM to decide what to send.</p></div>
+        </div>
+        <div class="chips"><span class="chip">CRM</span><span class="chip">Gmail</span><span class="chip">Slack</span><span class="chip">Docs</span></div>
+        <div class="impact"><span class="lab">Impact</span> <span class="t">Renewals are worked 60 days out and upsells actually get proposed — protecting recurring revenue.</span></div>
+        <div class="approve"><span class="g"></span><span>Human approves: <b>every client-facing renewal or upsell</b> message (revenue-affecting).</span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- 05 CONTENT OPS -->
+<section class="cat" id="content-ops">
+  <div class="wrap">
+    <div class="cat-head"><span class="cnum">CATEGORY 05</span></div>
+    <h2 class="rv">Content Ops</h2>
+    <p class="cdesc rv">Agents draft, route for approval, schedule and repurpose content across briefs, calendars and channels — so the pipeline keeps moving and nothing publishes without a human's yes.</p>
+    <div class="cards">
+
+      <article class="svc rv">
+        <div class="svc-top"><span class="svc-idx">SERVICE 14</span><span class="tag-lvl lvl2"><span class="d"></span>L2 · STANDARD</span></div>
+        <h3>Content brief &rarr; first-draft generator</h3>
+        <p class="does">Turns an approved brief into a structured first draft for a human editor.</p>
+        <div class="ba">
+          <div class="col before"><div class="lab">Before</div><p>A writer stares at a blank doc and rebuilds the same structure from scratch each time.</p></div>
+          <div class="arrow">&rarr;</div>
+          <div class="col after"><div class="lab">After</div><p>The agent reads the Notion brief and keyword targets and produces an outline + first draft in the house format.</p></div>
+        </div>
+        <div class="chips"><span class="chip">Notion / Docs</span><span class="chip">Search Console</span><span class="chip">SEMrush</span></div>
+        <div class="impact"><span class="lab">Impact</span> <span class="t">Writers edit instead of starting from a blank page, so content throughput goes up.</span></div>
+        <div class="approve"><span class="g"></span><span>Human approves: a person edits and approves — <b>nothing auto-publishes</b>.</span></div>
+      </article>
+
+      <article class="svc rv">
+        <div class="svc-top"><span class="svc-idx">SERVICE 15</span><span class="tag-lvl lvl2"><span class="d"></span>L2 · STANDARD</span></div>
+        <h3>Content approval router</h3>
+        <p class="does">Moves a draft through defined review tiers with SLAs and escalates if approvals stall.</p>
+        <div class="ba">
+          <div class="col before"><div class="lab">Before</div><p>Approvals get lost in email threads; assets sit for days waiting on a nudge.</p></div>
+          <div class="arrow">&rarr;</div>
+          <div class="col after"><div class="lab">After</div><p>The agent routes reviewer &rarr; client with reminders and escalates to a manager after 24h of silence.</p></div>
+        </div>
+        <div class="chips"><span class="chip">Notion / Airtable</span><span class="chip">Slack</span><span class="chip">Forms</span></div>
+        <div class="impact"><span class="lab">Impact</span> <span class="t">Approvals stop stalling in email; SLAs are enforced automatically.</span></div>
+        <div class="approve"><span class="g"></span><span>Human approves: each reviewer's <b>approval is the gate</b> — the agent only routes and nudges.</span></div>
+      </article>
+
+      <article class="svc rv">
+        <div class="svc-top"><span class="svc-idx">SERVICE 16</span><span class="tag-lvl lvl2"><span class="d"></span>L2 · STANDARD</span></div>
+        <h3>Publish &amp; repurpose distributor</h3>
+        <p class="does">Once content is approved, schedules it and spins channel-specific variants.</p>
+        <div class="ba">
+          <div class="col before"><div class="lab">Before</div><p>A social manager manually cuts each blog into LinkedIn and X posts and schedules them one by one.</p></div>
+          <div class="arrow">&rarr;</div>
+          <div class="col after"><div class="lab">After</div><p>The agent drafts the variants from the approved piece and queues them in the scheduler for review.</p></div>
+        </div>
+        <div class="chips"><span class="chip">Buffer / Hootsuite</span><span class="chip">Notion</span><span class="chip">LinkedIn</span></div>
+        <div class="impact"><span class="lab">Impact</span> <span class="t">One approved piece becomes every channel variant, queued for a human's yes.</span></div>
+        <div class="approve"><span class="g"></span><span>Human approves: the scheduled queue before it <b>publishes externally</b>.</span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- 06 BILLING -->
+<section class="cat" id="billing">
+  <div class="wrap">
+    <div class="cat-head"><span class="cnum">CATEGORY 06</span></div>
+    <h2 class="rv">Billing &amp; Finance Ops</h2>
+    <p class="cdesc rv">Agents handle invoicing, payment chasing and receipt capture — so cash is collected on time and money-related steps always wait for a person's approval.</p>
+    <div class="cards">
+
+      <article class="svc rv">
+        <div class="svc-top"><span class="svc-idx">SERVICE 17</span><span class="tag-lvl lvl2"><span class="d"></span>L2 · STANDARD</span></div>
+        <h3>Recurring invoice generator</h3>
+        <p class="does">Creates and drafts recurring client invoices from the source-of-truth on schedule.</p>
+        <div class="ba">
+          <div class="col before"><div class="lab">Before</div><p>Someone manually raises the same monthly retainer invoices in QuickBooks and occasionally forgets one.</p></div>
+          <div class="arrow">&rarr;</div>
+          <div class="col after"><div class="lab">After</div><p>The agent reads the retainer table and drafts each invoice for a bookkeeper to approve and send.</p></div>
+        </div>
+        <div class="chips"><span class="chip">Airtable / Sheets</span><span class="chip">QuickBooks / Xero</span><span class="chip">Stripe</span></div>
+        <div class="impact"><span class="lab">Impact</span> <span class="t">Every retainer is invoiced on time — no missed revenue.</span></div>
+        <div class="approve"><span class="g"></span><span>Human approves: <b>every invoice before it's sent</b> (money-related).</span></div>
+      </article>
+
+      <article class="svc rv">
+        <div class="svc-top"><span class="svc-idx">SERVICE 18</span><span class="tag-lvl lvl2"><span class="d"></span>L2 · STANDARD</span></div>
+        <h3>Overdue-invoice chaser</h3>
+        <p class="does">Detects unpaid invoices and runs a polite, escalating reminder sequence.</p>
+        <div class="ba">
+          <div class="col before"><div class="lab">Before</div><p>Someone eyeballs the AR aging report and awkwardly chases payments when they remember.</p></div>
+          <div class="arrow">&rarr;</div>
+          <div class="col after"><div class="lab">After</div><p>The agent watches invoice status, sends staged reminders, and flags accounts past a threshold for a human call.</p></div>
+        </div>
+        <div class="chips"><span class="chip">QuickBooks / Xero</span><span class="chip">Stripe</span><span class="chip">Gmail</span><span class="chip">Slack</span></div>
+        <div class="impact"><span class="lab">Impact</span> <span class="t">Cash comes in faster and overdue balances get chased without the awkward reminders.</span></div>
+        <div class="approve"><span class="g"></span><span>Human approves: tone up front; final <b>escalation</b> steps stay human.</span></div>
+      </article>
+
+      <article class="svc rv">
+        <div class="svc-top"><span class="svc-idx">SERVICE 19</span><span class="tag-lvl lvl2"><span class="d"></span>L2 · STANDARD</span></div>
+        <h3>Receipt &amp; vendor-invoice capture</h3>
+        <p class="does">Extracts vendor, amount and date from incoming bills and creates the accounting record for approval.</p>
+        <div class="ba">
+          <div class="col before"><div class="lab">Before</div><p>Vendor bills are keyed from email into the ledger by hand, with the occasional wrong number.</p></div>
+          <div class="arrow">&rarr;</div>
+          <div class="col after"><div class="lab">After</div><p>The agent reads the PDF, extracts the fields and creates a draft bill routed for approval.</p></div>
+        </div>
+        <div class="chips"><span class="chip">Gmail / Outlook</span><span class="chip">OCR</span><span class="chip">QuickBooks / Xero</span><span class="chip">Drive</span></div>
+        <div class="impact"><span class="lab">Impact</span> <span class="t">Vendor bills are booked straight from the PDF instead of keyed by hand.</span></div>
+        <div class="approve"><span class="g"></span><span>Human approves: <b>each bill before it's booked or paid</b> (money-related).</span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- 07 STATUS QA -->
+<section class="cat" id="status-qa">
+  <div class="wrap">
+    <div class="cat-head"><span class="cnum">CATEGORY 07</span></div>
+    <h2 class="rv">Status, Comms &amp; QA / Monitoring</h2>
+    <p class="cdesc rv">Agents keep clients and teams updated, watch KPIs and health, and flag anomalies before a human notices — including the monitoring layer that watches every other agent.</p>
+    <div class="cards">
+
+      <article class="svc rv">
+        <div class="svc-top"><span class="svc-idx">SERVICE 20</span><span class="tag-lvl lvl2"><span class="d"></span>L2 · STANDARD</span></div>
+        <h3>Weekly internal status digest</h3>
+        <p class="does">Compiles cross-tool metrics into a formatted status report for leadership on schedule.</p>
+        <div class="ba">
+          <div class="col before"><div class="lab">Before</div><p>A PM spends Friday afternoon pulling project completion, closed deals and open tickets into a summary.</p></div>
+          <div class="arrow">&rarr;</div>
+          <div class="col after"><div class="lab">After</div><p>The agent queries each system Friday at 4pm and posts a clean digest to the leadership channel.</p></div>
+        </div>
+        <div class="chips"><span class="chip">Asana / ClickUp</span><span class="chip">HubSpot</span><span class="chip">Help desk</span><span class="chip">Slack</span></div>
+        <div class="impact"><span class="lab">Impact</span> <span class="t">The Friday status report writes itself.</span></div>
+        <div class="approve none"><span class="g"></span><span>Internal, read-only — no irreversible action.</span></div>
+      </article>
+
+      <article class="svc rv">
+        <div class="svc-top"><span class="svc-idx">SERVICE 21</span><span class="tag-lvl lvl3"><span class="d"></span>L3 · ADVANCED</span></div>
+        <h3>Ops health &amp; pipeline monitor</h3>
+        <p class="does">Continuously watches the automations and data pipelines themselves and alerts on failures or anomalies.</p>
+        <div class="ba">
+          <div class="col before"><div class="lab">Before</div><p>You discover a broken connector when a client report ships empty — after the client has already seen it.</p></div>
+          <div class="arrow">&rarr;</div>
+          <div class="col after"><div class="lab">After</div><p>The agent checks that each sync ran and each source returned data, and pages the owner on failure. The QA layer over everything else.</p></div>
+        </div>
+        <div class="chips"><span class="chip">Pipeline monitoring</span><span class="chip">Slack</span><span class="chip">PagerDuty / Email</span></div>
+        <div class="impact"><span class="lab">Impact</span> <span class="t">Broken connectors are caught before a client ever sees an empty report.</span></div>
+        <div class="approve none"><span class="g"></span><span>Detects and alerts — a human triages. This is the telemetry that makes failures visible early.</span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- CHOOSE PLAN -->
+<section id="choose">
+  <div class="wrap">
+    <div class="kicker rv">How to choose</div>
+    <h2 class="rv">Start with your highest-impact agent. Grow the portfolio.</h2>
+    <p class="sub rv">Most agencies begin with the one automation that hurts most — usually reporting or
+      onboarding — prove it in production, then add the next. You never buy a level; you subscribe to
+      an operated capability that grows with you.</p>
+    <div class="choose">
+      <div class="pick rv">
+        <div class="pn">Start</div>
+        <div class="pp">$900<small>/mo</small></div>
+        <div class="who">For your first automation done right.</div>
+        <ul>
+          <li>1 production agent — any level, your highest-impact one</li>
+          <li>Hosting + monitoring with real telemetry</li>
+          <li>Monthly report: processed, flagged, escalated</li>
+          <li>Fixes and adjustments included</li>
+        </ul>
+        <a class="btn btn-ghost js-tg" href="#">Start the conversation</a>
+      </div>
+      <div class="pick feat rv">
+        <span class="badge">Where most agencies land</span>
+        <div class="pn">Operate</div>
+        <div class="pp">$1,600<small>/mo</small></div>
+        <div class="who">For running core ops on agents.</div>
+        <ul>
+          <li>Up to 3 production agents across levels</li>
+          <li>A new automation from your hours-lost map each quarter</li>
+          <li>Priority support, direct channel</li>
+          <li>Everything in Start</li>
+        </ul>
+        <a class="btn btn-primary js-tg" href="#">Start the conversation</a>
+      </div>
+      <div class="pick rv">
+        <div class="pn">Scale</div>
+        <div class="pp">$2,500<small>/mo</small></div>
+        <div class="who">For operating on agents end-to-end.</div>
+        <ul>
+          <li>An agent portfolio across your operation</li>
+          <li>Continuous build queue</li>
+          <li>Monthly ops-review call</li>
+          <li>Everything in Operate</li>
+        </ul>
+        <a class="btn btn-ghost js-tg" href="#">Start the conversation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="final">
+  <div class="wrap">
+    <h2 class="rv">Don't see yours? It probably fits.</h2>
+    <p class="rv">This catalog is a starting menu, not a limit. Tell us the most repetitive task in your
+      operation and we'll map it to a level, an example and a plan — honestly, including when it isn't
+      worth automating.</p>
+    <a class="btn btn-primary js-tg rv" href="#">Talk to us on Telegram</a>
+    <p style="margin-top:16px;font-size:14px;color:var(--dim)">Prefer email? <a id="mail-link" href="#">Write to us</a> &nbsp;·&nbsp; <a href="/ops/">Back to overview</a></p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap foot">
+    <div>MINDFAX OPS · AI operations for agencies &amp; consultancies</div>
+    <div><a href="/ops/">Overview</a> &nbsp;·&nbsp; <a href="/">MINDFAX ecosystem</a></div>
+  </div>
+</footer>
+
+<script>
+  var TELEGRAM_URL = "https://t.me/mindfax_ops_bot";
+  var CONTACT_EMAIL = "iamediafactory.studio@gmail.com";
+  document.querySelectorAll(".js-tg").forEach(function(a){ a.href = TELEGRAM_URL; });
+  var ml = document.getElementById("mail-link");
+  if(ml) ml.href = "mailto:" + CONTACT_EMAIL + "?subject=" + encodeURIComponent("Automation for our agency");
+
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("on"); io.unobserve(e.target); } });
+  }, {threshold: .14});
+  document.querySelectorAll(".rv").forEach(function(el){ io.observe(el); });
+</script>
+</body>
+</html>
