@@ -7,7 +7,7 @@
   window.__MINDFAX_WIDGET__ = true;
 
   var ENDPOINT = "/chat"; // será prefixado com o domínio do worker (ver CHAT_URL)
-  var CHAT_URL = "https://chat.mindfax.art/chat"; // worker (troque/configure se mudar)
+  var CHAT_URL = "https://mindfax-chat.iamediafactory-studio.workers.dev"; // worker do chat (Cloudflare)
   var BOT = "t.me/mindfax_ops_bot";
   var WHATSAPP_NUM = "5561996138513";
   var EMAIL_TO = "iamediafactory.studio@gmail.com";
