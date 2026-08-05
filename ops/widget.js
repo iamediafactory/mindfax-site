@@ -54,7 +54,7 @@
   pan.innerHTML =
     '<div class="mfx-chat-head"><span class="dot"></span><span><b>MINDFAX OPS</b><span class="sub">assistente de IA · online</span></span></div>' +
     '<div class="mfx-hero">Fale conosco pelo nosso chat 👇 <span>respondemos na hora, direto aqui</span></div>' +
-    '<div class="mfx-log" id="mfxLog"><div class="mfx-b ai"><b>Bem-vindo(a)!</b> 👋 Sou a IA da MINDFAX OPS — automatizo o trabalho repetitivo de agências e consultorias (relatórios, onboarding, dados, status).<br><br>Como posso te ajudar hoje?</div></div>' +
+    '<div class="mfx-log" id="mfxLog"><div class="mfx-b ai"><b>👋 Welcome to MINDFAX OPS</b><br>We build AI agents that run the repetitive work of agencies and consultancies.<br><br>Please choose your preferred language to continue: <b>Português · English · Español</b></div></div>' +
     '<div class="mfx-bar"><input id="mfxInput" placeholder="Escreva sua mensagem…" aria-label="Mensagem"/><button id="mfxSend">Ir</button></div>' +
     '<div class="mfx-note">Prefere outro canal? <a href="https://t.me/mindfax_ops_bot" target="_blank" rel="noopener">Telegram</a> · <a href="https://wa.me/5561996138513" target="_blank" rel="noopener">WhatsApp</a> · <a href="mailto:iamediafactory.studio@gmail.com">E-mail</a></div>';
   document.body.appendChild(pan);
