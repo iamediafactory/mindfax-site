@@ -36,7 +36,10 @@
     ".mfx-channel{display:flex;align-items:center;gap:9px;background:#14211d;border:1px solid #1f332b;border-radius:10px;padding:10px 12px;color:#e8f4ee;font-size:13px;cursor:pointer;text-align:left;width:100%;font-family:inherit}",
     ".mfx-channel:hover{border-color:#2f4a3d}",
     ".mfx-channel span{flex:1}",
-    ".mfx-note{font-size:10.5px;color:#5c7367;text-align:center;padding:6px;border-top:1px solid #131e21}"
+    ".mfx-note{font-size:10.5px;color:#5c7367;text-align:center;padding:6px;border-top:1px solid #131e21}",
+    ".mfx-note a{color:#4fd1a5;text-decoration:none;margin:0 3px}.mfx-note a:hover{text-decoration:underline}",
+    ".mfx-hero{padding:8px 16px;background:radial-gradient(300px 60px at 50% 0%,rgba(79,209,165,.18),transparent 75%);font-size:13.5px;color:#e8f4ee;border-bottom:1px solid #14211d}",
+    ".mfx-hero span{display:block;font-size:11.5px;color:#7f9a8d}"
   ].join("");
   document.head.appendChild(style);
 
@@ -50,9 +53,10 @@
   pan.className = "mfx-chat-panel";
   pan.innerHTML =
     '<div class="mfx-chat-head"><span class="dot"></span><span><b>MINDFAX OPS</b><span class="sub">assistente de IA · online</span></span></div>' +
+    '<div class="mfx-hero">Fale conosco pelo nosso chat 👇 <span>respondemos na hora, direto aqui</span></div>' +
     '<div class="mfx-log" id="mfxLog"><div class="mfx-b ai"><b>Bem-vindo(a)!</b> 👋 Sou a IA da MINDFAX OPS — automatizo o trabalho repetitivo de agências e consultorias (relatórios, onboarding, dados, status).<br><br>Como posso te ajudar hoje?</div></div>' +
     '<div class="mfx-bar"><input id="mfxInput" placeholder="Escreva sua mensagem…" aria-label="Mensagem"/><button id="mfxSend">Ir</button></div>' +
-    '<div class="mfx-note">Atendimento por IA · um humano (analista sênior) assume se você pedir.</div>';
+    '<div class="mfx-note">Prefere outro canal? <a href="https://t.me/mindfax_ops_bot" target="_blank" rel="noopener">Telegram</a> · <a href="https://wa.me/5561996138513" target="_blank" rel="noopener">WhatsApp</a> · <a href="mailto:iamediafactory.studio@gmail.com">E-mail</a></div>';
   document.body.appendChild(pan);
 
   var log = document.getElementById("mfxLog");
