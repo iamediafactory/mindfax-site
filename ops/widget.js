@@ -52,11 +52,11 @@
   var pan = document.createElement("div");
   pan.className = "mfx-chat-panel";
   pan.innerHTML =
-    '<div class="mfx-chat-head"><span class="dot"></span><span><b>MINDFAX OPS</b><span class="sub">assistente de IA · online</span></span></div>' +
-    '<div class="mfx-hero">Fale conosco pelo nosso chat 👇 <span>respondemos na hora, direto aqui</span></div>' +
-    '<div class="mfx-log" id="mfxLog"><div class="mfx-b ai"><b>👋 Welcome to MINDFAX OPS</b><br>We build AI agents that run the repetitive work of agencies and consultancies.<br><br>Please choose your preferred language to continue: <b>Português · English · Español</b></div></div>' +
-    '<div class="mfx-bar"><input id="mfxInput" placeholder="Escreva sua mensagem…" aria-label="Mensagem"/><button id="mfxSend">Ir</button></div>' +
-    '<div class="mfx-note">Prefere outro canal? <a href="https://t.me/mindfax_ops_bot" target="_blank" rel="noopener">Telegram</a> · <a href="https://wa.me/5561996138513" target="_blank" rel="noopener">WhatsApp</a> · <a href="mailto:iamediafactory.studio@gmail.com">E-mail</a></div>';
+    '<div class="mfx-chat-head"><span class="dot"></span><span><b>MINDFAX OPS</b><span class="sub">AI assistant · online</span></span></div>' +
+    '<div class="mfx-hero">Chat with us — right here 👇 <span>instant replies, no setup</span></div>' +
+    '<div class="mfx-log" id="mfxLog"><div class="mfx-b ai"><b>👋 Welcome to MINDFAX OPS</b><br>We build AI agents that run the repetitive work of agencies and consultancies.<br><br>Please choose your preferred language to continue: <b>English · Español · Português</b></div></div>' +
+    '<div class="mfx-bar"><input id="mfxInput" placeholder="Type your message…" aria-label="Message"/><button id="mfxSend">Send</button></div>' +
+    '<div class="mfx-note">Prefer another channel? <a href="https://t.me/mindfax_ops_bot" target="_blank" rel="noopener">Telegram</a> · <a href="https://wa.me/5561996138513" target="_blank" rel="noopener">WhatsApp</a> · <a href="mailto:iamediafactory.studio@gmail.com">Email</a></div>';
   document.body.appendChild(pan);
 
   var log = document.getElementById("mfxLog");
@@ -75,10 +75,10 @@
 
   function fallbackChannels(txt) {
     var c = document.createElement("div"); c.className = "mfx-channels";
-    c.innerHTML = '<div class="tl">Prefere continuar em outro canal?</div>' +
+    c.innerHTML = '<div class="tl">Prefer to continue on another channel?</div>' +
       '<button class="mfx-channel" data-c="t"><span>💬 Telegram</span></button>' +
       '<button class="mfx-channel" data-c="w"><span>💬 WhatsApp</span></button>' +
-      '<button class="mfx-channel" data-c="e"><span>📧 E-mail</span></button>';
+      '<button class="mfx-channel" data-c="e"><span>📧 Email</span></button>';
     log.appendChild(c);
     c.addEventListener("click", function (e) {
       var b = e.target.closest(".mfx-channel"); if (!b) return;
