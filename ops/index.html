@@ -157,6 +157,27 @@
   .final p{color:var(--muted);margin-bottom:34px}
   footer{border-top:1px solid var(--line);padding:36px 0;font-size:13.5px;color:var(--dim)}
   .foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  /* ---- MINDFAX OPS chat widget ---- */
+  .mfx-chat-fab{position:fixed;right:22px;bottom:22px;z-index:999;width:60px;height:60px;border-radius:50%;border:none;cursor:pointer;
+    background:radial-gradient(circle at 30% 30%,#65e3c2,#1f9c6e);box-shadow:0 8px 24px rgba(0,0,0,.35);
+    display:flex;align-items:center;justify-content:center;transition:transform .2s}
+  .mfx-chat-fab:hover{transform:scale(1.06)}
+  .mfx-chat-fab svg{width:30px;height:30px;fill:#06231a}
+  .mfx-chat-panel{position:fixed;right:22px;bottom:92px;z-index:999;width:330px;max-width:calc(100vw - 40px);
+    background:#0b1214;border:1px solid #1e2a2e;border-radius:16px;box-shadow:0 20px 50px rgba(0,0,0,.55);
+    display:none;flex-direction:column;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+  .mfx-chat-panel.open{display:flex}
+  .mfx-chat-head{background:#0f1a1c;padding:14px 16px;border-bottom:1px solid #1e2a2e;display:flex;align-items:center;gap:10px}
+  .mfx-chat-head .dot{width:9px;height:9px;border-radius:50%;background:#4fd1a5;box-shadow:0 0 8px #4fd1a5}
+  .mfx-chat-head b{font-size:14px;color:#e8f4ee}.mfx-chat-head span{display:block;font-size:11px;color:#7f9a8d}
+  .mfx-chat-body{padding:14px 16px;min-height:120px;max-height:230px;overflow-y:auto;font-size:13.5px;color:#cfdfd7;line-height:1.5}
+  .mfx-chat-msg{background:#14211d;border:1px solid #1f332b;border-radius:12px;padding:10px 12px;margin-bottom:8px}
+  .mfx-chat-msg b{color:#5ee0be}
+  .mfx-chat-input{display:flex;gap:8px;padding:10px;border-top:1px solid #1e2a2e;background:#0d1517}
+  .mfx-chat-input input{flex:1;background:#162226;border:1px solid #22333a;border-radius:10px;color:#e8f4ee;padding:10px 12px;font-size:13px;outline:none}
+  .mfx-chat-input button{background:radial-gradient(circle at 30% 30%,#5ee0be,#1f9c6e);border:none;color:#03180f;font-weight:700;border-radius:10px;padding:0 16px;cursor:pointer;font-size:13px}
+  .mfx-chat-note{font-size:10.5px;color:#5c7367;text-align:center;padding:6px;border-top:1px solid #131e21}
+
 </style>
 </head>
 <body>
@@ -551,5 +572,7 @@
   });
   calc();
 </script>
+
+<script src="widget.js"></script>
 </body>
 </html>
