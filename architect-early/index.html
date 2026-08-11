@@ -735,24 +735,12 @@
   </main>
 
   <!-- FOOTER -->
-  <footer>
-<div class="mfxlin"><p>THE ARCHITECT — Early Edition is the entry point to <strong>The Architect Universe</strong>, the axis the whole ecosystem turns on.</p><nav aria-label="Universe hierarchy"><a href="/thearchitectuniverse/">The Architect Universe<span>the axis</span></a><a href="/thefreedomprotocol/">The Freedom Protocol<span>Volume Zero · the doctrine</span></a><a href="/mindfax/">Mindfax<span>the cosmos arm</span></a><a href="/neurabyte/">Neurabyte<span>the mind arm</span></a><a href="/finsage-universe/">Finsage<span>the matter arm</span></a><a href="/">MINDFAX<span>the studio</span></a></nav></div>
-
-    <div class="container footer-inner">
-      <div>
-        © <span id="year"></span> MINDFAX • IA Media Factory Publishing™ · All rights reserved.
-      </div>
-      <div class="footer-right">
-        <span>Universe: THE ARCHITECT</span>
-        <span>Domain: mindfax.art</span>
-      </div>
-    </div>
-  </footer>
+  
 </div>
 
 <script>
   // Atualiza o ano automaticamente
-  document.getElementById("year").textContent = "2025–2026";
+  var _y=document.getElementById("year"); if(_y) _y.textContent = "2025–2026";
 </script>
 
 <!-- ===== MINDFAX ecosystem nav (cross-links) ===== -->
@@ -775,8 +763,7 @@
     <div class="mfx-links"><a href="/">Home</a><a href="/thearchitectuniverse/">The Architect Universe</a><span aria-current="page">Early Edition</span><a href="/thecontinuum/">The Continuum</a><a href="/thefreedomprotocol/">Freedom Protocol</a><a href="/finsage/">Finsage</a><a href="/neurabyte-protocol/">Neurabyte</a><a href="/aiplayground/">AI Playground</a><a href="/thesecondforestproject/">The Second Forest</a></div>
     <p class="mfx-cp">© <span class="mfx-y"></span> MINDFAX · IA Media Factory Publishing™ · All rights reserved.</p>
   </div>
-  <script>document.querySelectorAll(".mfx-y").forEach(function(e){e.textContent="2025–2026"});</script>
-</nav>
+  </nav>
 <!-- ===== /MINDFAX ecosystem nav ===== -->
 
 <style>
@@ -849,5 +836,20 @@ document.addEventListener('click',function(e){var t=e.target.closest('.mfxfilm [
 document.addEventListener('keydown',function(e){if(e.key!=='Enter'&&e.key!==' ')return;
 var t=document.activeElement&&document.activeElement.closest&&document.activeElement.closest('.mfxfilm [data-yt]');if(t){e.preventDefault();m(t);}});})();</script>
 
+
+<footer>
+<div class="mfxlin"><p>THE ARCHITECT — Early Edition is the entry point to <strong>The Architect Universe</strong>, the axis the whole ecosystem turns on.</p><nav aria-label="Universe hierarchy"><a href="/thearchitectuniverse/">The Architect Universe<span>the axis</span></a><a href="/thefreedomprotocol/">The Freedom Protocol<span>Volume Zero · the doctrine</span></a><a href="/mindfax/">Mindfax<span>the cosmos arm</span></a><a href="/neurabyte/">Neurabyte<span>the mind arm</span></a><a href="/finsage-universe/">Finsage<span>the matter arm</span></a><a href="/">MINDFAX<span>the studio</span></a></nav></div>
+
+    <div class="container footer-inner">
+      <div>
+        © <span id="year"></span> MINDFAX • IA Media Factory Publishing™ · All rights reserved.
+      </div>
+      <div class="footer-right">
+        <span>Universe: THE ARCHITECT</span>
+        <span>Domain: mindfax.art</span>
+      </div>
+    </div>
+  </footer>
+<script id="mfxyear">(function(){var y="2025–2026";document.querySelectorAll("#year,#y,.mfx-y").forEach(function(e){e.textContent=y;});})();</script>
 </body>
 </html>
