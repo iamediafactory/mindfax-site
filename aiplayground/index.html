@@ -1681,53 +1681,11 @@ What grows from it depends on what you do at home.
   </div>
 
   <!-- FOOTER -->
-  <footer>
-<div class="mfxlin"><p>AI Playground is a work of <strong>Neurabyte</strong>, the mind arm of The Architect Universe.</p><nav aria-label="Universe hierarchy"><a href="/neurabyte/">Neurabyte<span>the mind arm</span></a><a href="/thearchitectuniverse/">The Architect Universe<span>the axis</span></a><a href="/thefreedomprotocol/">The Freedom Protocol<span>Volume Zero · the doctrine</span></a><a href="/neurabyte-protocol/">Neurabyte Protocol<span>a sister work</span></a><a href="/">MINDFAX<span>the studio</span></a></nav></div>
-
-    <div class="wrap">
-      <div class="footer-top">
-        <div>
-          <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
-            <div class="top-logo" style="width:64px;height:64px;border-radius:16px;">
-              <img
-                src="./AI%20PLAYGROUND_Logo%20sem%20fundo.png"
-                alt="AI PLAYGROUND logo"
-                onerror="this.outerHTML='<div class=&quot;logo-fallback&quot; width="1024" height="1024" loading="lazy" decoding="async" />AI<br/>PG</div>'"
-              />
-            </div>
-            <div>
-              <div style="font-family:'Cinzel',serif;letter-spacing:.10em;font-weight:700;">AI PLAYGROUND</div>
-              <div style="color:var(--muted);font-size:12px;margin-top:4px;">
-                Official System Portal · Published by IA Media Factory Studio™ · Powered by Neurabyte™
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="footer-links">
-          <a href="#what">What it is</a>
-          <a href="#system">System</a>
-          <a href="#validation">Validation</a>
-          <a href="#start">Start</a>
-          <a href="#author">Author</a>
-          <a href="#top" onclick="scrollToTop(event)">Back to top</a>
-        </div>
-      </div>
-
-      <div class="footer-note">
-        <span class="mono" style="color:rgba(53,214,210,.92);">AI PLAYGROUND —</span>
-        <span class="mono" style="color:rgba(210,138,47,.92);">Because thinking never goes out of style.</span>
-      </div>
-
-      <div style="margin-top:18px; color:var(--muted2); font-size:12px;">
-        © <span id="year"></span> The Architect · IA Media Factory Studio™. All rights reserved.
-      </div>
-    </div>
-  </footer>
+  
 
   <script>
     // Year
-    document.getElementById("year").textContent = "2025–2026";
+    var _y=document.getElementById("year"); if(_y) _y.textContent = "2025–2026";
 
     // Smooth scroll helper
     function scrollToId(id){
@@ -1934,8 +1892,7 @@ What grows from it depends on what you do at home.
     <div class="mfx-links"><a href="/">Home</a><a href="/thearchitectuniverse/">The Architect Universe</a><a href="/architect-early/">Early Edition</a><a href="/thecontinuum/">The Continuum</a><a href="/thefreedomprotocol/">Freedom Protocol</a><a href="/finsage/">Finsage</a><a href="/neurabyte-protocol/">Neurabyte</a><span aria-current="page">AI Playground</span><a href="/thesecondforestproject/">The Second Forest</a></div>
     <p class="mfx-cp">© <span class="mfx-y"></span> MINDFAX · IA Media Factory Publishing™ · All rights reserved.</p>
   </div>
-  <script>document.querySelectorAll(".mfx-y").forEach(function(e){e.textContent="2025–2026"});</script>
-</nav>
+  </nav>
 <!-- ===== /MINDFAX ecosystem nav ===== -->
 
 <style>
@@ -2016,5 +1973,50 @@ document.addEventListener('click',function(e){var t=e.target.closest('.mfxfilm [
 document.addEventListener('keydown',function(e){if(e.key!=='Enter'&&e.key!==' ')return;
 var t=document.activeElement&&document.activeElement.closest&&document.activeElement.closest('.mfxfilm [data-yt]');if(t){e.preventDefault();m(t);}});})();</script>
 
+
+<footer>
+<div class="mfxlin"><p>AI Playground is a work of <strong>Neurabyte</strong>, the mind arm of The Architect Universe.</p><nav aria-label="Universe hierarchy"><a href="/neurabyte/">Neurabyte<span>the mind arm</span></a><a href="/thearchitectuniverse/">The Architect Universe<span>the axis</span></a><a href="/thefreedomprotocol/">The Freedom Protocol<span>Volume Zero · the doctrine</span></a><a href="/neurabyte-protocol/">Neurabyte Protocol<span>a sister work</span></a><a href="/">MINDFAX<span>the studio</span></a></nav></div>
+
+    <div class="wrap">
+      <div class="footer-top">
+        <div>
+          <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+            <div class="top-logo" style="width:64px;height:64px;border-radius:16px;">
+              <img
+                src="./AI%20PLAYGROUND_Logo%20sem%20fundo.png"
+                alt="AI PLAYGROUND logo"
+                onerror="this.outerHTML='<div class=&quot;logo-fallback&quot; width="1024" height="1024" loading="lazy" decoding="async" />AI<br/>PG</div>'"
+              />
+            </div>
+            <div>
+              <div style="font-family:'Cinzel',serif;letter-spacing:.10em;font-weight:700;">AI PLAYGROUND</div>
+              <div style="color:var(--muted);font-size:12px;margin-top:4px;">
+                Official System Portal · Published by IA Media Factory Studio™ · Powered by Neurabyte™
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <a href="#what">What it is</a>
+          <a href="#system">System</a>
+          <a href="#validation">Validation</a>
+          <a href="#start">Start</a>
+          <a href="#author">Author</a>
+          <a href="#top" onclick="scrollToTop(event)">Back to top</a>
+        </div>
+      </div>
+
+      <div class="footer-note">
+        <span class="mono" style="color:rgba(53,214,210,.92);">AI PLAYGROUND —</span>
+        <span class="mono" style="color:rgba(210,138,47,.92);">Because thinking never goes out of style.</span>
+      </div>
+
+      <div style="margin-top:18px; color:var(--muted2); font-size:12px;">
+        © <span id="year"></span> The Architect · IA Media Factory Studio™. All rights reserved.
+      </div>
+    </div>
+  </footer>
+<script id="mfxyear">(function(){var y="2025–2026";document.querySelectorAll("#year,#y,.mfx-y").forEach(function(e){e.textContent=y;});})();</script>
 </body>
 </html>
