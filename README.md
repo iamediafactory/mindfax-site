@@ -4,7 +4,7 @@ Official web repository for the MINDFAX ecosystem and The Architect Universe.
 
 ## Overview
 
-This repository contains a multi-property web ecosystem for original books, educational systems, digital products and science-fiction universes created and directed by Mateus Lolas.
+This repository contains a multi-property web ecosystem for original books, educational systems, digital products and science-fiction universes created and directed by Mathew Loulas.
 
 It was built through an AI-native development process in which specialized AI systems supported coding, design, research, editing and review under human architecture, validation and final responsibility.
 
@@ -55,7 +55,7 @@ Each property has its own page, visual language and assets while remaining part 
 
 ## AI-native working method
 
-Mateus Lolas acts as the human architect and final authority.
+Mathew Loulas acts as the human architect and final authority.
 
 The workflow includes:
 
@@ -101,9 +101,9 @@ Unless explicitly stated otherwise:
 - no permission is granted to reproduce, redistribute, train on or commercially exploit these assets;
 - third-party trademarks and platforms remain the property of their respective owners.
 
-Copyright © Mateus Lolas / IA Media Factory. All rights reserved.
+Copyright © Mathew Loulas / IA Media Factory. All rights reserved.
 
 ## Contact
 
-For professional collaboration involving AI-native systems, digital products, publishing or intellectual-property architecture, contact Mateus Lolas through his professional profile or the official MINDFAX channels.
+For professional collaboration involving AI-native systems, digital products, publishing or intellectual-property architecture, contact Mathew Loulas through his professional profile or the official MINDFAX channels.
 
