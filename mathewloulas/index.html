@@ -41,7 +41,7 @@
       "alternateName": ["The Architect", "Mateus Lolas"],
       "url": "https://mindfax.art/mathewloulas/",
       "mainEntityOfPage": "https://mindfax.art/mathewloulas/",
-      "image": "https://mindfax.art/mathewloulas/og.png",
+      "image": ["https://mindfax.art/mathewloulas/mathew.webp","https://mindfax.art/mathewloulas/og.png"],
       "email": "mailto:iamediafactory.studio@gmail.com",
       "jobTitle": "Author and AI Systems Architect",
       "description": "Author writing under the pen name The Architect, and AI systems architect. Creator of The Architect Universe and founder of MINDFAX OPS.",
@@ -125,6 +125,11 @@ a{color:inherit}
   pointer-events:none;mix-blend-mode:screen;
   -webkit-mask-image:radial-gradient(closest-side,#000 38%,transparent 76%);
   mask-image:radial-gradient(closest-side,#000 38%,transparent 76%)}
+/* faixa do universo, largura total */
+.band{position:relative;width:100vw;left:50%;margin-left:-50vw;margin-bottom:74px;line-height:0;overflow:hidden}
+.band img{width:100%;height:auto;display:block}
+.band::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,var(--bg) 0%,transparent 16%,transparent 78%,var(--bg) 100%)}
 .hero .wrap{position:relative;z-index:2}
 .eyebrow{font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--cyan);font-weight:600;margin:0 0 26px}
 h1{font-family:var(--serif);font-weight:300;font-size:clamp(40px,6.1vw,78px);line-height:1.04;
@@ -167,10 +172,16 @@ section{padding:96px 0}
 .pseudo{background:
   linear-gradient(180deg,rgba(79,209,255,.05),transparent 40%),var(--bg2);
   border-top:1px solid var(--line2);border-bottom:1px solid var(--line2)}
-.pgrid{display:grid;grid-template-columns:300px 1fr;gap:60px;align-items:start}
-.pfig{position:relative}
-.pfig img{border-radius:14px;border:1px solid var(--line);width:100%}
-.pfig figcaption{margin-top:14px;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);text-align:center}
+.pgrid{display:grid;grid-template-columns:344px 1fr;gap:56px;align-items:start}
+.portraits{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.portraits figure{margin:0}
+.portraits img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 26%;
+  border-radius:12px;border:1px solid var(--line);background:#070a14;display:block}
+.portraits img.arch{object-position:center 18%;border-color:rgba(79,209,255,.26)}
+.portraits figcaption{margin-top:12px;font-family:var(--display);font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;color:#cbd2e8;text-align:center;line-height:1.4}
+.portraits figcaption span{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.11em;
+  color:var(--dim);margin-top:5px;text-transform:uppercase}
 .pbody .statement{font-family:var(--serif);font-size:clamp(21px,2.5vw,29px);font-weight:300;line-height:1.42;color:#e9ecfa;margin:0 0 26px;letter-spacing:-.012em}
 .pbody .statement b{color:var(--cyan);font-weight:400}
 .pbody p{color:var(--muted);font-size:17px;line-height:1.7;margin:0 0 17px;max-width:60ch}
@@ -257,13 +268,23 @@ section{padding:96px 0}
 .svlist span{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:10px}
 .svlist h4{font-family:var(--serif);font-weight:400;font-size:20px;margin:0 0 8px;line-height:1.25}
 .svlist p{font-size:15px;line-height:1.62;color:var(--muted);margin:0}
-.honour figure{margin:0}
-.honour img{border-radius:14px;border:1px solid var(--line)}
-.honour figcaption{font-size:13px;line-height:1.6;color:var(--dim);margin-top:14px}
-.honour h4{font-family:var(--serif);font-weight:400;font-size:23px;margin:26px 0 10px;line-height:1.25}
-.honour p{font-size:15.5px;line-height:1.66;color:var(--muted);margin:0 0 12px}
-.honour .seal{display:inline-block;font-size:10.5px;letter-spacing:.17em;text-transform:uppercase;color:var(--gold);
-  border:1px solid rgba(232,192,122,.4);padding:6px 12px;border-radius:999px;margin-bottom:18px}
+.creed{position:relative;border:1px solid rgba(232,192,122,.22);border-radius:18px;padding:38px 36px 34px;
+  background:linear-gradient(160deg,rgba(232,192,122,.055),rgba(232,192,122,.012) 55%,transparent),var(--panel);overflow:hidden}
+.creed::after{content:"";position:absolute;bottom:-190px;right:-170px;width:460px;height:460px;
+  background:url("/assets/brand/art-fractal-motif.webp") center/contain no-repeat;opacity:.09;
+  mix-blend-mode:screen;pointer-events:none;
+  -webkit-mask-image:radial-gradient(closest-side,#000 34%,transparent 74%);
+  mask-image:radial-gradient(closest-side,#000 34%,transparent 74%)}
+.creed>*{position:relative;z-index:2}
+.creed .seal{display:inline-block;font-size:10.5px;letter-spacing:.17em;text-transform:uppercase;color:var(--gold);
+  border:1px solid rgba(232,192,122,.4);padding:6px 12px;border-radius:999px;margin-bottom:26px}
+.creed .credo{font-family:var(--serif);font-weight:300;font-size:clamp(26px,3vw,36px);line-height:1.22;
+  letter-spacing:-.018em;color:#eef1fb;margin:0 0 26px}
+.creed .credo em{font-style:italic;color:var(--gold)}
+.creed p{font-size:16.5px;line-height:1.72;color:var(--muted);margin:0 0 16px}
+.creed p b{color:#d8dcf0;font-weight:600}
+.creed .credo-end{font-family:var(--serif);font-style:italic;font-size:17.5px;line-height:1.66;color:#c6cde6;
+  border-top:1px solid rgba(232,192,122,.18);padding-top:20px;margin:24px 0 0}
 
 /* ---------- CONTACT ---------- */
 .contact{padding:104px 0 96px;position:relative;overflow:hidden}
@@ -305,7 +326,7 @@ section{padding:96px 0}
 
 /* ---------- RESPONSIVO ---------- */
 @media(max-width:1000px){
-  .pgrid{grid-template-columns:220px 1fr;gap:38px}
+  .pgrid{grid-template-columns:284px 1fr;gap:38px}
   .feat{grid-template-columns:250px 1fr;gap:36px;padding:34px}
   .sysgrid{grid-template-columns:1fr}
   .works{grid-template-columns:1fr}
@@ -322,7 +343,8 @@ section{padding:96px 0}
   .hero::after{width:520px;height:520px;right:-190px;opacity:.08}
   section{padding:68px 0}
   .pgrid{grid-template-columns:1fr;gap:34px}
-  .pfig{max-width:230px}
+  .portraits{max-width:420px}
+  .band{margin-bottom:44px}
   .namesplit{grid-template-columns:1fr}
   .feat{grid-template-columns:1fr;gap:28px;padding:26px}
   .feat img{max-width:230px}
@@ -375,7 +397,7 @@ section{padding:96px 0}
     <ul class="also">
       <li>Founder of <b>MINDFAX OPS</b> — AI agents built, hosted and monitored, with a human approving anything irreversible</li>
       <li>Career <b>public servant</b> in Brazil, and an <b>educator at the University of Brasília since 2009</b></li>
-      <li>Leader of <b>humanitarian and educational work</b> in the Federal District, honoured by the Federal Senate in 2026</li>
+      <li>One of many hands behind <b>humanitarian and educational work</b> in the Federal District</li>
     </ul>
     <p class="constraint">Everything on this page was made by one person working alongside specialised AI systems, while holding a full-time public career. Authorship, judgment and final responsibility stayed human. That is not a disclaimer. It is the thesis.</p>
     <div class="cta">
@@ -393,7 +415,7 @@ section{padding:96px 0}
       <div><b>6</b><span>works published and on sale, two of them on Amazon in Kindle and paperback</span><i>Since 2025</i></div>
       <div><b>4</b><span>YouTube channels across the three arms of the universe, 28 published pieces on the main one</span><i>Cosmos · mind · matter</i></div>
       <div><b>17</b><span>years teaching languages to socially vulnerable students at the University of Brasília</span><i>PESES · since 2009</i></div>
-      <div><b>2026</b><span>Chico Xavier Commendation, awarded in the plenary of the Federal Senate of Brazil</span><i>7 July · Brasília</i></div>
+      <div><b>1</b><span>person directing multiple specialised AI systems — authorship and final responsibility never delegated</span><i>The working method</i></div>
     </div>
   </div>
 </div>
@@ -406,10 +428,16 @@ section{padding:96px 0}
       <h2>Two names, and neither is a <em>disguise.</em></h2>
     </div>
     <div class="pgrid">
-      <figure class="pfig rv">
-        <img src="architect.webp" alt="The Architect — the authorial figure of The Architect Universe" width="461" height="720" loading="lazy" decoding="async">
-        <figcaption>The Architect</figcaption>
-      </figure>
+      <div class="portraits rv">
+        <figure>
+          <img src="mathew.webp" alt="Mathew Loulas" width="760" height="760" loading="lazy" decoding="async">
+          <figcaption>Mathew Loulas</figcaption>
+        </figure>
+        <figure>
+          <img class="arch" src="architect.webp" alt="The Architect — the authorial figure of The Architect Universe" width="461" height="720" loading="lazy" decoding="async">
+          <figcaption>The Architect</figcaption>
+        </figure>
+      </div>
       <div class="pbody rv">
         <p class="statement">“I write under the name The Architect. <b>Not as a character. Not as a brand. As a function.</b>”</p>
         <p>The pen name is not there to hide anything. It is there to concentrate. <strong>The Architect is not a generic pen name — it is an ongoing experiment in how one consciousness can host many universes at once.</strong></p>
@@ -462,7 +490,8 @@ section{padding:96px 0}
 </section>
 
 <!-- ============ THE UNIVERSE ============ -->
-<section id="works">
+<section id="works" style="padding-top:0">
+  <div class="band" aria-hidden="true"><img src="universe-banner.webp" alt="" width="1920" height="767" loading="lazy" decoding="async"></div>
   <div class="wrap">
     <div class="shead rv">
       <p>The body of work</p>
@@ -707,9 +736,9 @@ section{padding:96px 0}
           <p>Citizen services, planning, institutional development, oversight and the governance of social initiatives — the environment where accountability is not a design principle but a legal obligation.</p>
         </article>
         <article>
-          <span>Humanitarian</span>
-          <h4>Obras Sociais O Consolador</h4>
-          <p>Free full-time education, daily meals and integral care in Sol Nascente, Ceilândia — the most vulnerable region of the Federal District. No cost to any family, and not a single day interrupted since 2005.</p>
+          <span>Volunteer work</span>
+          <h4>A school in Sol Nascente</h4>
+          <p>Free education and daily meals for children in the most vulnerable region of the Federal District. I give it time, like many others do. It is not my work — it is work I get to be part of.</p>
         </article>
         <article>
           <span>Writing</span>
@@ -717,15 +746,12 @@ section{padding:96px 0}
           <p>Science fiction, educational methods, digital products and AI-native publishing systems — all of it signed, all of it public, all of it carrying one name.</p>
         </article>
       </div>
-      <div class="honour rv">
-        <figure>
-          <img src="senado.webp" alt="The Chico Xavier Commendation being handed over in the plenary of the Federal Senate of Brazil" width="1280" height="825" loading="lazy" decoding="async">
-          <figcaption>The commendation handed over in the plenary of the Federal Senate — 7 July 2026, Brasília.</figcaption>
-        </figure>
-        <span class="seal" style="margin-top:26px">Chico Xavier Commendation · Federal Senate</span>
-        <h4>One of three institutions in Brazil recognised in 2026</h4>
-        <p>On 7 July 2026, in the plenary of the Federal Senate, Obras Sociais O Consolador was one of three charitable institutions in the country chosen to receive the Chico Xavier Commendation for the Encouragement of Charity.</p>
-        <p>For a school that operates in the largest area of social vulnerability in the Federal District, that day said more than any report could.</p>
+      <div class="creed rv">
+        <span class="seal">A note on the part that is not a portfolio</span>
+        <p class="credo">Charity is not a feeling. <em>It is an architecture.</em></p>
+        <p>Every tradition I have worked inside — religious, secular, institutional — arrives at the same instruction written in a different alphabet. <b>Love your neighbour as yourself.</b> Do unto others as you would have them do unto you. <b>Ubuntu</b> — I am because we are. <b>Tikkun olam</b> — repair the world. <b>Ahimsa</b> — do no harm to what lives. The vocabulary changes with the century and the language. The engineering does not.</p>
+        <p>It belongs to no single faith, and it needs none to be true. It is the oldest working system humanity has, and it still outperforms everything built to replace it — including anything I could write.</p>
+        <p class="credo-end">Which is why none of it is a project of mine. A school stays open because dozens of people show up, every day, for years. Any honour that reaches it belongs to those hands — never to a name on a website.</p>
       </div>
     </div>
   </div>
