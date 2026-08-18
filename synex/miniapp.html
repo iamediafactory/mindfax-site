@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SYNEX — Painel do Cofundador</title>
+<meta name="theme-color" content="#070709">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Newsreader:opsz,wght@6..72,300;6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="synex.css">
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body class="app">
+
+<div class="app-top">
+  <div class="app-id">
+    <a class="mark" href="index.html" style="font-size:11px"><b>[</b><span>SYNEX</span><b>]</b></a>
+    <span class="who">cofundador <b id="cf">#—</b></span>
+  </div>
+  <div class="app-rail">
+    <span><i class="dot"></i><b class="on" id="mode">—</b></span>
+    <span>MECANISMOS <b id="mech">00 / 12</b></span>
+    <span>FREIO <b id="kill">—</b></span>
+    <span>CICLO <b id="cyc">—</b></span>
+  </div>
+  <div class="tabs">
+    <button class="on" data-t="agora">Agora</button>
+    <button data-t="hist">Histórico</button>
+    <button data-t="livro">Livro</button>
+    <button data-t="casa">A casa</button>
+    <button data-t="maq">Sala de máquinas</button>
+  </div>
+</div>
+
+<!-- ============ AGORA ============ -->
+<section class="pane on" id="p-agora">
+  <h2>Posições abertas na sua conta</h2>
+  <span class="sub">lido da corretora · não do nosso banco</span>
+
+  <div class="kpi">
+    <div><span class="k">posições</span><span class="v" id="pos">—</span></div>
+    <div><span class="k">capital lido</span><span class="v" id="cap">—</span></div>
+    <div><span class="k">reconciliação</span><span class="v s" id="rec">—</span></div>
+    <div><span class="k">guardião</span><span class="v s" id="grd">—</span></div>
+  </div>
+
+  <div class="empty" id="noPos"><p>Nenhuma posição aberta neste momento</p></div>
+
+  <div class="note" style="margin-top:22px">
+    <p><strong style="color:var(--bone)">O que você vê aqui é lido da corretora</strong>, não do
+      nosso banco. Se divergir do que a sua corretora mostra, isso é um sinistro &mdash; e o
+      guardião abre um dossiê sozinho.</p>
+  </div>
+</section>
+
+<!-- ============ HISTORICO ============ -->
+<section class="pane" id="p-hist">
+  <h2>Suas operações</h2>
+  <span class="sub">cada saída, com a categoria do motivo</span>
+
+  <div class="empty"><p>Sem operações registradas sob o seu número</p></div>
+
+  <div class="note" style="margin-top:22px">
+    <p><strong style="color:var(--bone)">Sobre o motivo de cada saída.</strong> Mostramos a
+      categoria &mdash; alvo, stop, estagnação, tempo. Não mostramos os limiares que definem cada
+      uma: é o método, e ele é o que protege quem já está dentro.</p>
+  </div>
+</section>
+
+<!-- ============ LIVRO ============ -->
+<section class="pane" id="p-livro">
+  <h2>Livro de mecanismos</h2>
+  <span class="sub">validados com dinheiro real</span>
+
+  <div class="kpi" style="grid-template-columns:1fr">
+    <div><span class="k">fechados</span><span class="v s"><span id="mn">00</span> / 12</span><span class="k" style="margin:8px 0 0">fechados com dinheiro real</span></div>
+  </div>
+
+  <div class="mech" id="mgrid"></div>
+
+  <div class="note">
+    <p><strong style="color:var(--bone)">A fase venture termina quando isto fechar em 12.</strong>
+      Enquanto houver caixa em branco, você é cofundador &mdash; e o seu preço está congelado.</p>
+  </div>
+</section>
+
+<!-- ============ A CASA ============ -->
+<section class="pane" id="p-casa">
+  <h2>O registro da casa</h2>
+  <span class="sub">o pior dia com o mesmo peso do melhor</span>
+
+  <div class="kpi">
+    <div><span class="k">dias operando</span><span class="v" id="dias">—</span></div>
+    <div><span class="k">operações</span><span class="v" id="ops">—</span></div>
+    <div><span class="k">melhor dia</span><span class="v s" id="bd">—</span></div>
+    <div><span class="k">pior dia</span><span class="v a" id="wd">—</span></div>
+  </div>
+
+  <div class="note">
+    <p><strong style="color:var(--bone)">O pior dia aparece com o mesmo peso do melhor.</strong>
+      É de propósito. Um registro que só mostra o que deu certo não é registro &mdash; é propaganda.</p>
+  </div>
+</section>
+
+<!-- ============ SALA DE MAQUINAS ============ -->
+<section class="pane" id="p-maq">
+  <h2>Da sala de máquinas</h2>
+  <span class="sub">boletim curado · o que quebrou e o que foi corrigido</span>
+
+  <div class="rowi">
+    <div class="h"><b>O freio que evaporava no reboot</b><span>18/08/2026</span></div>
+    <p>O kill-switch vivia num diretório que o sistema limpa ao reiniciar. Se o motor tivesse se
+      parado e a máquina reiniciasse, ele voltaria a operar sozinho &mdash; o oposto da regra que
+      rege o projeto. Corrigido com espelho em disco durável: armar propaga, desarmar continua
+      sendo ato humano.</p>
+  </div>
+
+  <div class="rowi">
+    <div class="h"><b>O observatório inteiro estava cego</b><span>18/08/2026</span></div>
+    <p>Sete rotinas de monitoramento rodavam num modo diferente do motor que observavam. O módulo
+      de diagnóstico pulava as próprias checagens porque se achava em simulação. Instrumentação que
+      não grita custa mais caro que o defeito que ela deveria pegar.</p>
+  </div>
+
+  <div class="rowi">
+    <div class="h"><b>Acervo em disco volátil</b><span>18/08/2026</span></div>
+    <p>Todo o registro operacional vivia num diretório limpo a cada reinício. Para uma casa cuja
+      tese é que o ativo é o acervo probatório, isso é defeito estrutural. Migrado para disco
+      durável com rotação.</p>
+  </div>
+
+  <div class="note">
+    <p>Você lê o que aconteceu e o que foi feito. Não lê o método, os limiares nem o código
+      &mdash; e é isso que protege o seu lugar aqui dentro.</p>
+  </div>
+</section>
+
+<div class="appfoot">
+  <p>Software experimental em fase venture · lucro é projetado, nunca prometido · o capital pode ser perdido integralmente</p>
+</div>
+
+<script>
+(function(){
+  var TG = window.Telegram && window.Telegram.WebApp;
+  if (TG) {
+    TG.ready();
+    TG.expand();
+    try { TG.setHeaderColor('#070709'); TG.setBackgroundColor('#070709'); } catch(e){}
+    try { TG.disableVerticalSwipes && TG.disableVerticalSwipes(); } catch(e){}
+  }
+
+  // abas
+  var btns=[].slice.call(document.querySelectorAll('.tabs button'));
+  btns.forEach(function(b){ b.addEventListener('click',function(){
+    btns.forEach(function(x){x.classList.remove('on')}); b.classList.add('on');
+    [].slice.call(document.querySelectorAll('.pane')).forEach(function(p){p.classList.remove('on')});
+    document.getElementById('p-'+b.dataset.t).classList.add('on');
+    if (TG && TG.HapticFeedback) { try{ TG.HapticFeedback.selectionChanged(); }catch(e){} }
+  });});
+
+  // grade do livro de mecanismos
+  var g=document.getElementById('mgrid');
+  for(var i=1;i<=12;i++){ var e=document.createElement('i'); e.textContent=('0'+i).slice(-2); g.appendChild(e); }
+
+  // estado: pedido ao backend com o initData do Telegram para validacao HMAC no servidor.
+  // enquanto o endpoint nao responder, a tela mostra tracos — nunca numero inventado.
+  var API='/api/estado';
+  function set(id,v){ var el=document.getElementById(id); if(el && v!==undefined && v!==null) el.textContent=v; }
+
+  function pinta(d){
+    set('cf', d.cofundador ? '#'+d.cofundador : '#—');
+    set('mode', d.modo || '—');
+    set('mech', ('0'+(d.mecanismos||0)).slice(-2)+' / 12');
+    set('mn', ('0'+(d.mecanismos||0)).slice(-2));
+    set('kill', d.kill===true ? 'ARMADO' : (d.kill===false ? 'OFF' : '—'));
+    set('cyc', d.ciclo || '—');
+    set('pos', d.posicoes!==undefined ? d.posicoes : '—');
+    set('cap', d.capital!==undefined ? d.capital : '—');
+    set('rec', d.reconciliado ? 'OK' : '—');
+    set('grd', d.guardiao || '—');
+    set('dias', d.dias!==undefined ? d.dias : '—');
+    set('ops', d.operacoes!==undefined ? d.operacoes : '—');
+    set('bd', d.melhor_dia || '—');
+    set('wd', d.pior_dia || '—');
+    var np=document.getElementById('noPos');
+    if (np && d.posicoes > 0) np.style.display='none';
+    for(var i=0;i<(d.mecanismos||0);i++){ if(g.children[i]) g.children[i].classList.add('f'); }
+  }
+
+  fetch(API, {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({ initData: (TG && TG.initData) || '' })
+  })
+  .then(function(r){ if(!r.ok) throw 0; return r.json(); })
+  .then(pinta)
+  .catch(function(){
+    // sem backend ainda: a tela permanece em tracos, declarada como tal.
+    document.getElementById('mode').textContent='SEM CANAL';
+    document.getElementById('mode').classList.remove('on');
+  });
+})();
+</script>
+</body>
+</html>
