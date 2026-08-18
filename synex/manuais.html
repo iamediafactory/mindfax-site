@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SYNEX — Como gerar a chave que não pode sacar</title>
-<meta name="description" content="O passo que torna a custódia zero um fato técnico em vez de uma promessa. Aberto, sem login.">
+<title>SYNEX — A chave que não pode sacar (Protocolo §9A)</title>
+<meta name="description" content="Permissões mínimas, subconta dedicada e bloqueio automático. O protocolo de segurança de conta, aberto e sem login.">
 <meta name="theme-color" content="#070709">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +21,9 @@
         <a href="ciencia.html">Ciência</a>
         <a href="contrato.html">Contrato</a>
         <a href="adesao.html">Adesão</a>
-        <a href="manuais.html">Manuais</a>
+        <a href="manuais.html">Chave</a>
+        <a href="registro.html">Registro</a>
+        <a href="atendimento.html">Atendimento</a>
         <a href="academy.html">Academy</a>
       </nav>
     </div>
@@ -40,50 +42,95 @@
 <main class="page">
   <div class="wrap">
     <div class="crumb">
-      <a href="index.html">Início</a><span class="sep">/</span><span class="now">Manuais · abertos, sem login</span>
+      <a href="index.html">Início</a><span class="sep">/</span><span class="now">Passo 4 de 4 · a chave</span>
     </div>
-
-    <h1>Como gerar a chave que não pode sacar.</h1>
+<div class="prog"><div class="">01 · Ciência</div><div class="">02 · Contrato</div><div class="">03 · Adesão</div><div class="on">04 · Chave</div></div>
+    <h1>A chave que não pode sacar.</h1>
     <p class="lede">Este é o passo que torna a custódia zero um fato técnico em vez de uma promessa.
-      Leia antes de aderir &mdash; e não é preciso ter conta para ler.</p>
+      O que está nesta página é o <strong>Protocolo de Segurança de Conta &sect;9A</strong> &mdash;
+      parte integrante do acordo, não recomendação. Leia antes de aderir; não é preciso ter conta.</p>
 
     <div class="warn">
       <h3>Ninguém da SYNEX pede chave por mensagem</h3>
-      <p>Ninguém da SYNEX vai te pedir senha, código de verificação ou chave por mensagem. A chave
-        é entregue por formulário seguro, nunca em conversa de chat. Se alguém pedir de outro jeito,
-        não é a SYNEX.</p>
+      <p>Ninguém vai te pedir senha, código de verificação ou chave por mensagem. A chave é entregue
+        por formulário seguro, nunca em conversa de chat. Se alguém pedir de outro jeito, não é a SYNEX.</p>
     </div>
 
-    <h2 style="margin-top:56px">Os passos</h2>
-    <div class="pstep"><i>[ 01 ]</i><div><b>Crie uma subconta dedicada</b>
-      <p>Na corretora, crie uma subconta separada e transfira para ela apenas o capital que você
-        decidiu operar. Assim, o resto do que você tem fica fora do alcance de qualquer defeito
-        &mdash; inclusive dos nossos.</p></div></div>
+    <h2 style="margin-top:64px">&sect;9A.1 · Permissões de chave — regra absoluta</h2>
+    <div class="grid g2" style="margin-top:28px">
+      <div class="cel"><h3 style="color:var(--signal)">O que a chave PODE ter</h3>
+        <p><strong>Leitura</strong> (Read) e <strong>negociação</strong> (Trade). Nada além disso.</p></div>
+      <div class="cel"><h3 style="color:var(--alert)">O que a chave NUNCA pode ter</h3>
+        <p><strong>Retirada</strong> (withdraw). E <strong>transferência interna de ativos</strong>
+          (internal transfer) &mdash; <strong>este é o ponto crítico</strong>, e é o que quase todo
+          mundo esquece de desmarcar.</p></div>
+    </div>
 
-    <div class="pstep"><i>[ 02 ]</i><div><b>Gere a chave de API dentro da subconta</b>
+    <div class="warn" style="border-color:var(--alert);background:rgba(217,97,76,.05)">
+      <h3 style="color:var(--alert)">O bloqueio é automático, e é declarado</h3>
+      <p>Se a chave tiver permissão de transferência ou de retirada, a SYNEX <strong>bloqueia
+        automaticamente a sua conta na plataforma</strong> e te informa. Ela permanece travada até
+        a correção &mdash; chave nova, ou a permissão removida. O bloqueio não é rigor: é a prova
+        de diligência da casa, e fica registrado no seu livro (&sect;9A.6-c).</p>
+    </div>
+
+    <h2 style="margin-top:64px">Os passos</h2>
+    <div class="pstep"><i>[ 01 ]</i><div><b>Crie uma subconta dedicada &mdash; &sect;9A.2</b>
+      <p>A estratégia opera <strong>exclusivamente na subconta dedicada</strong> que você criar
+        (ex.: <code>SYNEX-TRADING</code>). Transfira para ela apenas o capital que você decidiu
+        alocar. <strong>A sua conta principal nunca é tocada.</strong> E a chave que você entrega
+        tem de ser <strong>da subconta</strong>, não da conta principal.</p></div></div>
+
+    <div class="pstep"><i>[ 02 ]</i><div><b>Gere a chave dentro da subconta</b>
       <p>Marque apenas <code>leitura</code> e <code>operação de futuros</code>. Deixe
-        <code>saque</code> e <code>transferência</code> desmarcados. Se a corretora não permitir
-        separar isso, não prossiga &mdash; e nos avise.</p></div></div>
+        <code>saque</code> e <code>transferência interna</code> desmarcados. Se a corretora não
+        permitir separar isso, não prossiga &mdash; e nos avise.</p></div></div>
 
     <div class="pstep"><i>[ 03 ]</i><div><b>Restrinja a chave ao nosso IP</b>
       <p>A tela de vínculo mostra o endereço exato a autorizar. Chave sem restrição de origem é
-        recusada pelo sistema &mdash; não por rigor nosso, mas porque uma chave sem restrição vale
-        para qualquer um que a obtenha.</p></div></div>
+        recusada &mdash; não por rigor nosso, mas porque uma chave sem restrição vale para qualquer
+        um que a obtenha.</p></div></div>
 
     <div class="pstep"><i>[ 04 ]</i><div><b>Entregue pelo formulário seguro</b>
       <p>Dentro do aplicativo no Telegram existe um formulário próprio para isso.
-        <strong>Nunca cole a chave numa mensagem de chat</strong> &mdash; mensagem fica no
-        histórico, sincroniza em todos os seus aparelhos e pode ser encaminhada.</p></div></div>
+        <strong>Nunca cole a chave numa mensagem de chat</strong> &mdash; mensagem fica no histórico,
+        sincroniza em todos os seus aparelhos e pode ser encaminhada.</p></div></div>
 
     <div class="pstep"><i>[ 05 ]</i><div><b>O sistema confere na hora</b>
-      <p>Antes de qualquer operação, verificamos três coisas: se a chave pode sacar (recusa), se
-        tem restrição de origem (exige), e se consegue ler saldo e posições (exige). O resultado
-        dessa verificação fica registrado na sua adesão.</p></div></div>
+      <p>Antes de qualquer operação verificamos três coisas: se a chave pode sacar (recusa), se tem
+        restrição de origem (exige), e se consegue ler saldo e posições (exige). O resultado dessa
+        verificação fica registrado na sua adesão.</p></div></div>
 
     <div class="pstep"><i>[ 06 ]</i><div><b>Comece em simulação</b>
       <p>O motor roda simulado sobre a sua conta real por um período mínimo. Você recebe as
         mensagens, vê os sinais e observa uma queda simulada. Só depois disso o modo real é
         liberado &mdash; e por ato deliberado seu.</p></div></div>
+
+    <h2 style="margin-top:72px">&sect;9A.3 · A única movimentação que o sistema faz</h2>
+    <div class="prose narrow">
+      <p>Na estratégia de futuros, você autoriza expressamente a SYNEX a mover capital
+        <strong>spot ↔ futuros dentro da sua própria subconta</strong>, somente no montante que a
+        estratégia exige, com cada movimentação registrada e auditável.</p>
+      <p>A SYNEX <strong>nunca</strong> transfere para carteira externa, para outro usuário, nem
+        realiza retirada. Só isso, e só ali dentro.</p>
+    </div>
+
+    <h2 style="margin-top:72px">&sect;9A.4 e &sect;9A.5 · Se você mexer na subconta</h2>
+    <div class="grid g2">
+      <div class="cel"><h3>O sistema detecta e pausa</h3><p>Se você fizer ação manual na subconta
+        &mdash; transferência, compra de outro ativo, trade manual, mudança de alavancagem,
+        alteração de permissões &mdash; que conflite com a estratégia, o sistema
+        <strong>detecta, registra e pausa</strong> até reconciliar.</p></div>
+      <div class="cel"><h3 style="color:var(--alert)">E a responsabilidade é sua</h3><p>Nesse caso a
+        responsabilidade é exclusivamente sua, e divergências decorrentes disso
+        <strong>não geram direito</strong> a reparação. O seu livro de auditoria é a fonte da
+        verdade de quem fez o quê e quando.</p></div>
+    </div>
+    <div class="note">
+      <p>O compromisso, dos dois lados: você não opera manualmente na subconta enquanto a estratégia
+        estiver ativa &mdash; e nós registramos cada movimento que fazemos, para que você possa
+        cobrar o mesmo de nós.</p>
+    </div>
 
     <div class="grid g2" style="margin-top:44px">
       <div class="cel"><h3>Como sair</h3><p>Revogue a chave no painel da corretora. Isso encerra
@@ -91,9 +138,9 @@
         quiser, encerre a licença na sua área &mdash; mas a operação já terá parado no segundo em
         que a chave morreu.</p></div>
       <div class="cel"><h3>O dia ruim</h3><p>Vai chegar. O motor tem quedas previstas e
-        documentadas, e uma delas vai acontecer com você dentro. Quando acontecer, você vai receber
-        a explicação do que houve &mdash; não silêncio. Se a queda passar do limite que você
-        aceitou, o sistema para sozinho e avisa.</p></div>
+        documentadas, e uma delas vai acontecer com você dentro. Quando acontecer, você recebe a
+        explicação do que houve &mdash; não silêncio. Se a queda passar do limite que você aceitou,
+        o sistema para sozinho e avisa.</p></div>
     </div>
 
     <div class="note">
@@ -102,8 +149,8 @@
     </div>
 
     <div class="acts">
-      <a class="btn btn-p" href="adesao.html">Voltar à adesão</a>
-      <a class="btn" href="index.html">Início</a>
+      <a class="btn btn-p" href="registro.html">O livro que se abre no seu nome</a>
+      <a class="btn" href="adesao.html">Voltar à adesão</a>
     </div>
   </div>
 </main>
@@ -118,8 +165,11 @@
           <a href="ciencia.html">Ciência</a>
           <a href="contrato.html">Contrato</a>
           <a href="adesao.html">Adesão</a>
-          <a href="manuais.html">Manuais</a>
+          <a href="manuais.html">Manual da chave</a>
+          <a href="registro.html">O livro e a retenção</a>
+          <a href="atendimento.html">Atendimento e prazos</a>
           <a href="academy.html">SFC Academy</a>
+          <a href="miniapp.html">Painel no Telegram</a>
         </div>
       </div>
       <p class="fnote">

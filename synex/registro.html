@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SYNEX — O livro auditável, e por quanto tempo ele existe</title>
+<meta name="description" content="Livro append-only encadeado por hash desde a assinatura (§9C), prazos de retenção e protocolo de reclamação (§9B).">
+<meta name="theme-color" content="#070709">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,200;0,6..72,300;0,6..72,400;1,6..72,300&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="synex.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="mast">
+      <a class="mark" href="index.html"><b>[</b><span>SYNEX</span><b>]</b></a>
+      <nav>
+        <a href="ciencia.html">Ciência</a>
+        <a href="contrato.html">Contrato</a>
+        <a href="adesao.html">Adesão</a>
+        <a href="manuais.html">Chave</a>
+        <a href="registro.html">Registro</a>
+        <a href="atendimento.html">Atendimento</a>
+        <a href="academy.html">Academy</a>
+      </nav>
+    </div>
+  </div>
+  <div class="rail">
+    <div class="wrap">
+      <div class="cell"><span class="dot"></span><b class="on">OBSERVAÇÃO ADIANTE</b></div>
+      <div class="cell">MECANISMOS <b>00 / 12</b></div>
+      <div class="cell">CAPITAL DE USUÁRIO <b>NENHUM</b></div>
+      <div class="cell">REGISTRO <b>APPEND-ONLY · ENCADEADO</b></div>
+      <div class="cell">FASE <b>VENTURE</b></div>
+    </div>
+  </div>
+</header>
+
+<main class="page">
+  <div class="wrap">
+    <div class="crumb">
+      <a href="index.html">Início</a><span class="sep">/</span><span class="now">O registro</span>
+    </div>
+
+    <h1>O livro se abre na assinatura, não na primeira operação.</h1>
+    <p class="lede">A partir da hora em que você assina, tudo passa a ser registrado &mdash;
+      antes de qualquer pagamento e antes de qualquer trade. Esta página é o
+      <strong>&sect;9C</strong> e o <strong>&sect;9B</strong> do acordo, na tela.</p>
+
+    <h2 style="margin-top:64px">&sect;9C.2 · O que entra no livro</h2>
+    <div class="book" style="margin-top:26px">
+      <table>
+        <thead><tr><th>evento</th><th>registrado</th></tr></thead>
+        <tbody>
+          <tr><td class="ev">assinatura do acordo &mdash; data, hora, versão</td><td style="color:var(--signal)">sim</td></tr>
+          <tr><td class="ev">ciência do projeto e dos manuais</td><td style="color:var(--signal)">sim</td></tr>
+          <tr><td class="ev">pagamentos &mdash; valor, id, confirmação</td><td style="color:var(--signal)">sim</td></tr>
+          <tr><td class="ev">conexão de chave &mdash; permissões detectadas</td><td style="color:var(--signal)">sim</td></tr>
+          <tr><td class="ev">bloqueios e validações de chave</td><td style="color:var(--signal)">sim</td></tr>
+          <tr><td class="ev">movimentações spot ↔ futuros</td><td style="color:var(--signal)">sim</td></tr>
+          <tr><td class="ev">trades &mdash; entrada, saída, resultado, stop</td><td style="color:var(--signal)">sim</td></tr>
+          <tr><td class="ev">relatórios mensais enviados</td><td style="color:var(--signal)">sim</td></tr>
+          <tr><td class="ev">suas ações manuais, e as divergências</td><td style="color:var(--signal)">sim</td></tr>
+          <tr><td class="ev">comunicados e reclamações</td><td style="color:var(--signal)">sim</td></tr>
+          <tr><td class="ev">qualquer alteração de termos &mdash; nova versão</td><td style="color:var(--signal)">sim</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 style="margin-top:72px">&sect;9C.3 · Por que ele não pode ser adulterado</h2>
+    <div class="grid g4">
+      <div class="cel"><h3>Append-only</h3><p>Nada é editado nem apagado. Só acrescentado.</p></div>
+      <div class="cel"><h3>Cadeia de hash</h3><p>SHA-256 encadeado mais OpenTimestamps: ninguém altera retroativamente &mdash; nem a SYNEX.</p></div>
+      <div class="cel"><h3>Individual</h3><p>Cada usuário tem o seu livro, separado dos demais.</p></div>
+      <div class="cel"><h3>Legível por você</h3><p>Você consulta o seu próprio livro, em leitura, sob confidencialidade.</p></div>
+    </div>
+
+    <div class="note">
+      <p><strong style="color:var(--bone)">A consequência prática é dos dois lados.</strong>
+        Nada de &ldquo;não vi&rdquo;, &ldquo;não li&rdquo; ou &ldquo;não foi dito&rdquo; &mdash; o
+        livro registra ciência e recebimento com data e versão. Vale contra você e vale contra nós.</p>
+    </div>
+
+    <h2 style="margin-top:72px">&sect;9B.1 · Quanto tempo o registro existe</h2>
+    <p class="lede" style="margin-bottom:26px">Dado não fica guardado para sempre. Tem prazo, uso e
+      descarte definidos &mdash; e isso é dito antes, não depois.</p>
+    <div class="book">
+      <table>
+        <thead><tr><th>dado</th><th>retenção</th><th>depois</th></tr></thead>
+        <tbody>
+          <tr><td class="ev">livro de auditoria individual</td><td style="color:var(--bone)">2 anos do encerramento</td><td>descarte seguro, com registro</td></tr>
+          <tr><td class="ev">operações e trades</td><td style="color:var(--bone)">2 anos do encerramento</td><td>descartado</td></tr>
+          <tr><td class="ev">relatórios mensais enviados</td><td style="color:var(--bone)">2 anos</td><td>descartado</td></tr>
+          <tr><td class="ev">conversas do atendimento</td><td style="color:var(--bone)">1 ano</td><td>descartado</td></tr>
+          <tr><td class="ev">dados fiscais e contábeis</td><td style="color:var(--bone)">conforme a lei</td><td>retido só se a lei exigir</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 style="margin-top:72px">&sect;9B.2 · Se você tiver do que reclamar</h2>
+    <div class="pstep"><i>[ 01 ]</i><div><b>Você reclama, por escrito, em até 30 dias</b>
+      <p>Contados da ciência do fato, por e-mail ou pelo canal oficial no Telegram.</p></div></div>
+    <div class="pstep"><i>[ 02 ]</i><div><b>Respondemos em até 10 dias úteis</b>
+      <p>Com a evidência tirada do seu livro &mdash; não com versão nossa dos fatos.</p></div></div>
+    <div class="pstep"><i>[ 03 ]</i><div><b>Não resolvido em 30 dias, vai a arbitragem</b>
+      <p>Conforme &sect;13.3 do acordo.</p></div></div>
+
+    <div class="warn">
+      <h3>O prazo corre contra os dois lados</h3>
+      <p>Reclamação apresentada fora do prazo de 30 dias prescreve. E depois do prazo de retenção,
+        a SYNEX não é obrigada a apresentar dado já descartado &mdash; a reclamação sobre período
+        descartado é improcedente por falta de objeto. Está escrito aqui para que ninguém descubra
+        isso no dia em que precisar.</p>
+    </div>
+
+    <div class="acts">
+      <a class="btn btn-p" href="atendimento.html">Como funciona o atendimento</a>
+      <a class="btn" href="manuais.html">Voltar ao manual da chave</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="mark" href="index.html" style="margin-bottom:20px;display:inline-flex"><b>[</b><span>SYNEX</span><b>]</b></a>
+        <div class="flinks">
+          <a href="index.html">Documento 001</a>
+          <a href="ciencia.html">Ciência</a>
+          <a href="contrato.html">Contrato</a>
+          <a href="adesao.html">Adesão</a>
+          <a href="manuais.html">Manual da chave</a>
+          <a href="registro.html">O livro e a retenção</a>
+          <a href="atendimento.html">Atendimento e prazos</a>
+          <a href="academy.html">SFC Academy</a>
+          <a href="miniapp.html">Painel no Telegram</a>
+        </div>
+      </div>
+      <p class="fnote">
+        SYNEX é uma plataforma de trading em fase venture dentro do ecossistema IA Media Factory
+        &mdash; Symbiosis Fractal Capital. Estratégias co-criadas por humano e máquina, com
+        desenvolvimento auditável.
+      </p>
+    </div>
+    <p class="fine">
+      <b>Aviso de risco.</b> O SYNEX é software experimental em desenvolvimento ativo. Lucro é
+      <b>projetado, nunca prometido</b> (&sect;9E). O capital pode ser perdido integralmente. Nada nesta
+      página é oferta de valores mobiliários, oferta de participação societária, conselho de
+      investimento, gestão de carteira ou administração de ativos, e nada exibido ou sugerido deve
+      ser lido como previsão de resultado. Medição histórica ou simulada não indica resultado futuro.
+      <br><br>
+      &copy; 2025&ndash;2026 SYNEX &middot; IA Media Factory Publishing&trade; &mdash; Mathew Loulas
+    </p>
+  </div>
+</footer>
+</body>
+</html>
