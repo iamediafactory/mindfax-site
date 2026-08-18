@@ -1,0 +1,397 @@
+/* ============================================================
+   SYNEX · SISTEMA VISUAL v2.0 "INSTRUMENT"
+   Symbiosis Fractal Capital · 2026
+   ------------------------------------------------------------
+   v1.0 era editorial-institucional (osso, ouro, serifa).
+   Sofisticado, mas o registro era de banca privada.
+   v2.0 mantem os ossos editoriais e troca os sinais de
+   patrimonio por sinais de instrumento:
+     - mono assume TODA a camada operacional
+     - notacao de colchete como gramatica de interacao
+     - um acento frio, reservado exclusivamente a telemetria
+     - ambar rebaixado: so aparece onde se fala de capital
+     - o grao de filme sai; a malha de engenharia entra
+   ============================================================ */
+
+:root{
+  /* fundo */
+  --ink:#070709; --ink-2:#0B0B0E; --char:#131317; --panel:#0D0D11;
+  --line:#1B1B21; --line-2:#292932;
+  --hair:rgba(237,231,220,.055);
+
+  /* texto */
+  --bone:#EDE7DC; --dim:#8E8A82; --faint:#5C5852;
+
+  /* acentos semanticos — frio = maquina, quente = capital */
+  --signal:#5CE1E6;      /* telemetria viva, estado ativo, colchetes */
+  --signal-dim:#1D4A4E;
+  --amber:#C8963E;       /* SOMENTE capital / venture / equity */
+  --amber-dim:#6B5124;
+  --alert:#D9614C;       /* falseamento / risco */
+
+  /* tipografia */
+  --display:"Instrument Serif",Georgia,serif;
+  --serif:"Newsreader",Georgia,serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+
+  --pad:40px;
+  --rail:34px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--ink);color:var(--bone);
+  font-family:var(--serif);font-weight:300;font-size:17.5px;line-height:1.72;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  font-variant-numeric:tabular-nums;
+}
+::selection{background:var(--signal);color:var(--ink)}
+a:focus-visible,button:focus-visible{outline:1px solid var(--signal);outline-offset:3px}
+
+/* malha de desenho tecnico — substitui o grao de filme.
+   nao e ornamento: e a grade em que a pagina foi desenhada, deixada a vista. */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:3;
+  background:
+    repeating-linear-gradient(to right,var(--hair) 0 1px,transparent 1px 96px),
+    radial-gradient(130% 100% at 50% 0%,transparent 64%,rgba(0,0,0,.30) 100%);
+  opacity:.9;
+}
+
+/* ---------- tipografia ---------- */
+h1,h2,h3{font-weight:400;letter-spacing:-.012em}
+h1{font-family:var(--display);font-size:clamp(40px,6.4vw,74px);line-height:1.04;letter-spacing:-.02em}
+h2{font-family:var(--display);font-size:clamp(27px,3.5vw,42px);line-height:1.14;margin-bottom:26px}
+h3{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--bone)}
+p{max-width:66ch}
+p+p{margin-top:1.05em}
+em{font-style:italic}
+strong{font-weight:400;color:var(--bone);border-bottom:1px solid var(--signal-dim)}
+
+/* ---------- camada mono: toda a UI ---------- */
+.m{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+.lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--faint)}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+/* colchetes como gramatica de interacao */
+.br::before{content:"[";color:var(--signal);margin-right:.55em}
+.br::after{content:"]";color:var(--signal);margin-left:.55em}
+
+/* ---------- estrutura ---------- */
+.wrap{max-width:1140px;margin:0 auto;padding:0 var(--pad)}
+.narrow{max-width:840px}
+section{padding:108px 0;position:relative}
+.rule{height:1px;background:var(--line);border:0}
+
+/* ---------- cabecalho ---------- */
+header{position:fixed;top:0;left:0;right:0;z-index:20;
+  background:rgba(7,7,9,.86);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.mast{display:flex;align-items:center;justify-content:space-between;height:58px}
+.mark{font-family:var(--mono);font-weight:500;letter-spacing:.42em;font-size:12px;
+  color:var(--bone);text-decoration:none;display:inline-flex;align-items:center}
+.mark b{color:var(--signal);font-weight:400;letter-spacing:0}
+.mark span{margin:0 .7em}
+nav{display:flex;gap:24px;font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase}
+nav a{color:var(--dim);text-decoration:none;transition:color .22s;position:relative}
+nav a:hover{color:var(--bone)}
+nav a:hover::before{content:"";position:absolute;left:-9px;top:50%;width:3px;height:1px;background:var(--signal)}
+
+/* trilho de instrumento — estado real do desenvolvimento, sem numero de retorno */
+.rail{border-bottom:1px solid var(--line);background:var(--ink-2);height:var(--rail);
+  display:flex;align-items:center;overflow:hidden}
+.rail .wrap{display:flex;align-items:center;gap:0;width:100%}
+.rail .cell{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);padding-right:22px;margin-right:22px;border-right:1px solid var(--line);white-space:nowrap}
+.rail .cell:last-child{border-right:0}
+.rail .cell b{font-weight:400;color:var(--dim)}
+.rail .on{color:var(--signal)}
+.dot{display:inline-block;width:5px;height:5px;background:var(--signal);border-radius:0;
+  margin-right:7px;vertical-align:middle;animation:pulse 2.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.22}}
+
+/* ---------- heroi ---------- */
+.hero{position:relative;min-height:94vh;display:flex;align-items:center;
+  padding:148px 0 92px;overflow:hidden}
+.hero h1 i{font-style:italic;color:var(--dim)}
+.kicker{margin-bottom:32px;display:flex;flex-wrap:wrap;align-items:center;gap:0 18px}
+.kicker span{font-family:var(--mono);font-size:10px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--faint);white-space:nowrap;position:relative}
+.kicker span+span::before{content:"";position:absolute;left:-10px;top:50%;width:1px;height:9px;
+  background:var(--line-2);transform:translateY(-50%)}
+.kicker .s{color:var(--signal)}
+.kicker .q{flex-basis:100%;margin-top:9px;letter-spacing:.2em}
+.kicker .q::before{display:none}
+.lede{margin-top:30px;max-width:60ch;color:var(--dim);font-size:18px}
+.lede b{color:var(--bone);font-weight:300}
+
+/* ---------- botoes: quadrados, mono, colchetados ---------- */
+.acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:42px}
+.btn{display:inline-flex;align-items:center;font-family:var(--mono);font-size:11px;
+  letter-spacing:.18em;text-transform:uppercase;text-decoration:none;
+  padding:15px 26px;border:1px solid var(--line-2);color:var(--bone);
+  background:transparent;transition:.22s;cursor:pointer}
+.btn:hover{border-color:var(--signal);color:var(--signal)}
+.btn-p{background:var(--bone);color:var(--ink);border-color:var(--bone)}
+.btn-p:hover{background:var(--signal);border-color:var(--signal);color:var(--ink)}
+
+/* ---------- indice de secao: [01] em vez de algarismo romano ---------- */
+.sx{display:flex;align-items:baseline;gap:16px;margin-bottom:30px}
+.sx i{font-style:normal;font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--signal)}
+.sx u{text-decoration:none;font-family:var(--mono);font-size:11px;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--faint)}
+.sx hr{flex:1;height:1px;background:var(--line);border:0}
+
+/* ---------- paineis ---------- */
+.panel{border:1px solid var(--line);background:var(--panel);padding:30px}
+.panel-h{display:flex;justify-content:space-between;align-items:center;
+  padding-bottom:16px;margin-bottom:22px;border-bottom:1px solid var(--line)}
+.grid{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:44px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.cel{background:var(--ink);padding:28px 26px}
+.cel h3{margin-bottom:12px;color:var(--dim)}
+.cel p{font-size:15.5px;line-height:1.62;color:var(--dim);max-width:none}
+.cel:hover{background:var(--ink-2)}
+
+/* compromissos */
+.vow{background:var(--ink);padding:30px 28px;border-left:2px solid var(--line-2)}
+.vow:hover{border-left-color:var(--signal)}
+.vow b{display:block;font-family:var(--serif);font-size:19px;font-weight:400;margin-bottom:8px}
+.vow span{display:block;color:var(--dim);font-size:15px;margin-bottom:16px}
+.vow .enf{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+
+/* falseamento — o unico lugar do vermelho */
+.fal{background:var(--ink);padding:26px;display:flex;gap:20px}
+.fal i{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--alert);flex-shrink:0;padding-top:4px}
+.fal p{font-size:15.5px;line-height:1.62;color:var(--dim);max-width:none}
+
+/* estagios */
+.stage{background:var(--ink);padding:26px}
+.stage .tag{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  display:inline-block;padding:4px 9px;border:1px solid var(--line-2);color:var(--faint);margin-bottom:14px}
+.stage.done .tag{border-color:var(--signal-dim);color:var(--signal)}
+.stage.now .tag{border-color:var(--amber-dim);color:var(--amber)}
+.stage b{display:block;font-family:var(--display);font-size:24px;font-weight:400;margin-bottom:8px}
+.stage p{font-size:15px;color:var(--dim);max-width:none}
+
+/* livro-especimen */
+.book{border:1px solid var(--line);background:var(--panel);margin-top:36px;overflow-x:auto}
+.book table{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:12px}
+.book th{text-align:left;padding:13px 18px;font-weight:400;font-size:10px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--faint);border-bottom:1px solid var(--line)}
+.book td{padding:12px 18px;border-bottom:1px solid var(--line);color:var(--dim);white-space:nowrap}
+.book tr:last-child td{border-bottom:0}
+.book .red{color:var(--line-2);letter-spacing:-.06em}
+.book .ev{color:var(--bone)}
+.chain{display:flex;gap:26px;padding:14px 18px;border-top:1px solid var(--line);
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;color:var(--faint);flex-wrap:wrap}
+.chain b{color:var(--signal);font-weight:400}
+
+/* registro de desenvolvimento */
+.log{margin-top:44px;border-top:1px solid var(--line)}
+.log .row{display:grid;grid-template-columns:150px 1fr;gap:30px;padding:24px 0;border-bottom:1px solid var(--line)}
+.log .when{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);padding-top:5px}
+.log b{display:block;font-family:var(--serif);font-size:19px;font-weight:400;margin-bottom:6px}
+.log p{color:var(--dim);font-size:15.5px;max-width:70ch}
+
+/* passos de admissao */
+.step{background:var(--ink);padding:28px 26px;position:relative}
+.step i{font-style:normal;font-family:var(--mono);font-size:10px;letter-spacing:.1em;
+  color:var(--signal);display:block;margin-bottom:14px}
+
+/* nota juridica */
+.note{margin-top:34px;padding:22px 24px;border:1px solid var(--line);background:var(--ink-2)}
+.note p{font-size:14.5px;line-height:1.66;color:var(--faint);max-width:none}
+
+/* onde se fala de capital, o quente reaparece */
+.cap{color:var(--amber)}
+
+/* fecho */
+.close{padding:118px 0;border-top:1px solid var(--line);text-align:center}
+.close h2{max-width:20ch;margin:0 auto 34px}
+footer{border-top:1px solid var(--line);padding:34px 0;background:var(--ink-2)}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;
+  font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+
+@media(max-width:900px){
+  .g4,.g3{grid-template-columns:repeat(2,1fr)}
+  .rail .cell:nth-child(n+4){display:none}
+}
+@media(max-width:680px){
+  :root{--pad:22px}
+  body{font-size:16.5px}
+  section{padding:76px 0}
+  .g4,.g3,.g2{grid-template-columns:1fr}
+  .log .row{grid-template-columns:1fr;gap:8px}
+  nav{display:none}
+  .hero{min-height:auto;padding:132px 0 72px}
+}
+
+/* ---------- rodape completo ---------- */
+footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--ink-2)}
+.fgrid{display:grid;grid-template-columns:1fr 1.35fr;gap:56px;
+  padding-bottom:30px;margin-bottom:26px;border-bottom:1px solid var(--line)}
+.flinks{display:flex;flex-direction:column;gap:9px}
+.flinks a{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--dim);text-decoration:none;transition:color .22s;width:fit-content}
+.flinks a:hover{color:var(--signal)}
+.fnote{font-size:15.5px;line-height:1.66;color:var(--dim);max-width:60ch}
+.fine{font-family:var(--mono);font-size:10.5px;line-height:1.95;letter-spacing:.045em;
+  color:var(--faint);max-width:none;text-transform:none}
+.fine b{color:var(--dim);font-weight:500}
+@media(max-width:680px){.fgrid{grid-template-columns:1fr;gap:30px}}
+
+/* ---------- heroi: declaracao a esquerda, figura a direita ---------- */
+.hero-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:60px;align-items:center;position:relative;z-index:1}
+.hero-say h1{max-width:14ch}
+.hero-say .lede{max-width:46ch}
+
+.fig{border:1px solid var(--line);background:var(--panel);display:flex;flex-direction:column}
+.fig-h{display:flex;justify-content:space-between;align-items:center;gap:16px;
+  padding:13px 16px;border-bottom:1px solid var(--line)}
+.fig-c{position:relative;height:392px}
+.fig-c canvas{position:absolute;inset:0;width:100%;height:100%}
+.fig-f{padding:13px 16px;border-top:1px solid var(--line)}
+.fig-f span{font-family:var(--mono);font-size:9.5px;line-height:1.75;letter-spacing:.05em;color:var(--faint)}
+
+@media(max-width:1040px){
+  .hero-grid{grid-template-columns:1fr;gap:44px}
+  .hero-say h1{max-width:16ch}
+  .fig-c{height:300px}
+}
+
+/* ============ PAGINAS INTERNAS ============ */
+.crumb{display:flex;align-items:center;gap:14px;margin-bottom:38px}
+.crumb a{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--dim);text-decoration:none}
+.crumb a:hover{color:var(--signal)}
+.crumb .sep{color:var(--line-2)}
+.crumb .now{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--signal)}
+
+.page{padding:150px 0 96px}
+.page h1{font-size:clamp(32px,4.6vw,52px);max-width:20ch;margin-bottom:26px}
+.page .lede{color:var(--dim);max-width:62ch;margin-bottom:0}
+
+/* barra de progresso de admissao */
+.prog{display:flex;gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:42px}
+.prog div{flex:1;background:var(--ink);padding:11px 14px;font-family:var(--mono);font-size:9.5px;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--faint)}
+.prog div.on{background:var(--panel);color:var(--signal)}
+.prog div.on::before{content:"▸ ";}
+
+/* aviso / pendencia declarada */
+.warn{border:1px solid var(--amber-dim);background:rgba(200,150,62,.045);padding:24px 26px;margin:36px 0}
+.warn h3{color:var(--amber);margin-bottom:12px}
+.warn p{color:var(--dim);font-size:15.5px;max-width:none}
+.warn.sec{border-color:var(--signal-dim);background:rgba(92,225,230,.035)}
+.warn.sec h3{color:var(--signal)}
+
+/* blocos de contrato */
+.cblock{border:1px solid var(--line);background:var(--panel);margin-bottom:1px}
+.cblock .ch{padding:18px 24px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;align-items:center}
+.cblock .ch b{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:500}
+.cblock .cb{padding:22px 24px;font-family:var(--mono);font-size:11.5px;color:var(--line-2);
+  letter-spacing:.04em;border-bottom:1px solid var(--line)}
+.cblock .cm{padding:22px 24px}
+.cblock .cm span{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--faint);margin-bottom:10px}
+.cblock .cm p{color:var(--dim);font-size:15.5px;max-width:none}
+
+/* aceites */
+.acc{border:1px solid var(--line);background:var(--panel);padding:26px;margin-bottom:1px;
+  display:grid;grid-template-columns:34px 1fr;gap:20px;align-items:start}
+.acc .box{width:18px;height:18px;border:1px solid var(--line-2);margin-top:5px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;transition:.2s;flex-shrink:0}
+.acc .box::after{content:"";width:8px;height:8px;background:transparent;transition:.2s}
+.acc.ok .box{border-color:var(--signal)}
+.acc.ok .box::after{background:var(--signal)}
+.acc b{display:block;font-family:var(--serif);font-size:18px;font-weight:400;margin-bottom:9px}
+.acc p{color:var(--dim);font-size:15.5px;max-width:none}
+.acc.ok{background:var(--ink-2)}
+.tally{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint)}
+.tally b{color:var(--signal);font-weight:400}
+
+/* passos numerados */
+.pstep{border:1px solid var(--line);background:var(--panel);padding:26px 28px;margin-bottom:1px;
+  display:grid;grid-template-columns:52px 1fr;gap:22px}
+.pstep i{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--signal);padding-top:3px}
+.pstep b{display:block;font-family:var(--serif);font-size:19px;font-weight:400;margin-bottom:9px}
+.pstep p{color:var(--dim);font-size:15.5px;max-width:none}
+.pstep code{font-family:var(--mono);font-size:12px;color:var(--bone);
+  border:1px solid var(--line-2);padding:1px 6px;white-space:nowrap}
+
+/* niveis */
+.lv{background:var(--ink);padding:30px 28px}
+.lv .n{font-family:var(--mono);font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--signal);margin-bottom:16px;display:block}
+.lv .d{font-family:var(--display);font-size:30px;line-height:1.1;margin-bottom:14px}
+.lv ul{list-style:none;margin-top:16px}
+.lv li{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--dim);
+  padding:9px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:14px}
+.lv li b{color:var(--bone);font-weight:400}
+
+/* maximo de largura em prosa longa */
+.prose p{color:var(--dim)}
+.prose p b,.prose p strong{color:var(--bone)}
+
+/* ============ MINI APP (TELEGRAM) ============ */
+body.app{font-size:15.5px;padding-bottom:76px}
+body.app::before{background:repeating-linear-gradient(to right,var(--hair) 0 1px,transparent 1px 72px)}
+.app-top{position:sticky;top:0;z-index:20;background:rgba(7,7,9,.94);
+  backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.app-id{display:flex;align-items:center;justify-content:space-between;padding:13px 18px}
+.app-id .who{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+.app-id .who b{color:var(--signal);font-weight:400}
+.app-rail{display:flex;gap:0;padding:0 18px 11px;flex-wrap:wrap}
+.app-rail span{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--faint);padding-right:14px;margin-right:14px;border-right:1px solid var(--line)}
+.app-rail span:last-child{border-right:0;margin-right:0;padding-right:0}
+.app-rail b{font-weight:400;color:var(--dim)}
+.app-rail .on{color:var(--signal)}
+
+.tabs{display:flex;border-bottom:1px solid var(--line);background:var(--ink-2);overflow-x:auto}
+.tabs button{flex:1;background:none;border:0;border-bottom:1px solid transparent;color:var(--faint);
+  font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  padding:15px 12px;cursor:pointer;white-space:nowrap;transition:.2s}
+.tabs button.on{color:var(--signal);border-bottom-color:var(--signal);background:var(--panel)}
+
+.pane{display:none;padding:26px 18px 40px}
+.pane.on{display:block}
+.pane h2{font-size:24px;margin-bottom:8px}
+.pane .sub{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--faint);margin-bottom:20px;display:block}
+
+.kpi{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);
+  border:1px solid var(--line);margin-bottom:22px}
+.kpi div{background:var(--ink);padding:18px 16px}
+.kpi .k{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);display:block;margin-bottom:8px}
+.kpi .v{font-family:var(--mono);font-size:21px;color:var(--bone);font-variant-numeric:tabular-nums}
+.kpi .v.s{color:var(--signal)}
+.kpi .v.a{color:var(--alert)}
+
+.empty{border:1px dashed var(--line-2);padding:30px 22px;text-align:center}
+.empty p{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);max-width:none}
+
+.rowi{border:1px solid var(--line);background:var(--panel);padding:16px;margin-bottom:1px}
+.rowi .h{display:flex;justify-content:space-between;gap:12px;margin-bottom:8px}
+.rowi .h b{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--bone);font-weight:500}
+.rowi .h span{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.rowi p{font-size:14.5px;color:var(--dim);max-width:none}
+
+/* livro de mecanismos 0/12 */
+.mech{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin:18px 0 14px}
+.mech i{aspect-ratio:1;border:1px solid var(--line-2);display:flex;align-items:center;
+  justify-content:center;font-style:normal;font-family:var(--mono);font-size:10px;color:var(--faint)}
+.mech i.f{border-color:var(--signal);color:var(--signal);background:rgba(92,225,230,.06)}
+
+.appfoot{position:fixed;bottom:0;left:0;right:0;background:rgba(7,7,9,.96);backdrop-filter:blur(18px);
+  border-top:1px solid var(--line);padding:13px 18px;z-index:20}
+.appfoot p{font-family:var(--mono);font-size:8.5px;line-height:1.6;letter-spacing:.05em;
+  color:var(--faint);max-width:none;text-align:center}
+
+/* mini app: largura de leitura, tambem no Telegram Desktop */
+body.app .app-id,body.app .app-rail,body.app .tabs,body.app .pane,body.app .appfoot p{
+  max-width:620px;margin-left:auto;margin-right:auto}
+body.app .tabs{width:100%}
