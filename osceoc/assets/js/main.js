@@ -140,3 +140,19 @@
   }, { threshold: 0.3 });
   bars.forEach(function (b) { io.observe(b); });
 })();
+
+
+/* meta 120 — barra de crescimento */
+(function () {
+  var g = document.querySelector('.m-bar .grow');
+  if (!g) return;
+  var run = function () { g.style.width = (g.getAttribute('data-w') || 25) + '%'; };
+  if (!('IntersectionObserver' in window)) return run();
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (en) {
+      if (!en.isIntersecting) return;
+      setTimeout(run, 220); io.disconnect();
+    });
+  }, { threshold: 0.4 });
+  io.observe(document.querySelector('.meta120'));
+})();
