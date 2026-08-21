@@ -608,3 +608,63 @@ body.clean .ref-toggle .dot{background:#5BBE7F}
 .cost-side dt{font-size:.92rem;color:var(--muted)}
 .cost-side dd{margin:0;font-size:.99rem;font-weight:600;color:var(--navy);text-align:right}
 @media (max-width:980px){ .cost{grid-template-columns:1fr;gap:2.4rem} .cost-side{position:static} }
+
+
+/* meta institucional de expansão */
+.goal-note{margin-top:1.4rem;padding:1.05rem 1.2rem;border-left:3px solid var(--gold);
+  background:var(--cream-2);border-radius:0 10px 10px 0;font-size:.97rem;line-height:1.62}
+.goal-note b{color:var(--navy);display:block;margin-bottom:.3rem}
+
+/* ============ META 120 — campanha de expansão ============ */
+.meta120{margin-top:4.2rem;position:relative;overflow:hidden;border-radius:20px;
+  background:linear-gradient(150deg,#1B2E55 0%,var(--navy) 48%,#2E4A82 100%);
+  color:#fff;padding:3.2rem 2.6rem 2.8rem}
+.meta120::after{content:'';position:absolute;right:-90px;top:-90px;width:280px;height:280px;
+  border-radius:50%;background:radial-gradient(circle,rgba(229,156,47,.28),transparent 68%)}
+.meta120 .m-head{position:relative;z-index:2;max-width:760px}
+.meta120 .eyebrow{color:var(--gold-soft)}
+.meta120 .eyebrow::before{background:var(--gold)}
+.meta120 h3{font-size:clamp(1.75rem,3.4vw,2.5rem);line-height:1.14;margin:.5rem 0 .9rem;color:#fff}
+.meta120 .m-head p{color:rgba(255,255,255,.84);font-size:1rem;line-height:1.68;margin:0}
+
+.m-track{position:relative;z-index:2;display:flex;align-items:center;gap:1.4rem;margin:2.6rem 0 2.2rem}
+.m-num{text-align:center;flex:0 0 auto;line-height:1}
+.m-num b{display:block;font-family:var(--serif);font-size:2.4rem;color:rgba(255,255,255,.62)}
+.m-num span{font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.m-num.goal b{color:var(--gold);font-size:3.1rem}
+.m-num.goal span{color:var(--gold-soft)}
+.m-bar{position:relative;flex:1;height:12px;border-radius:99px;background:rgba(255,255,255,.14);overflow:visible}
+.m-bar i{position:absolute;top:0;height:12px;border-radius:99px}
+.m-bar .base{left:0;width:75%;background:rgba(255,255,255,.45)}
+.m-bar .grow{left:75%;width:0;background:linear-gradient(90deg,var(--gold),var(--gold-soft));
+  transition:width 1.5s cubic-bezier(.22,.9,.28,1);box-shadow:0 0 18px rgba(229,156,47,.55)}
+.m-flag{position:absolute;left:75%;top:-2.15rem;transform:translateX(-6%);font-size:.76rem;font-weight:700;
+  letter-spacing:.06em;color:var(--gold-soft);white-space:nowrap}
+
+.m-grid{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-bottom:2.4rem}
+.m-grid>div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);
+  border-radius:13px;padding:1.15rem 1.25rem}
+.m-grid b{display:block;font-family:var(--serif);font-size:1.55rem;color:var(--gold-soft);margin-bottom:.3rem}
+.m-grid span{display:block;font-size:.88rem;line-height:1.5;color:rgba(255,255,255,.78)}
+
+.m-meter{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.16);padding-top:1.9rem}
+.m-meter .nums{display:flex;align-items:baseline;gap:.55rem;margin-bottom:.7rem}
+.m-meter .nums b{font-family:var(--serif);font-size:2rem;color:#fff;line-height:1}
+.m-meter .nums>span:last-child{font-size:.93rem;color:rgba(255,255,255,.72)}
+.m-meter .bar{height:9px;border-radius:99px;background:rgba(255,255,255,.14);overflow:hidden}
+.m-meter .bar i{display:block;height:9px;width:0;border-radius:99px;
+  background:linear-gradient(90deg,var(--gold),var(--gold-soft));transition:width 1.3s cubic-bezier(.22,.9,.28,1)}
+.m-meter .cap{margin:.85rem 0 0;font-size:.9rem;color:rgba(255,255,255,.66)}
+.m-cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem}
+.btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.42)}
+.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.meta120 .ref{display:inline-block;width:auto;background:rgba(255,255,255,.18);color:#fff;border:0;
+  font-size:.58rem;padding:.12rem .38rem;vertical-align:super;margin-left:.3rem}
+.m-grid b .ref{vertical-align:middle}
+
+@media(max-width:900px){
+  .m-grid{grid-template-columns:1fr}
+  .meta120{padding:2.4rem 1.5rem 2.2rem}
+  .m-track{gap:.9rem}
+  .m-num b{font-size:1.9rem}.m-num.goal b{font-size:2.4rem}
+}
