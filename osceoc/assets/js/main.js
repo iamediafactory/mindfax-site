@@ -120,3 +120,23 @@
   document.addEventListener('DOMContentLoaded', function () { document.body.appendChild(btn); });
   if (document.readyState !== 'loading') document.body.appendChild(btn);
 })();
+
+
+/* barras da composição de custo */
+(function () {
+  var bars = document.querySelectorAll('.cost-bar i');
+  if (!bars.length) return;
+  if (!('IntersectionObserver' in window)) {
+    bars.forEach(function (b) { b.style.width = b.getAttribute('data-w') + '%'; });
+    return;
+  }
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (en) {
+      if (!en.isIntersecting) return;
+      var b = en.target, w = b.getAttribute('data-w');
+      setTimeout(function () { b.style.width = w + '%'; }, 80);
+      io.unobserve(b);
+    });
+  }, { threshold: 0.3 });
+  bars.forEach(function (b) { io.observe(b); });
+})();
